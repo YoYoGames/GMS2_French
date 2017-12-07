@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>iap_acquire</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/in app purchases/iap_acquire.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fin%20app%20purchases%2Fiap_acquire.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fin%20app%20purchases%2Fiap_acquire.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h1 class="studio"> iap_acquire </h1><h2 class="studio"> Ceci demande l&#39;acquisition du produit donné. </h2><h3 class="studio"> Syntaxe: </h3><p class="code">iap_acquire(purchase_id, payload);<span class="notranslate"></span></p><p><br></p><div class="param"><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">purchase_id</span> </td> <td> La chaîne d&#39;identification du produit pour l&#39;achat. </td></tr><tr class="alt"><td> <span class="notranslate">payload</span> </td> <td> C&#39;est une chaîne qui peut être utilisée pour la vérification d&#39;achat sur Google Play (utilisez une chaîne vide, &quot;&quot;, sur toutes les autres plates-formes). </td></tr></table></div><p><br></p><p> <b>Retours:</b> Real </p><p><br></p><h3 class="studio"> La description </h3><p> Cette fonction est celle que vous utilisez pour acquérir un achat via le magasin cible pour l&#39;appareil qui exécute votre jeu. Cette chaîne d&#39;ID de produit est celle que vous spécifiez lors de l&#39;activation de l&#39;IAP en utilisant <a href="iap_activate.html"><tt>iap_activate</tt></a>, et devrait être le même que celui que vous avez utilisé pour identifier le produit sur le magasin cible. Cette fonction renverra une valeur car elle est &quot;index&quot; afin qu&#39;elle puisse être identifiée lorsque les données d&#39;achat arrivent et que l&#39;appel de la fonction déclenche un <a href=
+"../../../2_interface/1_editors/events/async_events.html"><b>événement IAP</b></a> du &quot;type&quot; <tt><tt>iap_ev_purchase</tt></tt>, qui contiendra la clé supplémentaire suivante: </p><blockquote><ul><li> &quot; <b>index</b> &quot; - L&#39;identifiant d&#39;achat du produit activé. </li></ul></blockquote><p> Cet ID d&#39;achat peut ensuite être utilisé pour vérifier quel achat a déclenché l&#39;événement (en le comparant à la valeur d&#39;index renvoyée que vous avez stockée), ce qui vous permet de traiter le problème en conséquence. Si vous développez pour Google Play (sur la cible <span class="notranslate">Android</span> ), vous pouvez également définir la chaîne &quot;Payload&quot;. Google s&#39;en sert pour vérifier le produit et est envoyé avec la demande d&#39;achat à Google Play. Lorsqu&#39;un achat est effectué avec succès, le jeu recevra la charge utile utilisée dans le cadre des informations d&#39;achat. En générant une charge utile à chaque achat, vous pouvez donc fournir un simple formulaire de vérification d&#39;achat. <br><br></p><p><br></p><h3 class="studio"> Exemple: </h3><p class="code">if mouse_check_button_pressed(mb_left)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;iap_acquire("noads", "")<br>
+&nbsp;&nbsp;&nbsp;}<br><span class="notranslate"></span></p><p> Le code ci-dessus enverra une demande d&#39;achat lorsque le bouton de la souris est pressé. </p><p><br></p><div class="clear"><div style="float:left"> Retour: <a href="index.html">dans les achats d&#39;applications</a> </div><div style="float:right"> Suivant: <a href=
+"iap_consume.html">iap_consume</a> </div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

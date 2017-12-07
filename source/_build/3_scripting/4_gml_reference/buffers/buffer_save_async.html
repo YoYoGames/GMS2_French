@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>buffer_save_async</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/buffers/buffer_save_async.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fbuffers%2Fbuffer_save_async.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fbuffers%2Fbuffer_save_async.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> buffer_save_async </h2><div class="body-scroll"><h3 class="studio"> Syntaxe: </h3><p class="code">buffer_save_async(buffer, filename, offset,
+size);<span class="notranslate"></span></p><p><br></p><div class="param"><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">buffer</span> </td> <td> L&#39;index du tampon à sauvegarder. </td></tr><tr class="alt"><td> <span class="notranslate">filename</span> </td> <td> Le nom du fichier à enregistrer sous. </td></tr><tr><td> <span class="notranslate">offset</span> </td> <td> Le décalage dans la mémoire tampon pour sauvegarder (en octets). </td></tr><tr class="alt"><td> <span class="notranslate">size</span> </td> <td> La taille de la zone tampon à sauvegarder (en octets). </td></tr></table></div><p><br></p><p> <b>Retours:</b> Real </p><p><br></p><h3 class="studio"> La description </h3><p> Avec cette fonction, vous pouvez enregistrer une partie du contenu d&#39;un tampon dans un fichier, prêt à être relu en mémoire en utilisant le <a href=
+"buffer_load.html"><tt>buffer_load</tt></a> fonction (ou l&#39;une des autres fonctions pour charger les tampons). Le &quot;décalage&quot; définit la position de départ dans le tampon pour la sauvegarde (en octets), et la &quot;taille&quot; est la taille de la zone tampon à sauvegarder à partir de ce décalage (également en octets). Cette fonction fonctionne de manière asynchrone et le jeu continuera à fonctionner pendant la sauvegarde. Cette fonction déclenche un <a href=
+"../../../2_interface/1_editors/events/async_events.html">événement de chargement / enregistrement asynchrone dans</a> lequel vous pouvez vérifier que la sauvegarde s&#39;est bien déroulée. <br><br> Notez que vous pouvez enregistrer plusieurs tampons en un en appelant cette fonction plusieurs fois entre les appels à <a href=
+"buffer_async_group_begin.html"><tt>buffer_async_group_begin()</tt></a> et <a href=
+"buffer_async_group_end.html"><tt>buffer_async_group_end()</tt></a> (voir ces fonctions pour plus d&#39;informations à ce sujet). <br><br> La fonction renvoie une valeur d&#39;ID unique qui peut ensuite être utilisée pour vérifier l&#39;événement asynchrone <tt>async_load</tt> Valeur d&#39;ID, comme indiqué dans l&#39;exemple étendu ci-dessous. le <tt>async_load</tt> La carte dans l&#39;événement aura les deux paires clé / valeur suivantes: </p><blockquote><ul><li> <b>&quot;id&quot;:</b> l&#39;identifiant de la fonction asynchrone renvoyée par la fonction de sauvegarde. </li><li> <b>&quot;status&quot;:</b> retournera <tt>true</tt> si les données ont été sauvegardées / chargées correctement, et <tt>false</tt> autrement. </li></ul></blockquote><p><br><br></p><p><br></p><h3 class="studio"> Exemple étendu: </h3><p> le <tt>buffer_save_async()</tt> La fonction peut être appelée à partir de n&#39;importe quel événement, et comme elle est asynchrone, le rappel peut être presque instantané ou prendre plusieurs secondes. Appeler la fonction est simple et ressemblerait à ceci: </p><p class="code">saveid = buffer_save_async(buff, "Player_Save.sav",
+0, 16384);<br><span class="notranslate"></span></p><p> Le code ci-dessus enregistre le contenu du tampon &quot; <i>buff</i> &quot; dans le fichier de sauvegarde donné, en stockant l&#39;ID de l&#39;appel de fonction dans la variable &quot; <i>saveid</i> &quot;. Lorsque l&#39;enregistrement est terminé, l&#39;événement Save / Load asynchrone est déclenché et vous pouvez analyser <tt>async_load</tt> carte pour l&#39;ID correct de la fonction, comme ceci: </p><p class="code">if ds_map_find_value(async_load, "id") ==
+saveid<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;if ds_map_find_value(async_load, "status") ==
+false<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;show_debug_message("Save
+failed!");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;}<br><span class="notranslate"></span></p><p> Le code ci-dessus vérifiera d&#39;abord l&#39;identifiant de la carte ds_map créée, puis vérifiera l&#39;état du rappel, en publiant un message de débogage s&#39;il y a eu des problèmes. </p><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href=
+"index.html">Tampons</a> </div><div style="float:right"> Suivant: <a href=
+"buffer_load.html">buffer_load</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>instance_deactivate_layer</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/instances/deactivating_instances/instance_deactivate_layer.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Finstances%2Fdeactivating_instances%2Finstance_deactivate_layer.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Finstances%2Fdeactivating_instances%2Finstance_deactivate_layer.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h1 class="studio"> instance_deactivate_layer </h1><div class="body-scroll"><p><br></p><h3 class="studio"> <b>Syntaxe:</b> </h3><p class="code">instance_deactivate_layer(obj);<span class="notranslate"></span></p><p><br></p><div class="param"><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">layer</span> </td> <td> La chaîne d&#39;ID de couche (ou la valeur) à utiliser </td></tr></table></div><p><br></p><p> <b>Retours:</b> N / A </p><p><br></p><h3 class="studio"> La description </h3><p> Avec cette fonction, vous pouvez désactiver toutes les instances affectées à un calque spécifique. Vous devez fournir l&#39; <b>ID de couche</b>, qui peut être le nom de la couche tel qu&#39;il est écrit dans l&#39;éditeur de code (sous la forme d&#39;une chaîne) ou la valeur d&#39;ID de couche réelle renvoyée par le <a href=
+"../../rooms/layers/layer_create.html"><tt>layer_create</tt></a> et notez que vous ne pouvez désactiver les couches d&#39; <i>instance</i> qu&#39;avec cette fonction. Notez que si vous avez désactivé une couche contenant des instances d&#39;objets marqués comme <b>persistants</b>, vous devrez réactiver la couche avec la fonction <a href=
+"instance_actiavte_layer.html"><tt>instance_activate_layer</tt></a> avant de changer de pièce, sinon les instances persistantes sur la couche <i>ne</i> seront <i>pas</i> reportées et seront rejetées. <br><br></p><blockquote> <i><b>REMARQUE:</b> Si vous désactivez une instance au démarrage de</i> la <i>pièce (ex:</i> à <i>partir du code de création de pièce ou d&#39;une instance créer</i> un <i>événement d&#39;une instance dans la salle) tous</i> les <i>cas qui sont placés dans la salle de l&#39;éditeur de chambre <b>sera toujours gérer leur créer</b></i> un <i><b>événement</b> avant d&#39;être désactivé.</i> <br><br> <i><b>AVERTISSEMENT: la</b> désactivation des instances sur lesquelles la physique est activée n&#39;empêchera <b>PAS</b> leurs appareils d&#39;interagir avec la simulation physique. Pour cela, vous devez définir leur <a href=
+"../../physics/physics%20variables/phy_active.html"><tt>phy_active</tt></a> variable à <tt>true</tt> ou <tt>false</tt> lorsque vous activez / désactivez les instances.</i> <br><br></blockquote><p><br></p><h3> <b>Exemple:</b> </h3><p class="code">instance_deactivate_layer("Enemy Layer");<br>
+var _vx = camera_get_view_x(view_camera[0]);<br>
+var _vy = camera_get_view_y(view_camera[0]);<br>
+var _vw = camera_get_view_width(view_camera[0]);<br>
+var _vh = camera_get_view_height(view_camera[0]);<br>
+instance_activate_region(_vx - 64, _vy - 64, _vw + 128, _vh + 128,
+false);<br><span class="notranslate"></span></p><p> Le code ci-dessus désactive toutes les instances affectées au calque &quot;Enemy_Layer&quot; puis active une région dans la pièce. </p><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">Désactivation d&#39;instances</a> </div><div style="float:right"> Suivant: <a href=
+"instance_activate_all.html">instance_activate_all</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

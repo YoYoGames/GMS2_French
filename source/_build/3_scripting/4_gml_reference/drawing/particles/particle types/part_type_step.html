@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>part_type_step</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href=
+"../../../../../../../files/helpindex.css" type="text/css">
+<link rel="stylesheet" href="../../../../../../../default.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/drawing/particles/particle types/part_type_step.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fdrawing%2Fparticles%2Fparticle%20types%2Fpart_type_step.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fdrawing%2Fparticles%2Fparticle%20types%2Fpart_type_step.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h1 class="studio"> part_type_step </h1><h2 class="studio"> Définit une particule pour en créer une autre à chaque étape de sa vie. </h2><h3 class="studio"> Syntaxe: </h3><p class="code">part_type_step(ind, step_number, step_type);<span class="notranslate"></span></p><p><br></p><div><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">ind</span> </td> <td> L&#39;indice du type de particule à changer. </td></tr><tr><td> <span class="notranslate">step_number</span> </td> <td> La quantité de la nouvelle particule à créer par étape. </td></tr><tr><td> <span class="notranslate">step_type</span> </td> <td> L&#39;index du type de particule à créer. </td></tr></table></div><p><br></p><p> <b>Retours:</b> N / A </p><p><br></p><h3 class="studio"> La description </h3><p> Cette fonction peut être utilisée pour que votre type de particule puisse diffuser un autre type à chaque étape jusqu&#39;à la fin de sa durée de vie. Vous pouvez définir une valeur négative pour le numéro d&#39;étape et une particule sera émise à un intervalle aléatoire basé sur cela, de sorte que, par exemple, une valeur de -3 aura une chance de 1: 3 d&#39;émettre une particule à chaque étape. <br><br> <i><b>NOTE:</b> N&#39;utilisez JAMAIS le même type de particule car cela provoquera une boucle infinie et peut faire planter le jeu en quelques secondes! En outre, soyez très prudent lors de l&#39;utilisation car cela peut augmenter considérablement le nombre de particules à l&#39;écran à la fois et provoquer un ralentissement notable de vos jeux.</i> <br><br></p><p><br></p><h3 class="studio"> Exemple: </h3><p class="code">particle2 = part_type_create();<br>
+part_type_shape(particle2, pt_shape_smoke);<br>
+part_type_size(particle2, 0.01, 0.01, 0.01, 0);<br>
+part_type_scale(particle2, 1, 1);<br>
+part_type_colour3(particle2, 4227327, 8454143, 4227327);<br>
+part_type_alpha3(particle2,1, 0.50, 0.80);<br>
+part_type_speed(particle2, 0, 0, 0, 0);<br>
+part_type_direction(particle2, 0, 359, 0, 0);<br>
+part_type_gravity(particle2, 0, 270);<br>
+part_type_orientation(particle2, 0, 0, -2, 0, 1);<br>
+part_type_blend(particle2, 1);<br>
+part_type_life(particle2, 160, 160);<br>
+particle3 = part_type_create();<br>
+part_type_shape(particle3, pt_shape_flare);<br>
+part_type_size(particle3, 0.20, 0.20, 0.02, 0);<br>
+part_type_scale(particle3, 1, 1);<br>
+part_type_colour3(particle3, 16777215, 8454143, 16777215);<br>
+part_type_alpha3(particle3, 0, 0.50, 0);<br>
+part_type_speed(particle3, 3, 3, -0.03, 0);<br>
+part_type_direction(particle3, 0, 359, 0, 0);<br>
+part_type_gravity(particle3, 0, 270);<br>
+part_type_orientation(particle3, 0, 0, 0, 0, 1);<br>
+part_type_blend(particle3, 1);<br>
+part_type_life(particle3, 40, 80);<br>
+part_type_step(particle2, 2, particle3);<br><span class="notranslate"></span></p><p> Le code ci-dessus crée et définit deux particules et définit la particule indexée dans la variable &quot;particle2&quot; pour créer 2 particules de &quot;particle3&quot; à chaque étape de sa durée de vie. </p><p><br></p><div class="clear"><div style="float:left"> Retour: <a href="index.html">Types de particules</a> </div><div style="float:right"> Suivant: <a href=
+"part_type_death.html">part_type_death</a> </div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

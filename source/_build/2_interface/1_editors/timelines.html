@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>The Timeline Editor</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+<link rel="stylesheet" href="../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/2_interface/1_editors/timelines.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2F_build%2F2_interface%2F1_editors%2Ftimelines.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2F_build%2F2_interface%2F1_editors%2Ftimelines.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> L&#39;éditeur de timeline </h2><div class="body-scroll"><p><br></p><p><img class="center" src="images/editor_timelines.png" alt="Éditeur de chronologie"> Dans la plupart des jeux, vous voulez que certaines choses se produisent à des moments précis dans le temps. Maintenant, vous pouvez essayer d&#39;y parvenir en utilisant les événements d&#39;alarme, mais lorsque les choses deviennent trop compliquées cela ne fonctionnera plus, d&#39;autant plus que vous êtes limité à seulement douze alarmes. C&#39;est pourquoi nous avons la ressource de calendrier. Dans une ligne de temps, vous spécifiez quelles actions doivent se produire à certains moments du jeu, et vous pouvez utiliser toutes les actions qui sont également disponibles pour un objet dans ses différents événements ou codes pour le définir. Une fois que vous avez créé une ligne de temps, vous pouvez l&#39;assigner à un objet, et l&#39;instance de cet objet exécutera ensuite les actions aux moments indiqués lorsqu&#39;il est placé ou créé dans une pièce. </p><p> Par exemple, supposons que vous voulez faire un garde et que ce garde doit se déplacer de 20 pas de temps vers la gauche, puis 10 vers le haut, puis 20 vers la droite, puis 10 vers le bas et enfin s&#39;arrêter. Pour ce faire, vous pouvez faire une ligne de temps où vous commencez à définir un mouvement vers la gauche. Vous créez alors le moment 20 (un &quot;moment&quot; est juste une autre façon de dire &quot;game step&quot;) et réglez un mouvement vers le haut, puis à un moment 30 un mouvement vers la droite, à un moment 50 un mouvement vers le bas arrêterait le mouvement. Une fois cela fait, vous pouvez assigner cette ligne de temps au gardien et le gardien fera exactement ce que vous avez planifié. Vous pouvez même définir une alarme dans la ligne de temps afin qu&#39;elle soit répétée après un certain laps de temps et de cette façon votre garde peut patrouiller une zone. Vous pouvez également utiliser une ligne temporelle pour contrôler votre jeu plus globalement, par exemple en créant un objet contrôleur invisible, puis une ligne de temps qui, à certains moments, crée des ennemis, puis l&#39;affecte à l&#39;objet contrôleur et place une instance dans la pièce. C&#39;est un moyen facile d&#39;obtenir des pions chronométrés des ennemis. </p><p> Pour créer une ligne de temps, faites un clic droit <img style=
+"vertical-align:middle" src="../../images/icon_rmb.png"> sur la ressource de la chronologie dans l&#39;arbre des ressources et sélectionnez &quot;Créer&quot;. Cela ouvrira la fenêtre illustrée en haut de cette page avec les sections suivantes: </p><blockquote><a name="timeline_name" id="timeline_name"></a> <label class="collapse" for="one">prénom</label> <input id="one"
+type="checkbox"><div class="index_list"><p> Ici, vous donnez un nom à votre ressource de calendrier. Cela ne doit contenir que des caractères alphanumériques ou la barre de soulignement &quot;_&quot; et être unique, car il sera utilisé pour référencer votre timeline à travers le code. Ce nom sera également l&#39;ID de timeline unique qui peut être utilisé dans les actions DnD™ ou les fonctions de code pour identifier la timeline. </p></div><br><a name="timeline_moment" id="timeline_moment"></a> <label class=
+"collapse" for="two">Moment</label> <input id="two" type=
+"checkbox"><div class="index_list"><p> Vous pouvez définir la valeur du moment ici. La valeur de moment est calculée comme le nombre d&#39;étapes de jeu après le début de la chronologie. Donc, si vous avez une chronologie avec des moments à 0 et à 60, le moment 0 sera déclenché lorsque la chronologie est lancée et le moment 60 se produira 60 étapes plus tard. Si la vitesse de votre pièce est égale à 60, le moment 60 arrive une seconde après le début de la ligne de temps. Vous pouvez faire un double clic <img style=
+"vertical-align:middle" src="../../images/icon_lmb.png"> sur la valeur du moment ou vous pouvez utiliser le bon bouton <img style=
+"vertical-align:middle" src="../../images/icon_rmb.png"> menu et sélectionnez &quot;changer&quot; (voir la section sur le menu bouton ci-dessous) pour le changer. Pour ajouter un nouveau moment, cliquez simplement sur le bouton <i>Ajouter</i> en bas de l&#39;éditeur. Ajouter de nouveaux moments ouvrira alors le code ou l&#39;éditeur d&#39;action où vous pourrez ajouter les fonctions ou DnD™ que vous voulez appeler dans ce moment. </p></div><br><a name="timeline_moment_name" id="timeline_moment_name"></a> <label class="collapse" for="three">Nom du moment</label> <input id=
+"three" type="checkbox"><div class="index_list"><p> Pour vous aider à comprendre ce que votre calendrier est en train de faire, il est permis de donner un nom aux moments pour les identifier. Ceci est simplement une chaîne et ne sera pas utilisé dans le code du jeu ou ailleurs, car il est purement pour l&#39;organisation et la compréhension de ce que fait votre calendrier. Vous pouvez faire un double clic <img style=
+"vertical-align:middle" src="../../images/icon_lmb.png"> sur la valeur du moment ou vous pouvez utiliser le bon bouton <img style=
+"vertical-align:middle" src="../../images/icon_rmb.png"> menu et sélectionnez &quot;changer&quot; (voir la section sur le menu bouton ci-dessous) pour le changer. </p></div></blockquote><p> L&#39;éditeur de chronologie vous permet d&#39;utiliser <img style=
+"vertical-align:middle" src="../../images/icon_shift.png"> + <img style="vertical-align:middle" src="../../images/icon_lmb.png"> sélectionnez tous les moments entre le premier clic <img style=
+"vertical-align:middle" src="../../images/icon_lmb.png"> et le deuxième clic <img style="vertical-align:middle" src=
+"../../images/icon_lmb.png"> ou vous pouvez utiliser <img style=
+"vertical-align:middle" src=
+"../../images/icon_ctrl.png"> / <img style="vertical-align:middle"
+src="../../images/icon_cmd.png"> + <img style=
+"vertical-align:middle" src="../../images/icon_lmb.png"> cliquer sur des moments uniques pour les sélectionner indépendamment. Les moments de la timeline peuvent être édités en utilisant le bouton droit de la souris <img style=
+"vertical-align:middle" src="../../images/icon_rmb.png"> menu sur l&#39;un des éléments sélectionnés: <img class="center" src=
+"images/editor_timelines_rmbmenu.png" alt="Menu de l&#39;éditeur de chronologie"></p><blockquote><a name="timeline_add" id="timeline_add"></a> <label class="collapse" for="four">Ajouter</label> <input id="four"
+type="checkbox"><div class="index_list"><p> Cette option vous permet d&#39;ajouter un nouveau moment à la chronologie. Il sera ajouté directement après le dernier moment, donc si le dernier moment de votre timeline est 120, le prochain que vous ajouterez sera de 121. Vous pouvez changer la position du moment en double-cliquant <img style=
+"vertical-align:middle" src="../../images/icon_lmb.png"> sur la valeur du moment dans l&#39;éditeur ou en cliquant-droit <img style=
+"vertical-align:middle" src="../../images/icon_rmb.png"> et en choisissant &quot;Changer&quot;. </p></div><br><a name="timeline_edit" id="timeline_edit"></a> <label class=
+"collapse" for="five">modifier</label> <input id="five" type=
+"checkbox"><div class="index_list"><p> Cela ouvre le moment de la timeline en cours pour l&#39;édition. </p></div><br><a name="timeline_change" id="timeline_change"></a> <label class=
+"collapse" for="six">Changer le moment</label> <input id="six" type=
+"checkbox"><div class="index_list"><p> Changez la valeur pour le moment du scénario sélectionné. C&#39;est le même que le double clic lent <img style="vertical-align:middle"
+src="../../images/icon_lmb.png"> sur la valeur de la timeline dans la fenêtre de l&#39;éditeur. </p></div><br><a name="timeline_change_name" id="timeline_change_name"></a> <label class="collapse" for="ten">Changer la description</label> <input id="ten" type="checkbox"><div class="index_list"><p> Modifiez le nom descriptif pour le moment du scénario sélectionné. C&#39;est le même que le double clic lent <img style=
+"vertical-align:middle" src="../../images/icon_lmb.png"> dans la description de la timeline dans la fenêtre de l&#39;éditeur. </p></div><br><a name="timeline_duplicate" id="timeline_duplicate"></a> <label class="collapse" for="seven">Dupliquer</label> <input id=
+"seven" type="checkbox"><div class="index_list"><p> Cela dupliquera tous les moments de la timeline sélectionnés et les ajoutera consécutivement à la fin de la chronologie actuelle. </p></div><br><a name="timeline_merge" id="timeline_merge"></a> <label class=
+"collapse" for="eight">Fusionner</label> <input id="eight" type=
+"checkbox"><div class="index_list"><p> Si vous sélectionnez deux moments ou plus dans un scénario, vous pouvez choisir de les fusionner. Cela créera un instant de ligne de temps unique à la position du premier moment sélectionné avec tout le code et les actions ensemble simultanément. </p></div><br><a name="timeline_remove" id="timeline_remove"></a> <label class=
+"collapse" for="nine">Retirer</label> <input id="nine" type=
+"checkbox"><div class="index_list"><p> Cela supprimera le moment (ou les moments) sélectionné (s) de la chronologie. </p></div><br><a name="timeline_cut" id="timeline_cut"></a> <label class=
+"collapse" for="thirteen">Couper / Copier / Coller</label> <input id=
+"thirteen" type="checkbox"><div class="index_list"><p> Ces options vous permettent de couper, copier ou coller un ou plusieurs moments de la timeline. Vous pouvez également utiliser les raccourcis clavier standard ici: <img style="vertical-align:middle" src=
+"../../images/icon_ctrl.png"> / <img style="vertical-align:middle"
+src="../../images/icon_cmd.png"> + <tt>X</tt>, <img style=
+"vertical-align:middle" src=
+"../../images/icon_ctrl.png"> / <img style="vertical-align:middle"
+src="../../images/icon_cmd.png"> + <tt>C</tt>, et <img style=
+"vertical-align:middle" src=
+"../../images/icon_ctrl.png"> / <img style="vertical-align:middle"
+src="../../images/icon_cmd.png"> + <tt>V</tt>. </p></div><br><a name="timeline_select" id="timeline_select"></a> <label class=
+"collapse" for="eleven">Tout sélectionner</label> <input id="eleven" type=
+"checkbox"><div class="index_list"><p> Avec cette option, vous pouvez sélectionner tous les moments d&#39;une ligne temporelle. Les moments sélectionnés peuvent ensuite être supprimés, fusionnés, dupliqués, coupés ou copiés. </p></div><br><a name="timeline_dnd" id="timeline_dnd"></a> <label class=
+"collapse" for="twelve">Convertir en Drag et Drop / Code</label> <input id="twelve" type="checkbox"><div class="index_list"><p> Les moments de la timeline seront créés à l&#39;aide de la méthode choisie lors de la création du projet, soit en utilisant du code, soit en utilisant des actions de glisser-déposer. Avec cette option, vous pouvez convertir de l&#39;un à l&#39;autre, quel que soit le type de projet. </p></div><br></blockquote><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">Index des éditeurs</a> </div><div style="float:right"> Suivant: <a href="objects.html">L&#39;éditeur d&#39;objets</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

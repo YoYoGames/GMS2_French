@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Soft Body Particles</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/physics/soft body particles/index.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fphysics%2Fsoft%20body%20particles%2Findex.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fphysics%2Fsoft%20body%20particles%2Findex.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> Particules souples </h2><p> <i><span class="notranslate">GameMaker Studio 2</span></i> utilise la bibliothèque de physique de corps rigide Box2D, et en tant que telle ne permet pas la physique du corps mou. Cependant, l&#39;extension <b>Liquid Fun</b> ajoute des <i>particules</i> au système physique, ce qui permet la création de corps mou simulés en utilisant la physique du corps rigide. Fondamentalement, vous pouvez créer une <i>forme</i> de particules qui maintiennent la cohésion et ainsi simuler un corps entier, ce qui, en raison de l&#39;interaction des particules, donne l&#39;impression d&#39;un corps mou. Vous pouvez également utiliser les particules de physique pour simuler des liquides et d&#39;autres systèmes physiques basés sur les particules. </p><p> Les sections suivantes sont toutes liées à l&#39;utilisation de particules de physique pour créer des grippes (corps mou) et d&#39;autres effets: </p><blockquote> <label class="collapse" for="one">Obtention et réglage des données de particules</label> <input id="one" type="checkbox"><div class="index_list"><p> Avant de commencer à créer vos particules de la physique, vous devez définir les propriétés de la physique de base pour eux, comme vous le feriez d&#39; un <i>appareil</i> de la physique régulière. Notez cependant que la définition de ces propriétés affectera <i>toutes les particules créées précédemment</i> ainsi que toutes les nouvelles particules que vous créez, de sorte que vous n&#39;utiliserez normalement ces fonctions qu&#39;au début du jeu ou du niveau. Cependant, il existe des fonctions spécifiques pour définir les <i>indicateurs</i> de particules pour les particules individuelles (et les groupes de particules) qui vont changer leurs propriétés comme &quot;bounciness&quot; ou &quot;viscosité&quot;, vous permettant de créer différents types de particules dans les limites de ces paramètres globaux. </p><p> Les fonctions suivantes sont disponibles pour le paramétrage et l&#39;obtention des données globales du système de particules: </p><ul><li> <a href=
+"physics_particle_count.html">physique_particle_count</a> <br></li><li> <a href=
+"physics_particle_group_count.html">physics_particle_group_count</a> <br></li><li> <a href=
+"physics_particle_set_max_count.html">physique_particle_set_max_count</a> <br></li><li> <a href=
+"physics_particle_set_radius.html">physics_particle_set_radius</a> <br></li><li> <a href=
+"physics_particle_set_density.html">physics_particle_set_density</a> <br></li><li> <a href=
+"physics_particle_set_damping.html">physics_particle_set_damping</a> <br></li><li> <a href=
+"physics_particle_set_gravity_scale.html">physics_particle_set_gravity_scale</a> <br></li><li> <a href=
+"physics_particle_get_max_count.html">physics_particle_get_max_count</a> <br></li><li> <a href=
+"physics_particle_get_radius.html">physics_particle_get_radius</a> <br></li><li> <a href=
+"physics_particle_get_density.html">physics_particle_get_density</a> <br></li><li> <a href=
+"physics_particle_get_damping.html">physics_particle_get_damping</a> <br></li><li> <a href=
+"physics_particle_get_gravity_scale.html">physics_particle_get_gravity_scale</a> <br></li></ul><p> Vous disposez également des fonctions suivantes pour définir des <i>indicateurs</i> sur des particules individuelles (ou des groupes de particules), ainsi que pour obtenir des informations, telles que la position ou la couleur, à partir d&#39;une seule particule ou d&#39;un seul groupe: </p><ul><li> <a href=
+"physics_particle_set_flags.html">physics_particle_set_flags</a> <br></li><li> <a href=
+"physics_particle_set_category_flags.html">physics_particle_set_category_flags</a> <br></li><li> <a href=
+"physics_particle_set_group_flags.html">physics_particle_set_group_flags</a> <br></li><li> <a href=
+"physics_particle_get_group_flags.html">physics_particle_get_group_flags</a> <br></li><li> <a href=
+"physics_particle_group_get_inertia.html">physics_particle_group_get_inertia</a> <br></li><li> <a href=
+"physics_particle_group_get_centre_x.html">physics_particle_group_get_centre_x</a> <br></li><li> <a href=
+"physics_particle_group_get_centre_y.html">physics_particle_group_get_centre_y</a> <br></li><li> <a href=
+"physics_particle_group_get_vel_x.html">physics_particle_group_get_vel_x</a> <br></li><li> <a href=
+"physics_particle_group_get_vel_y.html">physics_particle_group_get_vel_y</a> <br></li><li> <a href=
+"physics_particle_group_get_ang_vel.html">physics_particle_group_get_ang_vel</a> <br></li><li> <a href=
+"physics_particle_group_get_x.html">physics_particle_group_get_x</a> <br></li><li> <a href=
+"physics_particle_group_get_y.html">physics_particle_group_get_y</a> <br></li><li> <a href=
+"physics_particle_group_get_angle.html">physics_particle_group_get_angle</a> <br></li><li> <a href=
+"physics_particle_get_data.html">physics_particle_get_data</a> <br></li><li> <a href=
+"physics_particle_get_data_particle.html">physics_particle_get_data_particle</a> <br></li><li> <a href=
+"physics_particle_group_get_data.html">physics_particle_group_get_data</a> <br></li></ul></div><br> <label class="collapse" for="two">Créer des particules</label> <input id="two" type="checkbox"><div class="index_list"><p> Vous pouvez créer des particules de deux façons - individuellement ou en groupe. Les particules individuelles se comportent exactement comme défini par les paramètres globaux et les indicateurs définis lors de leur création, mais les groupes de particules peuvent présenter des comportements différents en fonction de leurs <i>indicateurs de groupe</i>. Ces <i>indicateurs de groupe</i> peuvent être définis sur des valeurs différentes pour donner au groupe des propriétés différentes, telles que la pénétration et la rigidité. </p><p> Les fonctions suivantes sont disponibles pour créer des particules: </p><ul><li> <a href=
+"physics_particle_create.html">physics_particle_create</a> <br></li><li> <a href=
+"physics_particle_group_begin.html">physics_particle_group_begin</a> <br></li><li> <a href=
+"physics_particle_group_circle.html">physics_particle_group_circle</a> <br></li><li> <a href=
+"physics_particle_group_box.html">physics_particle_group_box</a> <br></li><li> <a href=
+"physics_particle_group_polygon.html">physics_particle_group_polygon</a> <br></li><li> <a href=
+"physics_particle_group_add_point.html">physics_particle_group_add_point</a> <br></li><li> <a href=
+"physics_particle_group_end.html">physics_particle_group_end</a> <br></li><li> <a href=
+"physics_particle_group_join.html">physics_particle_group_join</a> <br></li><li> <a href=
+"physics_particle_group_delete.html">physics_particle_group_delete</a> <br></li></ul></div><br> <label class="collapse" for="three">Suppression de particules</label> <input id="three" type="checkbox"><div class="index_list"><p> Non seulement vous pouvez créer des particules, mais vous pouvez également les supprimer, individuellement ou dans une région. Les fonctions suivantes sont disponibles pour supprimer des particules du système: </p><ul><li> <a href=
+"physics_particle_delete.html">physics_particle_delete</a> <br></li><li> <a href=
+"physics_particle_delete_region_circle.html">physics_particle_delete_region_circle</a> <br></li><li> <a href=
+"physics_particle_delete_region_box.html">physics_particle_delete_region_box</a> <br></li><li> <a href=
+"physics_particle_delete_region_poly.html">physics_particle_delete_region_poly</a> <br></li></ul></div><br> <label class="collapse" for="four">Particules de dessin</label> <input id="four" type="checkbox"><div class="index_list"><p> Sauf si vous avez activé le dessin de débogage en utilisant <a href=
+"../the%20physics%20world/physics_draw_debug.html"><tt>physics_draw_debug()</tt></a>, vous ne verrez aucune particule sur l&#39;écran lorsque vous les créez. Par conséquent, pour réellement voir les particules, vous devez les dessiner à l&#39;écran dans l&#39; <b>événement Draw</b> d&#39;une instance en utilisant les fonctions suivantes (notez que vous pouvez également les dessiner en utilisant <tt>draw_sprite</tt> fonctions si vous obtenez les données pour chaque particule en utilisant la fonction <a href=
+"physics_particle_get_data.html"><tt>physics_particle_get_data</tt></a> ): </p><ul><li> <a href=
+"physics_particle_draw.html">physique_particle_draw</a> <br></li><li> <a href=
+"physics_particle_draw_ext.html">physics_particle_draw_ext</a> <br></li></ul></div></blockquote><p><br></p><div class="clear"><div style="float:left"> Retour: <a href=
+"../index.html">Physique</a> </div><div style="float:right"> Suivant: <a href=
+"../physics%20variables/index.html">Variables de physique</a> </div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

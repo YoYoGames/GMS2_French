@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>steam_upload_score_buffer</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/steam api/steam_upload_score_buffer.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fsteam%20api%2Fsteam_upload_score_buffer.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fsteam%20api%2Fsteam_upload_score_buffer.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> <span class="notranslate">steam</span> _upload_score_buffer </h2><div class="body-scroll"><h3 class="studio"> Syntaxe: </h3><p class="code">steam_upload_score_buffer(lb_name, score,
+buffer);<span class="notranslate"></span></p><p><br></p><div class="param"><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">lb_name</span> </td> <td> Le nom du classement auquel vous importez les scores (une chaîne). </td></tr><tr class="alt"><td> <span class="notranslate">score</span> </td> <td> Le score à télécharger (un nombre réel). </td></tr><tr><td> <span class="notranslate">buffer</span> </td> <td> L&#39;ID du tampon à attacher. </td></tr></table></div><p><br></p><p> <b>Retours:</b> Real </p><p><br></p><h3 class="studio"> La description </h3><p> Cette fonction enverra un score au leaderboard donné avec un paquet de données créé à partir d&#39;un tampon. La taille du tampon ne doit pas dépasser 256 octets - tout ce qui va au-delà sera supprimé - et peut contenir toutes les données dont vous avez besoin. Le score à télécharger doit être un nombre réel, et le nom du classement est une chaîne qui a été définie lorsque vous avez créé le classement en utilisant la fonction. <a href=
+"steam_create_leaderboard.html"><tt>steam_create_leaderboard</tt></a>. <br><br> Si la fonction échoue, elle renvoie une valeur de -1, alors qu&#39;un post réussi renvoie un identifiant unique pour le téléchargement et déclenche un <a href=
+"../../../2_interface/1_editors/events/async_events.html">événement <span class="notranslate">Steam</span></a> asynchrone. Cet événement va créer un <tt>ds_map</tt> dans la variable intégrée <tt>async_load</tt> avec les paires clé / valeur suivantes: <br><br></p><ul><li> &quot; <b>event_type</b> &quot; - Cette clé contiendra la valeur &quot; <b>leaderboard_upload</b> &quot; lorsqu&#39;elle est déclenchée par cette fonction </li><li style="list-style: none"><br></li><li> &quot; <b>lb_name</b> &quot; - Cette clé contient le nom du leaderboard qui a été posté sur </li><li style="list-style: none"><br></li><li> &quot; <b>succès</b> &quot; - Sera 1 si le poste a réussi, 0 a échoué </li><li style="list-style: none"><br></li><li> &quot; <b>updated</b> &quot; - Sera 1 si le score du classement a été réellement mis à jour (ie: le nouveau score était meilleur) ou 0 sinon. Notez que si le score est mis à jour, les données du tampon téléchargées ne seront pas ajoutées non plus. </li><li style="list-style: none"><br></li><li> &quot; <b>post_id</b> &quot; - Cette clé doit correspondre à la valeur d&#39;ID renvoyée par l&#39;appel de téléchargement </li><li style="list-style: none"><br></li><li> &quot; <b>score</b> &quot; - Cette clé contient le score qui a été posté </li><li style="list-style: none"><br></li></ul><p> Notez que si la fonction lors du téléchargement du leaderboard, la clé &quot;entrées&quot; de la <tt>async_load</tt> map va maintenant avoir une clé &quot;data&quot; pour que vous puissiez récupérer le tampon de données téléchargé (voir l&#39;exemple de code étendu <a href=
+"../../../2_interface/1_editors/events/async_events.html"><span class="notranslate">Steam</span> Event</a> pour plus de détails). </p><p><br></p><h3 class="studio"> Exemple étendu: </h3><p> Dans cet exemple, nous importons d&#39;abord une partition, puis analysons la <tt>async_load</tt> carte retournée en cas de succès. Le code ci-dessous montre un exemple typique de téléchargement, avec un tampon créé pour contenir une chaîne indiquant le niveau auquel le score a été importé: </p><p class="code">if (hp &lt;= 0)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;var buff = buffer_create(256, buffer_fixed, 1
+);<br>
+&nbsp;&nbsp;&nbsp;buffer_write(buff, buffer_string, "Uploaded on
+level " + string(global.Level));<br>
+&nbsp;&nbsp;&nbsp;upload_ID = steam_upload_score("Game Scores",
+score, buff);<br>
+&nbsp;&nbsp;&nbsp;if (!upload_ID)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alarm[0] = room_speed;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;buffer_delete(buff);<br>
+&nbsp;&nbsp;&nbsp;}<br><span class="notranslate"></span></p><p> Notez que nous avons défini une alarme si l&#39;appel échoue. Cela sera utilisé pour essayer le téléchargement plus tard et vous pouvez ajouter du code supplémentaire pour réessayer le téléchargement ou enregistrer le score dans un fichier texte en cas d&#39;échec, etc. Notez également que nous supprimons immédiatement le fichier. tampon, puisqu&#39;il n&#39;est plus requis pour la fonction. Nous ajoutons maintenant ce qui suit dans l&#39; <b>événement asynchrone <span class="notranslate">Steam</span></b> pour l&#39;instance contrôlant les scores: </p><p class="code">var type = ds_map_find_value(async_load,
+"event_type");<br>
+if (type == "leaderboard_upload")<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;var lb_ID = ds_map_find_value(async_load,
+"post_id");<br>
+&nbsp;&nbsp;&nbsp;if lb_ID == upload_ID<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var lb_name =
+ds_map_find_value(async_load, "lb_name");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var lb_done =
+ds_map_find_value(async_load, "success");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var lb_score =
+ds_map_find_value(async_load, "score");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var lb_updated =
+ds_map_find_value(async_load, "updated");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;show_debug_message("leaderboard
+post id:" + string(lb_ID) + " to lb:" + string(lb_name) + " with
+score:" + string(lb_score) + " updated=" + string(lb_updated));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (lb_done)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;show_debug_message("-
+Succeeded");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;show_debug_message("-
+Failed");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;}<br><span class="notranslate"></span></p><p> Dans l&#39;exemple, nous publions simplement les valeurs de retour dans la fenêtre du compilateur en tant que messages de débogage, mais vous pouvez utiliser cet événement pour traiter les informations comme vous le souhaitez. <br><br></p><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">API <span class="notranslate">Steam</span></a> </div><div style="float:right"> Suivant: <a href=
+"steam_download_scores.html"><span class="notranslate">steam</span> _download_scores</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

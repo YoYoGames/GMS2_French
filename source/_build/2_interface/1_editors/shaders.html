@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>The Shader Editor</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+<link rel="stylesheet" href="../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/2_interface/1_editors/shaders.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2F_build%2F2_interface%2F1_editors%2Fshaders.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2F_build%2F2_interface%2F1_editors%2Fshaders.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> L&#39;éditeur Shader </h2><div class="body-scroll"><p><br></p><p><img class="center" src="images/editor_shaders.png" alt="Éditeur de shader"> Les shaders sont un outil très puissant qui peut être utilisé pour manipuler les graphiques que votre jeu affiche à l&#39;écran, permettant des effets incroyablement rapides pouvant aller, par exemple, d&#39;une teinte subtile à une image-objet, jusqu&#39;à des effets de distorsion plein écran. Mais qu&#39;est-ce qu&#39;un shader? </p><p> Un shader est essentiellement un programme en deux parties qui s&#39;exécute directement sur la carte graphique elle-même, ce qui le rend très rapide puisque le GPU fait tout le travail et libère des cycles de CPU pour votre code de jeu. Le shader complet comprend un programme de vertex shader et un programme de fragment shader (également connu sous le nom de pixel shader). Ces deux petits programmes fonctionnent ensemble afin de manipuler ce que la carte graphique rend à l&#39;écran. Cela vous permet ensuite de manipuler en temps réel, la position, la couleur et les valeurs alpha qui sont réellement rendues dans le tampon d&#39;affichage. </p><blockquote><a name="shaders_vertex" id="shaders_vertex"></a> <label class="collapse" for="one">Vertex Shader</label> <input id=
+"one" type="checkbox"><div class="index_list"><p> Le <b>Vertex Shader</b> est l&#39;étape du shader programmable dans le pipeline de rendu qui gère le traitement des sommets individuels (les points des triangles utilisés pour rendre n&#39;importe quelle image) et lorsque vous reproduisez une géométrie - comme un sprite ou une surface - <i><span class="notranslate">GameMaker Studio 2</span></i> crée un flux de sommets, appelé <i>Vertex Buffer</i>, qui définit la géométrie de ces triangles. Un sprite par exemple aurait une géométrie de deux triangles (polygones) rendus ensemble pour former un &quot;quad&quot;. Ce flux de vertex du Vertex Buffer est alimenté en tant qu&#39;entrée dans le Vertex Shader, qui peut traiter les données de sommets de manière programmable. La sortie Vertex Shader est utilisée par le GPU pour assembler des triangles, qui sont ensuite correctement écrêtés et ramenés au port de visualisation, puis envoyés au bloc de rastérisation du GPU qui génère un <i>nouveau</i> flux de sortie, constitué de quelque chose appelé Fragments. Ce sont des structures de données minuscules, dont chacune est relative à un seul pixel du triangle qui apparaît sur l&#39;écran. </p></div><br><a name="shaders_fragment" id="shaders_fragment"></a> <label class=
+"collapse" for="three">Fragment Shader</label> <input id="three"
+type="checkbox"><div class="index_list"><p> Le <b>fragment Shader</b> est l&#39;étape de shader programmable dans le pipeline de rendu qui traite des &quot;fragments&quot; - les pixels interpolés utilisés pour texturer un polygone donné - et ils sont responsables de la sortie de la couleur finale du pixel de chaque pixel rendu. Fondamentalement, cela fonctionne comme ceci: le Shader Fragment reçoit en entrée tous les fragments (les pixels individuels du triangle étant rendu) qui ont été transmis le long du pipeline par le Vertex Shader. Vous pouvez ensuite traiter ces fragments pour changer la couleur et l&#39;alpha du pixel de destination final qui sera dessiné à l&#39;écran. </p></div></blockquote><p> Un aperçu complet de la façon dont les shaders fonctionnent réellement et de leur place dans le pipeline graphique est hors de portée de ce manuel, mais <span class="notranslate">YoYo Games</span> a produit un certain nombre d&#39;articles de Blog Tech qui donnent une excellente base pour commencer: </p><blockquote><ul><li> <a href=
+"https://www.yoyogames.com/blog/14/shaders-overview-part-1" target=
+"_blank">Shaders Partie 1</a> </li><li> <a href=
+"https://www.yoyogames.com/blog/16/shaders-overview-part-2" target=
+"_blank">Shaders Partie 2</a> </li><li> <a href=
+"https://www.yoyogames.com/blog/17/shaders-overview-part-3" target=
+"_blank">Shaders Partie 3</a> </li><li> <a href=
+"https://www.yoyogames.com/blog/18/shaders-overview-part-4" target=
+"_blank">Shaders Partie 4</a> </li></ul></blockquote><p> <i><span class="notranslate">GameMaker Studio 2</span></i> prend en charge les langues de shader suivantes: </p><div class="compat"><table><tr><th> Shader Language </th><th> Plate-forme cible </th></tr><tr><td> GLSL ES </td><td> Toutes les plates-formes cibles </td></tr><tr class="alt"><td> GLSL </td><td> Mac et Ubuntu (Linux) </td></tr><tr><td> HLSL11 </td><td> Windows, UWP, XboxOne </td></tr><tr><td> PSSL </td><td> <span class="notranslate">Playstation 4</span> </td> </tr></table></div><p><br> Pour créer une ressource de shader, faites un clic droit <img style=
+"vertical-align:middle" src="../../images/icon_rmb.png"> dans le dossier Shader de l&#39;arborescence Ressource et sélectionnez <i>Créer</i>. Une fois que vous avez créé le shader de base, vous pouvez utiliser la souris droite <img style="vertical-align:middle" src="../../images/icon_rmb.png"> menu sur la nouvelle ressource pour sélectionner le type de shader avant de continuer à modifier le code: <img class="center" src=
+"images/editor_shader_rmbmenu.png" alt="Shader Editor Menu RMB"></p><p> L&#39;éditeur de code lui-même est divisé en deux programmes lorsque vous créez un nouveau shader, chacun étant disponible à partir des onglets en haut. C&#39;est parce que vous <i>ne pouvez pas créer un shader sans les deux parties</i>. Même si vous souhaitez n&#39;utiliser que le fragment shader, vous devrez d&#39;abord créer un vertex shader &quot;pass through&quot;, c&#39;est pourquoi par défaut, tout nouveau shader créé aura un vertex et un fragment traversant le shader déjà codé pour vous (en la capture d&#39;écran en haut de la page, vous pouvez voir que nous avons utilisé la <a href="scripts.html#script_edition">vue</a> de l&#39; <a href="scripts.html#script_edition">éditeur de code</a> pour afficher les deux côte à côte... utile lorsque vous travaillez sur les deux programmes shader ensemble). </p><p> Il convient de noter que vous pouvez utiliser les shaders GLSL ES sur toutes les plates-formes cibles, mais pour la plate-forme cible <b>HTML5,</b> <i>vous devez avoir activé WebGL</i> dans les <a href=
+"../3_settings/game_options/options_html5.html">options de jeu HTML5,</a> sinon cela ne fonctionnera pas. </p><p> Pour plus d&#39;informations sur les fonctions de shader et sur leur utilisation dans <i><span class="notranslate">GameMaker Studio 2</span></i>, consultez les pages suivantes: </p><blockquote><ul><li> <a href=
+"../../3_scripting/4_gml_reference/shaders/index.html">Shader Functions</a> - La section de référence GML pour les shaders </li><li> <a href=
+"../../3_scripting/4_gml_reference/shaders/shader%20constants/index.html">Shader Constants</a> - <a href=
+"../../3_scripting/4_gml_reference/shaders/shader%20constants/index.html">Constantes</a> intégrées à <i><span class="notranslate">GameMaker</span> Studio 2</i> pouvant être utilisées lors de l&#39;écriture de shaders </li><li> <a href=
+"http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.0.17.pdf"
+target="_blank">GLSL ES Spécifications</a> - <tt>pdf</tt> des spécifications Open GL Shader Language <i><span class="notranslate">GameMaker Studio</span></i> par <i><span class="notranslate">GameMaker Studio</span> 2</i> </li></ul></blockquote><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">Index des éditeurs</a> </div><div style="float:right"> Suivant: <a href="fonts.html">L&#39;éditeur de polices</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

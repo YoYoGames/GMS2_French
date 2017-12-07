@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>physics_fixture_bind_ext</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/physics/fixtures/physics_fixture_bind_ext.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fphysics%2Ffixtures%2Fphysics_fixture_bind_ext.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fphysics%2Ffixtures%2Fphysics_fixture_bind_ext.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h1 class="studio"> physics_fixture_bind_ext </h1><h2 class="studio"> Cette fonction lie un fixture à une instance, en décalant sa position x ou y d&#39;un montant donné. </h2><h3 class="studio"> Syntaxe: </h3><p class="code">physics_fixture_bind_ext(fixture, target, xoffset,
+yoffset)<span class="notranslate"></span></p><p><br></p><div class="param"><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">fixture</span> </td> <td> l&#39;appareil qui doit être lié </td></tr><tr class="alt"><td> <span class="notranslate">target</span> </td> <td> l&#39;instance cible qui doit recevoir le projecteur (peut être un identifiant d&#39;instance, un identifiant d&#39;objet, un <i>autre</i> ou <i>tous</i> ) </td></tr><tr><td> <span class="notranslate">xoffset</span> </td> <td> le décalage le long de l&#39;axe des x </td></tr><tr class="alt"><td> <span class="notranslate">yoffset</span> </td> <td> le décalage le long de l&#39;axe des y </td></tr></table></div><p><br></p><p> <b>Retours:</b> Real </p><p><br></p><h3 class="studio"> La description </h3><p> Une fois que nous avons défini notre appareil, il doit être lié à une instance. Cela signifie que ses <i>propriétés</i> sont transférées à l&#39;instance sélectionnée, et <b>non au projecteur lui</b> - <b>même</b>, de sorte qu&#39;un appareil peut être lié à plusieurs instances si toutes doivent avoir les mêmes propriétés. Vous pouvez spécifier un index d&#39;objet pour la cible et toutes les instances présentes dans la pièce recevront les propriétés de ces fixtures (mais pas les nouvelles instances de l&#39;objet créées ultérieurement), ou vous pouvez utiliser les mots-clés spéciaux <i>other</i> et <i>all</i>. Vous pouvez même spécifier un objet parent et toutes les instances enfants avec ce parent recevront également le projecteur. Une fois que le projecteur a été lié à toutes les instances dont vous avez besoin, il peut être supprimé s&#39;il n&#39;est plus nécessaire et les instances avec ces propriétés ne seront pas affectées et conserveront ces propriétés. <br><br> Normalement, l&#39;appareil sera lié à l&#39;instance avec le centre de masse positionné à l&#39;origine de l&#39;instance, mais ce n&#39;est pas toujours ce dont vous avez besoin et cette fonction vous permet également de décaler la position x et y où le projecteur est lié par une quantité donnée (si vous ne l&#39;exigez pas, utilisez <a href=
+"physics_fixture_bind.html"><tt>physics_fixture_bind</tt></a> au lieu). Il est important de noter qu&#39;un appareil ne peut supporter qu&#39;un <i>seul</i> décalage, car l&#39;ajout de plusieurs décalages à un seul appareil n&#39;est pas supporté par Box2D. <img class="center" src=
+"images/physics_fixture_bind_ext_image.png"> La fonction renverra également une valeur &quot;id&quot; unique pour la fixture <i>liée</i> ( <b>pas la fixture elle-même</b> ) qui peut ensuite être utilisée pour enlever (&quot;un-bind&quot;) les propriétés physiques de l&#39;instance en utilisant la fonction <a href="physics_remove_fixture.html"><tt>physics_remove_fixture</tt></a>. Cela vous permet d&#39;ajouter et de supprimer des propriétés physiques d&#39;une instance sans détruire et recréer des objets. <br><br> <i><b>Remarque: Les</b> appareils doivent être supprimés lorsqu&#39;ils ne sont plus nécessaires, faute de quoi une fuite de mémoire risque de ralentir et éventuellement de bloquer votre partie.</i> <br><br></p><p><br></p><h3 class="studio"> Exemple: </h3><p class="code">var fix, inst;<br>
+fix = physics_fixture_create();<br>
+physics_fixture_set_circle_shape(fix, 16);<br>
+physics_fixture_set_density(fix, 1.0);<br>
+inst = instance_create_layer(x, y, "Instances",
+genericBodyObject);<br>
+my_fix = physics_fixture_bind_ext(fix, inst, sprite_width / 2,
+-(sprite_height / 2));<br>
+physics_fixture_delete(fix);<br><span class="notranslate"></span></p><p> Le code ci-dessus créera un fixture et assignera son index à la variable &quot;fix&quot;. Il définit ensuite la forme et la densité de l&#39;appareil avant de le lier à l&#39;instance à un décalage basé sur la largeur et la hauteur de l&#39;image-objet. L&#39;index de l&#39;appareil <b>lié</b> est stocké dans la variable &quot;my_fix&quot;. Enfin, l&#39;appareil lui-même est supprimé pour éviter les fuites de mémoire car il n&#39;est plus nécessaire. </p><p><br></p><div class="clear"><div style="float:left"> Retour: Les <a href=
+"index.html">luminaires</a> </div><div style="float:right"> Suivant: <a href=
+"physics_fixture_set_collision_group.html">physics_fixture_set_collision_group</a> </div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

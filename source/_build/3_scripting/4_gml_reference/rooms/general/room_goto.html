@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>room_goto</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/rooms/general/room_goto.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Frooms%2Fgeneral%2Froom_goto.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Frooms%2Fgeneral%2Froom_goto.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> room_goto </h2><p><br></p><h3> La description </h3><blockquote> Cette fonction vous permet d&#39;accéder à n&#39;importe quelle pièce de votre projet de jeu, qu&#39;elle soit créée à l&#39;aide de code ou dans l&#39;arborescence des ressources. Vous fournissez la valeur unique de l&#39;ID de pièce (stockée dans la variable pour le nom de la pièce, ou en tant que variable renvoyée par la fonction <a href=
+"room_add.html"><tt>room_add</tt></a>. Notez que l&#39;appel de cette fonction ne change pas instantanément les pièces, et la pièce ne changera pas jusqu&#39;à la fin du cadre de jeu actuel (ce qui signifie que tout code après cette fonction sera toujours exécuté, comme certains événements). Cette fonction déclenche également l&#39;événement <b>Room End</b>. </blockquote><p><br></p><h3> Syntaxe: </h3><p class="code">room_goto(index);<span class="notranslate"></span></p><p><br></p><h3> Arguments: </h3><blockquote><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">index</span> </td> <td> L&#39;index de la pièce à visiter. </td></tr></table></blockquote><p><br></p><h3> Résultats: </h3><p class="code">N/A<span class="notranslate"></span></p><p><br></p><h3> Exemple: </h3><p class="code">switch (global.rm)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;case 0: room_goto(rm_level1); break;<br>
+&nbsp;&nbsp;&nbsp;case 1: room_goto(rm_level2); break;<br>
+&nbsp;&nbsp;&nbsp;case 2: room_goto(rm_level3); break;<br>
+&nbsp;&nbsp;&nbsp;}<br><span class="notranslate"></span></p><blockquote> Le code ci-dessus vérifiera une variable globale et changera de pièce en fonction de la valeur qu&#39;il contient. </blockquote><p><br></p><div class="clear"><div style="float:left"> Précédent: <a href="index.html">Fonctions et variables générales de la pièce</a> </div><div style="float:right"> Suivant: <a href=
+"room_goto_next.html">room_goto_next</a> </div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>view_set_surface_id</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/cameras and display/cameras/view_set_surface_id.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fcameras%20and%20display%2Fcameras%2Fview_set_surface_id.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fcameras%20and%20display%2Fcameras%2Fview_set_surface_id.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> view_set_surface_id </h2><p><br></p><h3> La description </h3><blockquote><p> Avec cette variable, vous pouvez définir le contenu d&#39;un port de vue pour dessiner sur une surface. Lorsque vous travaillez avec des surfaces, il est souvent nécessaire de capturer <i>toute</i> la zone visible de l&#39;écran à la surface, et ainsi vous l&#39;affecteriez à un port de vue en utilisant cette fonction. Cela signifie que tout ce qui est affiché dans la vue de port choisie sera maintenant dessiné sur la surface assignée et que le contenu de ce port d&#39;affichage ne sera plus affiché, ce qui signifie que vous devrez: </p><blockquote><ul><li> Activer une nouvelle vue et dessiner la surface uniquement dans cette vue (en utilisant <a href="view_current.html"><tt>view_current</tt></a> pour vérifier quelle vue est dessinée) </li><li style="list-style: none"><br></li><li> Dessinez la surface dans l&#39;événement Draw GUI d&#39;une instance, car la couche GUI est indépendante des vues. </li></ul></blockquote><p> Lorsque vous utilisez cette fonction, vous indiquez l&#39;index du port de vue (de 0 à 7) et un index de surface (soit le <a href=
+"../../drawing/surfaces/the%20application%20surface.html"><tt>application_surface</tt></a> ou la valeur d&#39;index unique renvoyée par la fonction <a href=
+"../../drawing/surfaces/surface_create.html"><tt>surface_create</tt></a> ) ou, si une surface a déjà été affectée et que vous souhaitez la supprimer, la valeur -1. Pour plus d&#39;informations sur la définition du port de vue sur une surface, voir également la variable <a href=
+"view_surface_id.html"><tt>view_surface_id</tt></a>. </p></blockquote><p><br></p><h3> Syntaxe: </h3><p class="code">view_set_surface_id(view_port, surf)<span class="notranslate"></span></p><p><br></p><h3> Arguments: </h3><blockquote><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">view_port</span> </td> <td> Le port de vue à cibler (0 - 7) </td></tr></table></blockquote><p><br></p><h3> Résultats: </h3><p class="code">Real<span class="notranslate"></span></p><p><br></p><h3> Exemple: </h3><p class="code">if view_get_surface_id(0) == -1<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;view_set_surface_id(0, global.vSurf);<br>
+&nbsp;&nbsp;&nbsp;}<br><span class="notranslate"></span></p><p> Le code ci-dessus va vérifier si une surface a été affectée au port de visualisation [0] et si ce n&#39;est pas le cas, une est assignée. </p><p><br></p><div class="clear"><div style="float:left"> Retour: <a href=
+"index.html">Caméras</a> </div><div style="float:right"> Suivant: <a href=
+"view_get_camera.html">view_get_camera</a> </div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>physics_world_draw_debug</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/physics/the physics world/physics_world_draw_debug.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fphysics%2Fthe%20physics%20world%2Fphysics_world_draw_debug.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fphysics%2Fthe%20physics%20world%2Fphysics_world_draw_debug.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h1 class="studio"> physics_world_draw_debug </h1><h2 class="studio"> Cette fonction dessine une partie ou la totalité du système du monde physique pour le débogage en fonction de la valeur de l&#39;indicateur. </h2><h3 class="studio"> Syntaxe: </h3><p class="code">physics_world_draw_debug(flag)<span class="notranslate"></span></p><p><br></p><div class="param"><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">flag</span> </td> <td> La valeur de l&#39;indicateur pour afficher différentes fonctionnalités de débogage </td></tr></table></div><p><br></p><p> <b>Retours:</b> N / A </p><p><br></p><h3 class="studio"> La description </h3><p> Cette fonction va dessiner une représentation du système physique de la pièce pour aider au débogage lorsque vous avez du mal à faire fonctionner la scène physique. Parfois, le problème peut être dans la partie de rendu de votre jeu, par exemple un sprite peut être dessiné à la mauvaise position ou rotation, donnant l&#39;apparence d&#39;une physique incorrecte, ou il se peut que vos calculs ne soient pas corrects. Quoi qu&#39;il en soit, cette fonction vous aidera à trouver et à résoudre le problème en dessinant ce qui se passe dans votre système physique. Pour ce faire, vous devez indiquer quelle partie du système dessiner, et ceci en passant une valeur créée à partir des bits stockés dans différentes constantes &quot;flag&quot;: </p><div class="compat"><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">phy_debug_render_aabb</span> </td> <td> Ceci montre la boîte de délimitation absolue de chaque luminaire par rapport à l&#39;axe de la pièce </td></tr><tr class="alt"><td> <span class="notranslate">phy_debug_render_collision_pairs</span> </td> <td> Cela montrera tous les appareils qui sont actuellement en collision </td></tr><tr><td> <span class="notranslate">phy_debug_render_coms</span> </td> <td> Ceci marque le centre de masse de chaque luminaire dans la pièce </td></tr><tr class="alt"><td> <span class="notranslate">phy_debug_render_core_shapes</span> </td> <td> Affiche les formes de base qui composent les appareils dans la pièce </td></tr><tr><td> <span class="notranslate">phy_debug_render_joints</span> </td> <td> Cela va dessiner chacune des articulations de tous les appareils dans la pièce </td></tr><tr class="alt"><td> <span class="notranslate">phy_debug_render_obb</span> </td> <td> Cela montre la boîte de délimitation relative pour les appareils dans la pièce </td></tr><tr><td> <span class="notranslate">phy_debug_render_shapes</span> </td> <td> Cela montre les formes réelles qui composent les appareils dans la pièce </td></tr></table></div><p> Donc, pour dessiner deux de ces options, nous aurions besoin de faire un &quot;ou&quot; (dans <i><span class="notranslate">GameMaker Studio 2</span></i> ceci est représenté par |) sur les deux et stocker la variable résultante pour la fonction à utiliser. Voici un exemple de définition d&#39;une variable à utiliser avec la fonction qui dessine uniquement les centres de masse et les articulations de tous les appareils d&#39;une pièce: </p><p class="code">flag = phy_debug_render_coms |
+phy_debug_render_shapes<span class="notranslate"></span></p><p> Ce qui vous donnerait quelque chose comme ceci: <br><br><img class="center" src="images/physics_draw_debug_image.png"></p><p> Comme vous pouvez le voir avec le code ci-dessus, seules les formes et centres de masse sont dessinés à l&#39;écran (ainsi que les couleurs représentant leurs états - pour plus d&#39;informations, veuillez consulter la documentation Box 2D en ligne). De la même manière, vous pouvez afficher plus, voire toutes, les constantes que vous souhaitez déboguer... Juste &quot;ou&quot; tous ensemble! Une autre chose est à noter: cette fonction doit être appelée <i>uniquement</i> dans l&#39;événement draw d&#39;une instance dont la profondeur est inférieure à celle que vous souhaitez déboguer, sinon vous ne pourrez pas voir les informations de débogage. <br><br></p><p><br></p><h3 class="studio"> Exemple: </h3><p class="code">flag = phy_debug_render_aabb |
+phy_debug_render_collision_pairs | phy_debug_render_obb;<br>
+physics_world_draw_debug(flag);<br><span class="notranslate"></span></p><p> Le code ci-dessus va dessiner toutes les boîtes de délimitation absolues, les boîtes de délimitation relatives ainsi que les appareils en collision dans le système physique actuel. </p><p><br></p><div class="clear"><div style="float:left"> Retour: <a href="index.html">Le monde de la physique</a> </div><div style="float:right"> Suivant: <a href=
+"physics_draw_debug.html">physics_draw_debug</a> </div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

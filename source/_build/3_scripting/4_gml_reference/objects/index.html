@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Objects</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/objects/index.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fobjects%2Findex.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fobjects%2Findex.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> Objets </h2><p> Dans <i><span class="notranslate">GameMaker Studio 2</span></i> vous avez des objets et vous avez des instances. Les objets sont essentiellement le modèle de base pour une instance, et en tant que tels <i>ne</i> sont <i>jamais</i> présents dans une pièce directement... seules les <i>instances</i> de l&#39;objet sont placées dans la pièce. Cela signifie que si vous voulez changer quelque chose pour toutes les instances que vous allez créer, vous pouvez le faire en changeant l&#39; <i>objet</i>. </p><div class="note"> <b>IMPORTANT!</b> Changer quelque chose à propos d&#39;un objet <b>ne</b> changera <b>pas</b> les instances présentes dans la pièce, seulement celles créées après le changement </div><p> Vous pouvez également accéder à des informations sur un objet de base et l&#39;utiliser pour dicter des comportements ou des changements dans le jeu. Par exemple, vous pouvez vérifier l&#39;ID d&#39;un objet parent et, dans le code suivant, si une instance avec ce parent est trouvée, vous pouvez vérifier son <tt>object_index</tt> décider ce qui devrait être fait. </p><blockquote> <label class="collapse" for="one">Obtenir des propriétés d&#39;objet</label> <input id="one" type="checkbox"><div class="index_list"><p> <i><span class="notranslate">GameMaker Studio 2</span></i> vous donne un certain nombre de fonctions qui vous permettent d&#39;obtenir divers détails sur un objet. Notez qu&#39;un objet n&#39;est <i>pas</i> une instance (une entité dans le jeu), c&#39;est simplement une ressource à partir de laquelle toutes les instances sont créées. Cela signifie que les valeurs de retour de ces fonctions peuvent être différentes des valeurs réelles affichées par les instances dans la pièce, car une fois qu&#39;une instance est créée, elle peut être modifiée via le code et les actions DnD™. <br></p><ul><li> <a href="object_exists.html">object_exists</a> <br></li><li> <a href=
+"../instances/instance_variables/object_index.html">object_index</a> <br></li><li> <a href="object_get_mask.html">object_get_mask</a> <br></li><li> <a href="object_get_name.html">object_get_name</a> <br></li><li> <a href="object_get_parent.html">object_get_parent</a> <br></li><li> <a href=
+"object_get_persistent.html">object_get_persistent</a> <br></li><li> <a href="object_get_solid.html">object_get_solid</a> <br></li><li> <a href="object_get_sprite.html">object_get_sprite</a> <br></li><li> <a href="object_get_visible.html">object_get_visible</a> <br></li><li> <a href="object_get_physics.html">object_get_physics</a> <br></li><li> <a href="object_is_ancestor.html">object_is_ancestor</a> <br></li></ul></div><br> <label class="collapse" for="two">Définir les propriétés d&#39;objet</label> <input id="two" type="checkbox"><div class="index_list"><p> Il existe également un certain nombre de fonctions qui vous permettent de définir les propriétés d&#39;un objet. Il convient de noter que toutes les instances de cet objet qui existent déjà dans la pièce <i>peuvent ne pas être affectées par ces fonctions</i>, mais toutes les nouvelles instances de cet objet créées dans la pièce le seront. Il est donc recommandé de ne jamais modifier les propriétés d&#39;un objet. les instances de cet objet sont présentes dans la pièce actuelle. </p><ul><li> <a href="object_set_mask.html">object_set_mask <br></a> </li><li> <a href=
+"object_set_persistent.html">object_set_persistent <br></a> </li><li> <a href="object_set_solid.html">object_set_solid <br></a> </li><li> <a href="object_set_sprite.html">object_set_sprite <br></a> </li><li> <a href="object_set_visible.html">object_set_visible <br></a> </li></ul></div></blockquote><p> Vous pouvez également utiliser certaines fonctions pour générer des événements à partir d&#39;un code à partir d&#39;une instance ou d&#39;un objet spécifique. Ces fonctions peuvent être très utiles, en particulier pour les <a href=
+"../../../2_interface/1_editors/objects.html#object_parent">parents et les enfants</a>, et sont décrites dans la section suivante: </p><blockquote><ol><li> <a href="generating%20events/index.html">Générer des événements <br></a> </li></ol></blockquote><p><br></p><div class="clear"><div style="float:left"> Arrière: <a href="../index.html">Référence du langage <i><span class="notranslate">GameMaker</span> Studio 2</i></a> </div><div style="float:right"> Suivant: <a href=
+"../instances/index.html">Instances</a> </div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

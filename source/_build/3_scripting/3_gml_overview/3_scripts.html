@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Basic Code Structure</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+<link rel="stylesheet" href="../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/3_gml_overview/3_scripts.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2F_build%2F3_scripting%2F3_gml_overview%2F3_scripts.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2F_build%2F3_scripting%2F3_gml_overview%2F3_scripts.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> Scripts </h2><div class="body-scroll"><p><br></p><p> Les scripts sont essentiellement des fonctions que vous écrivez vous-même sous la forme de petits fragments de code capables de résoudre des expressions, de renvoyer des valeurs ou tout ce que le langage permet. Fondamentalement, si vous avez un bloc de code que vous utilisez dans plus d&#39;un endroit ou d&#39;un objet, alors il vaut probablement mieux dans un script, car cela signifie que vous pouvez le changer une fois quand nécessaire et le changement sera &quot;ramassé&quot; par chaque objet qui a un appel au script. Ils peuvent également être très utiles d&#39;un point de vue organisationnel, même si le code qu&#39;ils contiennent n&#39;est appelé qu&#39;une seule fois par un seul objet, car il permet de fractionner des blocs de code plus grands en &quot;morceaux&quot; plus facilement gérés en points logiques. </p><p> Lorsque vous créez un script, les valeurs que vous choisissez de transmettre sont appelées <b>arguments</b> et vous voulez accéder à ces arguments - soit en utilisant l&#39;action de script, soit en appelant le script en tant que fonction d&#39;un programme ou d&#39;un autre script. Ces arguments sont stockés dans les variables <i>intégrées</i>: </p><p class="code"><tt>argument0</tt>, <tt>argument1</tt>, ..., etc...
+up to <tt>argument15</tt><span class="notranslate"></span></p><p> Il peut donc y avoir au plus 16 arguments transmis à un script lorsqu&#39;il est appelé à partir du code en utilisant les variables d&#39;argument, et lors de l&#39;utilisation du <tt>argument0...15</tt> Pour les variables d&#39;un script, vous <b>devez</b> vous <b>assurer que le script utilise tous les arguments fournis</b>. Par exemple, si vous avez un script qui prend deux arguments et que vous n&#39;en fournissez qu&#39;un, vous obtiendrez une erreur pour ce script. Il en va de même si vous fournissez plus d&#39;arguments que vous n&#39;en avez besoin. </p><p> Cependant, vous pouvez fournir un nombre variable d&#39;arguments à un script en utilisant le tableau d&#39;arguments <i>construit</i>, et vous n&#39;êtes <i>pas</i> limité à un maximum de 16 arguments soit en utilisant ce tableau, mais peut en avoir autant que vous le souhaitez (bien que, encore une fois, vous devez vous assurer que tous les arguments sont référencés dans le script): </p><p class="code"><tt>argument[0 ... max_num]</tt>
+<span class="notranslate"></span></p><p> Lorsque vous passez un nombre variable d&#39;arguments en tant que tableau de valeurs, vous pouvez utiliser la fonction suivante: </p><blockquote><ul><li> <a href="argument_count.html"><tt>argument_count</tt></a> </li></ul></blockquote><p> Cela peut être utilisé pour savoir combien d&#39;arguments ont été passés et adapter le script pour utiliser uniquement les arguments fournis. </p><div class="note"> <b>Remarque:</b> vous ne pouvez pas mélanger les deux types de variables d&#39;argument lors de l&#39;appel d&#39;un script. Vous devez utiliser <b>soit</b> <tt>argument0...15</tt> <b>ou</b> argument [n]. </div><p><a name="return" id="return"></a> Les scripts peuvent également renvoyer une valeur afin qu&#39;ils puissent être utilisés dans des expressions. Pour cela, vous utiliserez le <tt>return</tt> déclaration: </p><p class="code">return &lt;expression&gt;<span class="notranslate"></span></p><p> Il convient de noter que l&#39; <i>exécution du script se termine à l&#39;instruction return</i>, ce qui signifie que tout code qui vient après que le retour a été appelé <i>ne sera pas exécuté</i>. Voici un petit exemple de script appelé &quot;scr_sqr&quot; qui calcule le carré de la valeur qui lui est transmise, et qui inclut l&#39;erreur catching au cas où l&#39;argument que ce soit passé n&#39;est pas un nombre réel: </p><p class="code">{<br>
+if !is_real(argument0)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;return 0;<br>
+&nbsp;&nbsp;&nbsp;}<br>
+else<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;return (argument0 * argument0);<br>
+&nbsp;&nbsp;&nbsp;}<br>
+}<span class="notranslate"></span></p><p> Pour appeler un script à l&#39;intérieur d&#39;un code, agissez de la même manière que lorsque vous appelez des fonctions, c&#39;est-à-dire, écrivez le nom du script avec les valeurs d&#39;argument entre parenthèses. Donc, le script ci-dessus serait appelé comme ceci: </p><p class="code">if keyboard_check_pressed(vk_enter)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;val = scr_sqr(amount);<br>
+&nbsp;&nbsp;&nbsp;}<br><span class="notranslate"></span></p><p> Il est à noter que lors de l&#39;écriture de vos propres scripts, ils peuvent également avoir certains commentaires de style <b>JSDoc</b> ajoutés de sorte que lorsque vous les utilisez dans votre code, ils apparaissent dans auto-complète avec leurs arguments et d&#39;autres détails. vous pouvez en savoir plus à ce sujet dans la section <a href=
+"../../1_overview/3_additional_information/jsdoc.html">Commentaires sur les scripts JSDoc</a> pour plus d&#39;informations. Notez en outre que lorsque vous tapez vos scripts dans l&#39;éditeur de code, vous pouvez cliquer sur <img style="vertical-align:middle" src="../../images/icon_f1.png"> ou utilisez le bouton du milieu de la souris <img style="vertical-align:middle"
+src="../../images/icon_mmb.png"> sur le nom du script pour l&#39;ouvrir pour l&#39;éditer directement. </p><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">Présentation du GML</a> </div><div style="float:right"> Suivant: <a href="4_comments.html">Commentaires dans le code</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

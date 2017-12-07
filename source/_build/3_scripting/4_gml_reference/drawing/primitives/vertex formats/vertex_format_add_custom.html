@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>vertex_format_add_custom</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href=
+"../../../../../../../files/helpindex.css" type="text/css">
+<link rel="stylesheet" href="../../../../../../../default.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/drawing/primitives/vertex formats/vertex_format_add_custom.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fdrawing%2Fprimitives%2Fvertex%20formats%2Fvertex_format_add_custom.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fdrawing%2Fprimitives%2Fvertex%20formats%2Fvertex_format_add_custom.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h1 class="studio"> vertex_format_add_custom </h1><h2 class="studio"> Ajoutez des valeurs personnalisées au format de vertex. </h2><h3 class="studio"> Syntaxe: </h3><p class="code">vertex_format_add_custom(type, usage);<span class="notranslate"></span></p><p><br></p><div><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">type</span> </td> <td> Le type de données que ces données de sommet personnalisées vont contenir (voir les <b><i>constantes de type</i></b> listées ci-dessous). </td></tr><tr class="alt"><td> <span class="notranslate">usage</span> </td> <td> L&#39;utilisation que les données vont obtenir (voir les <b><i>constantes d&#39;utilisation</i></b> énumérées ci-dessous). </td></tr></table></div><p><br></p><p> <b>Retours:</b> N / A </p><p><br></p><h3 class="studio"> La description </h3><p> Dites à <i><span class="notranslate">GameMaker Studio 2</span></i> d&#39;accepter une valeur personnalisée (ou des valeurs) dans le cadre du nouveau format de vertex en cours de création. Les valeurs disponibles à utiliser sont définies par la constante de type de données que vous choisissez, répertoriée ci-dessous: <br><br></p><div class="compat"><table><tr><th> Constant </th><th> La description </th></tr><tr><td> <span class="notranslate">vertex_type_float1</span> </td> <td> Une seule valeur en virgule flottante </td></tr><tr class="alt"><td> <span class="notranslate">vertex_type_float2</span> </td> <td> Deux valeurs à virgule flottante </td></tr><tr><td> <span class="notranslate">vertex_type_float3</span> </td> <td> Trois valeurs à virgule flottante </td></tr><tr class="alt"><td> <span class="notranslate">vertex_type_float4</span> </td> <td> Quatre valeurs à virgule flottante </td></tr><tr><td> <span class="notranslate">vertex_type_colour</span> </td> <td> Quatre valeurs de composantes (r, g, b, a) </td></tr><tr class="alt"><td> <span class="notranslate">vertex_type_ubyte4</span> </td> <td> Quatre valeurs d&#39;octets non signés (de 0 à 255) </td></tr></table></div><p> L&#39;utilisation de ces constantes doit également être définie afin que les valeurs puissent être &quot;liées&quot; correctement dans le shader créé. Ceci est nécessaire en raison du fait que DX et OpenGL ont des exigences différentes, donc si vous ne les liez pas correctement, ils ne seront pas directement dans le shader. Les constantes d&#39;utilisation disponibles que vous pouvez choisir sont listées ci-dessous et celles que vous utiliserez dépendront des spécificités du shader en cours de création: <br><br></p><div class="compat"><table><tr><th> Constant </th><th> La description </th></tr><tr><td> <span class="notranslate">vertex_usage_position</span> </td> <td> valeurs de position (x, y, z) </td></tr><tr class="alt"><td> <span class="notranslate">vertex_usage_colour</span> </td> <td> valeurs de couleur (r, g, b, a) </td></tr><tr><td> <span class="notranslate">vertex_usage_normal</span> </td> <td> vertex valeurs normales (nx, ny, nz) </td></tr><tr class="alt"><td> <span class="notranslate">vertex_usage_textcoord</span> </td> <td> Coordonnées UV (u, v) </td></tr><tr><td> <span class="notranslate">vertex_usage_blendweight</span> </td> <td> le blendweight de la matrice d&#39;entrée (pour l&#39;animation squelettique, par exemple) </td></tr><tr class="alt"><td> <span class="notranslate">vertex_usage_blendindices</span> </td> <td> les indices des matrices à utiliser (pour l&#39;animation squelettique, par exemple) </td></tr><tr><td> <span class="notranslate">vertex_usage_depth</span> </td> <td> valeur du tampon de profondeur du sommet </td></tr><tr class="alt"><td> <span class="notranslate">vertex_usage_tangent</span> </td> <td> valeurs tangentes </td></tr><tr><td> <span class="notranslate">vertex_usage_binormal</span> </td> <td> valeurs binormales </td></tr><tr class="alt"><td> <span class="notranslate">vertex_usage_fog</span> </td> <td> valeurs de brouillard </td></tr><tr><td> <span class="notranslate">vertex_usage_sample</span> </td> <td> sampler index </td></tr></table></div><p><br></p><h3 class="studio"> Exemple: </h3><p class="code">vertex_format_begin();<br>
+vertex_format_add_textcoord();<br>
+vertex_format_add_custom(vertex_type_float3,
+vertex_usage_position);<br>
+my_format = vertex_format_end();<br><span class="notranslate"></span></p><p> Le code ci-dessus va créer un nouveau format de vertex avec juste la texture et 3 valeurs à virgule flottante pour la position. Il stocke ensuite l&#39;identifiant de format dans la variable &quot;my_format&quot;. </p><p><br></p><div class="clear"><div style="float:left"> Retour: <a href="index.html">Formats Vertex</a> </div><div style="float:right"> Suivant: <a href=
+"vertex_format_end.html">vertex_format_end</a> </div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

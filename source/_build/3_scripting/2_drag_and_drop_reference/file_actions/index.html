@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>DnD™ File Actions Library</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/2_drag_and_drop_reference/file_actions/index.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F2_drag_and_drop_reference%2Ffile_actions%2Findex.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F2_drag_and_drop_reference%2Ffile_actions%2Findex.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> Bibliothèque de fichiers </h2><div class="body-scroll"><p><br></p><p><img class="center" src="images/lib_files.png" alt="Actions de fichier"></p><p> Les <b>actions de fichiers</b> traitent de deux types de fichiers différents - les fichiers tampons et les fichiers Ini - et ont également certaines actions de fichiers génériques pour renommer ou copier des fichiers existants. <b>Les fichiers tampons</b> sont créés en sauvegardant les données d&#39;un tampon que vous avez précédemment créé et ces données peuvent ensuite être chargées dans un tampon à tout moment dans le futur. Vous pouvez trouver plus d&#39;informations sur les tampons ici: <a href="../buffer_actions/index.html">Actions tampons</a>. </p><p> <b>Les fichiers Ini</b> sont de petits fichiers légers qui sont compatibles avec la plupart des plates-formes. Elles sont idéales pour stocker de petites informations, comme les préférences d&#39;interface, les scores locaux élevés, les données de niveau, etc. et sont très faciles à utiliser. Les fichiers Ini ne doivent pas avoir été créés précédemment pour utiliser ces actions, et vous pouvez lire à partir d&#39;un fichier Ini inexistant et vous obtiendrez simplement un <tt>default</tt> return value (que vous spécifiez), cependant nous vous recommandons de créer au moins un fichier ini &quot;base&quot; pour l&#39;ouverture et la modification avant d&#39;utiliser les actions. Ce fichier ini de base peut être créé en appelant simplement l&#39;action <a a="" href=
+"open_ini_file.html">Open Ini File</a> suivie du <a href="close_ini_file.html">fichier Close Ini</a>, car la fermeture du fichier l&#39;écrira sur le disque, ou vous pouvez en inclure une dans les <a href=
+"../../../2_interface/1_editors/included_files.html">fichiers inclus</a> de l&#39;arborescence des ressources. Si vous utilisez un fichier inclus dans l&#39;arborescence des ressources comme base Ini, vous devriez également lire la section du manuel sur le <a href=
+"../../../1_overview/3_additional_information/file_system.html">fonctionnement du système de fichiers</a>. </p><div class="note"> <b>NOTE</b>: Pour les jeux avec des localisations, il est très important que les lettres accentuées puissent être lues à partir de fichiers externes. Cela signifie que vous devez d&#39;abord créer le fichier ini au <b>format UTF8,</b> puis l&#39;ajouter à <i><span class="notranslate">GameMaker Studio 2</span></i> tant que fichier inclus afin qu&#39;il soit exporté lors de l&#39;exécution du jeu et utilisé à la place du fichier INSI au format ANSI par défaut fonctionne quand aucune n&#39;a été fournie précédemment. De cette façon, vous pouvez lire et écrire correctement avec tous les accents et les lettres non-romaines étant maintenues. </div><p><br> Les actions suivantes existent pour travailler avec des fichiers: </p><table class="icons"><tr><td class="icons"> <a href="load_buffer.html"><img align="middle"
+src="images/i_files_load_buffer.png" alt="Charger le tampon"></a> </td><td class="text"> <a href="load_buffer.html">Charger le tampon</a> </td></tr><tr><td class="icons"> <a href="save_buffer.html"><img align="middle"
+src="images/i_files_save_buffer.png" alt="Enregistrer le tampon"></a> </td><td class="text"> <a href="save_buffer.html">Enregistrer le tampon</a> </td></tr><tr><td class="icons"> <a href="rename_file.html"><img align="middle"
+src="images/i_files_rename_file.png" alt="Renommer le fichier"></a> </td><td class="text"> <a href="rename_file.html">Renommer le fichier</a> </td></tr><tr><td class="icons"> <a href="copy_file.html"><img align="middle" src=
+"images/i_files_copy_file.png" alt="Copier un fichier"></a> </td><td class="text"> <a href="copy_file.html">Copier un fichier</a> </td></tr><tr><td class="icons"> <a href="delete_file.html"><img align="middle"
+src="images/i_files_delete_file.png" alt="Supprimer le fichier"></a> </td><td class="text"> <a href="delete_file.html">Supprimer le fichier</a> </td></tr><tr><td class="icons"> <a href="open_ini_file.html"><img align="middle"
+src="images/i_files_open_ini_file.png" alt="Ouvrir le fichier Ini"></a> </td><td class="text"> <a href="open_ini_file.html">Ouvrir le fichier Ini</a> </td></tr><tr><td class="icons"> <a href="close_ini_file.html"><img align="middle"
+src="images/i_files_close_ini_file.png" alt="Fermer le fichier Ini"></a> </td><td class="text"> <a href="close_ini_file.html">Fermer le fichier Ini</a> </td></tr><tr><td class="icons"> <a href="write_to_ini_file.html"><img align=
+"middle" src="images/i_files_write_to_ini_file.png" alt="Ecrire dans le fichier Ini"></a> </td><td class="text"> <a href="write_to_ini_file.html">Ecrire dans le fichier Ini</a> </td></tr><tr><td class="icons"> <a href="read_ini_file.html"><img align="middle"
+src="images/i_files_read_ini_file.png" alt="Lire le fichier Ini"></a> </td><td class="text"> <a href="read_ini_file.html">Lire le fichier Ini</a> </td></tr><tr><td class="icons"> <a href="if_file_exists.html"><img align="middle"
+src="images/i_files_if_file_exists.png" alt="Si le fichier existe"></a> </td><td class="text"> <a href="if_file_exists.html">Si le fichier existe</a> </td></tr></table><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="../index.html">Drag and Drop Reference</a> </div><div style="float:right"> Next: <a href=
+"../type_actions/index.html">Actions de type de données</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

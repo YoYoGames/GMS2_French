@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>iap_activate</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/in app purchases/iap_activate.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fin%20app%20purchases%2Fiap_activate.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fin%20app%20purchases%2Fiap_activate.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h1 class="studio"> iap_activate </h1><h2 class="studio"> Active le support pour effectuer des achats dans l&#39;application. </h2><h3 class="studio"> Syntaxe: </h3><p class="code">iap_activate(product_index);<span class="notranslate"></span></p><p><br></p><div class="param"><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">product_index</span> </td> <td> L&#39;indice de la <tt>ds_list</tt> qui contient les achats disponibles. </td></tr></table></div><p><br></p><p> <b>Retours:</b> N / A </p><p><br></p><h3 class="studio"> La description </h3><p> Cette fonction permet d&#39;effectuer des achats dans l&#39;application et prépare <i><span class="notranslate">GameMaker Studio 2</span></i> en fournissant le produit <a href="../data_structures/ds%20lists/index.html"><tt>ds_list</tt></a> qui détient une série de <a href=
+"../data_structures/ds%20maps/index.html"><tt>ds_maps</tt></a> avec les informations sur chaque achat disponible. Cela signifie que vous devrez indiquer à <i><span class="notranslate">GameMaker Studio 2</span></i> toutes les options d&#39;achat disponibles en les réglant individuellement <tt>ds_maps</tt> (un pour chaque achat disponible), qui sont ensuite stockés dans un <tt>ds_list</tt>, qui est alors &quot;activé&quot; avec cette fonction. <br><br> Les cartes d&#39;achat individuelles qui doivent être stockées dans le <tt>ds_list</tt> devrait avoir le format suivant de paires clé-valeur: <br><br></p><blockquote><ul><li> &quot; <b>id</b> &quot; - L&#39;ID de produit pour l&#39;achat, par exemple: &quot;LevelPack&quot;. <br><br></li><li> &quot; <b>title</b> &quot; - Le nom de l&#39;achat, par exemple: &quot;Level Pack 1&quot;. <br><br></li><li> &quot; <b>description</b> &quot; - La description de l&#39;achat, par exemple: &quot;Level Pack 1 for Catch The Clown&quot;. <br><br></li><li> &quot; <b>prix</b> &quot; - Le prix de l&#39;achat, par exemple: &quot; <span class="notranslate">$1</span>.00&quot;. <br><br></li><li> &quot; <b>type</b> &quot; - <b><i><span class="notranslate">Windows 8</span> et <span class="notranslate">Windows Phone</span> seulement!</i></b> Le type d&#39;achat, qui devrait être soit &quot;Consommable&quot; ou &quot;Durable&quot;. &quot;Durable&quot; est la valeur par défaut (non consommable). <br></li></ul></blockquote><p> Il convient de noter que les seules clés essentielles pour toute configuration de magasin cible (par ID de produit) sont les &quot;id&quot;, à l&#39;exception des cibles <span class="notranslate">Windows 8</span> et <span class="notranslate">Windows Phone</span>, auquel cas vous avez également besoin de la clé &quot;type&quot;. Notez que pour ces plateformes cibles, si vous voulez que le magasin rapporte des données significatives (correctes) en mode <i>bac</i> à <i>sable</i>, alors le &quot;titre&quot;, la &quot;description&quot;, etc... <b>sont</b> nécessaires. <br><br> Activer les achats déclenchera également un <a href=
+"../../../2_interface/1_editors/events/async_events.html"><b>événement IAP</b></a>, ce qui crée un <a href=
+"../../../2_interface/1_editors/events/async_events.html"><b>événement</b></a> spécial <tt>iap_data</tt> ds_map du type d&#39;événement <tt>iap_ev_product</tt>. Cette ds_map aura la clé supplémentaire suivante: </p><blockquote><ul><li> &quot; <b>index</b> &quot; - L&#39;ID de produit pour le produit activé. </li></ul></blockquote><p> Si vous activez plusieurs produits, chaque produit déclenche son propre <b>événement IAP</b> du type <tt>iap_ev_product</tt> où vous pouvez ensuite obtenir l&#39;ID du produit. Il convient de noter que le Google Play Store (pour <span class="notranslate">Android</span> ) ne peut traiter que les détails des produits 20 à la fois, ce qui peut entraîner des temps de chargement assez longs pour les applications comportant un nombre important de produits. <br><br><br><br> <i><b>NOTE:</b> Toutes les paires clé / valeur qui composent une carte d&#39;achat sont des chaînes!</i> <br><br></p><p><br></p><h3 class="studio"> Exemple: </h3><p class="code">var purchaseList, purchase1;<br>
+purchaseList = ds_list_create();<br>
+purchase1 = ds_map_create();<br>
+ds_map_add(purchase1, "id", "LevelPack");<br>
+ds_map_add(purchase1, "title", "ExtraLevels1");<br>
+ds_map_add(purchase1, "description", "Level Pack 1 for Catch The
+Clown");<br>
+ds_map_add(purchase1, "price", "$1.00");<br>
+ds_list_add(purchaseList, purchase1);<br>
+iap_activate(purchaseList);<br>
+ds_map_destroy(purchase1);<br>
+ds_list_destroy(purchaseList);<br><span class="notranslate"></span></p><p> Le code ci-dessus va créer un <tt>ds_list</tt> et un <tt>ds_map</tt>, qui est ensuite rempli par les informations pour effectuer un achat. Cette carte est ajoutée à la liste puis activée en tant qu&#39;achat disponible pour le jeu. Finalement, le <tt>ds_list</tt> et <tt>ds_map</tt> sont supprimés pour éviter les fuites de mémoire car ils ne sont plus nécessaires. </p><p><br></p><div class="clear"><div style="float:left"> Retour: <a href="index.html">dans les achats d&#39;applications</a> </div><div style="float:right"> Suivant: <a href=
+"iap_status.html">iap_status</a> </div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

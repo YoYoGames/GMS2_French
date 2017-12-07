@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>show_debug_overlay</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/debugging/show_debug_overlay.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fdebugging%2Fshow_debug_overlay.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fdebugging%2Fshow_debug_overlay.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> show_debug_overlay </h2><div class="body-scroll"><p><br></p><h3> La description </h3><blockquote><p> Cette fonction peut être utilisée pour activer et désactiver la superposition de débogage standard lors du test de votre jeu et est désactivée par défaut. La superposition de débogage affiche une barre d&#39;utilisation graphique CPU / GPU dans la fenêtre de jeu elle-même avec la valeur réelle fps, le nombre de swaps de texture et le nombre de vertex batch (notez que les swaps de texture et les vertex batch ne seront jamais affiche des valeurs de 2 ou 3, car même avec une pièce vide et aucun objet, <i><span class="notranslate">GameMaker Studio 2</span></i> doit encore dessiner et <i><span class="notranslate">GameMaker Studio 2</span></i> des choses). <img class="center" src=
+"../../../1_overview/2_quick_start/images/qs_debug_bar.png"></p><p> Cette barre est divisée en sections, chaque section étant au 1 / 60ème de seconde. Comme vous pouvez le voir sur l&#39;image ci-dessus, la barre est composée de différentes couleurs: </p><ul><li> <b>Vert</b> - Traitement des entrées / sorties (c.-à-d. Clavier, souris, manette de jeu, mise en réseau, etc.) </li><li> <b>Rouge</b> - La vitesse de mise à jour de l&#39;événement d&#39;étape </li><li> <b>Jaune</b> - Le temps requis pour l&#39;événement de tirage </li><li> <b>Orange -</b> Heure de mise à jour de Debug, qui n&#39;est normalement visible que lorsque vous utilisez le module de débogage </li><li> <b>Blanc</b> - Le GPU est parti au fil du temps, c&#39;est le temps passé à attendre que le GPU termine le rendu du cadre avant que le prochain puisse commencer </li><li> <b>Cyan</b> - Le temps de rendu du texte </li><li> <b>Gris</b> - Le temps requis pour effacer l&#39;écran à chaque étape du tirage </li><li> <b>Dark Red</b> - Le flush du GPU, qui est le temps que prend le GPU pour effacer les images de la mémoire </li></ul><p> En utilisant cette fonction, vous pouvez ajouter la superposition en mode débogage ou non, et ainsi, vous pouvez voir comment votre jeu fonctionne efficacement et obtenir un indice visuel de la façon dont il utilise les ressources disponibles, sans avoir à en tirer le débogueur s&#39;exécute à côté. </p></blockquote><p><br></p><h3> Syntaxe: </h3><p class="code">show_debug_overlay(enable);<span class="notranslate"></span></p><div class="param"><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">enable</span> </td> <td> allumer ( <tt>true</tt> ) ou désactivé ( <tt>false</tt> ) la superposition de débogage. </td></tr></table></div><p><br></p><h3> Résultats: </h3><p class="code">N/A<span class="notranslate"></span></p><p><br></p><h3> <b>Exemple:</b> </h3><p class="code">if global.debug<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;show_debug_overlay(true);<br>
+&nbsp;&nbsp;&nbsp;}<br>
+else<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;show_debug_overlay(false);<br>
+&nbsp;&nbsp;&nbsp;}<br><span class="notranslate"></span></p><blockquote><p> Le code ci-dessus va activer ou désactiver le débogage en fonction de la valeur d&#39;une variable globale. </p></blockquote><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href=
+"index.html">Débogage</a> </div><div style="float:right"> Suivant: <a href=
+"code_is_compiled.html">code_is_compiled</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

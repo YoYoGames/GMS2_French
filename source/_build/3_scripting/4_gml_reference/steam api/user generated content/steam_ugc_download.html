@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>steam_ugc_download</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/steam api/user generated content/steam_ugc_download.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fsteam%20api%2Fuser%20generated%20content%2Fsteam_ugc_download.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fsteam%20api%2Fuser%20generated%20content%2Fsteam_ugc_download.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> <span class="notranslate">steam</span> _ugc_download </h2><div class="body-scroll"><h3 class="studio"> Syntaxe: </h3><p class="code">steam_ugc_download(ugc_handle, dest_filename);<span class="notranslate"></span></p><p><br></p><div class="param"><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">ugc_handle</span> </td> <td> La poignée unique pour l&#39;aperçu à télécharger. </td></tr><tr class="alt"><td> <span class="notranslate">dest_filename</span> </td> <td> Le nom du fichier pour enregistrer l&#39;aperçu avec. </td></tr></table></div><p><br></p><p> <b>Renvoie:</b> Async ID </p><p><br></p><h3 class="studio"> La description </h3><p> Avec cette fonction, vous pouvez télécharger une image d&#39;aperçu pour n&#39;importe quel objet UGC. le <tt>ugc_handle</tt> est la valeur d&#39;identification unique pour l&#39;image (que vous pouvez obtenir en utilisant la fonction <a href=
+"steam_ugc_send_query.html"><tt>steam_ugc_send_query()</tt></a> ), et le nom de fichier de destination est le nom (et le chemin local dans le sandbox <span class="notranslate">Steam</span> ) que vous souhaitez donner au fichier image lorsque le téléchargement est terminé. <br><br> Lors de l&#39;utilisation de cette fonction, un événement <a href=
+"../../../../2_interface/1_editors/events/async_events.html"><span class="notranslate">Steam</span> Asynchronous</a> est déclenché pour signaler les détails du fichier image demandé contenant les paires clé / valeur suivantes <tt>async_load</tt> ds_map: </p><blockquote><ol><li> &quot; <b>id</b> &quot; - L&#39;identifiant asynchrone renvoyé par la fonction d&#39;appel </li><li style="list-style: none"><br></li><li> &quot; <b>résultat</b> &quot; - Le résultat de l&#39;opération (une valeur réelle). Ce sera soit la constante GML <tt>ugc_result_success</tt> ou un autre nombre réel. Vous devriez donc vérifier cette constante pour vous assurer que l&#39;appel a réussi et, dans le cas contraire, que quelque chose n&#39;a pas fonctionné correctement. Le reste des valeurs possibles renvoyées sont affichées comme le résultat de la valeur <span class="notranslate">Steam</span> &quot;EResult&quot; et vous devriez voir <tt>steamclientpublic.h</tt> dans les en-têtes SDK pour toutes les 89 valeurs possibles. </li><li style="list-style: none"><br></li><li> &quot; <b>event_type</b> &quot; - Cette clé contiendra la valeur &quot; <b>ugc_download</b> &quot; </li><li style="list-style: none"><br></li><li> &quot; <b>original_filename</b> &quot; - Cette clé contient le nom d&#39;origine du fichier image <i>sur le serveur</i> (une chaîne) </li><li style="list-style: none"><br></li><li> &quot; <b>dest_filename</b> &quot; - Cette clé contient le nom du fichier d&#39;image que vous avez passé (une chaîne) </li><li style="list-style: none"><br></li><li> &quot; <b>ugc_handle</b> &quot; - Cette clé contient le <tt>ugc_handle</tt> valeur que vous avez passé à la fonction d&#39;appel </li></ol></blockquote><p><br></p><h3 class="studio"> Exemple étendu: </h3><p> Dans cet exemple, nous appelons d&#39;abord la fonction et stockons la valeur de l&#39;identifiant asynchrone dans une variable: </p><p class="code">steam_get = steam_ugc_download(steam_handle,
+"\UGC\Preview_file.png");<br><span class="notranslate"></span></p><p> Cela enverrait alors une demande de fichier à l&#39;API <span class="notranslate">Steam</span>, générant un événement asynchrone que nous traiterions comme suit: </p><p class="code">var event_id = async_load[? "id"];<br>
+if event_id == steam_get<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;var type = async_load[? "event_type"];<br>
+&nbsp;&nbsp;&nbsp;if type == "ugc_download"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sprite_delete(preview_sprite);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;preview_sprite =
+sprite_add(async_load[? "dest_filename"], 0, false, false, 0,
+0);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;}<br><span class="notranslate"></span></p><p> Le code ci-dessus vérifie le type d&#39;événement, puis crée un sprite à partir de l&#39;image téléchargée. </p><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Précédent: <a href="index.html">API <span class="notranslate">Steam</span> - Contenu généré par l&#39;utilisateur</a> </div><div style="float:right"> Suivant: <a href=
+"steam_ugc_create_item.html"><span class="notranslate">steam</span> _ugc_create_item</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

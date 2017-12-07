@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Constructing Action Block Code</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+<link rel="stylesheet" href="../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/1_drag_and_drop_overview/creating_action_block_code.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2F_build%2F3_scripting%2F1_drag_and_drop_overview%2Fcreating_action_block_code.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2F_build%2F3_scripting%2F1_drag_and_drop_overview%2Fcreating_action_block_code.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> Construire un code d&#39;action </h2><div class="body-scroll"><p><br></p><p> Pour ajouter des comportements à des objets, vous pouvez construire votre code en utilisant Actions des différentes bibliothèques disponibles dans la <b>boîte à outils Action</b>. Pour commencer, vous devrez créer un nouveau <a href=
+"../../1_overview/2_quick_start/2_start.html#new_project">projet de glisser-déposer</a>, puis créer un <a href=
+"../../1_overview/2_quick_start/workflow/4_objects.html">nouvel objet</a> (vous pouvez également assigner un <a href=
+"../../1_overview/2_quick_start/workflow/1_sprites.html">sprite</a> à l&#39;objet si nécessaire). Dans votre nouvel objet, vous pouvez commencer à ajouter des <a href=
+"../../2_interface/1_editors/events/index.html">événements</a>, et dans les événements, ajoutez vos actions de code DnD™. <img class="center" src=
+"images/dnd_create_event.png" alt="DnD™ Créer un événement"></p><p> Notez que lorsque vous ajoutez un nouvel événement, une fenêtre &quot;code&quot; s&#39;ouvre avec un onglet pour l&#39;événement donné (voir l&#39;image ci-dessus), et vous pouvez maintenant faire glisser n&#39;importe quelle action de la Boîte à outils vers la droite dans le volet Bloc d&#39;Action de la fenêtre de code. Maintenant, bien qu&#39;il soit vrai que vous pouvez ajouter <i>n&#39;importe quelle</i> action, cela ne signifie pas qu&#39;ils fonctionneront tous ou que le projet compilera avec eux. Certaines actions nécessitent que les <a href="../3_gml_overview/6_scope.html">variables</a> fonctionnent, tandis que d&#39;autres - comme les actions <b>Draw</b> - ne fonctionneront que si elles sont utilisées dans un événement spécifique. Comment savez-vous lesquels utiliser? Eh bien, généralement, il s&#39;agit simplement d&#39;utiliser la logique... si une action nécessite une variable et que nous n&#39;en avons pas encore défini, nous ne devrions pas l&#39;utiliser avant d&#39;avoir ajouté une action pour créer la variable. </p><p> Lorsque vous faites glisser une action de la boîte à outils dans l&#39;espace de travail principal du bloc d&#39;actions, elle se développe pour vous montrer les paramètres disponibles (arguments) que vous pouvez remplir et modifier pour définir le comportement. Dans l&#39;image ci-dessous, nous avons déplacé une action <b>Assign Variable</b> de la bibliothèque Toolbox <a href=
+"../2_drag_and_drop_reference/common_actions/index.html">Common</a> dans l&#39;espace de travail du bloc d&#39;actions: <img class="center" src=
+"images/dnd_add_var.png" alt="DnD™ Assign Variable"></p><p> Vous pouvez voir que la nouvelle action est également affichée sur la gauche de la fenêtre de code dans un raccourci. Vous pouvez cliquer sur cette liste d&#39;actions, appelée <b>Présentation de</b> l&#39;action, pour accéder rapidement à cette action afin de la modifier. Vous pouvez continuer à ajouter des actions à l&#39;événement si nécessaire, chaque nouvelle action étant &quot;chaînée&quot; à la précédente pour afficher le flux du code DnD™ que vous construisez. Notez que la zone dans laquelle vous pouvez supprimer d&#39;autres actions est mise en surbrillance sous l&#39;action initiale et, en fonction de l&#39;action que vous utilisez, différentes zones seront mises en surbrillance pour indiquer où dans la chaîne vous pouvez l&#39;ajouter: <img class=
+"center" src="images/dnd_set_dir.png" alt="DnD™ Définir la variable de direction"></p><p> Lorsque vous ajoutez des actions à l&#39;espace de travail, elles seront &quot;chaînées&quot; aux actions ci-dessus afin que vous puissiez voir comment le code DnD™ circule, avec une action menant à une autre, et le volet de synthèse les affiche sous forme abrégée et dans l&#39;ordre d&#39;exécution: <img class="center" src=
+"images/dnd_scope_other.png" alt="Chaîne d&#39;actions DnD™"></p><p> Certaines actions placeront le code dans une chaîne séparée du flux principal - des choses comme <a href=
+"../2_drag_and_drop_reference/common_actions/if_variable.html">si</a> créeraient une sous-chaîne d&#39;actions qui devrait se produire si les conditions correctes sont remplies avant de continuer avec la chaîne principale: <img class="center" src=
+"../2_drag_and_drop_reference/common_actions/images/e_common_if_variable.png"
+alt="DnD™ side chain d&#39;actions"></p><p> Notez que lorsque vous utilisez des actions qui peuvent avoir un bloc de chaîne latérale comme celui-ci, l&#39;action aura <i>deux</i> zones en surbrillance pour abandonner d&#39;autres actions: Une en dessous de l&#39;action normale et une à droite de l&#39;action pour montrer que vous voulez créer bloc d&#39;actions séparé à exécuter lorsque la condition de la première action renvoie <tt>true</tt>: <img class="center" src=
+"../2_drag_and_drop_reference/common_actions/images/a_common_if_drop.png"
+alt="DnD™ Chaîne latérale d&#39;actions"></p><p> Vous pouvez changer la position des actions dans la chaîne en cliquant simplement sur <img style="vertical-align:middle" src=
+"../../images/icon_lmb.png"> et en les faisant glisser dans la nouvelle position dont vous avez besoin, et si vous faites un clic et maintenez pendant une seconde puis déplacez la souris, vous pouvez déplacer l&#39;action dans l&#39;espace de travail tout en conservant sa place dans la chaîne du bloc d&#39;action. </p><p> C&#39;est l&#39;essentiel de l&#39;utilisation de l&#39;éditeur de code Drag and Drop, mais d&#39;autres détails importants sont expliqués dans les sections suivantes: </p><blockquote> <label class="collapse" for="a">Variables cibles</label> <input id="a" type="checkbox"><div class="index_list"><p> Il est important de noter que de nombreuses actions offrent une variable &quot;cible&quot;, qui peut être marquée comme &quot;temporaire&quot;, par exemple: <img class="center" src=
+"../2_drag_and_drop_reference/audio_actions/images/a_audio_get_audio_volume.png"
+alt="Exemple de cible"></p><p> Cela signifie que vous pouvez fournir une variable &quot;cible&quot; qui contiendra la valeur renvoyée par l&#39;action. Dans l&#39;exemple d&#39;action ci-dessus, l&#39;action renvoie le volume de la ressource audio que vous sélectionnez. Vous indiquez donc une variable cible pour conserver cette valeur afin de pouvoir la référencer ultérieurement. Maintenant, cette variable cible devra avoir été déclarée précédemment en utilisant <a href=
+"../2_drag_and_drop_reference/common_actions/assign_var.html">Assign Variable</a> (qui crée une <b>variable Instance</b> ) ou <a href="../2_drag_and_drop_reference/common_actions/temp_var.html">Declare Temporary Variable</a> (qui crée une <b>variable temporaire locale</b> ), mais si vous cochez l&#39;option &quot;Temp&quot;, vous pouvez simplement ajoutez un nom de variable et l&#39;action créera cette variable et définira la valeur de retour pour vous (création d&#39;une variable locale temporaire). Toutes les actions utilisées <i>après</i> cela peuvent maintenant accéder à la valeur dans la variable temporaire, mais <i>seulement dans le même événement ou script</i>. Les variables temporaires sont uniquement disponibles dans la portée dans laquelle elles ont été créées. Pour plus d&#39;informations détaillées sur les variables et la portée variable, s&#39;il vous plaît voir <a href=
+"../3_gml_overview/6_scope.html">ici</a>. </p></div><br> <label class="collapse" for="b">Champ d&#39;action</label> <input id="b"
+type="checkbox"><div class="index_list"><p> Les variables n&#39;ont pas seulement des étendues (voir <b>Variables cibles</b>, ci-dessus), les actions peuvent également avoir des <i>étendues</i> différentes. En fait, presque toutes les actions peuvent avoir une portée différente, à partir de la fenêtre déroulante ouverte dans l&#39;action elle-même, comme indiqué ici: <img class="center" src="images/dnd_applies_to.png" alt="DnD™ s&#39;applique à"></p><p> Vous pouvez également définir la portée de toutes les autres actions à l&#39;aide de l&#39;action spéciale <a href=
+"../2_drag_and_drop_reference/common_actions/apply_to.html">Appliquer à</a>. Pour plus d&#39;informations sur cette fonctionnalité des actions DnD™, veuillez consulter ici: </p><blockquote><ol><li> <a href="applying_actions.html"><span class=
+"list_link">Application d&#39;actions à d&#39;autres instances</span></a> <br></li></ol></blockquote></div><br> <label class="collapse" for="c">Auto complet</label> <input id="c"
+type="checkbox"><div class="index_list"><p> Lorsque vous utilisez Drag and Drop, vous devez ajouter des variables et des expressions dans les différents champs de saisie des actions. Cependant, lorsque vous faites cela, vous obtenez souvent la fenêtre Auto Complete qui apparaît pour vous aider: <img class="center" src=
+"images/action_autocomplete.png" alt="Auto complet"></p><p> Cette fenêtre pop-up liste toutes les variables, constantes et fonctions GML ( <span class="notranslate">GameMaker</span> Language) intégrées, ainsi que toutes les ressources qui contiennent les lettres initiales de ce que vous étiez en train de taper. Il peut être utilisé pour trouver rapidement la ressource ou la variable dont vous avez besoin pour l&#39;action sans avoir à tout saisir en vous-même. Par exemple, si toutes vos pièces sont préfixées &quot;rm_&quot;, en tapant cela et en attendant un moment, la fenêtre auto complete sera affichée avec toutes les ressources commençant par &quot;rm_&quot;. Notez que toutes les variables intégrées qui sont affichées dans la fenêtre d&#39;achèvement automatique peuvent être utilisées partout où une variable ou une expression est attendue dans une action, comme peuvent le faire la plupart des fonctions GML. </p></div><br> <label class="collapse" for="d">Action d&#39;expansion</label> <input id=
+"d" type="checkbox"><div class="index_list"><p> Parfois, lorsque vous utilisez une action, vous verrez une petite <b>icône plus</b> <img style="vertical-align:middle" src=
+"../2_drag_and_drop_reference/icon_expand_arguments.png"> sur le côté. Cela signifie que vous pouvez <i>développer</i> l&#39;action pour effectuer des tâches supplémentaires ou prendre d&#39;autres arguments. Par exemple, si vous regardez l&#39;action <a href=
+"../2_drag_and_drop_reference/common_actions/temp_var.html">Déclarer les variables temporaires</a>, vous pouvez voir qu&#39;il a cette <img style="vertical-align:middle" src=
+"../2_drag_and_drop_reference/icon_expand_arguments.png"> icône: <img class="center" src=
+"../2_drag_and_drop_reference/common_actions/images/a_common_declare_temp_var.png"
+alt="Expansion variable de température"></p><p> Lorsque vous cliquez sur l&#39;icône, l&#39;action se développe et vous permet de déclarer plus de variables, ce qui facilite et accélère la définition de plusieurs variables en même temps. <img class="center" src=
+"images/action_expansion_example.png" alt="Exemple d&#39;expansion variable de température"></p><p> L&#39;icône peut également être utilisée pour les actions qui nécessitent des arguments facultatifs, comme l&#39;action <a href=
+"../2_drag_and_drop_reference/random_actions/choose.html">Choisir</a>, qui vous permet d&#39;ajouter différentes valeurs à renvoyer: <img class="center" src=
+"../2_drag_and_drop_reference/random_actions/images/e_mathematics_choose.png"
+alt="Choisissez l&#39;exemple d&#39;expansion"></p></div><br> <label class="collapse" for="e">Menu RMB</label> <input id="e"
+type="checkbox"><div class="index_list"><p> Lorsque vous travaillez sur votre code DnD™, vous pouvez cliquer sur le bouton droit de la souris <img style="vertical-align:middle" src=
+"../../images/icon_rmb.png"> sur l&#39;action (ou sur le texte dans la liste de gauche) pour ouvrir le menu suivant: <img class=
+"center" src="images/dnd_rmb_menu.png" alt="Menu RMN DnD™"></p><p> Ce menu a les options suivantes: </p><ul><li> <b>Couper / Copier / Coller</b>: Ceci vous permettra de couper, copier ou coller n&#39;importe quelle action sélectionnée. Notez que vous pouvez utiliser <img style="vertical-align:middle" src=
+"../../images/icon_shift.png"> + <img style="vertical-align:middle"
+src="../../images/icon_lmb.png"> en dehors des actions et faites glisser, ou utilisez <img style="vertical-align:middle" src=
+"../../images/icon_ctrl.png"> / <img style="vertical-align:middle"
+src="../../images/icon_cmd.png"> + <img style=
+"vertical-align:middle" src="../../images/icon_lmb.png"> sur des actions individuelles, pour en sélectionner plusieurs et appliquer la commande à chacune d&#39;entre elles. <br><br></li><li> <b>Désactiver</b>: cette commande désactive l&#39;action (ou les actions) sélectionnée. Lorsqu&#39;une action est désactivée, elle est toujours visible dans l&#39;espace de travail mais elle <i>ne s&#39;exécutera pas</i> lorsque vous compilez le jeu. De cette façon, vous pouvez ajouter / supprimer des actions pour tester et déboguer. L&#39;image ci-dessous montre du code DnD™ avec des actions désactivées: <img class="center" src="images/dnd_disable_actions.png"
+alt="Actions DnD™ Disable"> Vous pouvez voir que les actions &quot; <tt>If
+Score</tt> &quot; et &quot; <tt>Go To Next Room</tt> &quot;ont été désactivés et seront donc ignorés lorsque le jeu est testé ou compilé. <br><br></li><li> <b>Basculer le point d&#39;arrêt</b>: cette commande permet d&#39;activer ou de désactiver un <b>point</b> d&#39;arrêt pour l&#39;action sélectionnée. Un point d&#39;arrêt est simplement un point dans le code DnD™ où le débogueur doit s&#39;arrêter lorsque le jeu est exécuté en <a href=
+"../../2_interface/2_extras/debugging.html">mode débogage</a>. Une action associée à un point d&#39;arrêt sera surlignée, comme le montre l&#39;image ci-dessous <tt>If Health</tt> &quot;l&#39;action a été définie comme un point d&#39;arrêt&quot;: <img class="center" src=
+"images/dnd_togglebreakpoint.png" alt="Point d&#39;arrêt DnD™"></li><li> <b>Panoramique</b>: En sélectionnant ceci, vous effectuerez un panoramique et un zoom sur l&#39;espace de travail pour faire la mise au point sur l&#39;action sélectionnée. <br><br></li><li> <b>Afficher l&#39;aide...</b>: Cette option ouvre le manuel sur la page associée à l&#39;action DnD™ actuellement sélectionnée afin que vous puissiez vérifier son fonctionnement. </li></ul></div></blockquote><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">Vue d&#39;ensemble du glisser-déposer</a> </div><div style="float:right"> Next: <a href=
+"applying_actions.html">Application d&#39;actions à d&#39;autres instances</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Compiler Errors</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+<link rel="stylesheet" href="../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/1_overview/3_additional_information/errors.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2F_build%2F1_overview%2F3_additional_information%2Ferrors.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2F_build%2F1_overview%2F3_additional_information%2Ferrors.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> Erreurs du compilateur </h2><div class="body-scroll"><p><br></p><p> Lorsque vous créez votre jeu, il est très facile d&#39;oublier de déclarer une variable ou de mal saisir une chaîne comme un vrai etc... Ces erreurs seront capturées par <i><span class="notranslate">GameMaker Studio 2</span></i> pendant la compilation ou l&#39;exécution du jeu et une fenêtre s&#39;ouvrira avec le erreur donnée ainsi que l&#39;endroit où l&#39;erreur a été trouvée. Ces informations seront également affichées dans la <a href="../../2_interface/2_extras/output.html">sortie d&#39;erreur</a> du <a href="../../2_interface/2_extras/output.html">compilateur</a>, comme indiqué ci-dessous: <img class="center" src=
+"images/output_compileerrors.png" alt="Compiler les erreurs"></p><p> Vous pouvez cliquer sur l&#39;une des lignes de texte affichées et vous serez redirigé directement vers l&#39;objet ou le script qui a provoqué l&#39;erreur. Vous pouvez ensuite utiliser les informations contenues dans le message pour localiser exactement l&#39;objet ou le script. Une erreur s&#39;est produite. Cependant, parfois ces erreurs peuvent sembler un peu énigmatiques, ainsi, ci-dessous vous pouvez trouver une liste complète de toutes les erreurs et une brève explication de ce qu&#39;elles signifient: </p><blockquote> <label class="collapse" for="c">Divers</label> <input id="c" type="checkbox"><div class="index_list"><table><tr><td class="alt"><tt>No program to compile</tt></td><td class="arrow"> → </td><td> Une erreur de compilation précédente a provoqué la création de l&#39;arborescence d&#39;analyse du compilateur et donc le compilateur n&#39;a aucune donnée de programme à compiler </td></tr><tr><td class="alt"><tt>Fatal Error while compiling <i>[name]</i> -
+bailing details below</tt></td><td class="arrow"> → </td><td> Ce message signifie simplement qu&#39;une erreur a été découverte mais que le compilateur ne peut pas placer quoi et où (si cela arrive régulièrement, vous pouvez contacter le <a href=
+"http://help.yoyogames.com/hc/en-us/requests/new" target=
+"_blank">support de <span class="notranslate">YoYo Games</span></a> et fournir les détails que la fenêtre de sortie du compilateur montre) </td></tr><tr><td class="alt"><tt>Recursive macro expansion is not supported</tt></td><td class="arrow"> → </td><td> Vous avez utilisé des macros récursives qui se réfèrent et se développent constamment </td></tr><tr><td class="alt"><tt>Unable to find TextureGroup <i>[group]</i></tt></td><td class="arrow"> → </td><td> Cette erreur est généralement détectée uniquement lorsque vous tentez d&#39;exécuter un fichier de projet mal formé (si cela se produit régulièrement, vous pouvez contacter le <a href="http://help.yoyogames.com/hc/en-us/requests/new" target=
+"_blank">support de <span class="notranslate">YoYo Games</span></a> et fournir les détails que la fenêtre de sortie du compilateur affiche) </td></tr><tr><td class="alt"><tt>Wrong to convert <i>[value]</i> to number</tt></td><td class="arrow"> → </td><td> Vous avez essayé de convertir la valeur donnée, par exemple une chaîne, en un nombre </td></tr><tr><td class="alt"><tt>Division by 0</tt></td><td class="arrow"> → </td><td> Vous avez essayé de diviser une valeur par 0 </td></tr><tr><td class="alt"><tt>Invalid object id <i>[object ID]</i> used</tt></td><td class="arrow"> → </td><td> Vous avez essayé d&#39;accéder à un objet en utilisant une valeur d&#39;ID incorrecte (voir <a href=
+"../../3_scripting/4_gml_reference/instances/instance_variables/object_index.html">ici</a> pour plus d&#39;informations sur les ID d&#39;objet) </td></tr><tr><td class="alt"><tt>Unclosed comment (/*) at tend of script</tt></td><td class="arrow"> → </td><td> Vous avez créé un commentaire de script en utilisant <tt>/* [comment]
+*/</tt> mais n&#39;ont pas fourni le tag de commentaire de fermeture (voir <a href=
+"../../3_scripting/3_gml_overview/4_comments.html">ici</a> pour plus d&#39;informations) </td></tr><tr><td class="alt"><tt>Invalid token</tt></td><td class="arrow"> → </td><td> Vous avez un caractère invalide dans votre code de jeu, ce qui peut arriver avec des caractères en langue étrangère ou Unicode </td></tr><tr><td class="alt"><tt>Number</tt> [num] dans un format incorrect </td><td class="arrow"> → </td><td> Le nombre donné - indiqué dans l&#39;erreur - n&#39;est pas le bon format pour la fonction ou l&#39;opération en cours, par exemple vous fournissez un entier quand un pointeur est requis (voir la section sur <a href=
+"../../3_scripting/3_gml_overview/9_data_types.html">les types de données</a> pour plus d&#39;informations) </td></tr><tr><td class="alt"><tt>Unexpected EOF encountered</tt></td><td class="arrow"> → </td><td> Vous avez atteint la fin du fichier de manière inattendue lors de l&#39;utilisation des <a href=
+"../../3_scripting/4_gml_reference/file%20handling/index.html">fonctions de fichier</a> </td></tr></table></div><br> <label class="collapse" for="a">Cordes</label> <input id="a" type=
+"checkbox"><div class="index_list"><table><tr><td class="alt"><tt>Unable to Not a string</tt></td><td class="arrow"> → </td><td> Vous avez essayé d&#39;utiliser &quot;!&quot; ( <tt>not</tt> ) sur une chaîne (pour plus d&#39;informations sur les chaînes voir <a href=
+"../../3_scripting/3_gml_overview/9_data_types.html">ici</a> ) </td></tr><tr><td class="alt"><tt>Unable to Negate a string</tt></td><td class="arrow"> → </td><td> Vous avez essayé d&#39;annuler une chaîne, par exemple &quot; <tt>string =
+-string</tt> &quot;(pour plus d&#39;informations sur les chaînes voir <a href=
+"../../3_scripting/3_gml_overview/9_data_types.html">ici</a> ) </td></tr></table></div><br> <label class="collapse" for="b">Fonctions / Scripts / Arguments</label> <input id="b" type="checkbox"><div class="index_list"><table><tr><td class="alt"><tt>Wrong number of arguments for function
+<i>[function]</i></tt></td><td class="arrow"> → </td><td> Vous avez fourni trop ou trop peu d&#39;arguments pour la fonction donnée </td></tr><tr><td class="alt"><tt>Failed to parse action_execute_script() -
+incorrect number of arguments received</tt></td><td class="arrow"> → </td><td> L&#39;action <tt>Execute Script</tt> a trop ou trop peu d&#39;arguments pour le script donné étant appelé </td></tr><tr><td class="alt"><tt>Function <i>[function]</i> expects <i>n</i>
+arguments, <i>a</i> provided</tt></td><td class="arrow"> → </td><td> Une fonction a reçu le mauvais nombre d&#39;arguments quand un certain nombre étaient attendus </td></tr><tr><td class="alt"><tt>Unknown function <i>[function]</i> check to see
+if script is empty</tt></td><td class="arrow"> → </td><td> Un script a été appelé que le compilateur ne reconnaît pas (cette erreur est généralement renvoyée par des références de ressources de script vides car le compilateur supprimera ces ressources lors de la compilation) </td></tr><tr><td class="alt"><tt>Assignment of an empty value (function does not
+return anything?)</tt></td><td class="arrow"> → </td><td> Vous avez essayé d&#39;attribuer une valeur de retour à partir d&#39;un script ou d&#39;une fonction lorsque ce script ou cette fonction ne renvoie rien </td></tr><tr><td class="alt"><tt>Unable to find function <i>[function]</i></tt></td><td class="arrow"> → </td><td> Vous avez appelé une fonction inconnue </td></tr><tr><td class="alt"><tt>Calling a function that needs an instance and
+no instance is available</tt></td><td class="arrow"> → </td><td> La fonction ou le script appelé sert à agir sur une instance, mais au moment de l&#39;exécution aucune instance n&#39;existe </td></tr><tr><td class="alt"><tt>Calling a function that needs an <i>other</i>
+and no <i>other</i> is available</tt></td><td class="arrow"> → </td><td> Vous avez utilisé le mot-clé <tt>other</tt> en dehors de l&#39;événement de collision ou en dehors d&#39;un <tt>with</tt> déclaration </td></tr><tr><td class="alt"><tt>Argument naming error, <i>n</i> arguments but
+no reference found to <i>a</i></tt></td><td class="arrow"> → </td><td> Vous avez donné un certain nombre d&#39;arguments à un script, mais vous ne parvenez pas à en référencer un dans le script, par exemple, votre script prend trois arguments mais vous n&#39;utilisez que des arguments [0] et [2] (pour plus d&#39;informations voir <a href=
+"../../3_scripting/3_gml_overview/3_scripts.html">ici</a> ) </td></tr><tr><td class="alt"><tt>Cannot compare arguments</tt></td><td class="arrow"> → </td><td> Vous avez essayé de comparer deux types d&#39;arguments différents, comme une chaîne et un nombre réel (pour plus d&#39;informations sur les scripts et les arguments, voir <a href=
+"../../3_scripting/3_gml_overview/3_scripts.html">ici</a> ) </td></tr><tr><td class="alt"><tt>Unknown function or script
+<i>[functions/script]</i></tt></td><td class="arrow"> → </td><td> Le compilateur ne reconnaît pas la fonction ou le script appelé </td></tr><tr><td class="alt"><tt>Cannot use resource name <i>[resource]</i> as
+it is not being exported</tt></td><td class="arrow"> → </td><td> Vous avez essayé d&#39;accéder à une ressource qui n&#39;a pas été signalée dans le cadre du projet pour que la plate-forme soit compilée </td></tr><tr><td class="alt"><tt>Cannot use function/script name for a variable,
+using <i>[functions/script]</i></tt></td><td class="arrow"> → </td><td> Vous avez essayé d&#39;utiliser un nom de fonction ou un nom de script en tant que variable, par exemple <tt>string = "Hello World"</tt></td></tr><tr><td class="alt"><tt>Cannot use an argument outside a script</tt></td><td class="arrow"> → </td><td> Le construit dans <tt>argument</tt> les variables ne peuvent être utilisées qu&#39;à l&#39;intérieur d&#39;un script mais vous avez essayé de les utiliser ailleurs (pour plus d&#39;informations sur les scripts et les arguments, voir <a href=
+"../../3_scripting/3_gml_overview/3_scripts.html">ici</a> ) </td></tr><tr><td class="alt"><tt>No references to argument<i>[num]</i> but
+references argument<i>[num]</i></tt></td><td class="arrow"> → </td><td> Vous utilisez une référence à un argument qui n&#39;existe pas mais qui pourrait correspondre à un autre argument (pour plus d&#39;informations sur les scripts et les arguments, voir <a href=
+"../../3_scripting/3_gml_overview/3_scripts.html">ici</a> ) </td></tr><tr><td class="alt"><tt>Incorrect number of arguments for accessor</tt></td><td class="arrow"> → </td><td> Vous avez fourni le mauvais nombre d&#39;arguments lors de l&#39;utilisation d&#39;un accesseur (pour plus d&#39;informations sur les accesseurs, voir <a href=
+"../../3_scripting/3_gml_overview/13_accessors.html">ici</a> ) </td></tr><tr><td class="alt"><tt>Wrong type of arguments for /<br>
+Wrong type of arguments for div<br>
+Wrong type of arguments for mod<br>
+Wrong type of arguments for +<br>
+Wrong type of arguments for -<br>
+Wrong type of arguments for &amp;&amp;<br>
+Wrong type of arguments for ||<br>
+Wrong type of arguments for ||<br>
+Wrong type of arguments for &amp;<br>
+Wrong type of arguments for |<br>
+Wrong type of arguments for ^<br>
+Wrong type of arguments for &lt;&lt;<br>
+Wrong type of arguments for &gt;&gt;</tt></td><td class="arrow"> → </td><td> Vous avez fourni le mauvais type d&#39;argument pour l&#39;expression en cours d&#39;évaluation (pour plus d&#39;informations sur les expressions, voir <a href=
+"../../3_scripting/3_gml_overview/12_expressions.html">ici</a> ) </td></tr></table></div><br> <label class="collapse" for="d">Variables</label> <input id="d"
+type="checkbox"><div class="index_list"><table><tr><td class="alt"><tt>Using uninitialised variable <i>[var]</i></tt></td><td class="arrow"> → </td><td> Vous avez essayé d&#39;utiliser la variable nommée avant son initialisation (pour plus d&#39;informations sur les variables, voir <a href=
+"../../3_scripting/3_gml_overview/6_scope.html">ici</a> ) </td></tr><tr><td class="alt"><tt>Variable <i>[var]</i> is write-only</tt></td><td class="arrow"> → </td><td> Vous avez essayé de changer la variable nommée quand elle ne peut pas être changée (pour plus d&#39;informations sur les variables, voir <a href=
+"../../3_scripting/3_gml_overview/6_scope.html">ici</a> ) </td></tr><tr><td class="alt"><tt>Unable to find variable named <i>[var]</i></tt></td><td class="arrow"> → </td><td> La variable nommée ne peut pas être trouvée dans la compilation en cours (pour plus d&#39;informations sur les variables, voir <a href=
+"../../3_scripting/3_gml_overview/6_scope.html">ici</a> ) </td></tr><tr><td class="alt"><tt>Malformed variable reference</tt></td><td class="arrow"> → </td><td> Vous avez essayé de référencer une variable dans le mauvais sens (pour plus d&#39;informations sur les variables, voir <a href=
+"../../3_scripting/3_gml_overview/6_scope.html">ici</a> ) </td></tr><tr><td class="alt"><tt>Trying to set a read only variable
+<i>[var]</i></tt></td><td class="arrow"> → </td><td> Vous avez essayé de définir une variable en lecture seule (pour plus d&#39;informations sur les variables, voir <a href=
+"../../3_scripting/3_gml_overview/6_scope.html">ici</a> ) </td></tr><tr><td class="alt"><tt>Cannot redeclare a built in variable</tt></td><td class="arrow"> → </td><td> Vous avez essayé de déclarer une variable locale en utilisant le même nom que l&#39;une des variables intégrées (pour plus d&#39;informations sur les variables, voir <a href=
+"../../3_scripting/3_gml_overview/6_scope.html">ici</a> ) </td></tr><tr><td class="alt"><tt>Cannot use resource name for a variable</tt></td><td class="arrow"> → </td><td> Vous avez utilisé le même nom qu&#39;une ressource de l&#39;arbre des ressources en tant que variable locale (pour plus d&#39;informations sur les variables, voir <a href=
+"../../3_scripting/3_gml_overview/6_scope.html">ici</a> ) </td></tr><tr><td class="alt"><tt><i>[Variable]</i> is read-only</tt></td><td class="arrow"> → </td><td> Vous avez essayé d&#39;utiliser une variable signalée comme étant en lecture seule (pour plus d&#39;informations sur les variables, voir <a href=
+"../../3_scripting/3_gml_overview/6_scope.html">ici</a> ) </td></tr></table></div><br> <label class="collapse" for="e">Constantes</label> <input id="e"
+type="checkbox"><div class="index_list"><table><tr><td class="alt"><tt>Cannot set a constant</tt> [constante] à une valeur </td><td class="arrow"> → </td><td> Vous avez essayé de définir une constante à une valeur différente </td></tr><tr><td class="alt"><tt>Constant is invalid here</tt></td><td class="arrow"> → </td><td> Vous avez essayé d&#39;utiliser une constante quelque part qui n&#39;est pas valide pour le code en cours d&#39;exécution </td></tr><tr><td class="alt"><tt>Cannot assign to</tt> [var] - c&#39;est une constante </td><td class="arrow"> → </td><td> Vous avez essayé d&#39;attribuer une nouvelle valeur à la constante nommée </td></tr></table></div><br> <label class="collapse" for="f">Tableaux</label> <input id="f" type=
+"checkbox"><div class="index_list"><table><tr><td class="alt"><tt>Array index should not be negative</tt></td><td class="arrow"> → </td><td> Vous avez essayé d&#39;accéder, de créer ou de définir une valeur de tableau à l&#39;aide d&#39;un index de tableau négatif (pour plus d&#39;informations sur les tableaux, voir <a href=
+"../../3_scripting/3_gml_overview/10_arrays.html">ici</a> ) </td></tr><tr><td class="alt"><tt>Only 1 or 2 dimensional arrays are
+supported</tt></td><td class="arrow"> → </td><td> Vous avez essayé de créer un tableau qui a plus de 2 dimensions ( <i><span class="notranslate">GameMaker Studio 2</span></i> ne possède que des tableaux 1D et 2D - pour plus d&#39;informations sur les tableaux, voir <a href=
+"../../3_scripting/3_gml_overview/10_arrays.html">ici</a> ) </td></tr></table></div><br> <label class="collapse" for="g">Malformé...</label> <input id="g"
+type="checkbox"><div class="index_list"><table><tr><td class="alt"><tt>Malformed Conditional operator</tt></td><td class="arrow"> → </td><td> Vous avez utilisé un opérateur conditionnel (ternaire) erroné ou <tt>if</tt> déclaration, et non le format <tt>[condition] ?
+[expression1] : [expression2];</tt> (pour plus d&#39;informations sur <tt>if</tt> et opérateurs ternaires voir <a href=
+"../../3_scripting/3_gml_overview/14_language_features.html">ici</a> ) </td></tr><tr><td class="alt"><tt>If requires a then statement</tt></td><td class="arrow"> → </td><td> Vous avez écrit un <tt>if</tt> déclaration et expression à évaluer, mais pas donné <tt>then</tt> partie à exécuter (pour plus d&#39;informations sur <tt>if</tt> voir <a href=
+"../../3_scripting/3_gml_overview/14_language_features.html">ici</a> ) </td></tr><tr><td class="alt"><tt>malformed assignment statement</tt></td><td class="arrow"> → </td><td> Dans le code, vous utilisez un opérateur d&#39;affectation incorrect (pour plus d&#39;informations sur les affectations voir <a href=
+"../../3_scripting/3_gml_overview/11_assignments.html">ici</a> ) </td></tr><tr><td class="alt"><tt>Malformed if statement<br>
+Malformed repeat statement<br>
+Malformed while statement<br>
+Malformed do statement<br>
+Malformed for statement<br>
+Malformed with statement<br>
+Malformed switch statement<br>
+Malformed break statement<br>
+Malformed continue statement<br>
+Malformed exit statement</tt></td><td class="arrow"> → </td><td> La structure de l&#39;instruction donnée est incorrecte. Pour des détails spécifiques, veuillez consulter la section appropriée ici: <a href=
+"../../3_scripting/3_gml_overview/14_language_features.html">GML Overview</a> </td></tr><tr><td class="alt"><tt>Malformed post inc or dec statement</tt></td><td class="arrow"> → </td><td> Vous avez essayé d&#39;utiliser <tt>[var]++</tt> ou <tt>[var]--</tt> d&#39;une manière illégale (pour plus d&#39;informations sur ++ / - voir <a href=
+"../../3_scripting/3_gml_overview/12_expressions.html">ici</a> ) </td></tr><tr><td class="alt"><tt>Malformed pre inc or dec statement</tt></td><td class="arrow"> → </td><td> Vous avez essayé d&#39;utiliser <tt>++[var]</tt> ou <tt>--[var]</tt> d&#39;une manière illégale (pour plus d&#39;informations sur ++ / - voir <a href=
+"../../3_scripting/3_gml_overview/12_expressions.html">ici</a> ) </td></tr><tr><td class="alt"><tt>Malformed global gml_pragma</tt></td><td class="arrow"> → </td><td> Vous avez créé une mauvaise chaîne globale lors de l&#39;utilisation <tt>gml_pragma</tt> (pour plus d&#39;informations sur <tt>gml_pragma</tt> voir <a href=
+"../../3_scripting/4_gml_reference/miscellaneous/gml_pragma.html">ici</a> ) </td></tr><tr><td class="alt"><tt>Malformed PNGCrush gml_pragma</tt></td><td class="arrow"> → </td><td> Vous avez créé une mauvaise commande de chaîne pour PNGCrush lorsque vous utilisez <tt>gml_pragma</tt> (pour plus d&#39;informations sur <tt>gml_pragma</tt> voir <a href=
+"../../3_scripting/4_gml_reference/miscellaneous/gml_pragma.html">ici</a> ) </td></tr><tr><td class="alt"><tt>Malformed Texgroup.Scale gml_pragma</tt></td><td class="arrow"> → </td><td> Vous avez créé une mauvaise chaîne globale lors de l&#39;utilisation <tt>gml_pragma</tt> (pour plus d&#39;informations sur <tt>gml_pragma</tt> voir <a href=
+"../../3_scripting/4_gml_reference/miscellaneous/gml_pragma.html">ici</a> ) </td></tr></table></div><br> <label class="collapse" for="h">Commutateur</label> <input id="h" type=
+"checkbox"><div class="index_list"><table><tr><td class="alt"><tt>Default cannot be used multiple times in a
+switch</tt></td><td class="arrow"> → </td><td> Dans ton <tt>switch</tt> déclaration que vous avez définie <tt>default:</tt> plus d&#39;une fois (pour plus d&#39;informations sur <tt>switch</tt> voir <a href=
+"../../3_scripting/3_gml_overview/14_language_features.html">ici</a> ) </td></tr><tr><td class="alt"><tt>Clause expression type mismatch (clause
+expressions should all be the same type)</tt></td><td class="arrow"> → </td><td> Dans ton <tt>switch</tt> vous vérifiez deux constantes différentes <tt>case</tt> types, par exemple une chaîne dans un cas et un entier dans un autre (pour plus d&#39;informations sur <tt>switch</tt> voir <a href=
+"../../3_scripting/3_gml_overview/14_language_features.html">ici</a> ) </td></tr><tr><td class="alt"><tt>Case argument should be a constant</tt></td><td class="arrow"> → </td><td> Vous avez essayé d&#39;utiliser une valeur qui n&#39;évalue pas à une constante dans l&#39;un de vos <tt>switch</tt> cas (pour plus d&#39;informations sur <tt>switch</tt> voir <a href=
+"../../3_scripting/3_gml_overview/14_language_features.html">ici</a> ) </td></tr><tr><td class="alt"><tt>Statement in a switch MUST appear after case or
+default</tt></td><td class="arrow"> → </td><td> Vous avez ajouté une déclaration à un <tt>switch</tt> en dehors d&#39;un soit <tt>case:</tt> ou <tt>default:</tt> appel (pour plus d&#39;informations sur <tt>switch</tt> voir <a href=
+"../../3_scripting/3_gml_overview/14_language_features.html">ici</a> ) </td></tr><tr><td class="alt"><tt>Duplicate case statement found / original
+here</tt></td><td class="arrow"> → </td><td> Vous avez utilisé le même <tt>case</tt> constante dans deux endroits différents dans un <tt>switch</tt> (Notez que le commentaire &quot;original ici&quot; sera sur une autre ligne et peut être cliqué pour montrer l&#39;original <tt>case:</tt>, et vous pouvez trouver plus d&#39;informations sur <tt>switch</tt> <a href=
+"../../3_scripting/3_gml_overview/14_language_features.html">ici</a> ) </td></tr></table></div><br> <label class="collapse" for="i">Expressions</label> <input id="i"
+type="checkbox"><div class="index_list"><table><tr><td class="alt"><tt>No return value from expression (does
+expression have a return value?)</tt></td><td class="arrow"> → </td><td> Vous avez essayé d&#39;attribuer une valeur de retour d&#39;une expression à une variable lorsque l&#39;expression ne renvoie rien (pour plus d&#39;informations sur les expressions, voir <a href=
+"../../3_scripting/3_gml_overview/12_expressions.html">ici</a> ) </td></tr><tr><td class="alt"><tt>Expecting expression after the '.'</tt></td><td class="arrow"> → </td><td> Vous avez utilisé la notation de point (&quot;.&quot;) Par erreur et n&#39;a pas ajouté une expression après les mots correctement (pour plus d&#39;informations sur les expressions, voir <a href=
+"../../3_scripting/3_gml_overview/12_expressions.html">ici</a> ) </td></tr><tr><td class="alt"><tt>Unexpected symbol</tt> [symbole] dans l&#39;expression </td><td class="arrow"> → </td><td> L&#39;expression utilise un symbole qui ne fait pas partie du jeu de symboles d&#39;expression accepté - le symbole en question sera affiché (pour plus d&#39;informations sur les expressions, voir <a href=
+"../../3_scripting/3_gml_overview/12_expressions.html">ici</a> ) </td></tr></table></div><br> <label class="collapse" for="j">Valeurs inconnues</label> <input id=
+"j" type="checkbox"><div class="index_list"><table><tr><td class="alt"><tt>Unknown Pre operator</tt></td><td class="arrow"> → </td><td> Vous avez essayé d&#39;utiliser un symbole en tant que pré-opérateur lorsque ce symbole n&#39;est pas autorisé, par exemple <tt>**[var]</tt> ou <tt>&gt;&gt;[var]</tt> - seulement <tt>++</tt> et <tt>--</tt> sont acceptables (pour plus d&#39;informations sur ++ / - voir <a href=
+"../../3_scripting/3_gml_overview/12_expressions.html">ici</a> ) </td></tr><tr><td class="alt"><tt>Unknown Post operator</tt></td><td class="arrow"> → </td><td> Vous avez essayé d&#39;utiliser un symbole en tant que post-opérateur lorsque ce symbole n&#39;est pas autorisé, par exemple <tt>[var]**</tt> ou <tt>[var]&gt;&gt;</tt> - seulement <tt>++</tt> et <tt>--</tt> sont acceptables (pour plus d&#39;informations sur ++ / - voir <a href=
+"../../3_scripting/3_gml_overview/12_expressions.html">ici</a> ) </td></tr><tr><td class="alt"><tt>Unknown pragma</tt> [chaîne gml_pragma] </td><td class="arrow"> → </td><td> Vous avez utilisé une chaîne pragma inconnue du compilateur (pour plus d&#39;informations sur <tt>gml_pragma</tt> voir <a href=
+"../../3_scripting/4_gml_reference/miscellaneous/gml_pragma.html">ici</a> ) </td></tr><tr><td class="alt"><tt>Unknown unary operator</tt></td><td class="arrow"> → </td><td> Vous avez essayé d&#39;utiliser un symbole inconnu comme opérateur unaire (voir <a href=
+"../../3_scripting/3_gml_overview/12_expressions.html">ici</a> pour les symboles acceptés) </td></tr><tr><td class="alt"><tt>Unknown binary operator</tt></td><td class="arrow"> → </td><td> Vous avez essayé d&#39;utiliser un symbole inconnu en tant qu&#39;opérateur binaire (voir <a href=
+"../../3_scripting/3_gml_overview/12_expressions.html">ici</a> pour les symboles acceptés) </td></tr><tr><td class="alt"><tt>Unknown operator</tt> [opérateur] </td><td class="arrow"> → </td><td> Vous avez essayé d&#39;utiliser un symbole inconnu en tant qu&#39;opérateur (le symbole apparaîtra dans l&#39;erreur, et pour une liste de symboles acceptés, voir <a href=
+"../../3_scripting/3_gml_overview/12_expressions.html">ici</a> ) </td></tr></table></div><br> <label class="collapse" for="k">Pause / Continuer</label> <input id=
+"k" type="checkbox"><div class="index_list"><table><tr><td class="alt"><tt>Break used without context</tt></td><td class="arrow"> → </td><td> Tu n&#39;as pas utilisé <tt>break</tt> dans un <tt>switch</tt> ou une boucle ou toute autre structure autorisée (voir <a href=
+"../../3_scripting/3_gml_overview/14_language_features.html">ici</a> pour plus d&#39;informations sur <tt>break</tt> ) </td></tr><tr><td class="alt"><tt>Continue used without context</tt></td><td class="arrow"> → </td><td> Tu n&#39;as pas utilisé <tt>continue</tt> dans le bon contexte (voir <a href=
+"../../3_scripting/3_gml_overview/14_language_features.html">ici</a> pour plus d&#39;informations sur <tt>continue</tt> ) </td></tr><tr><td class="alt"><tt>continue statement is not allowed at this
+point</tt></td><td class="arrow"> → </td><td> Vous avez utilisé <tt>continue</tt> dans une partie de votre code où il n&#39;est pas autorisé (voir <a href=
+"../../3_scripting/3_gml_overview/14_language_features.html">ici</a> pour plus d&#39;informations sur <tt>continue</tt> ) </td></tr></table></div><br> <label class="collapse" for="l">Enums</label> <input id="l" type=
+"checkbox"><div class="index_list"><table><tr><td class="alt"><tt>enum num is invalid</tt></td><td class="arrow"> → </td><td> Le numéro d&#39;enum est invalide pour l&#39;énumération (voir <a href=
+"../../3_scripting/3_gml_overview/9_data_types.html">ici</a> pour plus d&#39;informations sur Enums) </td></tr><tr><td class="alt"><tt>malformed enum</tt></td><td class="arrow"> → </td><td> Vous n&#39;avez pas créé l&#39;enmu correctement (voir <a href=
+"../../3_scripting/3_gml_overview/9_data_types.html">ici</a> pour plus d&#39;informations sur Enums) </td></tr><tr><td class="alt"><tt>enum</tt> [enum] a déjà été défini </td><td class="arrow"> → </td><td> Vous avez essayé de définir un enmum en utilisant le même nom qu&#39;un autre précédemment défini (voir <a href=
+"../../3_scripting/3_gml_overview/9_data_types.html">ici</a> pour plus d&#39;informations sur Enums) </td></tr><tr><td class="alt"><tt>malformed enum entry</tt></td><td class="arrow"> → </td><td> L&#39;enum a une entrée invalide (voir <a href=
+"../../3_scripting/3_gml_overview/9_data_types.html">ici</a> pour plus d&#39;informations sur Enums) </td></tr><tr><td class="alt"><tt>enum expression must be an integer
+constant</tt></td><td class="arrow"> → </td><td> L&#39;entrée enmu n&#39;évalue pas comme une constante entière (voir <a href=
+"../../3_scripting/3_gml_overview/9_data_types.html">ici</a> pour plus d&#39;informations sur Enums) </td></tr><tr><td class="alt"><tt>enum reference</tt> [clé] n&#39;existe pas dans <tt>[enum]</tt></td><td class="arrow"> → </td><td> Vous avez essayé de référencer une entrée enum en utilisant une clé qui n&#39;a pas encore été définie pour cette énumération (voir <a href=
+"../../3_scripting/3_gml_overview/9_data_types.html">ici</a> pour plus d&#39;informations sur Enums) </td></tr></table></div><br> <label class="collapse" for="m">Symboles / valeurs attendus</label> <input id="m" type="checkbox"><div class="index_list"><table><tr><td class="alt"><tt>Symbol ( expected<br>
+Symbol ) expected<br>
+Symbol , or ) expected<br>
+Symbol { expected<br>
+Symbol } expected<br>
+Symbol , or } expected<br>
+Symbol : expected<br>
+Symbol ; expected<br>
+Symbol [ expected<br>
+symbol ] expected<br>
+Symbol , or ] expected</tt></td><td class="arrow"> → </td><td> Vous n&#39;avez pas utilisé un symbole requis lors de l&#39;écriture de votre code (voir la section sur les <a href=
+"../../3_scripting/3_gml_overview/12_expressions.html">expressions</a> ou sur les <a href=
+"../../3_scripting/3_gml_overview/14_language_features.html">fonctionnalités de langue</a> pour plus d&#39;informations) </td></tr><tr><td class="alt"><tt>Expected id or string</tt></td><td class="arrow"> → </td><td> Vous avez utilisé une valeur qui n&#39;est ni un ID de calque ni un nom de calque - en tant que chaîne - dans l&#39;une des <a href=
+"../../3_scripting/4_gml_reference/rooms/layers/index.html">fonctions de calque</a> </td></tr><tr><td class="alt"><tt>keyword Until expected</tt></td><td class="arrow"> → </td><td> Vous avez créé un <tt>do... until</tt> boucle, mais négligé de fournir un <tt>until</tt> expression (voir <a href=
+"../../3_scripting/3_gml_overview/14_language_features.html">ici</a> pour plus d&#39;informations sur <tt>do... until</tt> ) </td></tr><tr><td class="alt"><tt>Function name expected</tt></td><td class="arrow"> → </td><td> Vous avez utilisé autre chose qu&#39;un nom de fonction dans votre code où une fonction devrait aller (voir <a href=
+"../../3_scripting/3_gml_overview/2_functions.html">ici</a> pour plus d&#39;informations sur l&#39;utilisation des fonctions) </td></tr><tr><td class="alt"><tt>variable name expected</tt></td><td class="arrow"> → </td><td> Vous avez fourni un nom qui n&#39;est pas un nom de variable où l&#39;on est attendu (voir <a href=
+"../../3_scripting/3_gml_overview/6_scope.html">ici</a> pour plus d&#39;informations sur les variables) </td></tr><tr><td class="alt"><tt>Assignment operator expected</tt></td><td class="arrow"> → </td><td> Vous avez créé une affectation qui attend un opérateur mais aucune n&#39;a été fournie (voir <a href=
+"../../3_scripting/3_gml_overview/11_assignments.html">ici</a> pour plus d&#39;informations sur l&#39;attribution de valeurs) </td></tr></table></div><br> <label class="collapse" for="n"><span class="notranslate">Android</span> spécifique</label> <input id=
+"n" type="checkbox"><div class="index_list"><table><tr><td class="alt"><tt>Android ARM ToolChain directory</tt> [dir] n&#39;existe pas </td><td class="arrow"> → </td><td> Le lien donné dans <a href=
+"../../2_interface/3_settings/preferences.html"><span class="notranslate">Android</span> préférences <span class="notranslate">Android</span></a> pour la chaîne d&#39;outils ARM est incorrect et n&#39;existe pas. </td></tr><tr><td class="alt"><tt>Android MIPS ToolChain directory</tt> [dir] n&#39;existe pas </td><td class="arrow"> → </td><td> Le lien donné dans <a href=
+"../../2_interface/3_settings/preferences.html"><span class="notranslate">Android</span> Préférences <span class="notranslate">Android</span></a> pour la chaîne d&#39;outils MIPS est incorrect et n&#39;existe pas. </td></tr><tr><td class="alt"><tt>Android x86 ToolChain directory</tt> [dir] n&#39;existe pas </td><td class="arrow"> → </td><td> Le lien donné dans <a href=
+"../../2_interface/3_settings/preferences.html"><span class="notranslate">Android</span> préférences <span class="notranslate">Android</span></a> pour la chaîne d&#39;outils x86 est incorrect et n&#39;existe pas. </td></tr><tr><td class="alt"><tt>Android NDK directory</tt> [dir] n&#39;existe pas </td><td class="arrow"> → </td><td> Le lien donné dans <a href=
+"../../2_interface/3_settings/preferences.html"><span class="notranslate">Android</span> préférences <span class="notranslate">Android</span></a> pour <span class="notranslate">Android</span> NDK est incorrect et n&#39;existe pas. </td></tr></table></div><br><p><br></p></blockquote></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">Informations supplémentaires Index</a> </div><div style="float:right"> Suivant: <a href="jsdoc.html">JSDoc</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

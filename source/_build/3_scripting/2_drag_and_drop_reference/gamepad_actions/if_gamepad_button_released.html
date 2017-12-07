@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>If Gamepad Button Released</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/2_drag_and_drop_reference/gamepad_actions/if_gamepad_button_released.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F2_drag_and_drop_reference%2Fgamepad_actions%2Fif_gamepad_button_released.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F2_drag_and_drop_reference%2Fgamepad_actions%2Fif_gamepad_button_released.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2><img style="vertical-align:middle" src=
+"images/i_gamepad_if_button_released.png"> Si le bouton Gamepad a été libéré </h2><div class="body-scroll"><p><br></p><h3> La description </h3><blockquote><p> Cette action vérifie quand un bouton de gamepad a été publié pour l&#39;index de gamepad donné. Il reviendra <tt>true</tt> sur la tique de jeu unique que le bouton est libéré et <tt>false</tt> à tous les autres moments. Si vous activez le <tt>not</tt> modifier, cette action sera inversée, et vérifier si le bouton n&#39;a <i>pas</i> été libéré, retour <tt>false</tt> sur la tique du jeu qu&#39;il a été libéré sur et <tt>true</tt> à tous les autres moments. </p><p> Notez que pour ajouter des actions dans le bloc &quot;if&quot;, elles doivent être placées sur le côté de l&#39;action, comme indiqué dans l&#39;image ci-dessous: <br><img class="center" src="images/a_if_gamepaddrop.png" alt="Si Ajouter des actions clés"> Ces actions seront maintenant exécutées si le &quot;si&quot; évalue à <tt>true</tt>, tandis que toutes les actions abandonnées ailleurs seront effectuées après le bloc &quot;if&quot;. </p></blockquote><p><br></p><h3> Syntaxe de l&#39;action: </h3><img class="center" src="images/a_gamepad_if_button_released.png"
+alt="Syntaxe du bouton de la manette de jeu libérée"><p><br></p><h3> Arguments: </h3><blockquote><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">Gamepad</span> </td> <td> L&#39;index du gamepad. </td></tr><tr class="alt"><td> <span class="notranslate">Button</span> </td> <td> Le nom du bouton à vérifier. </td></tr><tr><td> <span class="notranslate">Not</span> </td> <td> Annulez le contrôle (true devient false et vice versa) </td></tr></table></blockquote><p><br></p><h3> Exemple: </h3><img class="center" src="images/e_gamepad_if_button_down.png" alt="Exemple de bouton de manette enfoncé"><blockquote> Le code de bloc d&#39;action ci-dessus interroge l&#39;état du bouton de la manette de jeu 0 à chaque pas et si un bouton est maintenu enfoncé, il vérifie que le bouton initial est enfoncé. Si le contrôle est <tt>true</tt> lors de la première pression vers le bas, un son est joué, puis, tandis que le bouton est maintenu enfoncé, la fusion des sprites est changée en rouge. Si le bouton n&#39;est pas maintenu enfoncé, une vérification est effectuée sur la libération du bouton pour réinitialiser la couleur de fusion au blanc. </blockquote><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Précédent: <a href="index.html">Actions du Gamepad</a> </div><div style="float:right"> suivant: <a href=
+"gamepad_get_axis.html">Gamepad Get Axis</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

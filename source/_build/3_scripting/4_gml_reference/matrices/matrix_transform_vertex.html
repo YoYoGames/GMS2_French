@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>matrix_transform_vertex</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/matrices/matrix_transform_vertex.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fmatrices%2Fmatrix_transform_vertex.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fmatrices%2Fmatrix_transform_vertex.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> matrix_transform_vertex </h2><p><br></p><h3> La description </h3><blockquote><p> Cette fonction transforme un vecteur par une matrice. Vous fournissez l&#39;ID de la matrice de transformation (tel que renvoyé par la fonction <a href=
+"matrix_build.html"><tt>matrix build</tt></a> ), ainsi que les valeurs x, y et z du vecteur à transformer. La fonction retournera un tableau 1D de 3 éléments où array [0] = x, array [1] = y, array [2] = z. </p></blockquote><p><br></p><h3> Syntaxe: </h3><p class="code">matrix_transform_vertex(matrix, x, y, z);<span class="notranslate"></span></p><p><br></p><h3> Arguments: </h3><blockquote><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">matrix</span> </td> <td> La matrice à utiliser </td></tr><tr class="alt"><td> <span class="notranslate">x</span> </td> <td> La composante x du vecteur de transformation </td></tr><tr><td> <span class="notranslate">y</span> </td> <td> La composante y du vecteur de transformation </td></tr><tr class="alt"><td> <span class="notranslate">z</span> </td> <td> La composante z du vecteur de transformation </td></tr></table></blockquote><p><br></p><h3> Résultats: </h3><p class="code">Array (1D, 3 elements)<span class="notranslate"></span></p><p><br></p><h3> Exemple: </h3><p class="code">t_matrix = matrix_build(0, 0, 0, 0, 90, 0, 1, 2,
+1);<br>
+verts = matrix_transform_vertex(t_matrix, x, y, z);<br><span class="notranslate"></span></p><blockquote><p> Le code ci-dessus transforme les valeurs données en utilisant la matrice stockée dans la variable &quot;t_matrix&quot; et les stocke dans le tableau &quot;verts&quot;. </p></blockquote><p><br></p><div class="clear"><div style="float:left"> Retour: <a href="index.html">Fonctions matricielles</a> </div><div style="float:right"> Suivant: <a href=
+"matrix_stack_is_empty.html">matrix_stack_is_empty</a> </div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

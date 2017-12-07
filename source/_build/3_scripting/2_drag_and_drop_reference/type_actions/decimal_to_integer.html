@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Decimal To Integer</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/2_drag_and_drop_reference/type_actions/decimal_to_integer.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F2_drag_and_drop_reference%2Ftype_actions%2Fdecimal_to_integer.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F2_drag_and_drop_reference%2Ftype_actions%2Fdecimal_to_integer.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2><img style="vertical-align:middle" src=
+"images/i_types_decimal_to_integer.png"> Décimal en entier </h2><div class="body-scroll"><p><br></p><h3> La description </h3><blockquote><p> Cette action prendra un nombre décimal et le convertira en entier. Vous donnez la valeur à convertir puis sélectionnez le type d&#39;arrondi qui doit être fait pour le transformer en une valeur intégrale. Les types d&#39;arrondi disponibles sont: </p><ul><li> <b>Round:</b> Cela prend un nombre décimal et arrondit vers le haut <i>ou</i> vers le bas au plus proche nombre entier. Dans le cas particulier où le nombre fourni est exactement la moitié d&#39;un entier (par exemple, 1.5, 17.5, -2.5, etc...), le nombre sera arrondi à la valeur <b>paire</b> la plus proche, par exemple, 2.5 sera arrondi à 2, Ce type d&#39;arrondi est appelé <i>arrondi des banquiers</i> et sur un grand nombre d&#39;itérations ou lors de l&#39;utilisation des calculs en virgule flottante, il donne un arrondi statistiquement meilleur que le plus traditionnel &quot;arrondi au-dessus de.5 et arrondi ailleurs &quot;approche. <br><br></li><li> <b>Ceil:</b> Cela prendra une valeur décimale et arrondir au nombre entier le plus proche. Contrairement à round (ci-dessus) cela ne prend pas en compte la partie décimale de la valeur, donc un nombre comme 5.0000001 serait encore arrondi à 6. Notez que si vous utilisez l&#39;action <a href=
+"../random_actions/get_random_number.html">Random Get Random Number</a> pour générer un aléatoire valeur décimale, puis en appelant cette action pour l&#39;arrondir, vous <i>pouvez</i> obtenir des résultats inattendus. L&#39;action aléatoire pourrait potentiellement retourner 0, et en utilisant &quot;Ceil&quot; sur cela ne donnera pas 1 mais 0, donc si vous obtenez une décimale aléatoire de 0 à 9 et utilisez cette fonction, vous pouvez obtenir des entiers de 1 à 10, mais dans En réalité, vous pouvez obtenir des nombres entiers compris entre 0 et 10. Il s&#39;agit d&#39;une possibilité éloignée, mais vous devez en tenir compte lors de l&#39;utilisation de cette action. <br><br></li><li> <b>Etage:</b> Cela prendra une valeur décimale et arrondir <i>vers</i> le <i>bas</i> à la plus proche valeur entière. Contrairement à round (ci-dessus), cela ne prend pas en compte la partie décimale de la valeur, donc un nombre comme 5.9999999 serait encore réduit à 5. </li></ul><p> Une fois que vous avez sélectionné le type d&#39;arrondi, vous devez fournir le nombre à arrondir (cela peut être une variable), puis donner une variable cible pour renvoyer la nouvelle valeur entière à (qui peut être marquée comme variable locale temporaire). </p></blockquote><p><br></p><h3> Syntaxe de l&#39;action: </h3><img class="center" src="images/a_types_decimal_to_integer.png"
+alt="Syntaxe décimale à entière"><p><br></p><h3> Arguments: </h3><blockquote><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">Rounding</span> </td> <td> Le type d&#39;arrondi à utiliser pour obtenir l&#39;entier (voir la description ci-dessus) </td></tr><tr class="alt"><td> <span class="notranslate">Number</span> </td> <td> Le nombre décimal à arrondir à un entier </td></tr><tr><td> <span class="notranslate">Target</span> </td> <td> La variable cible pour stocker l&#39;entier renvoyé </td></tr></table></blockquote><p><br></p><h3> Exemple: </h3><img class="center" src="images/e_types_decimal_to_integer.png"
+alt="Exemple décimal à entier"><blockquote> Le code de bloc d&#39;action ci-dessus prend une valeur décimale et la convertit en entier, stockant la valeur renvoyée dans une variable locale temporaire. Cette valeur est ensuite transformée en une chaîne et dessinée à l&#39;écran. </blockquote><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">Types Actions</a> </div><div style="float:right"> suivant: <a href=
+"string_to_number.html">Chaîne en nombre</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

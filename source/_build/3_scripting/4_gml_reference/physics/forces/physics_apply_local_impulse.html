@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>physics_apply_local_impulse</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/physics/forces/physics_apply_local_impulse.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fphysics%2Fforces%2Fphysics_apply_local_impulse.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fphysics%2Fforces%2Fphysics_apply_local_impulse.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h1 class="studio"> physics_apply_local_impulse </h1><h2 class="studio"> Cette fonction applique une impulsion à une position dans la pièce avec une force définie par un vecteur. </h2><h3 class="studio"> Syntaxe: </h3><p class="code">physics_apply_local_impulse(xpos, ypos, ximpulse,
+yimpulse)<span class="notranslate"></span></p><p><br></p><div class="param"><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">xpos</span> </td> <td> La coordonnée x par <i>rapport à l&#39;origine</i> où l&#39;impulsion sera appliquée </td></tr><tr class="alt"><td> <span class="notranslate">ypos</span> </td> <td> La coordonnée y <i>relative à l&#39;origine</i> où l&#39;impulsion sera appliquée </td></tr><tr><td> <span class="notranslate">ximpulse</span> </td> <td> la composante x du vecteur d&#39;impulsion (par rapport à la coordonnée xpos) </td></tr><tr class="alt"><td> <span class="notranslate">yimpulse</span> </td> <td> la composante y du vecteur d&#39;impulsion (par rapport à la coordonnée ypos) </td></tr></table></div><p><br></p><p> <b>Retours:</b> N / A </p><p><br></p><h3 class="studio"> La description </h3><p> Non seulement vous pouvez appliquer la force et la gravité à un objet avec la physique dans <i><span class="notranslate">GameMaker Studio 2</span></i> mais vous pouvez également appliquer une impulsion. Ceci est légèrement différent d&#39;une force en ce sens que lorsqu&#39;elle est appliquée, elle affecte <i>immédiatement</i> la vitesse, et potentiellement le couple (ou &quot;spin&quot;) de l&#39;objet, en particulier si le point choisi pour appliquer l&#39;impulsion a un vecteur qui n&#39;est pas aligné avec le centre de masse (note: le centre de masse n&#39;est <i>pas nécessairement</i> le même que l&#39;origine!). Cette fonction applique une impulsion <i>localement</i> à une instance. Cela signifie que la force et la direction de l&#39;impulsion sont calculées en fonction de l&#39;origine (ou de la position si elle n&#39;a pas de sprite) de l&#39;instance, sans tenir compte de la direction ou de la rotation dans la salle de jeu ou le monde physique. Voici une illustration: <br><br><img class="center" src=
+"images/physics_apply_local_impulse_image.png"></p><p> Comme vous pouvez le voir, la grenouille dans l&#39;image reçoit une impulsion d&#39;en bas pour la faire &quot;sauter&quot;. L&#39;impulsion exacte est définie par le vecteur que nous obtenons des composantes ximpulse / yimpulse par rapport aux coordonnées xpos / ypos - ce qui signifie simplement que l&#39;impulsion est calculée comme la distance de xpos / ypos à ximpulse / yimpulse en Newtons, et la direction est l&#39;angle que nous obtenons de xpos / ypos à ximpulse / yimpulse. <br><br><br> <i><b>NOTE:</b> Le monde de la physique utilise des mètres pour tous ses calculs, et le ratio de pixels par mètre est défini dans l&#39;éditeur de pièce ou en utilisant <a href=
+"../the%20physics%20world/physics_world_create.html"><tt>physics_world_create</tt></a>.</i> <br><br></p><p><br></p><h3 class="studio"> Exemple: </h3><p class="code">if jump physics_apply_local_impulse(0, 20, 0,
+50);<span class="notranslate"></span></p><p> Le code ci-dessus appliquera une impulsion avec une force de 30 Newtons et une direction allant de bas en haut par <i>rapport</i> à l&#39;origine de l&#39;instance si la variable &quot;jump&quot; est vraie. </p><p><br></p><div class="clear"><div style="float:left"> Retour: <a href="index.html">Forces</a> </div><div style="float:right"> Suivant: <a href=
+"physics_apply_torque.html">physics_apply_torque</a> </div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

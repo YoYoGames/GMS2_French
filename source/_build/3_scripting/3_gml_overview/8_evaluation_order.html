@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Evaluation Order</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+<link rel="stylesheet" href="../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/3_gml_overview/8_evaluation_order.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2F_build%2F3_scripting%2F3_gml_overview%2F8_evaluation_order.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2F_build%2F3_scripting%2F3_gml_overview%2F8_evaluation_order.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> Ordre d&#39;évaluation </h2><div class="body-scroll"><p><br></p><p> Lorsque vous programmez votre jeu en utilisant <i>GML,</i> vous devez savoir que les arguments d&#39;appel de fonction ne sont pas garantis par un ordre d&#39;évaluation. Cela signifie que l&#39;ordre dans lequel vous placez les fonctions dans votre code changera d&#39;une plate-forme à l&#39;autre, vous devez donc les coder de manière explicite. Cela est dû aux différences d&#39;optimisation entre les différentes plates-formes cibles, par exemple sur les fonctions cibles de Windows peuvent être évalués de droite à gauche, mais sur la cible HTML5, ils peuvent être évalués de gauche à droite. Donc, pour éviter les problèmes, il est préférable de ne pas appeler plusieurs fonctions dans les arguments d&#39;un appel de fonction, car vous pourriez être en train de construire en fonction de l&#39;ordre d&#39;évaluation. </p><p> Pour voir un exemple de ce que cela signifie, considérez le code suivant qui appelle plusieurs fonctions et les utilise comme arguments pour un script: </p><p class="code">buffer_seek(buff, buffer_seek_start, 0);<br>
+scr_buffer_get_info(buffer_read(buff, buffer_s8), buffer_read(buff,
+buffer_s16),buffer_read(buff, buffer_s16));<br><span class="notranslate"></span></p><p> Maintenant, le problème ici est que sur certaines plates-formes, le <i>dernier</i> <tt>buffer_read</tt> sera appelé en <i>premier</i>, et donc tous les arguments du script seront faux car les données sont lues dans le tampon dans l&#39;ordre &quot;inverse&quot; comme vous le percevriez. Cela a l&#39;effet d&#39;affecter ici toutes les autres valeurs pour le <tt>buffer_read</tt> fonctionne donc tous les arguments passés à ce script seront faux! </p><p> Pour contourner cela, vous devez appeler <i>explicitement</i> les fonctions dans l&#39;ordre requis et stocker les valeurs renvoyées dans les variables, comme ceci: </p><p class="code">var val[0] = buffer_read(buff, buffer_s8);<br>
+var val[1] = buffer_read(buff, buffer_s16);<br>
+var val[2] = buffer_read(buff, buffer_s16);<br>
+scr_buffer_get_info(val[0], val[1], val[2]);<br><span class="notranslate"></span></p><p> Bien que cela puisse sembler une méthode plus verbeuse, elle garde tout clair et évite tout problème possible avec l&#39;ordre d&#39;évaluation. </p><p> Vous devez également faire attention lorsque vous utilisez des expressions, car l&#39;ordre dans lequel elles sont évaluées changera en fonction de la cible à laquelle vous compilez. Ainsi, lorsque vous utilisez des expressions dans votre code, assurez-vous d&#39;utiliser brackets () pour contrôler correctement l&#39;ordre des opérations. Ceci est très important pour garantir le bon comportement de vos jeux sur tous les jeux de plates-formes cibles et est <i>essentiel</i> pour les plates-formes JavaScript. Par exemple, considérez le code suivant: </p><p class="code">a = b == c || d;<br><span class="notranslate"></span></p><p> Les différents compilateurs cibles effectueront les opérations dans des ordres différents puisqu&#39;ils ne sont pas explicitement montrés, donnant lieu à des résultats &quot;bizarres&quot; auxquels vous ne pouvez pas vous attendre lorsque vous jouez à votre jeu. Pour éviter cela, utilisez le signe () pour séparer les parties, comme ceci: </p><p class="code">a = (b == c || d);&nbsp;&nbsp;&nbsp;//better<br>
+a = ((b == c) || d); //best<br><span class="notranslate"></span></p><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">Présentation du GML</a> </div><div style="float:right"> Suivant: <a href="9_data_types.html">Types de données</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

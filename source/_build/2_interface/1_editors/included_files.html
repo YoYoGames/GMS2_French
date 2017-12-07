@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Included Files</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+<link rel="stylesheet" href="../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/2_interface/1_editors/included_files.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2F_build%2F2_interface%2F1_editors%2Fincluded_files.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2F_build%2F2_interface%2F1_editors%2Fincluded_files.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> Fichiers inclus </h2><div class="body-scroll"><p><br></p><p> <i><span class="notranslate">GameMaker Studio 2</span></i> ne se limite pas aux ressources que vous créez dans le programme. Il a une section spéciale dans l&#39; <b>arborescence</b> des <b>ressources</b> de la fenêtre principale pour les <b>fichiers inclus</b>. Ici vous pouvez charger différents types de fichiers (et même créer des sous-répertoires) dans <i><span class="notranslate">GameMaker Studio 2</span></i> et ils seront ensuite inclus dans le jeu final dans le cadre du package pour la plate-forme cible choisie. Ainsi, par exemple, dans un jeu Windows, ils seront regroupés dans le <tt>*.exe</tt> et exportés lors de l&#39;exécution, ou en HTML5, ils seront inclus dans le <tt>html5_game</tt> dossier et stocké sur le serveur. </p><p> Pour ajouter un fichier à vos ressources, vous devez cliquer avec le bouton droit de la souris <img style=
+"vertical-align:middle" src="../../images/icon_rmb.png"> dans la section <b>Fichiers inclus</b> de l&#39;arborescence des ressources et sélectionnez <i>Insérer un fichier inclus</i> ou, si vous souhaitez créer un sous-répertoire pour stocker d&#39;autres fichiers, <i>Créer un groupe</i>. Cela vous invitera alors à ajouter un fichier, ou des fichiers si vous en sélectionnez plusieurs, à la liste. Une fois qu&#39;ils ont été ajoutés, vous pouvez faire un clic droit <img style="vertical-align:middle" src="../../images/icon_rmb.png"> dessus et sélectionnez <i>Propriétés</i> pour modifier les propriétés du fichier. <img class="center" src=
+"images/editor_includedfileproperties.png" alt="Propriétés du fichier inclus"> Ici vous pouvez renommer le fichier si vous choisissez en changeant le <i>nom</i> du <i>fichier</i>. Sous le nom du fichier, il existe également une série d&#39;options pour la plate-forme cible sur laquelle ce fichier doit être copié. Si vous souhaitez qu&#39;il soit exporté uniquement lorsque vous exécutez le jeu dans un navigateur, vous ne cochez que la case HTML5, et si vous souhaitez l&#39;exporter uniquement vers <span class="notranslate">Android</span> cibles <span class="notranslate">Android</span> et iOS, cochez les cases, et ainsi de suite. Si vous choisissez de ne cocher aucune cible, ce fichier ne sera pas exporté du tout. Cette option est particulièrement utile pour ceux qui souhaitent utiliser le Configurations Manager pour stocker certaines configurations et exporter des fichiers spécifiques en fonction de celles-ci (cliquez sur la configuration que vous souhaitez utiliser, vérifiez / décochez les plates-formes dont vous avez besoin, puis changer les configurations, les fichiers sélectionnés pour chacun d&#39;eux seront mémorisés). </p><p> Une fois que vous cliquez sur &quot;OK&quot; le fichier sera stocké avec votre projet actuel dans son propre dossier appelé <tt>data-files</tt> trouvé dans le répertoire du projet. Si vous avez choisi de modifier le nom du fichier lorsque vous l&#39;avez ajouté à l&#39;arborescence des ressources, le fichier sera désormais stocké <i>avec ce nouveau nom</i>. Veuillez noter qu&#39;à partir de maintenant, vous devez éditer les fichiers stockés dans ce dossier et non les fichiers d&#39;origine (à moins que vous ne prévoyiez de les inclure de nouveau, mais en général, cela n&#39;est pas nécessaire). </p><p> Pour plus d&#39;informations sur la façon dont les fichiers inclus sont stockés avec votre jeu et comment ils sont accessibles, veuillez consulter la section du manuel dédiée au <a href=
+"../../1_overview/3_additional_information/file_system.html">système de fichiers</a>. </p><div class="note"> <b>IMPORTANT!</b> Lorsque vous incluez des fichiers son, vous devez vous assurer que les fichiers évitent les noms incompatibles avec <b>les</b> ressources audio en <b>streaming</b>. Par exemple, une ressource sonore appelée &quot;musique&quot; et un fichier inclus appelé &quot;music.ogg&quot; va être <tt>undefined</tt> lorsque le projet est en cours </div><p><br> Il est à noter que vous pouvez inclure des fichiers DLL (sur WIndows) ou DyLib (sur Mac OS) en tant que fichiers inclus, puis créer vos propres fonctions personnalisées pour les traiter en utilisant <a href=
+"../../3_scripting/4_gml_reference/miscellaneous/external_define.html"><tt>external_define</tt></a>. Ceux-ci peuvent ensuite être utilisés en appelant le <a href=
+"../../3_scripting/4_gml_reference/miscellaneous/external_call.html"><tt>external_call</tt></a> fonction. </p><div class="note"> <b>ATTENTION!</b> L&#39;utilisation de fichiers inclus pour créer des fonctionnalités supplémentaires de cette manière est <b>incompatible</b> avec le système d&#39; <a href="extensions.html">extension</a>, dans la mesure où vous ne pouvez pas utiliser le <tt>external_</tt> fonctionne avec des fichiers ajoutés dans une extension, puisque les extensions ont déjà une méthode pour ajouter des constantes et des fonctions. </div><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">Index des éditeurs</a> </div><div style="float:right"> Suivant: <a href=
+"extensions.html">Extensions</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

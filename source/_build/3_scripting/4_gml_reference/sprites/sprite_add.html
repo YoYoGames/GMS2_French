@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>sprite_add</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/sprites/sprite_add.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fsprites%2Fsprite_add.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fsprites%2Fsprite_add.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> sprite_add </h2><div class="body-scroll"><p><br></p><h3> Syntaxe: </h3><p class="code">sprite_add(fname, imgnumb, removeback, smooth,
+xorig, yorig);<span class="notranslate"></span></p><blockquote><div><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">fname</span> </td> <td> Le nom (un chemin de fichier de chaîne) du fichier à ajouter. </td></tr><tr class="alt"><td> <span class="notranslate">imgnum</span> </td> <td> Permet d&#39;indiquer le nombre de sous-images (1 pour une seule image ou pour une <tt>*.gif</tt> ). </td></tr><tr><td> <span class="notranslate">removeback</span> </td> <td> Indique s&#39;il faut rendre tous les pixels avec la couleur d&#39;arrière-plan (pixel en bas à gauche) transparent. </td></tr><tr class="alt"><td> <span class="notranslate">smooth</span> </td> <td> Indique si les bords doivent être lissés s&#39;ils sont transparents. </td></tr><tr><td> <span class="notranslate">xorig</span> </td> <td> Indique la position x de l&#39;origine dans l&#39;image-objet. </td></tr><tr class="alt"><td> <span class="notranslate">yorig</span> </td> <td> Indiquez la position y de l&#39;origine dans l&#39;image-objet. </td></tr></table></div></blockquote><p><br></p><h3> Résultats: </h3><p class="code">Real (sprite ID value)<span class="notranslate"></span></p><p><br></p><h3> La description </h3><blockquote><p> Avec cette fonction, vous pouvez ajouter une image en tant que sprite, en la chargeant à partir d&#39;une source externe où le fichier image à charger doit <b>toujours</b> être dans <tt>*.png</tt>, <tt>*.gif</tt> ou <tt>*.jpg/jpeg</tt> format. La fonction renvoie le nouvel index d&#39;image-objet qui doit ensuite être utilisé dans tous les autres codes relatifs à l&#39;image-objet. Si vous utilisez cette fonction avec HTML5 ou si vous obtenez une image à partir d&#39;une URL, cette fonction génère également un événement asynchrone. Voir <a href=
+"../../../2_interface/1_editors/events/async_events.html">L&#39;événement asynchrone</a> pour plus d&#39;informations. </p><p> Toutes les images qui doivent être transformées en sprites animés - sauf pour <tt>*.gif</tt> (voir ci-dessous) - devrait avoir un format &quot;strip&quot; (voir l&#39;image ci-dessous) et il sera divisé en nombre de sous-images spécifiées suivant la règle <b>sprite width = largeur de bande / sous-images</b>. <img class="center" src="spr_strip.png"></p><p> Comme vous pouvez le voir dans l&#39;image ci-dessus, le sprite a été placé sur un fond violet foncé, et ceci peut être enlevé en mettant l&#39;argument &quot;removeback&quot; à <tt>true</tt>. Cela fonctionne en vérifiant le pixel <i>inférieur gauche</i> de l&#39;image-objet pour la couleur, puis l&#39;utilise comme couleur à supprimer. Par exemple, dans l&#39;image ci-dessus, si la couleur du pixel inférieur gauche était verte, toutes les parties vertes du sprite auraient été supprimées et le reste du fond violet ignoré. </p><p> Si vous choisissez l&#39;option &quot;removeback&quot;, vous pouvez également souhaiter que <i><span class="notranslate">GameMaker Studio 2</span></i> lisse les bords de l&#39;image-objet en définissant l&#39;argument &quot;smooth&quot; sur <tt>true</tt>. Tout cela est de créer une bordure semi-transparente autour des bords de l&#39;image-objet après que son arrière-plan a été supprimé. </p><p> Enfin, vous pouvez également spécifier le x et l&#39; <i>origine</i> y pour l&#39;image - objet. C&#39;est le point où l&#39;image-objet est &quot;fixée&quot; sur l&#39;instance qui l&#39;utilise, et est toujours calculée par rapport au coin 0,0 en haut à gauche d&#39;une sous-image d&#39;image-objet. Ainsi, par exemple, un sprite de 32 x 32 pixels dont les valeurs sont définies sur (16,16) aura son origine au centre. </p><p> Si vous ajoutez un <tt>*.gif</tt> Au format image, il vous suffit de spécifier le nom du fichier et de l&#39;image (qui doit être 1 pour la première image) et de laisser tous les autres arguments comme 0, en notant que <b>seule la première image du GIF sera chargée</b>. </p><p> Par défaut, tous les nouveaux sprites ont leurs boîtes de délimitation calculées automatiquement (le cadre de délimitation exact dépendra de la taille et de la transparence de l&#39;image-objet), mais vous pouvez personnaliser cela, auquel cas vous devriez également utiliser la fonction <a href=
+"sprite_collision_mask.html"><tt>sprite_collision_mask</tt></a>. </p><div class="note"> <b>REMARQUE:</b> lorsque vous chargez une image-objet dans <i><span class="notranslate">GameMaker Studio 2</span></i> n&#39;oubliez pas de la supprimer <a href="sprite_delete.html"><tt>sprite_delete</tt></a> ) lorsqu&#39;il n&#39;est plus nécessaire, sinon il y a un risque de fuite de mémoire qui ralentira et finira par planter votre jeu. </div><div class="note"> <b>IMPORTANT!</b> Cette fonction n&#39;est <b>pas</b> disponible avec la licence d&#39;évaluation du produit. </div></blockquote><p><br></p><h3> Exemple: </h3><p class="code">spr = sprite_add("player_5.png", 16, true, true, 0,
+0);<span class="notranslate"></span></p><blockquote><p> Le code ci-dessus charge un sprite dans le jeu et stocke son index dans la variable &quot;spr&quot;. </p></blockquote><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href=
+"index.html">Sprites</a> </div><div style="float:right"> Suivant: <a href=
+"sprite_replace.html">sprite_replace</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

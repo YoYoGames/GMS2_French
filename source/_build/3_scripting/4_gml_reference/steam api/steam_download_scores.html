@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>steam_download_scores</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/steam api/steam_download_scores.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fsteam%20api%2Fsteam_download_scores.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fsteam%20api%2Fsteam_download_scores.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> <span class="notranslate">steam</span> _download_scores </h2><div class="body-scroll"><h3 class="studio"> Syntaxe: </h3><p class="code">steam_download_scores(lb_name, start_idx,
+end_idx);<span class="notranslate"></span></p><p><br></p><div class="param"><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">lb_name</span> </td> <td> Le nom du classement dont vous téléchargez les partitions (une chaîne de caractères). </td></tr><tr class="alt"><td> <span class="notranslate">start_idx</span> </td> <td> La position de départ dans le classement. </td></tr><tr><td> <span class="notranslate">end_idx</span> </td> <td> La position de fin dans le classement. </td></tr></table></div><p><br></p><p> <b>Retours:</b> Real </p><p><br></p><h3 class="studio"> La description </h3><p> Cette fonction est utilisée pour récupérer une série séquentielle d&#39;entrées de classement par classement par classement. le <tt>start_idx</tt> et <tt>end_idx</tt> les paramètres contrôlent la plage de rangs demandée, par exemple, vous pouvez afficher les 10 premiers sur un leaderboard pour votre jeu en définissant la valeur de départ à 1 et la valeur de fin à 10. Le nom du classement est une chaîne qui a été définie leaderboard en utilisant la fonction <a href=
+"steam_create_leaderboard.html"><tt>steam_create_leaderboard</tt></a>, et la fonction renverra une valeur qui peut ensuite être utilisée pour identifier le rappel dans l&#39; <a href=
+"../../../2_interface/1_editors/events/async_events.html">événement <span class="notranslate">Steam</span> Async</a>, ou elle renverra -1 si elle a échoué. <br><br></p><p><br></p><h3 class="studio"> Exemple étendu: </h3><p> Dans cet exemple étendu, nous demanderons le classement des dix premiers pour le classement donné et analyserons ses résultats dans l&#39; <b>événement <span class="notranslate">Steam</span> Async</b>. Pour commencer, nous devons demander les scores avec le code suivant: </p><p class="code">score_get = steam_download_scores("Game Scores", 1,
+10);<br><span class="notranslate"></span></p><p> Cela enverra une requête au serveur <span class="notranslate">Steam</span> pour les scores du classement &quot;Game Scores&quot;, en stockant l&#39; <b>identifiant asynchrone</b> de la requête dans la variable &quot;score_get&quot;. cela sera ensuite traité dans l&#39; <b>événement <span class="notranslate">Steam</span> Async</b> de la façon suivante: </p><p class="code">var async_id = ds_map_find_value(async_load,
+"id");<br>
+if async_id == score_get<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;var entries = ds_map_find_value(async_load,
+"entries");<br>
+&nbsp;&nbsp;&nbsp;var map = json_decode(entries);<br>
+&nbsp;&nbsp;&nbsp;if ds_map_exists(map, "default")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ds_map_destroy(map);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exit;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var list =
+ds_map_find_value(map, "entries");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var len =
+ds_list_size(list);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var entry;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(var i = 0; i &lt; len;
+i++;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;entry =
+ds_list_find_value(list, i );<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;steam_name[i]
+= ds_map_find_value(entry, "name");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;steam_score[i]
+= ds_map_find_value(entry, "score");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;steam_rank[i]
+= ds_map_find_value(entry, "rank");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;ds_map_destroy(map)<br>
+&nbsp;&nbsp;&nbsp;}<br><span class="notranslate"></span></p><p> Ce que nous faisons ici est d&#39;abord vérifier la clé &quot;id&quot; de la spéciale <a href=
+"../../../2_interface/1_editors/events/async_events.html"><tt>async_load</tt></a> ds_map. Si cette valeur est la même que la valeur de la fonction de rappel d&#39;origine (stockée dans la variable &quot;score_get&quot;), nous continuons à traiter les données. La première chose que nous faisons est d&#39;analyser <tt>async_load</tt> ds_map pour la clé &quot;entrées&quot; qui contiendra un objet JSON contenant les données du leaderboard. Cet objet JSON est ensuite décodé (voir <a href=
+"../file%20handling/json_decode.html"><tt>json_decode</tt></a> ) comme un autre ds_map, et ce nouvel identifiant de carte est stocké dans la variable &quot;map&quot;. <br><br> Cette carte est vérifiée pour la clé &quot;par défaut&quot; et si cela est trouvé alors la carte est détruite et l&#39;événement est quitté. Si aucune clé &quot;default&quot; n&#39;est trouvée, le code analysera la carte pour extraire les informations nécessaires sur le leaderboard, en extrayant d&#39;abord une liste ds_list de la clé &quot;entries&quot; de la carte ds_map, puis en passant en boucle chaque entrée de la liste obtenir <i>un autre</i> ds_map avec le nom, le score et le rang de chaque entrée. Ces valeurs sont ensuite stockées dans des tableaux. <br><br> Une fois la boucle terminée, le fichier JSON ds_map est détruit (ce qui à son tour détruit toutes les cartes et listes internes). Il n&#39;y a pas besoin de détruire le <tt>async_load</tt> ds_map car ceci est géré pour vous par <i><span class="notranslate">GameMaker Studio 2</span></i>. </p><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">API <span class="notranslate">Steam</span></a> </div><div style="float:right"> Suivant: <a href=
+"steam_download_scores_around_user.html"><span class="notranslate">steam</span> _download_scores_around_user</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

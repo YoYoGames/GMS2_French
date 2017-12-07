@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>For</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/2_drag_and_drop_reference/loop_actions/for.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F2_drag_and_drop_reference%2Floop_actions%2Ffor.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F2_drag_and_drop_reference%2Floop_actions%2Ffor.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2><img style="vertical-align:middle" src=
+"images/i_loops_for.png"> Pour </h2><div class="body-scroll"><p><br></p><h3> La description </h3><blockquote><p> L&#39;action <b>For</b> est utilisée pour effectuer des boucles qui se terminent uniquement lorsqu&#39;une valeur atteint la condition donnée. Vous donnez une valeur initiale en tant que variable (qui peut être marquée comme variable locale temporaire - c&#39;est généralement ce que vous voulez), puis vous donnez la condition pour vérifier la variable par rapport (par exemple si elle est inférieure à une certaine valeur), et enfin le montant pour incrémenter la variable à chaque itération de la boucle. Ainsi, le flux général est le suivant: </p><ul><li> Vous initialisez une variable à une valeur </li><li> Vous définissez la condition pour vérifier cette variable contre </li><li> Vous définissez combien la variable doit être incrémentée à chaque itération de la boucle </li><li> Vous ajoutez ensuite des actions dans la boucle, et celles-ci seront exécutées pour chaque itération jusqu&#39;à ce que la condition retourne <tt>false</tt> ou une action Break est rencontrée. </li></ul><p> Lors de l&#39;ajout d&#39;actions à effectuer dans la boucle, celles-ci sont ajoutées à celles que vous ajouteriez à un «si», c&#39;est-à-dire: en le plaçant sur le côté de l&#39;action plutôt qu&#39;en dessous: <img class="center"
+src="images/for_drop.png" alt="Déposer des actions dans une boucle For"></p><p> Toutes les actions ajoutées sur le côté seront incluses dans le For et seront exécutées avant l&#39;événement ou le script continue avec les actions ajoutées sous. Notez que vous pouvez terminer prématurément n&#39;importe quelle boucle si vous appelez l&#39;action <a href="break.html">Break</a>, et lorsque vous utilisez For loops, vous n&#39;avez pas <i>besoin</i> d&#39;incrémenter et vous pouvez également le décrémenter, à condition que la condition que vous utilisez soit appropriée. Par exemple, définissez la variable initiale sur 10, définissez la condition pour vérifier la valeur inférieure à 0, puis définissez la valeur de l&#39;incrément sur -1 et la boucle va itérer 10 fois, en comptant à rebours de 10 à 0. </p></blockquote><p><br></p><h3> Syntaxe de l&#39;action: </h3><img class="center" src="images/a_loops_for.png" alt="Pour la syntaxe"><p><br></p><h3> Arguments: </h3><blockquote><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">Initialise</span> </td> <td> Initialise la variable qui sera utilisée pour le comptage à une valeur (peut être marquée comme une variable locale temporaire) </td></tr><tr><td> <span class="notranslate">Condition</span> </td> <td> La condition pour vérifier pour casser la boucle </td></tr><tr><td> <span class="notranslate">Increment</span> </td> <td> Le montant à incrémenter (ou décrémenter) la variable de comptage initial à chaque itération de la boucle </td></tr></table></blockquote><p><br></p><h3> Exemple: </h3><img class="center" src="images/e_loops_for.png" alt="Par exemple"><blockquote> Le code de bloc d&#39;action ci-dessus exécute un <tt>for</tt> boucle pour vérifier et voir si une manette est connectée à l&#39;un des 12 &quot;emplacements&quot; disponibles. Si une manette est découverte, une variable globale est définie sur le numéro d&#39;emplacement actuel et la boucle est rompue. </blockquote><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Précédent: <a href="index.html">Actions de boucle</a> </div><div style="float:right"> suivant: <a href="break.html">Pause</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

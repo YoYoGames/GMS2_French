@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>The Sound Editor</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+<link rel="stylesheet" href="../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/2_interface/1_editors/sounds.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2F_build%2F2_interface%2F1_editors%2Fsounds.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2F_build%2F2_interface%2F1_editors%2Fsounds.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> L&#39;éditeur de son </h2><div class="body-scroll"><p><br></p><p><img class="center" src="images/editor_sound.png" alt="Éditeur de son"></p><p> L&#39;éditeur de sons est l&#39;endroit où vous pouvez charger des sons dans une nouvelle ressource audio ainsi que définir ses propriétés. Pour charger un son, appuyez sur le bouton <b>Load Sound</b> à droite du nom du son. Une boîte de dialogue de sélection de fichier apparaît dans laquelle vous pouvez sélectionner le fichier son. Ce soit soit un <tt>WAV</tt>, un <tt>MP3</tt> fichier ou un <tt>OGG</tt> fichier. En général <tt>*.wav</tt> sont utilisés pour les effets sonores courts car même si ce sont généralement des fichiers plus volumineux, ils joueront instantanément du fait qu&#39;ils n&#39;ont pas besoin de décodage pour jouer. <tt>*.mp3</tt> ou <tt>*.ogg</tt> les fichiers au format doivent être utilisés pour la musique de fond ou pour les effets sonores de plus ou de plus grande taille. Ces fichiers sont beaucoup plus petits qu&#39;un fichier wave, mais ils ont un léger surcoût CPU car ils doivent être décodés avant d&#39;être lus. </p><p> Une fois que vous avez chargé votre fichier, vous pouvez prévisualiser le son en utilisant le bouton de lecture qui sera en boucle en continu. C&#39;est très pratique car cela signifie que vous pouvez faire des changements au volume en utilisant le curseur au bas de la fenêtre et entendre l&#39;effet que cela aura sur le son. Il y a aussi un bouton d&#39;arrêt, de sorte que vous pouvez arrêter l&#39;aperçu à tout moment. </p><p> La fenêtre sonore a également d&#39;autres options qui sont expliquées ci-dessous. </p><blockquote><a name="sound_name" id="sound_name"></a> <label class=
+"collapse" for="one">Nom et fichier</label> <input id="one" type=
+"checkbox"><div class="index_list"><p> Ici vous pouvez cliquer sur le bouton &quot;ouvrir&quot; pour ouvrir l&#39;explorateur de fichiers et choisir un fichier audio à charger. Vous pouvez également définir le nom de la nouvelle ressource à partir du champ &quot;Nom&quot; sur la gauche. Les noms peuvent uniquement être alphanumériques et ne peuvent utiliser que le symbole &quot;_&quot;, et ils ne peuvent pas commencer par un nombre. </p></div><br><a name="sound_attributes" id="sound_attributes"></a> <label class=
+"collapse" for="two">Les attributs</label> <input id="two" type=
+"checkbox"><div class="index_list"><p> Cette section sert à définir les attributs sonores. Ce sont les attributs qui seront définis lorsque vous exportez votre jeu et qui affecteront la façon dont l&#39;ID sonore a été lu au moment de l&#39;exécution. Pour les effets sonores ( <tt>WAV</tt> format), vous souhaiterez qu&#39;ils soient décompressés pour qu&#39;ils soient lus rapidement et ne nécessitent pas de décodage. <tt>OGG</tt> et <tt>MP3</tt> vous voudriez généralement l&#39;une des trois autres options disponibles. </p><p> L&#39;audio compressé forcera tous vos fichiers son (qu&#39;ils soient ou non <tt>*.wav</tt> ou <tt>*.mp3</tt> ou <tt>*.ogg</tt> ) à compresser jusqu&#39;à Ogg Vorbis <tt>*.ogg</tt> Formater des fichiers pour toutes les plateformes. Ces sons sont plus petits sur le disque, mais auront un léger surcoût du CPU dû à la nécessité de les décompresser et de les charger en mémoire avant d&#39;être joués, donc gardez cela à l&#39;esprit si vous souhaitez utiliser la compression dans un jeu déjà intensif. </p><p> Vous pouvez atténuer ce surcoût CPU en choisissant de décompresser en charge, ce qui placera tous les sons dans la mémoire de l&#39;appareil pour une lecture plus rapide, au détriment de l&#39;utilisation accrue de la mémoire. </p><p> Si vous avez choisi l&#39;audio compressé, vous pouvez également choisir de diffuser votre son à partir du disque. Un son diffusé en continu sera un son non compressé et joué en temps réel, diffusé à partir du disque plutôt que chargé en mémoire. Le streaming est idéal pour la musique car il réduit le temps de décompression du fichier entier, ce qui peut provoquer une pause dans le jeu, mais n&#39;est pas recommandé pour les effets sonores simples où le hit sur le processeur est beaucoup moins. </p></div><br><a name="sound_volume" id="sound_volume"></a> <label class=
+"collapse" for="three">Le volume</label> <input id="three" type=
+"checkbox"><div class="index_list"><p> Ici vous pouvez régler le volume de lecture pour le son donné. C&#39;est le volume <i>absolu</i>, où si le curseur est au milieu - par exemple - alors le volume maximum pour ce son quand le gain est 1, sera la moitié du volume enregistré pour le son. En plus des commandes de volume, vous disposez également des commandes de <b>lecture</b> dans lesquelles vous pouvez prévisualiser le son, le mettre en boucle ou le rembobiner. Vous pouvez également cliquer sur le <img style="vertical-align:middle" src=
+"images/icon_openmixer.png"> Icône pour ouvrir le son dans le <b>Sound Mixer</b> (voir la section <a href=
+"../2_extras/sound_mixer.html">Mixing Sounds</a> pour plus d&#39;informations). </p></div><br><a name="sound_options" id="sound_options"></a> <label class=
+"collapse" for="four">Options de cible</label> <input id="four" type=
+"checkbox"><div class="index_list"><p> Le panneau Options cibles vous permet de définir les taux de conversion de votre jeu. Ces paramètres affecteront la façon dont le son est exporté pour la plate-forme cible, et <i><span class="notranslate">GameMaker Studio 2</span></i> convertira automatiquement vos fichiers audio pour vous - vous contrôlerez simplement la qualité finale de ces sons lors de la conversion. Généralement, les paramètres par défaut de 16 bits, 44100kHz et 192kbps sont parfaitement adaptés, mais il se peut que vous souhaitiez que les effets sonores (par exemple) aient une qualité inférieure et que la qualité de la musique soit meilleure, auquel cas ces paramètres peuvent être modifiés. </p><p> Vous pouvez également choisir si la conversion doit être <b>mono</b>, <b>stéréo</b> ou <b>3D</b>. Si vous envisagez d&#39;utiliser les fonctions de l&#39;émetteur audio pour créer des effets sonores 3D, vous devez l&#39;indiquer ici, sinon choisissez mono ou stéréo en fonction de l&#39;utilisation que vous allez faire des sons. Si vous choisissez d&#39;utiliser le son pour l&#39;audio 3D, il sera exporté en tant que son <b>mono</b>. </p><div class="note"> <b>REMARQUE:</b> Plus la qualité est élevée, plus le fichier est volumineux et cela doit être pris en compte lors du choix du débit. </div></div><br><a name="sound_group" id="sound_group"></a> <label class="collapse"
+for="five">Groupe audio</label> <input id="five" type="checkbox"><div class="index_list"><p> Vous pouvez affecter votre fichier audio à un <b>groupe audio</b> spécifique. Ils sont créés à partir de la fenêtre <a href="../3_settings/audio.html">Groupes audio</a> et sont utilisés pour regrouper les ressources audio afin de faciliter la gestion de la mémoire et le contrôle du volume. Une fois qu&#39;un fichier audio a été assigné à un groupe, vous pouvez ensuite utiliser les fonctions de groupe audio spécifiques pour les changer et les charger / décharger de la mémoire. Voir la section de référence sur <a href=
+"../../3_scripting/4_gml_reference/audio/index.html">les fonctions audio</a> pour plus d&#39;informations. Notez que bien que le reste des propriétés audio soit spécifique à la configuration, le paramètre de groupe audio ne l&#39;est pas et un son appartiendra au même groupe sur toutes les configurations que vous utilisez. </p></div></blockquote><p> Notez qu&#39;en dehors de ces options pour les sons individuels, vous pouvez également prévisualiser et mixer des sons à l&#39;aide du <a href=
+"../2_extras/sound_mixer.html">Mixeur de son</a> dédié. </p><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">Index des éditeurs</a> </div><div style="float:right"> Suivant: <a href="paths.html">L&#39;éditeur de chemin</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

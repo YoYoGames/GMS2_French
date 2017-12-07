@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>buffer_peek</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/buffers/buffer_peek.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fbuffers%2Fbuffer_peek.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fbuffers%2Fbuffer_peek.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> buffer_peek </h2><div class="body-scroll"><h3 class="studio"> Syntaxe: </h3><p class="code">buffer_peek(buffer, offset, type);<span class="notranslate"></span></p><p><br></p><div class="param"><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">buffer</span> </td> <td> L&#39;index du tampon à utiliser. </td></tr><tr class="alt"><td> <span class="notranslate">offset</span> </td> <td> La position de décalage (en octets) dans le tampon pour lire les données données. </td></tr><tr><td> <span class="notranslate">type</span> </td> <td> Le type de données à lire dans le tampon (voir la liste des constantes <a href="buffer_read.html">ici</a> ). </td></tr></table></div><p><br></p><p> <b>Retourne:</b> Réel / Chaîne </p><p><br></p><h3 class="studio"> La description </h3><p> Avec le <a href="buffer_read.html"><tt>buffer_read</tt></a> fonction, vous pouvez lire les données du tampon donné à la position &quot;rechercher&quot; actuelle, chaque donnée étant lue en avançant cette position par les octets lus ou écrits. Cependant, il peut être nécessaire pour vous de lire une donnée donnée sans vouloir changer la position de recherche actuelle, et c&#39;est alors que vous utiliseriez cette fonction. Vous fournissez simplement la fonction avec un identifiant de tampon, puis une position de décalage (à partir du début de la mémoire tampon) dans ce tampon à lire, ainsi que le type de données que vous voulez lire. <br><br> <i><b>REMARQUE: L&#39;</b> utilisation du type de données incorrect pour les données lues entraînera des valeurs erronées!</i> <br><br></p><p><br></p><h3 class="studio"> Exemple: </h3><p class="code">var red = buffer_peek(buff, 1, buffer_u8);<br>
+var green = buffer_peek(buff, 2, buffer_u8);<br>
+var blue = buffer_peek(buff, 3, buffer_u8);<br>
+image_blend = make_colour_rgb(red, green, blue);<br><span class="notranslate"></span></p><p> Le code ci-dessus va obtenir trois valeurs de trois positions différentes dans le tampon indexé dans la variable &quot;buff&quot; et ensuite utiliser ces valeurs pour définir le mélange d&#39;image de l&#39;instance. </p><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href=
+"index.html">Tampons</a> </div><div style="float:right"> Suivant: <a href=
+"buffer_poke.html">buffer_poke</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

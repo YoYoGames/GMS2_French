@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>skeleton_attachment_set</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/sprites/skeletal animations/skeleton_attachment_set.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fsprites%2Fskeletal%20animations%2Fskeleton_attachment_set.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fsprites%2Fskeletal%20animations%2Fskeleton_attachment_set.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> skeleton_attachment_set </h2><div class="body-scroll"><p><br></p><h3> Syntaxe: </h3><p class="code">skeleton_attachment_set(slot, attachment);<span class="notranslate"></span></p><blockquote><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">slot</span> </td> <td> Le nom de l&#39;emplacement (une chaîne) pour obtenir la pièce jointe. </td></tr><tr class="alt"><td> <span class="notranslate">attachment</span> </td> <td> Le nom (sous la forme d&#39;une chaîne ou d&#39;un sprite_index) de l&#39;image de la pièce jointe. </td></tr></table></blockquote><p><br></p><h3> Résultats: </h3><p class="code">String<span class="notranslate"></span></p><p><br></p><h3> La description </h3><blockquote><p> Un sprite d&#39;animation squelettique peut avoir d&#39;autres images ajoutées en pièces jointes, ces images étant ajoutées à un emplacement nommé (le nom est donné lorsque vous créez le logement de pièce jointe dans votre programme d&#39;animation) et elles seront dessinées avec l&#39;animation du sprite actuel. Avec cette fonction, vous pouvez définir une pièce jointe à un emplacement donné, où vous devez indiquer les noms (en tant que chaînes) du logement et de la pièce jointe. Ces noms sont définis par le programme d&#39;animation utilisé ou (dans le cas de la pièce jointe) lorsque vous appelez <a href=
+"skeleton_attachment_create.html"><tt>skeleton_attachment_create</tt></a>. </p><p> Notez que vous pouvez également passer un <tt>sprite_index</tt> en tant que pièce jointe, et ce sprite sera utilisé, ou vous pouvez utiliser -1 pour retirer la pièce jointe de la fente. Lorsque vous transmettez un index d&#39;image-objet en tant qu&#39;argument, il crée un emplacement de pièce jointe en utilisant le nom de l&#39;image-objet comme chaîne pour nommer l&#39;emplacement (en utilisant <tt>spr_sword</tt>, par exemple, créera une fente de pièce jointe &quot;spr_sword&quot;), et l&#39;emplacement utilisera le premier index d&#39;image (0) de l&#39;image-objet, ainsi que son décalage d&#39;origine x et y, avec une échelle de (1,1) et une rotation de 0. </p><div class="note"> <b>IMPORTANT!</b> Cette fonction n&#39;est <b>pas</b> disponible avec la licence d&#39;évaluation du produit. </div></blockquote><p><br></p><h3> Exemple: </h3><p class="code">if skeleton_attachment_get("slot_leftHand") ==
+""<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;skeleton_attachment_set("slot_leftHand",
+choose("sword", "spear", "knife"));<br>
+&nbsp;&nbsp;&nbsp;}<br><span class="notranslate"></span></p><blockquote><p> Le code ci-dessus vérifie le nom de pièce jointe actuellement attribué pour l&#39;emplacement &quot;slot_leftHand&quot; et si une chaîne vide est renvoyée, une nouvelle image-objet est attachée. </p></blockquote><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">Animations squelettiques</a> </div><div style="float:right"> Suivant: <a href=
+"skeleton_attachment_create.html">skeleton_attachment_create</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

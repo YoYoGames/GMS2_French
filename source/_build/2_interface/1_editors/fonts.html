@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>The Font Editor</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+<link rel="stylesheet" href="../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/2_interface/1_editors/fonts.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2F_build%2F2_interface%2F1_editors%2Ffonts.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2F_build%2F2_interface%2F1_editors%2Ffonts.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> L&#39;éditeur de polices </h2><div class="body-scroll"><p><br></p><p><img class="center" src="images/editor_fonts.png" alt="Éditeur de polices"> Lorsque vous voulez dessiner du texte dans votre jeu, ce texte est dessiné dans une police standard Arial 12 points, mais pour faire des textes plus intéressants ou uniques, vous voudrez probablement utiliser des polices différentes. Ainsi, pour utiliser les différentes polices que vous avez sur votre ordinateur, vous devez créer une <b>ressource de police</b> dans <i><span class="notranslate">GameMaker</span> Studio 2</i>. Ceci est fait par un clic droit <img style=
+"vertical-align:middle" src="../../images/icon_rmb.png"> dans le dossier &quot;Polices&quot; dans l&#39;arborescence des ressources et en cliquant sur &quot;Créer&quot;. Pour chaque ressource de police que vous créez, vous spécifiez un type particulier de police de votre ordinateur qui peut ensuite être utilisé dans votre jeu en utilisant l&#39;action ou le code pour définir une police pour le dessin. </p><p> Lorsque vous créez une ressource de police pour la première fois, la fenêtre de l&#39;éditeur de polices s&#39;ouvre avec les options suivantes: </p><blockquote><a name="font_details" id="font_details"></a> <label class="collapse" for="one">Détails</label> <input id="one"
+type="checkbox"><div class="index_list"><p> Ici vous pouvez donner un nom unique à votre police (caractères alphanumériques et le symbole &quot;_&quot; uniquement), ainsi que choisir la police à utiliser. La police doit être installée sur votre ordinateur et, en raison de problèmes de licence, <span class="notranslate">GameMaker Studio 2</span> ne stocke <i>pas</i> les fichiers de polices réels avec le fichier projet par défaut, mais la police est rendue sur une <b>page de texture en</b> tant que glyphes pré-rendus. Si vous voulez distribuer le fichier de polices actuel ( <tt>*.ttf</tt> uniquement) avec le projet lors de la création d&#39;un actif Marketplace, vous pouvez alors cocher l&#39;option <b>Inclure la police dans l&#39;actif du marché</b>. Cela ouvrira l&#39;explorateur de fichiers où vous pourrez sélectionner le fichier de police et il sera ensuite ajouté aux fichiers fournis avec le projet. </p><div class="note"> <b>REMARQUE IMPORTANTE</b>: <b>Vous ne devez utiliser que les polices que vous êtes légalement autorisé et autorisé à redistribuer ou à utiliser dans votre projet</b>. </div></div><br><a name="font_presets" id="font_presets"></a> <label class=
+"collapse" for="two">Presets</label> <input id="two" type=
+"checkbox"><div class="index_list"><p> Dans cette section, vous pouvez définir la taille (en points - la valeur par défaut est 12pt) et si la police doit être dessinée en gras ou en italique ou avoir un anti-aliasing (lissage des bords) appliqué. La fenêtre de prévisualisation sur la droite vous montrera le texte d&#39;aperçu tel qu&#39;il apparaîtra avec la taille et les transformations que vous avez spécifiées. </p></div><br><a name="font_texture_page" id="font_texture_page"></a> <label class="collapse" for="six">Groupe de texture</label> <input id=
+"six" type="checkbox"><div class="index_list"><p> Comme mentionné ci-dessus (dans la section sur les <b>détails de police</b> ) par défaut, tous les glyphes de police seront rendus à une page de texture dans le cadre d&#39;un <i>groupe de texture</i> pour les convertir en ressources graphiques. Cette section de l&#39;éditeur de polices vous permet de sélectionner le groupe auquel vous souhaitez les ajouter, et lorsque le jeu est compilé, la police sera ajoutée à une texture temporaire pour créer une image unique avec tous les glyphes de police requis, puis <i>ce</i> sera ajouté au groupe de texture principal pour l&#39;exportation. Notez que si vous avez choisi d&#39;inclure le fichier de police dans la construction du jeu, cette option ne fera rien. Pour plus d&#39;informations sur les groupes de texture, s&#39;il vous plaît voir <a href="../3_settings/textures.html">ici</a>. </p></div><br><a name="font_range" id="font_range"></a> <label class="collapse"
+for="three">Plages</label> <input id="three" type="checkbox"><div class="index_list"><p> Lorsque vous créez une ressource de police, il est rare que vous souhaitiez inclure chaque glyphe pour la police. C&#39;est pourquoi <i><span class="notranslate">GameMaker</span> Studio 2</i> n&#39;utilise par défaut que les caractères de 32 à 127 de la police choisie car cela nous donne les chiffres et les lettres minuscules et majuscules ainsi que certains signes de ponctuation. Vous pouvez, cependant, modifier la gamme de caractères utilisée pour optimiser vos jeux, c&#39;est-à-dire: si vous n&#39;avez besoin que des numéros d&#39;une police spécifique, sélectionnez <i>uniquement</i> les numéros. Pour ce faire, vous devez d&#39;abord cliquer sur le bouton <b>Supprimer</b> pour effacer la plage actuelle (vous devrez peut-être sélectionner la plage pour que cela fonctionne en cliquant <img style=
+"vertical-align:middle" src="../../images/icon_lmb.png"> dans la fenêtre d&#39;aperçu), puis cliquez sur le bouton <b>Ajouter</b> pour ajouter une nouvelle plage. Cela ouvrira la fenêtre chaînée suivante: <img class="center" src="images/editor_fonts_range.png" alt="Éditeur de plage de polices"></p><p> Cette fenêtre a quelques boutons pour vous aider à établir une gamme standard pour votre police: </p><p> - La gamme <i>normale</i> de 32 à 127 <br> - La plage <i>ASCII</i> de 0 à 255 <br> - La gamme de <i>chiffres</i> qui contient seulement les 10 chiffres <br> - La série de <i>lettres</i> qui contient toutes les lettres majuscules et minuscules seulement <br></p><p> D&#39;autres plages peuvent être utilisées en tapant le premier et le dernier index de caractères de la plage que vous souhaitez définir dans les zones de saisie de la plage de caractères (si un caractère ne se trouve pas dans la plage, il est remplacé par un espace). En dehors de ces boutons et boîtes de saisie, vous avez également deux autres options particulièrement utiles: </p><p> - <i>From Code</i>: si vous cliquez sur ce bouton, puis cliquez sur OK, <i><span class="notranslate">GameMaker Studio 2</span></i> analysera automatiquement votre code de jeu pour les chaînes, puis créera différentes gammes de caractères pour couvrir tout le texte de votre partie. Notez qu&#39;il recherche toutes les chaînes (&quot;&quot; ou &quot;&quot;) et peut donc inclure des noms de fichiers dans les plages de caractères. <br><br></p><p> - <i>From File</i>: cela fonctionne de manière similaire à l&#39;option &quot;from code&quot; expliquée ci-dessus. Si vous cliquez dessus, il vous sera demandé de fournir un fichier, puis une fois cela fait, vous devez cliquer sur OK. <i><span class="notranslate">GameMaker Studio 2</span></i> analysera ensuite le fichier et créera des plages de caractères pour le texte qui s&#39;y trouve. </p><p> Notez que vous pouvez modifier manuellement la plage de texte en ajoutant ou en supprimant directement des glyphes de texte dans la fenêtre de prévisualisation. </p></div><br><a name="font_preview" id="font_preview"></a> <label class=
+"collapse" for="four">Aperçu</label> <input id="four" type=
+"checkbox"><div class="index_list"><p> La fenêtre d&#39;aperçu est l&#39;endroit où vous pouvez taper n&#39;importe quel texte que vous voulez tester. Il sera rendu en utilisant les préréglages que vous avez sélectionnés. </p></div><br><a name="font_range_preview" id="font_range_preview"></a> <label class="collapse" for="five">Aperçu de la plage</label> <input id=
+"five" type="checkbox"><div class="index_list"><p> Ici, les différentes plages que vous avez ajoutées seront listées. Les valeurs de plage sont affichées à gauche et les glyphes de plage sont affichés sur la droite. </p></div></blockquote><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">Index des éditeurs</a> </div><div style="float:right"> Suivant: <a href="timelines.html">L&#39;éditeur de chronologie</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

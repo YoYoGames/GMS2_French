@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>depth</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/instances/instance_variables/depth.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Finstances%2Finstance_variables%2Fdepth.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Finstances%2Finstance_variables%2Fdepth.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> profondeur </h2><div class="body-scroll"><p><br></p><h3> La description </h3><blockquote><p> Lorsque vous créez un objet, vous pouvez lui attribuer une <i>profondeur</i> initiale qui définit comment les occurrences de cet objet seront dessinées dans la pièce lorsque le jeu est joué et cette variable peut être utilisée pour obtenir et modifier cette valeur de profondeur pendant que le jeu est fonctionnement. Vous n&#39;avez normalement pas besoin d&#39;utiliser cette variable, car vous devez définir des instances à ajouter aux <a href=
+"layer.html">couches</a> discrètes, qui sont à leur tour définies sur une profondeur spécifique, mais il se peut que vous souhaitiez modifier la profondeur d&#39;une instance à l&#39;aide de cette valeur, Dans ce cas, une &quot;couche temporaire&quot; sera créée spécifiquement pour l&#39;instance à la profondeur donnée. Notez que quand aucune instance n&#39;est à la même profondeur alors cette couche temporaire sera retirée de la mémoire (contrairement aux couches régulières qui resteront même si elles n&#39;ont rien sur elles). </p><div class="note"> <b>IMPORTANT!</b> Lorsque vous modifiez le <tt>depth</tt> variable et <span class="notranslate">GameMaker</span> STudio 2 gère les couches, l&#39;intégré <a href="layer.html"><tt>layer</tt></a> variable renvoie -1 et non l&#39;ID de couche, car les couches gérées ne peuvent pas être manipulées via le code. </div><p><br> Dans <i><span class="notranslate">GameMaker Studio 2</span></i> plus la valeur de profondeur d&#39;une occurrence est basse, plus cette occurrence sera proche de la caméra, tandis qu&#39;une valeur de profondeur plus élevée signifie que l&#39;occurrence sera dessinée plus loin de la caméra, soit: -1000 est dessiné au-dessus de -100, qui est dessiné au-dessus de 0, qui est dessiné au-dessus de 100, qui est dessiné sur le dessus de 1000. <img class="center" src=
+"../images/depth_image.png"></p><p> Notez que les occurrences d&#39;un objet ayant la <b>même</b> profondeur peuvent être dessinées <b>au <i>-</i> dessus <i>ou en</i> dessous l&#39;une de l&#39;autre,</b> même si elles semblent être placées les unes sur les autres dans l&#39;éditeur de la pièce. Si vous voulez garantir que quelque chose est dessiné sur ou sous tout le reste, vous devez toujours définir la profondeur (ou couche) explicitement. </p><div class="note"> <b>Remarque:</b> vous <b>ne pouvez pas</b> définir la profondeur d&#39;une instance dans son événement de dessin (tous les autres événements sont très bien). </div></blockquote><p><br></p><h3> Syntaxe: </h3><p class="code">depth;<span class="notranslate"></span></p><p><br></p><h3> Résultats: </h3><p class="code">Real<span class="notranslate"></span></p><p><br></p><h3> Exemple: </h3><p class="code">if y != yprevious<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;depth = -y;<br>
+&nbsp;&nbsp;&nbsp;}<br><span class="notranslate"></span></p><blockquote> Le code ci-dessus va vérifier pour voir si la position y a changé et si elle a alors la profondeur sera également définie pour lui correspondre. </blockquote><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">Variables d&#39;instance</a> </div><div style="float:right"> Suivant: <a href="layer.html">couche</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

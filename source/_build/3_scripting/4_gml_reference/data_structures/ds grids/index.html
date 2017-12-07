@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>DS Grids</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/data_structures/ds grids/index.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fdata_structures%2Fds%20grids%2Findex.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fdata_structures%2Fds%20grids%2Findex.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> Grilles DS </h2><p> Un ds_grid est essentiellement un type de <a href=
+"../../../3_gml_overview/10_arrays.html">tableau à deux dimensions</a>. Vous définissez la grille en définissant sa largeur et sa hauteur, qui définissent ensuite le nombre total de &quot;cellules&quot; dans la grille (la largeur et la hauteur multipliées) et ces cellules sont ensuite utilisées pour contenir différentes valeurs de données (nombres réels ou chaînes). <img class=
+"center" src="ds_grid_basic.png"></p><p> Ce type de structure vous permet de définir et de récupérer la valeur des cellules dans la grille en donnant l&#39;indice x et y de celle-ci (qui commence par 0 pour les axes x et y et monte jusqu&#39;à la largeur - 1 et la hauteur -1). Mais vous pouvez également définir la valeur dans des régions de grille spécifiques, ajouter des valeurs uniques et extraire la somme, le maximum, le minimum et la valeur moyenne sur une région donnée, faisant de cette structure de données la plus polyvalente possible. </p><p> Lors de l&#39;accès aux structures de données de la grille DS, vous devez toujours essayer d&#39;utiliser <b>des valeurs entières</b> pour la position de la cellule, et tous les index non entiers seront <span class="notranslate">GameMaker Studio 2</span> par <span class="notranslate">GameMaker Studio 2</span> si vous ne le faites pas. Si ce n&#39;est pas ce dont vous avez besoin, alors vous devrez faire l&#39;arrondi vous-même avant de passer l&#39;index que vous souhaitez vérifier. </p><div class="note"> <b>REMARQUE:</b> Comme pour toutes les ressources dynamiques, les structures de données occupent de la mémoire et doivent donc <b>toujours</b> être détruites lorsqu&#39;elles ne sont plus nécessaires pour éviter les fuites de mémoire qui ralentiront et finiront par planter votre partie. <div><p> &gt; Les fonctions suivantes concernent les grilles DS. </p><blockquote><ol><li> <a href="ds_grid_create.html">ds_grid_create</a> <br></li><li> <a href="ds_grid_destroy.html">ds_grid_destroy</a> <br></li><li> <a href="ds_grid_width.html">ds_grid_width</a> <br></li><li> <a href="ds_grid_height.html">ds_grid_height</a> <br></li><li> <a href="ds_grid_resize.html">ds_grid_resize</a> <br></li><li> <a href="ds_grid_clear.html">ds_grid_clear</a> <br></li><li> <a href="ds_grid_set.html">ds_grid_set</a> <br></li><li> <a href="ds_grid_set_disk.html">ds_grid_set_disk</a> <br></li><li> <a href=
+"ds_grid_set_grid_region.html">ds_grid_set_grid_region</a> <br></li><li> <a href="ds_grid_set_region.html">ds_grid_set_region</a> <br></li><li> <a href="ds_grid_shuffle.html">ds_grid_shuffle</a> <br></li><li> <a href="ds_grid_sort.html">ds_grid_sort</a> <br></li><li> <a href="ds_grid_get.html">ds_grid_get</a> <br></li><li> <a href="ds_grid_get_max.html">ds_grid_get_max</a> <br></li><li> <a href="ds_grid_get_mean.html">ds_grid_get_mean</a> <br></li><li> <a href="ds_grid_get_min.html">ds_grid_get_min</a> <br></li><li> <a href="ds_grid_get_sum.html">ds_grid_get_sum</a> <br></li><li> <a href=
+"ds_grid_get_disk_max.html">ds_grid_get_disk_max</a> <br></li><li> <a href=
+"ds_grid_get_disk_mean.html">ds_grid_get_disk_mean</a> <br></li><li> <a href=
+"ds_grid_get_disk_min.html">ds_grid_get_disk_min</a> <br></li><li> <a href=
+"ds_grid_get_disk_sum.html">ds_grid_get_disk_sum</a> <br></li><li> <a href="ds_grid_add.html">ds_grid_add</a> <br></li><li> <a href="ds_grid_add_region.html">ds_grid_add_region</a> <br></li><li> <a href="ds_grid_add_disk.html">ds_grid_add_disk</a> <br></li><li> <a href=
+"ds_grid_add_grid_region.html">ds_grid_add_grid_region</a> <br></li><li> <a href="ds_grid_multiply.html">ds_grid_multiply</a> <br></li><li> <a href=
+"ds_grid_multiply_disk.html">ds_grid_multiply_disk</a> <br></li><li> <a href=
+"ds_grid_multiply_region.html">ds_grid_multiply_region</a> <br></li><li> <a href=
+"ds_grid_multiply_grid_region.html">ds_grid_multiply_grid_region</a> <br></li><li> <a href=
+"ds_grid_value_exists.html">ds_grid_value_exists</a> <br></li><li> <a href=
+"ds_grid_value_disk_exists.html">ds_grid_value_disk_exists</a> <br></li><li> <a href="ds_grid_value_x.html">ds_grid_value_x</a> <br></li><li> <a href="ds_grid_value_y.html">ds_grid_value_y</a> <br></li><li> <a href=
+"ds_grid_value_disk_x.html">ds_grid_value_disk_x</a> <br></li><li> <a href=
+"ds_grid_value_disk_y.html">ds_grid_value_disk_y</a> <br></li><li> <a href="ds_grid_copy.html">ds_grid_copy</a> <br></li><li> <a href="ds_grid_read.html">ds_grid_read</a> <br></li><li> <a href="ds_grid_write.html">ds_grid_write</a> <br></li></ol></blockquote><p> En dehors de ces fonctions spécifiques, vous pouvez tous utiliser une expression (appelée <i>accesseur</i> ) pour ajouter ou modifier le contenu de votre <tt>ds_grid</tt>. Cet accesseur ressemble à un tableau 2D avec la syntaxe suivante: </p><p class="code">grid_index[# xpos, ypos]<span class="notranslate"></span></p><p> Vous pouvez trouver plus d&#39;informations, ainsi que des exemples, à partir de la page Vue d&#39;ensemble du GML sur les <a href=
+"../../../3_gml_overview/13_accessors.html">accesseurs</a>. </p><div class="note"> <b>NOTE:</b> si vous avez besoin de vérifier si une structure de données existe, vous pouvez utiliser <a href=
+"../ds_exists.html"><tt>ds_exists()</tt></a> fonction. </div><p><br></p><div class="clear"><div style="float:left"> Retour: <a href="../index.html">Structures de données</a> </div><div style="float:right"> Suivant: <a href=
+"../ds%20stacks/index.html">Stacks DS</a> </div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script> .</div></div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

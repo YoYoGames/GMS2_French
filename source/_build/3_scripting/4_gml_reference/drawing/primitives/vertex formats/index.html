@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Vertex Formats</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href=
+"../../../../../../../files/helpindex.css" type="text/css">
+<link rel="stylesheet" href="../../../../../../../default.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/drawing/primitives/vertex formats/index.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fdrawing%2Fprimitives%2Fvertex%20formats%2Findex.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fdrawing%2Fprimitives%2Fvertex%20formats%2Findex.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> Vertex Formats </h2><p> En général, lorsque vous commencez à travailler avec des effets spéciaux, des processus de dessin complexes ou des shaders, vous n&#39;avez pas à vous soucier du format de vertex utilisé, puisque <i><span class="notranslate">GameMaker Studio</span> 2</i> va automatiquement configurer et passer les données de vertex pour vous. Cependant, il est parfois nécessaire de créer vos propres données de vertex et de les mettre en forme, en particulier lorsque vous devez accélérer la vitesse ou que vous souhaitez transmettre des informations supplémentaires. Par exemple, le format de vertex standard inclut une position 3D x, y, z 3D, couleur (avec alpha) et des coordonnées de texture UV, qui, si vous le créiez vous-même, ressemblerait à ceci: </p><p class="code">vertex_format_begin();<br>
+vertex_format_add_position_3d();<br>
+vertex_format_add_colour();<br>
+vertex_format_add_textcoord();<br>
+my_format = vertex_format_end();<br><span class="notranslate"></span></p><p> Cependant, si vous utilisez seulement (par exemple) le shader pour manipuler la position du vertex, il n&#39;y aurait pas besoin de passer par les données de couleur ou de texture. Dans ce cas, vous créez votre propre format comme suit: </p><p class="code">vertex_format_begin();<br>
+vertex_format_add_position_3d();<br>
+my_format = vertex_format_end();<br><span class="notranslate"></span></p><p> Vous devriez noter qu&#39;une fois que vous avez créé votre format de vertex, l&#39;ordre dans lequel vous avez défini les propriétés de vertex <i>doit être respecté</i> lors de la construction de vos primitives. Donc, si vous avez défini un format de sommet comme position, couleur, coordonnée de texture, alors vous <i>devez</i> ajouter ces propriétés à la primitive dans le même ordre sinon vous obtiendrez une erreur. Notez également que, comme toute autre ressource dynamique, un format de vertex nécessite de la mémoire et doit donc être supprimé lorsqu&#39;il n&#39;est pas nécessaire d&#39;utiliser la fonction. <tt>vertex_format_delete()</tt>. </p><p> Les fonctions suivantes sont disponibles pour dessiner des shaders: </p><blockquote><ul><li> <a href="vertex_format_begin.html">vertex_format_begin</a> <br></li><li> <a href=
+"vertex_format_add_colour.html">vertex_format_add_colour</a> <br></li><li> <a href=
+"vertex_format_add_position.html">vertex_format_add_position</a> <br></li><li> <a href=
+"vertex_format_add_position_3d.html">vertex_format_add_position_3d</a> <br></li><li> <a href=
+"vertex_format_add_textcoord.html">vertex_format_add_textcoord</a> <br></li><li> <a href=
+"vertex_format_add_normal.html">vertex_format_add_normal</a> <br></li><li> <a href=
+"vertex_format_add_custom.html">vertex_format_add_custom</a> <br></li><li> <a href="vertex_format_end.html">vertex_format_end</a> <br></li><li> <a href=
+"vertex_format_delete.html">vertex_format_delete</a> <br></li></ul></blockquote><p> Un dernier point important à noter lors de l&#39;utilisation de vos propres tampons de vertex de cette manière est de savoir comment cela affecte les lots de vertex qui sont envoyés au GPU. Lorsque vous créez un tampon de vertex, vous créez le niveau le plus bas de données graphiques, donc lorsque vous dessinez tout ce qui se passe, nous envoyons votre tampon directement sur la carte graphique. Pour cette raison, si vous voulez un meilleur traitement par lots, vous devez le faire vous-même et stocker les choses que vous voulez traiter dans le même tampon. Vous ne pouvez donc pas mettre 3 sprites puis en dessiner beaucoup et attendre que les tampons de vertex soient fusionnés - vous êtes en charge des données de tampon de vertex à ce stade. Si vous voulez un auto-batching, vous devez donner au moteur des primitives de niveau supérieur - comme un sprite - à quel point <span class="notranslate">GameMaker Studio 2</span> peut déterminer ce que vous faites, et remplir les tampons correctement. </p><h2> Construction de primitives </h2><p> Une fois que vous avez défini votre nouveau format de vertex, vous pouvez alors aller de l&#39;avant et créer vos primitives qui l&#39;utiliseront. Les fonctions disponibles pour cela peuvent être trouvées dans la section suivante: </p><blockquote><ol><li> <a href="../primitive%20building/index.html">Construction de primitives</a> <br></li></ol></blockquote><p><br></p><div class="clear"><div style="float:left"> Retour: <a href="../index.html">Dessin et création de primitives</a> </div><div style="float:right"> Suivant: <a href=
+"../primitive%20building/index.html">Construire des primitives</a> <br></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

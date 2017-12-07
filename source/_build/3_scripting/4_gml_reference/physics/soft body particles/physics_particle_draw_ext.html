@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>physics_particle_draw_ext</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/physics/soft body particles/physics_particle_draw_ext.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fphysics%2Fsoft%20body%20particles%2Fphysics_particle_draw_ext.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fphysics%2Fsoft%20body%20particles%2Fphysics_particle_draw_ext.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h1 class="studio"> physics_particle_draw_ext </h1><h2 class="studio"> Dessinez un ensemble de particules à l&#39;aide d&#39;une image-objet avec les valeurs par défaut. </h2><h3 class="studio"> Syntaxe: </h3><p class="code">physics_particle_draw_ext(typemask, category,
+sprite, subimg, xscale, yscale, ang, col, alpha)<span class="notranslate"></span></p><p><br></p><div class="param"><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">typemask</span> </td> <td> Le masque pour comparer les drapeaux de particules avec. </td></tr><tr class="alt"><td> <span class="notranslate">category</span> </td> <td> La catégorie définie par l&#39;utilisateur à dessiner (utilisez 0 pour dessiner toutes les catégories). </td></tr><tr><td> <span class="notranslate">sprite</span> </td> <td> Le sprite à utiliser pour chaque particule. </td></tr><tr class="alt"><td> <span class="notranslate">subimg</span> </td> <td> le <tt>image_index</tt> du sprite à dessiner. </td></tr><tr><td> <span class="notranslate">xscale</span> </td> <td> Le facteur d&#39;échelle à appliquer à l&#39;image-objet le long de l&#39;axe des x. </td></tr><tr class="alt"><td> <span class="notranslate">yscale</span> </td> <td> Le facteur d&#39;échelle à appliquer à l&#39;image-objet le long de l&#39;axe y. </td></tr><tr><td> <span class="notranslate">ang</span> </td> <td> L&#39;angle (en degrés) pour dessiner le sprite. </td></tr><tr class="alt"><td> <span class="notranslate">col</span> </td> <td> La couleur à fusionner avec l&#39;image-objet (la valeur par défaut est <tt>c_white</tt> ). </td></tr><tr><td> <span class="notranslate">alpha</span> </td> <td> La valeur alpha à utiliser lors du dessin (0 - 1). </td></tr></table></div><p><br></p><p> <b>Retours:</b> N / A </p><p><br></p><h3 class="studio"> La description </h3><p> Cette fonction va dessiner un sprite à la position de toutes les particules qui partagent la même valeur de catégorie définie par l&#39;utilisateur, et qui ont des drapeaux qui coïncident avec ceux définis pour le masque. La valeur du masque est définie de la même manière que vous définiriez les drapeaux lors de la création des particules (voir les fonctions <a href=
+"physics_particle_create.html"><tt>physics_particle_create</tt></a> pour un exemple), c&#39;est-à-dire: utiliser le bitwise <i>ou</i> &quot;|&quot; masquer les bits appropriés pour chaque drapeau. </p><blockquote> <i><b>REMARQUE:</b> Cette fonction attirera <b>toutes les</b> particules de la simulation physique avec des indicateurs qui coïncident avec ceux du masque, qu&#39;il s&#39;agisse de particules individuelles ou de groupes, si la catégorie d&#39;utilisateur est la même.</i> </blockquote><p> La particule dessinée ignorera la couleur et les valeurs alpha définies lors de sa création et sera dessinée à l&#39;aide de l&#39;échelle, de l&#39;angle, de la couleur et des paramètres alpha donnés dans cette fonction. Notez que ceci est purement pour dessiner un sprite à la position de la particule et n&#39;affecte en rien le comportement de la particule. <br><br></p><p><br></p><h3 class="studio"> Exemple: </h3><p class="code">var flags = phy_particle_flag_water |
+phy_particle_flag_viscous | phy_particle_flag_tensile;<br>
+physics_particle_draw_ext(flags, 2, sprBlob, 0, 2, 2, 0, c_white,
+0.5);<br><span class="notranslate"></span></p><p> Le code ci-dessus va dessiner un sprite pour toutes les particules dans la catégorie définie par l&#39;utilisateur &quot;2&quot; qui ont les mêmes drapeaux que le masque donné, mis à l&#39;échelle de 2 le long des deux axes et avec un alpha de 0,5. </p><p><br></p><div class="clear"><div style="float:left"> Dos: <a href="index.html">Particules molles du corps</a> </div><div style="float:right"> Suivant: <a href=
+"physics_particle_count.html">physics_particle_count</a> </div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

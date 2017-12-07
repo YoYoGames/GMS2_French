@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Shaders</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/shaders/index.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fshaders%2Findex.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fshaders%2Findex.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> Shaders </h2><div class="body-scroll"><p><br></p><p> Les shaders sont un outil incroyablement puissant pour manipuler quoi et comment les choses sont rendues à l&#39;écran par la carte graphique. Comme ces petits programmes sont en fait exécutés sur la carte graphique elle-même, cela signifie qu&#39;ils sont extrêmement rapides à traiter, ce qui libère de précieux cycles CPU pour une plus grande logique de jeu. </p><div class="note"> <b>IMPORTANT!</b> Les shaders <b>ne</b> sont <b>pas</b> disponibles avec la licence d&#39;évaluation du produit. </div><p><br> Pour créer un shader, vous devez avoir écrit à la fois un <b>Vertex Shader</b> et un <b>Shader de fragmentation</b> (également <b>appelé Pixel Shader</b> ) à l&#39;aide de l&#39; <a href=
+"../../../2_interface/1_editors/shaders.html">éditeur Shader</a>, et même si (par exemple) vous souhaitez seulement modifier les positions de vertex pour une instance dessiné, ou si vous voulez seulement changer les valeurs de couleur pour les pixels, vous aurez toujours besoin des <b>deux</b> programmes pour qu&#39;un shader complet fonctionne. </p><div class="note"> <b>REMARQUE:</b> Shaders ne vous permettent <b>pas</b> de modifier la valeur de toutes les variables que vous passez en eux, et donc ceux - ci seront appelés <b>constantes de shaders</b> dans toute la documentation qui fait référence à eux. </div><p><br> Pour une vue d&#39;ensemble complète des fonctions et des variables GLSL ES disponibles que vous pouvez utiliser pour programmer les shaders eux-mêmes, reportez-vous aux <a href=
+"https://www.khronos.org/registry/OpenGL/specs/es/2.0/es_cm_spec_2.0.pdf"
+target="_blank">pages de référence du langage d&#39;ombrage OpenGL ES (GLSL ES)</a>. Le lien suivant est également utile car il contient des cartes de référence rapide pour OpenGL ES Api (notez que seules les deux dernières cartes présentées sont applicables à <i><span class="notranslate">GameMaker Studio 2</span></i> ): <a href=
+"https://www.khronos.org/opengles/sdk/docs/reference_cards/OpenGL-ES-2_0-Reference-card.pdf">Cartes de référence OpenGL ES</a>. </p><h2> Utiliser des shaders </h2><p> Une fois que vous avez créé votre shader, l&#39;utiliser est très simple et nécessite seulement quelques lignes de code pour en tirer le plus basique: </p><p class="code">shader_set(myShader);<br>
+draw_self();<br>
+shader_reset();<br><span class="notranslate"></span></p><p> Comme vous pouvez le voir, ils sont utilisés de la même manière pour fusionner les modes et les surfaces, où vous sélectionnez d&#39;abord (fixez) le shader, dessinez ce que vous voulez en l&#39;utilisant, puis réinitialisez à nouveau la cible du tirage par la suite. Si vous souhaitez rendre le plein écran via un shader, et pas seulement un seul sprite ou arrière-plan, vous devrez configurer une surface pour attraper la vue actuelle, puis la passer dans le shader (voir <a href="../drawing/surfaces/index.html">Surfaces</a> pour plus d&#39;informations). </p><div class="note"> <b>NOTES: Les</b> shaders, comme tout ce qui touche au dessin, ne <b>peuvent être utilisés que dans l&#39;événement draw</b>. Il est également important de noter que si vous essayez d&#39;utiliser une valeur de couleur dans un shader et que l&#39;objet n&#39;a pas de texture, les résultats seront noirs. </div><p><br> Si le shader que vous utilisez a des valeurs d&#39;entrée, celles-ci sont définies à l&#39;aide des fonctions <i>uniformes</i>. Vous obtiendrez d&#39;abord la <i>poignée</i> uniforme (qui est essentiellement une valeur ID pour l&#39;uniforme à définir) en utilisant la fonction <a href=
+"shader_get_uniform.html"><tt>shader_get_uniform()</tt></a> dans l&#39; <b>événement</b> de <b>création</b> de l&#39;instance en utilisant le shader, puis stockez ces poignées dans des variables, quelque chose comme ceci: </p><p class="code">colour_to_find = shader_get_uniform(sShaderDemo5,
+"f_Colour1");<br>
+colour_to_set = shader_get_uniform(sShaderDemo5,
+"f_Colour2");<br><span class="notranslate"></span></p><p> Une fois que vous avez les poignées d&#39;uniforme, elles peuvent ensuite être définies dans le code de shader pour l&#39; <b>événement de dessin</b> comme ceci: </p><p class="code">shader_set(sShaderDemo5);<br>
+shader_set_uniform_f(colour_to_find, 1,1,1 );<br>
+shader_set_uniform_f(colour_to_set, 1,0,0 );<br>
+draw_sprite(sprite_index,image_index,x+24, y);<br>
+shader_reset();<br><span class="notranslate"></span></p><p> Une dernière chose à noter est que même si les shaders sont acceptés sur toutes les plates-formes, ils sont toujours spécifiques à l&#39;appareil et si le matériel ou le logiciel de l&#39;appareil ne peut pas utiliser de shaders, vous obtiendrez une erreur. Par conséquent, il est recommandé de vérifier que le shader a été compilé avant de définir des uniformes ou d&#39;utiliser le shader lui-même, comme ceci: </p><p class="code">if (shader_is_compiled(myShader))<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;shader_set(myShader);<br>
+&nbsp;&nbsp;&nbsp;draw_self();<br>
+&nbsp;&nbsp;&nbsp;shader_reset();<br>
+&nbsp;&nbsp;&nbsp;}<br>
+else show_debug_message("Shader failed");<br><span class="notranslate"></span></p><p> En tant que vérification supplémentaire, vous pouvez également appeler la fonction <a href=
+"shaders_are_supported.html"><tt>shaders_are_supported</tt></a> pour voir si le matériel supporte même les shaders. En général, vous ferez ces vérifications au début du jeu et stockerez les résultats sous forme de variable globale pour ensuite vérifier plus tard. </p><p> Il est important de noter que <i><span class="notranslate">GameMaker Studio 2</span></i> prend également en charge certaines <b>macros de</b> compilation conditionnelles qui peuvent être utilisées dans les shaders GLSL ES afin de pouvoir exécuter du code alternatif sur des plates-formes prises en charge spécifiques. Les macros et les plates-formes sur lesquelles elles seront générées sont indiquées dans le tableau ci-dessous: </p><div class="compat"><table><tr><th> Shader Macro </th><th> Valeur </th><th> Plate-forme cible </th></tr><tr><td> _YY_GLSLES_ </td><td> 1 </td><td> Toutes les plates-formes cibles </td></tr><tr class="alt"><td> _YY_GLSL_ </td><td> 1 </td><td> Mac et Ubuntu (Linux) </td></tr><tr><td> _YY_HLSL11_ </td><td> 1 </td><td> Windows, UWP, XboxOne </td></tr><tr class="alt"><td> _YY_PSSL_ </td><td> 1 </td><td> PS4 </td></tr></table></div><p><br> Lorsque vous compilez votre projet <i><span class="notranslate">GameMaker Studio 2</span></i> sur l&#39;une des plateformes listées à l&#39;aide d&#39;un shader de format GLSL ES, l&#39; <i>une</i> des macros ci-dessus sera générée et pourra être utilisée dans le shader comme ceci: </p><p class="code">#ifdef _YY_HLSL11_<br>
+// HLSL shader code here<br>
+#else<br>
+// GLSL shader code here<br>
+#endif<br><span class="notranslate"></span></p><blockquote> <label class="collapse" for="one">Fonctions Shader</label> <input id="one" type="checkbox"><div class="index_list"><p> Les fonctions suivantes sont disponibles pour dessiner et définir des shaders: </p><ul><li> <a href="shader_set.html">shader_set</a> <br></li><li> <a href="shader_get_uniform.html">shader_get_uniform</a> <br></li><li> <a href=
+"shader_get_sampler_index.html">shader_get_sampler_index</a> <br></li><li> <a href=
+"shader_set_uniform_f.html">shader_set_uniform_f</a> <br></li><li> <a href=
+"shader_set_uniform_f_array.html">shader_set_uniform_f_array</a> <br></li><li> <a href=
+"shader_set_uniform_i.html">shader_set_uniform_i</a> <br></li><li> <a href=
+"shader_set_uniform_i_array.html">shader_set_uniform_i_array</a> <br></li><li> <a href=
+"shader_set_uniform_matrix.html">shader_set_uniform_matrix</a> <br></li><li> <a href=
+"shader_set_uniform_matrix_array.html">shader_set_uniform_matrix_array</a> <br></li><li> <a href="shader_reset.html">shader_reset</a> <br></li><li> <a href="shader_is_compiled.html">shader_is_compiled</a> <br></li><li> <a href=
+"shaders_are_supported.html">shaders_are_supported</a> <br></li><li> <a href="shader_current.html">shader_current</a> <br></li></ul><p> Nous avons également une fonction spéciale qui définit un état global pour tous les shaders: </p><ul><li> <a href=
+"shader_enable_corner_id.html">shader_enable_corner_id</a> <br></li></ul></div><br> <label class="collapse" for="two">Fonctions de texture</label> <input id="two" type="checkbox"><div class="index_list"><p> Lorsque vous travaillez avec des échantillonneurs de texture dans des shaders, vous aurez besoin d&#39;informations sur la texture utilisée, auquel cas vous pouvez utiliser les fonctions suivantes: </p><ul><li> <a href=
+"../sprites/sprite_get_texture.html">sprite_get_texture</a> <br></li><li> <a href="../sprites/sprite_get_uvs.html">sprite_get_uvs</a> <br></li><li> <a href=
+"../fonts/font_get_texture.html">font_get_texture</a> <br></li><li> <a href="../fonts/font_get_uvs.html">font_get_uvs</a> <br></li><li> <a href=
+"../drawing/textures/texture_get_width.html">texture_get_width</a> <br></li><li> <a href=
+"../drawing/textures/texture_get_height.html">texture_get_height</a> <br></li><li> <a href=
+"../drawing/textures/texture_get_texel_width.html">texture_get_texel_width</a> <br></li><li> <a href=
+"../drawing/textures/texture_get_texel_height.html">texture_get_texel_height</a> <br></li><li> <a href=
+"../drawing/textures/texture_set_stage.html">texture_set_stage</a> <br></li><li> <a href=
+"../drawing/gpu/gpu_set_texfilter_ext.html">gpu_set_texfilter_ext</a> <br></li><li> <a href=
+"../drawing/gpu/gpu_set_texrepeat.html">gpu_set_texrepeat</a> <br></li></ul></div></blockquote><h2> Constantes Shader de <i><span class="notranslate">GameMaker Studio 2</span></i> </h2><p> Bien que ce manuel <b>ne</b> couvre aucune des fonctions et variables de shaders d&#39; <i><span class="notranslate">GameMaker Studio 2</span></i>, il contient une liste de celles qui sont propres à <i><span class="notranslate">GameMaker Studio 2</span></i>. Ces constantes ne font pas partie de la spécification Open GL pour les shaders et sont fournies pour simplifier l&#39;intégration des shaders dans vos projets. </p><blockquote><ol><li> <a href="shader%20constants/index.html">Constantes de shader</a> <br></li></ol></blockquote><h2> Formats de sommet et primitives personnalisées </h2><p> Enfin, <i><span class="notranslate">GameMaker Studio 2</span></i> vous permet de définir vos propres <b>formats</b> de <b>sommet à</b> partir desquels vous pouvez créer vos propres primitives personnalisées. Cela peut grandement accélérer les opérations de shader ou peut être utilisé pour étendre leurs capacités et créer des effets surprenants. Vous pouvez trouver des informations à ce sujet dans les sections suivantes: </p><blockquote><ol><li> <a href=
+"../drawing/primitives/vertex%20formats/index.html">Vertex Formats</a> <br></li><li> <a href=
+"../drawing/primitives/primitive%20building/index.html">Bâtiment primitif</a> <br></li></ol></blockquote><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Arrière: <a href="../index.html">Référence du langage <i><span class="notranslate">GameMaker</span> Studio 2</i></a> </div><div style="float:right"> Suivant: <a href=
+"../fonts/index.html">Polices</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

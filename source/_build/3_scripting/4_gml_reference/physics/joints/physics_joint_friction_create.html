@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>physics_joint_friction_create</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/physics/joints/physics_joint_friction_create.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fphysics%2Fjoints%2Fphysics_joint_friction_create.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fphysics%2Fjoints%2Fphysics_joint_friction_create.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h1 class="studio"> physics_joint_friction_create </h1><h2 class="studio"> Un joint pour réduire le mouvement relatif entre deux appareils. </h2><h3 class="studio"> Syntaxe: </h3><p class="code">physics_joint_friction_create(inst1, inst2,
+anchor_x, anchor_y, max_force, max_torque, col)<span class="notranslate"></span></p><p><br></p><div class="param"><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">inst1</span> </td> <td> La première instance à se connecter avec l&#39;articulation </td></tr><tr class="alt"><td> <span class="notranslate">inst2</span> </td> <td> La deuxième instance pour se connecter avec l&#39;articulation </td></tr><tr><td> <span class="notranslate">anchor_x</span> </td> <td> La coordonnée x pour l&#39;articulation, dans le monde du jeu </td></tr><tr class="alt"><td> <span class="notranslate">anchor_y</span> </td> <td> La coordonnée y pour l&#39;articulation, dans le monde du jeu </td></tr><tr><td> <span class="notranslate">max_force</span> </td> <td> La force de friction maximale qui sera appliquée </td></tr><tr class="alt"><td> <span class="notranslate">max_torque</span> </td> <td> La force de rotation maximale qui sera appliquée </td></tr><tr><td> <span class="notranslate">col</span> </td> <td> Si les deux instances peuvent entrer en collision (vrai) ou non (faux) </td></tr></table></div><p><br></p><p> <b>Renvoie:</b> Index de l&#39;articulation </p><p><br></p><h3 class="studio"> La description </h3><p> Le joint de friction est un peu différent de tous les autres joints de la simulation physique en ce sens que la connexion créée ne contraint pas la position ou le mouvement des instances, mais plutôt sa vitesse et sa rotation. Cela fonctionne en prenant les valeurs d&#39;entrée maximales pour la force et le couple et en les appliquant à la seconde fixation pour ramener la vitesse et le moment angulaire aux mêmes valeurs que celles de la première instance. Donc, si vous avez une instance stationnaire et une instance mobile, connectez-les avec un joint de friction, l&#39;instance mobile ralentira progressivement jusqu&#39;à ce qu&#39;elle soit également stationnaire. Si les deux instances se déplaçaient alors la seconde instance aura sa vitesse de déplacement modifiée pour correspondre à celle de la première instance. <br><br><img class="center" src="images/friction_joint_image.png"></p><p> Comme avec la plupart des autres articulations, vous fournissez les instances à joindre ensemble, ainsi que la position de l&#39;articulation à créer dans la pièce. Vous fournissez alors la force maximale et le couple maximum (frottement directionnel et rotationnel), et si vous définissez la valeur &quot;col&quot; sur <tt>true</tt> alors les deux instances peuvent interagir et entrer en collision les unes avec les autres, mais <i>seulement</i> si elles ont des événements de collision, mais si elle est définie sur <tt>false</tt>, ils ne vont pas entrer en collision, peu importe quoi. <br><br></p><p><br></p><h3 class="studio"> Exemple: </h3><p class="code">var mainFixture, o_id;<br>
+mainFixture = physics_fixture_create();<br>
+physics_fixture_set_circle_shape(mainFixture,
+sprite_get_width(sprite_index) / 2);<br>
+o_id = instance_create_layer(x+300, y, "Instances",
+obj_Rudder);<br>
+physics_fixture_bind(mainFixture, id);<br>
+physics_fixture_bind(mainFixture, o_id);<br>
+physics_joint_friction_create(id, o_id, x, y, 10, 0.3, true);<br>
+physics_fixture_delete(mainFixture);<br><span class="notranslate"></span></p><p> Le code ci-dessus va créer un fixture puis le lier à deux instances, avant de les relier toutes les deux en utilisant un joint de friction. </p><p><br></p><div class="clear"><div style="float:left"> Arrière: <a href="index.html">Articulations</a> </div><div style="float:right"> Suivant: <a href=
+"physics_joint_delete.html">physics_joint_delete</a> </div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

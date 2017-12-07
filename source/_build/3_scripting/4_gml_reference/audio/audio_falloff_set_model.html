@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>audio_falloff_set_model</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/audio/audio_falloff_set_model.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Faudio%2Faudio_falloff_set_model.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Faudio%2Faudio_falloff_set_model.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> audio_falloff_set_model </h2><div class="body-scroll"><p><br></p><h3> La description </h3><blockquote><p> Pour ajouter plus de polyvalence au moteur audio, <i><span class="notranslate">GameMaker Studio</span> 2</i> vous permet de sélectionner le modèle d&#39;atténuation qui convient à votre jeu. Ce modèle sera utilisé pour <b>toutes</b> les fonctions audio du jeu ou de l&#39;application, et vous devez donc vous assurer que le modèle que vous choisissez est le bon, car chacun affectera la façon dont l&#39;auditeur perçoit les sons que vous jouez à travers les émetteurs ou fonction <a href=
+"audio_play_sound_at.html"></a><tt>audio_play_sound_at</tt>. </p><p> Lorsque vous définissez la chute dans votre jeu avec les fonctions appropriées, il y a trois arguments que vous devrez définir, et chacun est approprié à un modèle spécifique et affectera la façon dont le son final est &quot;entendu&quot; par le joueur en fonction de la distance que l&#39;auditeur provient de la source. Les trois arguments sont: </p><ul><li> <b>distance de référence</b> - distance entre l&#39;auditeur et la distance sous laquelle le volume du son devrait normalement diminuer de moitié avant d&#39;être influencé par le facteur d&#39;atténuation ou la distance maximale spécifiée. </li><li style="list-style: none"><br></li><li> <b>distance maximale</b>: définit la distance à laquelle il n&#39;y aura plus d&#39;atténuation du son source. Cela peut être le point auquel le son n&#39;est plus entendu <i>ou</i> le point auquel le volume sonore ne diminue plus en dessous du seuil minimum défini par le modèle choisi. </li><li style="list-style: none"><br></li><li> <b>facteur d&#39;atténuation</b> - Le facteur d&#39;atténuation est utilisé dans l&#39;atténuation de distance basée sur le modèle de distance inverse et définit le seuil minimum final pour un son avec atténuation. </li></ul><p><br> Les modèles d&#39;atténuation affectés par ces arguments sont représentés dans <i><span class="notranslate">GameMaker Studio 2</span></i> par les constantes suivantes (le tableau montre également les calculs exacts utilisés): </p><div class="compat"><table><tr><th> Constant </th><th> Fonction </th></tr><tr><td> <span class="notranslate">audio_falloff_exponent_distance</span> </td> <td><br> gain = (listener_distance / reference_distance) ^ (-falloff_factor) <br><br></td></tr><tr class="alt"><td> <span class="notranslate">audio_falloff_exponent_distance_clamped</span> </td> <td><br> distance = clamp (listener_distance, reference_distance, maximum_distance) <br> gain = (distance / distance_distance) ^ (-falloff_factor) <br><br></td></tr><tr><td> <span class="notranslate">audio_falloff_inverse_distance</span> </td> <td><br> gain = reference_distance / (reference_distance + falloff_factor * (listener_distance - reference_distance)) <br><br></td></tr><tr class="alt"><td> <span class="notranslate">audio_falloff_inverse_distance_clamped</span> </td> <td><br> distance = clamp (listener_distance, reference_distance, maximum_distance) <br> gain = reference_distance / (reference_distance + falloff_factor * (distance - reference_distance)) <br><br></td></tr><tr><td> <span class="notranslate">audio_falloff_linear_distance</span> </td> <td><br> distance = min (distance, distance maximale) <br> gain = (1 - falloff_factor * (distance - reference_distance) / (maximum_distance - reference_distance)) <br><br></td></tr><tr class="alt"><td> <span class="notranslate">audio_falloff_linear_distance_clamped</span> </td> <td><br> distance = clamp (listener_distance, reference_distance, maximum_distance) <br> gain = (1 - falloff_factor * (distance - reference_distance) / (maximum_distance - reference_distance)) <br><br></td></tr><tr><td> <span class="notranslate">audio_falloff_none</span> </td> <td><br> gain = 1 <br><br></td></tr></table></div><p><br> Les graphiques suivants sont des représentations visuelles de la façon dont les constantes ci-dessus fonctionnent et affectent le son en cours de lecture: <img class=
+"center" src="distance_models.png"></p></blockquote><p><br></p><h3> Syntaxe: </h3><p class="code">audio_falloff_set_model(model);<span class="notranslate"></span></p><p><br></p><div><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">model</span> </td> <td> La <b>constante</b> utilisée pour définir le modèle d&#39;atténuation. </td></tr></table></div><p><br></p><h3> Résultats: </h3><p class="code">N/A<span class="notranslate"></span></p><p><br></p><h3> Exemple: </h3><p class="code">
+audio_falloff_set_model(audio_falloff_exponent_distance_clamped);<br>
+
+audio_play_sound_at(snd_Waterfall, x, y, 0, 100, 300, 1, true,
+1);<br><span class="notranslate"></span></p><blockquote><p> Le code ci-dessus définit le modèle falloff et joue le son indexé dans la variable &quot;snd_Waterfall&quot;, qui sera bouclée à sa position de pièce, avec une référence de chute de 100, une distance de chute de 300, un facteur de réduction de 1 et une faible priorité. </p></blockquote><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">Audio</a> </div><div style="float:right"> Suivant: <a href=
+"audio_sound_gain.html">audio_sound_gain</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

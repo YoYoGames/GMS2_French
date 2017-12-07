@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Drawing Sprites And Tiles</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/drawing/sprites_and_tiles/index.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fdrawing%2Fsprites_and_tiles%2Findex.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fdrawing%2Fsprites_and_tiles%2Findex.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> Dessin de sprites et de carreaux </h2><p> Même si vous pouvez définir des arrière-plans dans l&#39;éditeur de pièce et que vous pouvez affecter des sprites à des instances, cette option n&#39;est souvent pas assez flexible pour le jeu que vous créez. Par exemple, si vous avez une instance qui doit dessiner un menu, vous voudrez peut-être afficher plusieurs sprites de boutons à la fois, ou si vous avez un jeu avec des arrière-plans de parallaxe, vous devrez être en mesure de les définir dans un instance de contrôleur d&#39;un certain type. Dans ces situations, vous devriez utiliser les fonctions suivantes qui peuvent dessiner des objets de sprite et d&#39;arrière-plan n&#39;importe où dans la pièce avec certaines fonctions qui vous permettent également de manipuler la forme, la taille, la couleur et l&#39;alpha de l&#39;image-objet. </p><blockquote><a name="drawing_sprites" id="drawing_sprites"></a> <label class="collapse" for="one">Dessin des sprites</label> <input id="one" type="checkbox"><div class="index_list"><p> Vous pouvez attribuer un sprite à une instance et par défaut <i><span class="notranslate">GameMaker Studio 2</span></i> dessinera avec les propriétés données par les différentes des <a href=
+"../../instances/instance_variables/index.html">variables sprite</a>, si vous ajoutez quoi que ce soit dans le cas de tirage au sort, vous « prenez le contrôle » et doit dire <i><span class="notranslate">GameMaker Studio 2</span></i> exactement que dessiner. Cela signifie que si vous devez utiliser les fonctions suivantes pour définir exactement ce que l&#39;instance doit dessiner et où dans la pièce il faut dessiner: </p><ul><li> <a href="draw_self.html">dessiner</a> <br></li><li> <a href="draw_sprite.html">draw_sprite</a> <br></li><li> <a href="draw_sprite_ext.html">draw_sprite_ext</a> <br></li><li> <a href="draw_sprite_general.html">draw_sprite_general</a> <br></li><li> <a href="draw_sprite_part.html">draw_sprite_part</a> <br></li><li> <a href=
+"draw_sprite_part_ext.html">draw_sprite_part_ext</a> <br></li><li> <a href=
+"draw_sprite_stretched.html">draw_sprite_stretched</a> <br></li><li> <a href=
+"draw_sprite_stretched_ext.html">draw_sprite_stretched_ext</a> <br></li><li> <a href="draw_sprite_pos.html">draw_sprite_pos</a> <br></li><li> <a href="draw_sprite_tiled.html">draw_sprite_tiled</a> <br></li><li> <a href=
+"draw_sprite_tiled_ext.html">draw_sprite_tiled_ext</a> <br></li></ul></div><br><a name="swf_sprites" id="swf_sprites"></a> <label class="collapse"
+for="two">Sprites SWF</label> <input id="two" type="checkbox"><div class="index_list"><p> Si vous utilisez des sprites au format SWF, il existe également des options supplémentaires pour contrôler l&#39;anticrénelage utilisé lors du dessin (voir <a href=
+"../../../../1_overview/3_additional_information/importing_non_bitmap_sprites.html">Importation de sprites</a> autres que <a href=
+"../../../../1_overview/3_additional_information/importing_non_bitmap_sprites.html">Bitmap</a> pour plus d&#39;informations sur ces types de sprites). Notez que ces fonctions fonctionnent au niveau <i>global</i> et définissent l&#39;AA sur tous les sprites SWF vectoriels dessinés après leur appel. </p><ul><li> <a href="draw_enable_swf_aa.html">draw_enable_swf_aa</a> <br></li><li> <a href=
+"draw_set_swf_aa_level.html">draw_set_swf_aa_level</a> <br></li><li> <a href=
+"draw_get_swf_aa_level.html">draw_get_swf_aa_level</a> <br></li></ul></div><br><a name="spine_sprites" id="spine_sprites"></a> <label class=
+"collapse" for="three">Spine Sprites (Animations squelettes)</label> <input id="three" type="checkbox"><div class="index_list"><p> Outre les fonctions énumérées ci-dessus, deux fonctions spéciales sont également conçues pour les animations squelettiques (voir <a href=
+"../../../../1_overview/3_additional_information/importing_non_bitmap_sprites.html">Importation de sprites non-bitmap</a> pour plus d&#39;informations sur ces types de sprites et section <a href=
+"../../sprites/skeletal%20animations/index.html">Animations squelettiques</a> pour des fonctions spécifiques liées à ces types de sprites).: </p><ul><li> <a href="draw_skeleton.html">draw_skeleton</a> <br></li><li> <a href=
+"draw_skeleton_instance.html">draw_skeleton_instance</a> <br></li><li> <a href=
+"draw_skeleton_collision.html">draw_skeleton_collision</a> <br></li><li> <a href="draw_skeleton_time.html">draw_skeleton_time</a> <br></li></ul></div><br><a name="drawing_tiles" id="drawing_tiles"></a> <label class=
+"collapse" for="four">Tracer des carreaux</label> <input id="four" type=
+"checkbox"><div class="index_list"><p> Les mosaïques sont automatiquement dessinées en fonction des données qu&#39;elles contiennent, du jeu de mosaïques utilisé et des propriétés du tilemap. Cependant, vous <i>pouvez</i> dessiner des carreaux individuels ou des vignettes en utilisant les fonctions suivantes: </p><ul><li> <a href="draw_tile.html">draw_tile</a> <br></li><li> <a href="draw_tile_ext.html">draw_tile_ext</a> <br></li><li> <a href="draw_tilemap.html">tilemap_draw</a> <br></li></ul></div></blockquote><p><br></p><div class="clear"><div style="float:left"> Retour: <a href=
+"../index.html">Dessin</a> </div><div style="float:right"> Suivant: <a href="../text/index.html">Dessin de texte</a> </div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

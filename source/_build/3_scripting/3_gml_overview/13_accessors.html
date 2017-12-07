@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Accessors</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+<link rel="stylesheet" href="../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/3_gml_overview/13_accessors.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2F_build%2F3_scripting%2F3_gml_overview%2F13_accessors.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2F_build%2F3_scripting%2F3_gml_overview%2F13_accessors.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> Accesseurs </h2><div class="body-scroll"><p><br></p><p> Le langage <span class="notranslate">GameMaker</span> (GML) vous permet également d&#39;accéder à certaines <a href="../4_gml_reference/data_structures/index.html">structures de données</a> et à certains <a href=
+"../4_gml_reference/buffers/index.html">tampons</a> en utilisant des expressions logiques appelées <b>accesseurs</b>. Ceci est fait de la même manière que pour travailler avec des <a href=
+"10_arrays.html">tableaux</a> seulement nous utilisons un symbole d&#39;identifiant avant le premier argument pour indiquer à <i><span class="notranslate">GameMaker Studio 2</span></i> que vous travaillez sur une structure de données (précédemment créée). <br><br></p><h2> Structures de données </h2><p> Vous pouvez ajouter, remplacer et obtenir des valeurs et des clés pour les types de structure de données suivants: <a href=
+"../4_gml_reference/data_structures/ds%20maps/index.html">ds_maps</a>, <a href=
+"../4_gml_reference/data_structures/ds%20lists/index.html">ds_lists</a> et <a href=
+"../4_gml_reference/data_structures/ds%20grids/index.html">ds_grids</a>. Chacun a reçu son propre symbole et sa propre méthode pour accéder, modifier ou définir des valeurs, comme indiqué ci-dessous. </p><blockquote> <label class="collapse" for="one">ds_list [| ]</label> <input id="one" type="checkbox"><div class="index_list"> La syntaxe des listes est: <br><br><p class="code">list_index[| index]<span class="notranslate"></span></p><br> Donc, quand vous avez utilisé <tt>ds_list_create()</tt> Pour créer votre liste, vous devez utiliser l&#39;index de la liste (que vous avez stocké dans une variable) pour le référencer, la valeur &quot;index&quot; étant la position dans la liste à définir ou à ajouter. Par exemple, le code suivant crée une liste, puis ajoute 10 entrées, définissant chaque entrée sur un nombre aléatoire compris entre 0 et 9: <br><br><p class="code">ds = ds_list_create();<br>
+var index = 0;<br>
+repeat(10)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;ds[| index++] = irandom(9);<br>
+&nbsp;&nbsp;&nbsp;}<br><span class="notranslate"></span></p><br> Une fois que vous avez créé votre structure de liste et l&#39;avez remplie avec des données, pour obtenir des valeurs de la liste, vous auriez quelque chose comme: <br><br><p class="code">value = ds[| 5];<span class="notranslate"></span></p><br> Ce qui précède obtiendra la valeur à partir de la position 5 (le sixième indice, puisque les listes commencent à 0) et le stocker dans une variable. Notez que si vous utilisez une expression pour ajouter une référence à un index ayant déjà une valeur, la valeur précédente sera remplacée plutôt qu&#39;un index supplémentaire ajouté à la liste. Pour ajouter d&#39;autres entrées, vous devez connaître la taille de ds_list et les ajouter à la fin. Il convient également de noter que vous pouvez définir un index de liste <i>supérieur</i> à la taille de la liste référencée, ce qui permet de définir cette valeur, d&#39;étendre la liste en même temps et d&#39;initialiser toutes les positions dans la liste. à l&#39;index donné comme 0. </div><br> <label class="collapse" for="two">ds_map [? ]</label> <input id=
+"two" type="checkbox"><div class="index_list"> La syntaxe des cartes est la suivante: <br><br><p class="code">map_index[? key]<span class="notranslate"></span></p><br> Après avoir créé votre carte avec <tt>ds_map_create()</tt>, vous utiliseriez l&#39;index de carte que vous avez stocké dans une variable pour le référencer, la valeur &quot;clé&quot; étant la clé de la carte à définir ou à obtenir. Par exemple, le code suivant crée une carte, puis ajoute quelques entrées à l&#39;aide de cette syntaxe: <br><br><p class="code">ds = ds_map_create();<br>
+ds[? "Name"] = "Hamish";<br>
+ds[? "Company"] = "MacSeweeny Games";<br>
+ds[? "Game"] = "Catch The Haggis";<br><span class="notranslate"></span></p><br> Une fois que vous avez créé la structure de votre carte et l&#39;avez remplie avec des données, pour obtenir des valeurs à partir d&#39;une clé de carte spécifique, vous auriez quelque chose comme: <br><br><p class="code">value = ds[? "Name"];<span class="notranslate"></span></p><br> Ce qui précède obtiendra la valeur à partir de la clé &quot;Name&quot; et la stockera dans une variable. Notez que si la carte contient déjà la même valeur de clé que vous essayez d&#39;ajouter, elle ne créera pas de clé dupliquée avec la nouvelle valeur, mais la valeur précédente sera remplacée. </div><br> <label class="collapse" for="three">ds_grid [#]</label> <input id=
+"three" type="checkbox"><div class="index_list"> La syntaxe pour les grilles est: <br><br><p class="code">grid_index[# xpos, ypos]<span class="notranslate"></span></p><br> Après avoir créé votre grille avec le <tt>ds_grid_create()</tt> fonction, vous utiliserez l&#39;index de grille que vous avez stocké dans une variable pour le référencer, avec le &quot;xpos&quot; et &quot;ypos&quot; étant la position dans la grille pour obtenir ou définir une valeur. Par exemple, le code suivant crée une grille, l&#39;efface à 0, puis lui ajoute quelques entrées: <br><br><p class="code">ds = ds_grid_create();<br>
+ds_grid_clear(ds, 0);<br>
+var gw = ds_grid_width(ds) - 1;<br>
+var gh = ds_grid_height(ds) - 1;<br>
+repeat(10)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;var xx = irandom(gw);<br>
+&nbsp;&nbsp;&nbsp;var yy = irandom(gh);<br>
+&nbsp;&nbsp;&nbsp;if ds[# xx, yy] == 0 ds[# xx, yy] = 1;<br>
+&nbsp;&nbsp;&nbsp;}<br><span class="notranslate"></span></p><br> Une fois que vous avez créé votre structure de grille et l&#39;avez remplie avec des données, pour obtenir des valeurs à partir d&#39;une position de grille spécifique, vous auriez quelque chose comme: <br><br><p class="code">value = ds[# mouse_x div 16, mouse_y div 16];<span class="notranslate"></span></p><br> Ce qui précède obtiendra la valeur du ds_grid donné en fonction de la position de la souris (divisée par la largeur de la &quot;cellule&quot; dans la pièce pour obtenir l&#39;emplacement correct). </div></blockquote><p><br></p><h2> Tableaux </h2><p> Les tableaux ont également leurs propres accesseurs qui fonctionnent de la même manière que ceux listés ci-dessus pour les structures de données. Cependant, les accesseurs de tableau ont une propriété intéressante, c&#39;est-à-dire vous permettre de modifier un tableau à partir d&#39;un script sans avoir à le copier. Lorsque vous passez un tableau dans un script, il est <i>passé par référence</i>, ce qui signifie que le tableau lui-même n&#39;est pas copié dans le script mais qu&#39;il est simplement référencé pour obtenir les données. Normalement, si vous avez besoin de changer le tableau, il sera copié dans le script et vous devrez alors passer le tableau copié pour que le tableau original soit mis à jour. Cela peut entraîner des coûts de traitement élevés et vous pouvez utiliser l&#39;accesseur à la place, car cela modifiera directement le tableau d&#39;origine sans qu&#39;il soit nécessaire de le copier. Vous pouvez voir comment cela fonctionne dans les exemples ci-dessous. </p><p> La syntaxe des tableaux est la suivante: <br></p><p class="code">array[@ xpos]<br>
+array[@ xpos, ypos]<br><span class="notranslate"></span></p><p> Après avoir créé votre tableau dans une instance, vous pouvez ensuite le passer à un script par référence et utiliser l&#39;accesseur <tt>@</tt> pour le changer directement. Par exemple, vous créez le tableau et appelez le script comme ceci: <br></p><p class="code">array[99] = 0;<br>
+scr_Array_Populate(array);<br><span class="notranslate"></span></p><p> Le script lui-même aurait quelque chose comme ça: <br></p><p class="code">var a = argument0; var i = 0; repeat(25)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;i = irandom(99);<br>
+&nbsp;&nbsp;&nbsp;while (a[i] != 0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i = irandom(99);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;a[@ i] = 100;<br>
+&nbsp;&nbsp;&nbsp;}<br><span class="notranslate"></span></p><p> Tout ce que fait ce script est de sélectionner 25 positions aléatoires dans le tableau et de définir la valeur de la position du tableau à 100. </p><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">Présentation du GML</a> </div><div style="float:right"> Suivant: <a href=
+"14_language_features.html">Caractéristiques du langage</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

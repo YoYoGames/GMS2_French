@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>dot_product_3d</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/maths/vector functions/dot_product_3d.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fmaths%2Fvector%20functions%2Fdot_product_3d.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fmaths%2Fvector%20functions%2Fdot_product_3d.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> dot_product_3d </h2><div class="body-scroll"><h3 class="studio"> Syntaxe: </h3><p class="code">dot_product_3d(x1, y1, z1, x2, y2, z2)<span class="notranslate"></span></p><p><br></p><div class="param"><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">x1</span> </td> <td> La coordonnée x du premier vecteur. </td></tr><tr class="alt"><td> <span class="notranslate">y1</span> </td> <td> La coordonnée y du premier vecteur. </td></tr><tr><td> <span class="notranslate">z1</span> </td> <td> La coordonnée z du premier vecteur. </td></tr><tr class="alt"><td> <span class="notranslate">x2</span> </td> <td> La coordonnée x du deuxième vecteur. </td></tr><tr><td> <span class="notranslate">y2</span> </td> <td> La coordonnée y du second vecteur. </td></tr><tr class="alt"><td> <span class="notranslate">z2</span> </td> <td> La coordonnée z du deuxième vecteur. </td></tr></table></div><p><br></p><p> <b>Retours:</b> Real </p><p><br></p><h3 class="studio"> La description </h3><p> Le produit scalaire est une valeur exprimant la relation angulaire entre deux vecteurs et se trouve en prenant deux vecteurs, en les multipliant ensemble et en ajoutant ensuite les résultats. Le nom &quot;produit scalaire&quot; est dérivé du point centré &quot;·&quot; qui est souvent utilisé pour désigner cette opération (le nom alternatif &quot;produit scalaire&quot; met l&#39;accent sur la nature scalaire plutôt que sur la nature vectorielle du résultat). <br><br> La formule mathématique réelle peut être écrite comme ceci: <br><br><img class="center" src="images/dot_product_image.png"></p><p><br> En 2D, le produit scalaire des vecteurs a [x1, y1] et b [x2, y2] est x1x2 + y1y2, donc en 3D, le produit scalaire des vecteurs a [x1, y1, z1] et b [x1, y1, z1] est x1x2 + y1y2 + z1z2. Ainsi, le dot_product_3d dans <i><span class="notranslate">GameMaker Studio 2</span></i> est calculé comme <i><span class="notranslate">GameMaker Studio 2</span></i>: <br></p><p class="code">a · b = (x1*x2) + (y1*y2) + (z1*z2);<br><span class="notranslate"></span></p><p> La chose curieuse à propos du produit scalaire est la relation qu&#39;il a avec l&#39;angle formé par les vecteurs d&#39;entrée qui peuvent être exprimés comme: </p><p class="code">a · b = (length of a) * (length of b) *
+cos(angle)<span class="notranslate"></span></p><p> C&#39;est-à-dire que le produit scalaire de deux vecteurs sera égal au cosinus de l&#39;angle entre ces vecteurs, multiplié par les longueurs de chacun d&#39;eux. Voici une image pour illustrer: <br><br><img class="center" src="images/dot_product_image_2.png"></p><p> Il y a quelques choses que nous pouvons maintenant énoncer à partir de deux vecteurs quelconques en relation avec le résultat de leur produit scalaire: </p><ul><li> Si a et b sont perpendiculaires (à 90 degrés l&#39;un de l&#39;autre), le résultat du produit scalaire sera nul, car cos (ang) sera nul </li><li> Si l&#39;angle entre a et b est inférieur à 90 degrés, le produit scalaire sera positif (supérieur à zéro), car cos (ang) sera positif </li><li> Si l&#39;angle entre a et b est supérieur à 90 degrés, le produit scalaire sera négatif (inférieur à zéro), car cos (ang) sera négatif </li></ul><p> Alors qu&#39;est-ce que cela signifie pour ceux d&#39;entre nous qui font des jeux? Bien, cette relation mathématique peut être utilisée dans un certain nombre de circonstances, mais la meilleure façon de le voir est de construire un scénario réel et de voir par vous-même ce qui se passe. L&#39;un des moyens les plus simples de le faire est de générer un simple &quot;contrôle de hauteur&quot; pour un ennemi, disons un jeu de plateforme, afin que l&#39;ennemi &quot;voie&quot; le joueur s&#39;il est au dessus du plan formé par le vecteur <i>normal</i> ennemi. le 3ème étage. <br><br><img class="center" src="images/dot_product_3d_image.png"></p><p> Fondamentalement, nous obtenons le vecteur normal de l&#39;ennemi perpendiculaire au sol et ensuite nous obtenons le vecteur du joueur à l&#39;ennemi. Nous obtiendrons alors le dot_product de ces vecteurs, et si le résultat est positif le joueur est &quot;au-dessus&quot; du plan de sol ennemi et s&#39;il est négatif il est en dessous. Le code réel pour obtenir ce travail est fourni dans l&#39;exemple ci-dessous. </p><p><br></p><h3 class="studio"> Exemple: </h3><p class="code">var x1, y1, x2, y2;<br>
+x1 = 0;<br>
+y1 = 1;<br>
+z1 = 0;<br>
+x2 = o_Player.x - x;<br>
+y2 = o_Player.y - y;<br>
+z2 = o_Player.z - z; if dot_product_3d(x1, y1, z1, x2, y2, z2) &gt;
+0 above=true else above=false;<br><span class="notranslate"></span></p><p> Le code ci-dessus crée un vecteur normal le long de l&#39;axe y (up), puis récupère le vecteur de l&#39;objet joueur &quot;o_Player&quot; sur lui-même. Finalement, il calcule le produit scalaire de ces deux vecteurs et s&#39;il est supérieur à tan 0, il met la variable &quot;above&quot; à true, et s&#39;il est inférieur ou égal à 0, il le met à &quot;false&quot;. </p><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">Fonctions vectorielles</a> </div><div style="float:right"> Suivant: <a href=
+"dot_product_normalised.html">dot_product_normalised</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

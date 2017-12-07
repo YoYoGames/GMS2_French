@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>mp_grid_path</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/movement and collisions/motion planning/mp_grid_path.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fmovement%20and%20collisions%2Fmotion%20planning%2Fmp_grid_path.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fmovement%20and%20collisions%2Fmotion%20planning%2Fmp_grid_path.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> mp_grid_path </h2><div class="body-scroll"><h3 class="studio"> Syntaxe: </h3><p class="code">mp_grid_path(id, path, xstart, ystart, xgoal,
+ygoal, allowdiag);<span class="notranslate"></span></p><p><br></p><div class="param"><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">id</span> </td> <td> Index du mp_grid à utiliser </td></tr><tr class="alt"><td> <span class="notranslate">path</span> </td> <td> index du chemin qui doit être utilisé par la fonction </td></tr><tr><td> <span class="notranslate">x start</span> </td> <td> Début de la coordonnée x du nouveau chemin </td></tr><tr class="alt"><td> <span class="notranslate">y start</span> </td> <td> Début y coordonnée du nouveau chemin </td></tr><tr><td> <span class="notranslate">xgoal</span> </td> <td> Finition x coordonnée du nouveau chemin </td></tr><tr class="alt"><td> <span class="notranslate">ygoal</span> </td> <td> Finition y coordonnée du nouveau chemin </td></tr><tr><td> <span class="notranslate">allowdiag</span> </td> <td> Indique si les déplacements diagonaux sont autorisés au lieu de simplement horizontaux ou verticaux </td></tr></table></div><p><br></p><p> <b>Renvoie:</b> Booléen. </p><p><br></p><h3 class="studio"> La description </h3><p><br> Avec cette fonction, vous pouvez créer un chemin qui va naviguer d&#39;un point de départ à un point d&#39;arrivée en utilisant un <tt>mp_grid</tt> que vous avez défini précédemment, en évitant les obstacles qui ont déjà été ajoutés dans la grille. Les arguments xstart et ystart indiquent le début du chemin dans les coordonnées de la pièce, tandis que les arguments xgoal et ygoal indiquent la destination. Vous pouvez également sélectionner un mouvement horizontal / vertical uniquement ou autoriser des mouvements diagonaux complets en spécifiant true dans l&#39;argument allowdiag. La fonction renvoie true (elle a réussi à trouver un chemin) ou false (elle a échoué) ainsi que le chemin choisi. Dans l&#39;image suivante, vous pouvez voir comment tout cela fonctionne ensemble: <br><br><img class="center" src="images/mp_grid_path_image.png"></p><p> Comme vous pouvez le voir, les objets &quot;pipe&quot; ont été ajoutés dans la grille, ce qui signifie que tout chemin créé doit les contourner. Il y a deux chemins créés dans l&#39;image, un (vert) a été fait avec des diagonales permises et l&#39;autre (rouge) sans. La différence entre les deux est assez évidente avec le chemin vert apparaissant beaucoup plus &quot;élégant&quot; et direct, mais tout dépend de ce que vous allez utiliser pour les mettre à celui que vous préférez. Notez que le chemin est indépendant de l&#39;instance actuelle - c&#39;est un chemin à travers la grille, pas un chemin pour une instance spécifique, même si une instance spécifique peut avoir la variable qui stocke l&#39;index de chemin. Vous devrez peut-être aussi déboguer ces chemins pour voir comment ils sont créés et interagir dans l&#39;environnement de jeu, auquel cas vous devriez utiliser le <a href=
+"../../drawing/forms/draw_path.html"><tt>draw_path</tt></a> fonction. <br><br> <i><b>NOTE:</b> Le chemin doit avoir été préalablement créé (soit en code avec <a href=
+"../../paths/changing%20paths/path_add.html"><tt>path_add</tt></a> ou en tant que ressource) et sera remplacé par le chemin généré par cette fonction.</i> <br><br></p><p><br></p><h3 class="studio"> Exemple: </h3><p class="code">global.grid = mp_grid_create(0, 0, room_width div
+32, room_height div 32, 32, 32);<br>
+mp_grid_add_instances(global.grid, obj_wall, false);<br>
+with (obj_Enemy)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;path = path_add();<br>
+&nbsp;&nbsp;&nbsp;if mp_grid_path(global.grid, path, x, y,
+obj_Player.x, obj_Player.y, 1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path_start(path, 0, 3, 0);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;}<br><span class="notranslate"></span></p><p> Le code ci-dessus crée une variable globale &quot;global.grid&quot;, puis génère un mp_grid et affecte son index (id) à cette variable pour l&#39;utiliser dans tous les autres appels de fonction mp_grid. Il ajoute ensuite toutes les instances de &quot;obj_Wall&quot; dans la grille avant d&#39;obtenir toutes les instances de &quot;obj_Enemy&quot; pour créer un chemin, puis utiliser <tt>mp_grid_path</tt> pour calculer une déroute de leur position à la position de &quot;obj_Player&quot;. Si un itinéraire existe, l&#39;objet commence lui-même le long du chemin. </p><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">Planification de mouvement</a> </div><div style="float:right"> Suivant: <a href=
+"mp_grid_add_cell.html">mp_grid_add_cell</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

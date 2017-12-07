@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Arrays</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+<link rel="stylesheet" href="../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/3_gml_overview/10_arrays.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2F_build%2F3_scripting%2F3_gml_overview%2F10_arrays.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2F_build%2F3_scripting%2F3_gml_overview%2F10_arrays.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> Tableaux </h2><div class="body-scroll"><p><br></p><p> Les tableaux peuvent sembler confus au début, mais ils peuvent être extrêmement utiles et sont une partie essentielle de la création de jeux. Pourquoi? Eh bien, voici quelques choses qui seraient impossibles sans tableaux - </p><ul><li> Menus Un tableau ou deux peut rendre beaucoup plus facile de créer un bon système de menu. </li><li> RPGs. Les tableaux sont essentiels pour créer des RPG, car au lieu d&#39;avoir un fouillis de variables, vous n&#39;avez que quelques lignes, auxquelles vous pouvez vous référer à tout moment. </li><li> Jeux de cartes. Bon pour garder la trace des cartes et des mains et peut même être mélangé! </li><li> Des scores élevés et d&#39;autres statistiques. Il est beaucoup plus facile de suivre un tableau que plusieurs variables. </li></ul><p> Ce n&#39;est que la pointe de l&#39;iceberg car les tableaux sont l&#39;un des outils de programmation les plus fondamentaux et les plus utiles que vous pouvez utiliser, et vous seriez surpris des applications qu&#39;ils peuvent avoir! Vous pouvez utiliser différents types de tableaux dans GML et ils sont décrits dans les sections suivantes: </p><blockquote> <label class="collapse" for="one">1 rangée de tableaux</label> <input id="one" type="checkbox"><div class="index_list"><p> D&#39;accord, nous pouvons utiliser un tableau pour les choses mentionnées ci-dessus, mais qu&#39;est-ce qu&#39;un tableau? À quoi cela ressemble-t-il? Eh bien, quelque chose comme ça... <img class="center" src="images/1darrayexample.png" alt="Tableau 1D"></p><p class="code">array[0] = 1.25;<span class="notranslate"></span></p><p> Ceci est un tableau 1D (unidimensionnel) dont nous allons maintenant décomposer les parties pour voir ce que cela signifie: </p><p class="code">array<span class="notranslate"></span></p><p> C&#39;est le nom du tableau. Comme n&#39;importe quelle autre variable, il peut être tout ce que vous voulez simplement de &quot;a&quot; à &quot;mymumscow&quot;. </p><p class="code">[0]<span class="notranslate"></span></p><p> C&#39;est la position dans le tableau que nous vérifions ou changeons. Vous voyez, un tableau est essentiellement un conteneur avec un certain nombre d&#39;espaces pour stocker des valeurs, et chaque position dans le conteneur a un numéro spécifique pour l&#39;identifier, ce qui est ce que nous mettons dans le []. Il est à noter qu&#39;un tableau <b>commence toujours à 0</b> et <i>ne</i> peut <i>jamais être négatif</i>! Maintenant élargissons notre tableau pour inclure différentes positions... </p><p class="code">array[2] = 0;<br>
+array[1] = 0;<br>
+array[0] = 0;<br><span class="notranslate"></span></p><p> Notre tableau contient maintenant trois positions (0, 1 et 2) et nous avons initialisé notre tableau à 0. Qu&#39;est-ce que cela signifie? Eh bien, un tableau doit être <i>initialisé</i> avant que nous puissions l&#39;utiliser ou <i><span class="notranslate">GameMaker</span> Studio 2</i> nous donnera une erreur. L&#39;initialisation d&#39;un tableau signifie simplement que nous donnons à chaque position du tableau une valeur initiale en préparation pour qu&#39;il soit utilisé ailleurs dans l&#39;objet ou le code. Ceci est important à retenir car cela signifie que vous devez faire une certaine planification avant d&#39;utiliser des tableaux, mais il est assez facile d&#39;en initialiser un en utilisant une boucle de répétition comme celle-ci... </p><p class="code">var i = 9;<br>
+repeat(10)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;array[i] = 0;<br>
+&nbsp;&nbsp;&nbsp;i -= 1;<br>
+&nbsp;&nbsp;&nbsp;}<br><span class="notranslate"></span></p><p> Ce code simple va initialiser un tableau de dix positions (0-9) à 0, en ce que chaque position dans le tableau contient la valeur 0. Vous remarquerez que le tableau a été initialisé à l&#39; <i>envers</i>, la dernière valeur étant définie en premier. Ce n&#39;est pas strictement nécessaire mais c&#39;est la façon optimale de le faire car il va réserver un espace en mémoire qui est la taille exacte du tableau, alors que si vous initialisez un tableau de 0 vers le haut, la mémoire doit être réallouée pour chaque valeur ajoutée supplémentaire. La différence de vitesse est négligeable pour les réseaux plus petits, mais les plus grands devraient être optimisés autant que possible de cette façon. </p><p> Mais que faire si nous voulons initialiser le tableau avec des valeurs différentes pour chaque position? Eh bien, pour cela, nous devons taper manuellement chaque position, mais il y a une bonne astuce pour nous aider à garder une trace des choses là aussi! </p><p class="code">count = 3;<br>
+array[count] = "you?"<br>
+count -= 1;<br>
+array[count] = "are "<br>
+count -= 1;<br>
+array[count] = "How "<br>
+count -= 1;<br>
+array[count] = "Hello!"<br>
+count -= 1;<br><span class="notranslate"></span></p><p> Comme vous pouvez le voir, nous n&#39;avons utilisé aucun nombre dans le tableau actuel, mais plutôt une variable pour décompter les valeurs. Cela a deux avantages - Premièrement, nous n&#39;avons pas à nous soucier des fautes de frappe ou des erreurs lors de l&#39;écriture des positions de tableau, et deux, nous avons dans la variable &quot;count&quot; le nombre de positions que le tableau contient, qui peut alors être utilisé ailleurs dans l&#39;objet. Très utile! </p><p> Enfin, vous pouvez affecter les valeurs à un tableau en utilisant un seul appel de variable comme ceci: </p><p class="code">var a = [0, 1, 2, 3, 4];<br>
+var b = [];<span class="notranslate"></span></p><p> Ce qui précède va créer deux tableaux comme variables locales, le premier déjà rempli avec 5 éléments et le second comme un tableau vide prêt à avoir des valeurs ajoutées. </p><p> Avec cela fait comment utilisons-nous un tableau pour des choses pratiques? Exactement le même que nous utiliserions une variable normale, comme le montrent les exemples suivants: </p><p class="code">total = array[0] + array[5]; //Add two array values
+together<br>
+<br>
+if (array[9]) == 10 //Check an array value<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;//do something<br>
+&nbsp;&nbsp;&nbsp;}<br>
+<br>
+draw_text(32, 32, array[3]); //draw an array value<br><span class="notranslate"></span></p><p> Puisque les tableaux sont numérotés consécutivement, cela signifie que vous pouvez les parcourir pour effectuer des actions supplémentaires, comme nous l&#39;avons fait pour l&#39;initialiser: </p><p class="code">var total = 0;<br>
+for (var i = 0; i &lt; 10; i++;)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;total += array[i];<br>
+&nbsp;&nbsp;&nbsp;draw_text(32, 32 + (i * 32), array[i]);<br>
+&nbsp;&nbsp;&nbsp;}<br>
+draw_text(32, 32 + (i * 32), total);<br><span class="notranslate"></span></p><p> Le code ci-dessus va ajouter toutes les valeurs dans notre tableau, dessiner chacun d&#39;eux et dessiner la valeur totale à la fin. </p></div><br> <label class="collapse" for="two">Tableaux à 2 dimensions</label> <input id="two" type="checkbox"><div class="index_list"><p> Maintenant que nous savons à quoi ressemble un tableau normal, regardons un tableau 2D (bidimensionnel). <img class="center" src=
+"images/2darrayexample.png" alt="Tableaux 2D"></p><p class="code">array[0, 0] = 5;<span class="notranslate"></span></p><p> Comme précédemment, chaque nombre pointe vers une position dans le tableau, mais cette fois-ci, chaque position a une coordonnée &quot;a&quot; <i>et</i> &quot;b&quot;. Pensez-y comme une dimension supplémentaire à notre conteneur, car il a maintenant la hauteur <i>et la</i> largeur alors que le tableau 1D n&#39;a que la hauteur. Voici un exemple étendu: </p><p class="code">array[1, 2] = 1;<br>
+array[1, 1] = "hello";<br>
+array[1, 0] = 55.5;<br>
+array[0, 2] = sprite_index;<br>
+array[0, 1] = "world";<br>
+array[0, 0] = -67.89;<br><span class="notranslate"></span></p><p> Un tableau 2D doit être initialisé avant utilisation, comme un tableau 1D, et peut contenir des nombres réels, des chaînes et des constantes, comme n&#39;importe quelle autre variable, ce qui en fait des candidats idéaux pour tout jeu qui doit stocker de grandes quantités de données dans un manière facilement accessible (rappelez-vous, vous pouvez facilement parcourir un tableau). Voici un dernier exemple de la façon dont cela peut être utilisé dans un jeu réel... Supposons que vous vouliez générer quatre ennemis différents à quatre points différents de votre jeu en fonction d&#39;une valeur aléatoire. Eh bien, nous pouvons utiliser un tableau 2D pour faire cela et sauvegarder l&#39;écriture d&#39;une charge de code. </p><p> Nous devons d&#39;abord initialiser le tableau que nous allons utiliser dans l&#39;événement create de notre objet &quot;controller&quot; (notez l&#39;utilisation de commentaires pour vous rappeler ce que fait chaque entrée de tableau): </p><p class="code">enemy[3, 2] = 448;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//y position<br>
+enemy[3, 1] = 32; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//x
+position<br>
+enemy[3, 0] = obj_Slime; //Object<br>
+enemy[2, 2] = 448;<br>
+enemy[2, 1] = 608;<br>
+enemy[2, 0] = obj_Skeleton;<br>
+enemy[1, 2] = 32;<br>
+enemy[1, 1] = 608;<br>
+enemy[1, 0] = obj_Knight;<br>
+enemy[0, 2] = 32;<br>
+enemy[0, 1] = 32;<br>
+enemy[0, 0] = obj_Ogre;<br><span class="notranslate"></span></p><p> Nous avons maintenant les objets pour engendrer des instances de et leurs coordonnées spawn x et y correspondantes dans la pièce toutes stockées dans notre tableau. Cela peut maintenant être utilisé comme suit dans un autre événement de l&#39;objet contrôleur (une alarme par exemple, ou un événement de pression de touche): </p><p class="code">var i;<br>
+i = irandom(3); //get a random number from 0 to 3, inclusive<br>
+instance_create_layer(enemy[i, 1], enemy[i, 2], enemy[i, 0],
+"Enemy_Layer"); //Use the array to create the object<br><span class="notranslate"></span></p><p> Ce code court va maintenant engendrer un ennemi aléatoire dans la salle de jeu, et il utilise beaucoup moins de code qu&#39;une structure &quot;if / then / else&quot; ou même un &quot;switch&quot;, et comme le tableau est initialisé tous ensemble dans l&#39;évènement create est BEAUCOUP plus facile à éditer et à modifier l&#39;une de ces valeurs car elles ne sont pas codées en dur dans le reste des codes d&#39;objet. Il est également important de noter que la longueur de chaque tableau 2D peut être différente, donc vous pouvez avoir un tableau avec une hauteur de 2, mais l&#39;entrée 0 pourrait être 2 en longueur, l&#39;entrée 1 pourrait être 4 en longueur et l&#39;entrée 2 pourrait être 3 en longueur: </p><p class="code">array[0, 0] = 1;<br>
+array[0, 1] = 2;<br>
+array[1, 0] = "one";<br>
+array[1, 1] = "two";<br>
+array[1, 2] = "three";<br>
+array[1, 3] = "four";<br>
+array[2, 0] = "1";<br>
+array[2, 1] = "2";<br>
+array[2, 2] = "3";<br><span class="notranslate"></span></p></div><br> <label class="collapse" for="three">Fonctionnalité de tableau avancé</label> <input id="three" type="checkbox"><div class="index_list"><p> Tout comme les variables normales, vous pouvez passer des tableaux à des scripts à utiliser, puis les renvoyer à l&#39;instance qui a appelé le script. Pour ce faire, vous devez simplement spécifier la variable tableau (pas besoin de chacune des entrées individuelles, ni les crochets []) et le tableau sera transmis par référence dans le script. Toutefois, si vous modifiez l&#39;une des valeurs du tableau, le tableau sera copié dans un tableau temporaire uniquement pour le script. Notez l&#39;utilisation du mot <i>temporaire</i> ici! Vous ne passez pas le tableau lui-même dans le script (comme vous le feriez pour une variable), mais vous demandez au script de créer une <i>copie</i> de ce tableau, que vous allez modifier dans le script. Cela signifie que vous <b>devez toujours renvoyer le tableau</b> depuis le script si vous souhaitez modifier les valeurs de tableau. </p><blockquote><div class="note"> <b>Remarque: en</b> raison de la façon dont cela fonctionne en interne, le passage de tableaux à des scripts peut affecter les performances, en particulier si le tableau est très volumineux. Alors utilisez cette fonctionnalité avec soin! </div></blockquote><p> À titre d&#39;exemple, considérez le code suivant. Nous créons d&#39;abord le tableau que nous voulons utiliser, puis nous passons ce tableau au script: </p><p class="code">for (var i = 9; i &gt; -1; i--;)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;a[i] = i;<br>
+&nbsp;&nbsp;&nbsp;}<br>
+<br>
+scr_Return_Array(a);<br><span class="notranslate"></span></p><p> Le script lui-même est quelque chose de simple comme: </p><p class="code">for (var i = 9; i &gt; -1; i--;)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;a[i] = i * 100;<br>
+&nbsp;&nbsp;&nbsp;}<br><span class="notranslate"></span></p><p> Maintenant, vous vous attendez à ce que le tableau final contienne les valeurs 900, 800, 700, etc... MAIS ce ne sera pas le cas, puisque nous n&#39;avons <i>pas</i> renvoyé le tableau du script, donc tout ce que nous avons changé était la copie temporaire créé lorsque nous avons passé le tableau en tant qu&#39;argument dans le script. Pour remédier à cela, nous aurions dû formater le code comme suit: </p><p class="code">for (var i = 9; i &gt; -1; i--;)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;a[i] = i;<br>
+&nbsp;&nbsp;&nbsp;}<br>
+<br>
+a = scr_Return_Array(a);<br><span class="notranslate"></span></p><p> Et le script devrait maintenant ressembler à ceci: </p><p class="code">for (var i = 9; i &gt; -1; i--;)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;argument0[i] = i * 100;<br>
+&nbsp;&nbsp;&nbsp;}<br>
+<br>
+return argument0;<br><span class="notranslate"></span></p><blockquote><div class="note"> <b>Remarque: ce qui</b> précède n&#39;est <b>pas</b> nécessaire si vous ne modifiez aucune des valeurs de tableau, mais simplement en les référençant. Référencer un tableau ne le copiera pas et sera plus rapide à analyser. </div></blockquote><p> Vous pouvez également supprimer un tableau simplement en &quot;réattribuant&quot; la variable qui le définit à une seule valeur. Cela libèrera la mémoire associée à toutes les entrées et valeurs de ce tableau. Par exemple: </p><p class="code">//Create the array for (var i = 9; i &gt; -1;
+i--;)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;a[i] = i;<br>
+&nbsp;&nbsp;&nbsp;}<br>
+//Delete the array a = 0;<span class="notranslate"></span></p><p> Il est également intéressant de noter que vous pouvez utiliser l&#39;accesseur <tt>@</tt> faire référence à un tableau à partir d&#39;un script et modifier directement ses valeurs, ce qui évite à l&#39;unité centrale de l&#39;avoir copiée dans le script. Vous pouvez trouver plus d&#39;informations sur les accesseurs et leur fonctionnement, ainsi qu&#39;un exemple pour les tableaux, à partir de la page suivante: </p><blockquote><ol><li> <a href="13_accessors.html"><span class=
+"list_link">Accesseurs</span></a> </li></ol></blockquote></div></blockquote><p><br></p><h2> Fonctions de tableau </h2><p> Il y a aussi quelques fonctions associées à l&#39;utilisation des tableaux. Ceux-ci sont conçus pour vous donner de la flexibilité dans votre code, et vous permettront de créer des tableaux plus fonctionnels et dynamiques lors de vos jeux. Ces fonctions sont: </p><ul><li> <a href="checking_data_types/is_array.html">is_array</a> <br></li><li> <a href="arrays/array_create.html">array_create</a> </li><li> <a href="arrays/array_copy.html">array_copy</a> </li><li> <a href="arrays/array_equals.html">array_equals</a> </li><li> <a href="arrays/array_length_1d.html">array_length_1D</a> <br></li><li> <a href="arrays/array_length_2d.html">array_length_2D</a> <br></li><li> <a href="arrays/array_height_2d.html">array_height_2D</a> <br></li></ul><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">Présentation du GML</a> </div><div style="float:right"> Suivant: <a href=
+"11_assignments.html">Affectations</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Basic Code Structure</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+<link rel="stylesheet" href="../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/3_gml_overview/2_functions.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2F_build%2F3_scripting%2F3_gml_overview%2F2_functions.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2F_build%2F3_scripting%2F3_gml_overview%2F2_functions.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> Les fonctions </h2><div class="body-scroll"><p><br></p><p> La définition générale d&#39;une fonction dans <b>GML</b> est quelque chose comme ceci: </p><blockquote> <i>Une fonction a une entrée et une sortie, et la sortie est liée d&#39;une manière ou d&#39;une autre à l&#39;entrée.</i> </blockquote><p> Dans <i><span class="notranslate">GameMaker Studio 2</span></i> vous utilisez des fonctions faisant partie de la <a href="1_code.html">structure</a> du <a href="1_code.html">code</a> pour faire bouger les choses dans votre jeu et vous disposez d&#39;un grand nombre de fonctions GML, qui sont toutes expliquées dans la section <a href=
+"../4_gml_reference/index.html">Référence</a> du <a href=
+"../4_gml_reference/index.html">langage</a> du manuel. </p><p> En GML, une fonction a la forme d&#39;un nom de fonction, suivi des arguments d&#39;entrée entre parenthèses et séparés par des virgules (si la fonction n&#39;a pas d&#39;arguments en entrée, seuls les parenthèses sont utilisées). Voici un aperçu de la structure d&#39;une fonction: </p><p class="code">&lt;function&gt;(&lt;arg0&gt;, &lt;arg1&gt; ,...
+&lt;arg15&gt;);<span class="notranslate"></span></p><p> Généralement, il existe deux types de fonctions - d&#39;abord, il y a l&#39;énorme collection de fonctions intégrées qui sont utilisées pour contrôler tous les aspects de votre jeu, et, deuxièmement, tous les <a href=
+"3_scripts.html">scripts que</a> vous définissez dans votre jeu peuvent aussi être utilisés comme fonction ( mais pas toujours). </p><p> Certaines fonctions renvoient des valeurs et peuvent être utilisées dans des expressions, tandis que d&#39;autres exécutent simplement des commandes, comme illustré dans les deux exemples suivants: </p><p class="code">instance_destroy();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//
+Destroy the calling instance - this requires no arguments and
+returns nothing<br>
+dist = point_distance(x, y, mouse_x, mouse_y; &nbsp;&nbsp;&nbsp;//
+Get the distance from the current instance position to the mouse
+position - takes four arguments and returns a real value<span class="notranslate"></span></p><p> Vous devez noter qu&#39;il est impossible d&#39;utiliser une fonction en tant que partie gauche d&#39;une affectation. Par exemple, le code suivant vous donnerait une erreur: </p><p class="code">instance_nearest(x, y, obj).speed = 0;<span class="notranslate"></span></p><p> La valeur de retour pour l&#39;expression dans cet exemple de code est un nombre réel (valeur d&#39;ID unique pour l&#39;instance la plus proche) et doit donc être entre parenthèses pour être utilisé de cette manière et adresser correctement l&#39;instance requise (voir <a href=
+"7_addressing_variables.html">Adressage de variables dans d&#39;autres Instances</a> pour plus d&#39;informations). Le code ci-dessus serait correctement écrit comme: </p><p class="code">(instance_nearest(x, y, obj)).speed = 0;<br>
+//or<br>
+var inst = instance_nearest(x, y, obj);<br>
+inst.speed = 0;<span class="notranslate"></span></p><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">Présentation du GML</a> </div><div style="float:right"> Suivant: <a href=
+"3_scripts.html">Scripts</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

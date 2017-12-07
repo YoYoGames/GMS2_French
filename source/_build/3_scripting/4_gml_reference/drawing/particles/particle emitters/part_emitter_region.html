@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>part_emitter_region</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href=
+"../../../../../../../files/helpindex.css" type="text/css">
+<link rel="stylesheet" href="../../../../../../../default.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/drawing/particles/particle emitters/part_emitter_region.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fdrawing%2Fparticles%2Fparticle%20emitters%2Fpart_emitter_region.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fdrawing%2Fparticles%2Fparticle%20emitters%2Fpart_emitter_region.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h1 class="studio"> part_emitter_region </h1><h2 class="studio"> Définit les paramètres de région et de distribution pour l&#39;émetteur donné. </h2><h3 class="studio"> Syntaxe: </h3><p class="code">part_emitter_region(ps, ind, xmin, xmax, ymin,
+ymax, shape, distribution);<span class="notranslate"></span></p><p><br></p><div><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">ps</span> </td> <td> Le système de particules dans lequel se trouve l&#39;émetteur. </td></tr><tr><td> <span class="notranslate">ind</span> </td> <td> L&#39;index de l&#39;émetteur à définir. </td></tr><tr><td> <span class="notranslate">xmin</span> </td> <td> La coordonnée x du côté gauche de la région. </td></tr><tr><td> <span class="notranslate">xmax</span> </td> <td> La coordonnée x du côté droit. </td></tr><tr><td> <span class="notranslate">ymin</span> </td> <td> La coordonnée y du sommet de la région. </td></tr><tr><td> <span class="notranslate">ymax</span> </td> <td> La coordonnée y du fond de la région. </td></tr><tr><td> <span class="notranslate">shape</span> </td> <td> La forme de la région </td></tr><tr><td> <span class="notranslate">distribution</span> </td> <td> Le style de distribution des particules </td></tr></table></div><p><br></p><p> <b>Retours:</b> N / A </p><p><br></p><h3 class="studio"> La description </h3><p> Cette fonction est utilisée pour définir leur position d&#39;un émetteur de particules dans la pièce actuelle. Vous spécifiez la zone de délimitation de la zone dans la fonction, puis utilisez une série de constantes pour définir la forme de l&#39;émetteur final dans cette zone de délimitation, ainsi que la distribution des particules dans la forme. Les constantes disponibles pour les formes de distribution sont répertoriées ci-dessous: </p><div class="compat"><table><tr><th> Constant </th><th> La description </th></tr><tr><td> <span class="notranslate">ps_shape_rectangle</span> </td> <td> Une forme rectangulaire qui remplit la zone donnée. </td></tr><tr><td> <span class="notranslate">ps_shape_ellipse</span> </td> <td> Une ellipse, avec la largeur et la hauteur définies par la zone. </td></tr><tr><td> <span class="notranslate">ps_shape_diamond</span> </td> <td> Une forme de diamant avec les points à la moitié de la largeur et la moitié de la hauteur. </td></tr><tr><td> <span class="notranslate">ps_shape_line</span> </td> <td> Une seule ligne, où le point de départ est la gauche et le haut et le point de fin est le droit et le bas. </td></tr></table></div><p><img class="center" src="images/emitter_shapes.png" alt="Formes d&#39;émetteur"></p><p> Outre les formes de distribution, vous pouvez également définir la courbe de distribution des particules à émettre. Les constantes disponibles pour les courbes de distribution sont répertoriées ci-dessous: </p><div class="compat"><table><tr><th> Constant </th><th> La description </th></tr><tr><td> <span class="notranslate">ps_distr_linear</span> </td> <td> Une distribution linéaire où toutes les particules ont une chance égale d&#39;apparaître n&#39;importe où dans la zone. </td></tr><tr><td> <span class="notranslate">ps_distr_gaussian</span> </td> <td> Une distribution gaussienne où plus de particules sont générées dans le centre plutôt que les bords. </td></tr><tr><td> <span class="notranslate">ps_distr_invgaussian</span> </td> <td> Une distribution gaussienne inverse où plus de particules sont générées sur les bords que le centre. </td></tr></table></div><p><img class="center" src="images/emitter_distribution.png" alt="Distribution d&#39;émetteurs"></p><div class="note"> <b>NOTE</b>: Si vous avez besoin que l&#39;émetteur bouge avec une instance, vous devrez utiliser cette fonction dans l&#39;événement step et mettre à jour la position de l&#39;émetteur de cette façon. Il est également intéressant de noter que pour les émissions ponctuelles où vous n&#39;avez pas besoin de créer des particules sur une zone ou avec une distribution spécifique, il est souvent plus facile à utiliser <a href=
+"../particle%20systems/part_particles_create.html"><tt>part_particles_create</tt></a>. </div><p><br></p><h3 class="studio"> Exemple: </h3><p class="code">part_emitter_region(global.Sname , emit_1, x - 50,
+x + 50, y - 50, y + 50, ps_shape_ellipse, ps_distr_linear)<span class="notranslate"></span></p><p> Le code ci-dessus définira un émetteur à une forme elliptique de 100px et large de 100px autour de la position actuelle (x, y) de l&#39;instance exécutant le code. </p><p><br></p><div class="clear"><div style="float:left"> Retour: <a href=
+"../index.html">Particules</a> </div><div style="float:right"> Suivant: <a href=
+"part_emitter_burst.html">part_emitter_burst</a> </div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

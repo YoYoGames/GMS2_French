@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>achievement_login</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/asynchronous functions/achievements and leaderboards/achievement_login.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fasynchronous%20functions%2Fachievements%20and%20leaderboards%2Fachievement_login.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fasynchronous%20functions%2Fachievements%20and%20leaderboards%2Fachievement_login.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> achievement_login </h2><div class="body-scroll"><p><br></p><h3> <b>Syntaxe:</b> </h3><p class="code">achievement_login()<span class="notranslate"></span></p><p><br></p><h3> Résultats: </h3><p class="code">N/A<span class="notranslate"></span></p><p><br></p><h3> La description </h3><blockquote><p> Cette fonction enregistre l&#39;utilisateur dans le service de classement et de réussite approprié. Si le service n&#39;est <i>pas</i> disponible, l&#39;utilisateur est connecté à un centre de jeu «prétendu» et toutes les réalisations et les scores sont stockés sur l&#39;appareil de sorte que lorsque le service réel est disponible, ces détails peuvent être téléchargés. La fonction déclenchera un <a href=
+"../../../../2_interface/1_editors/events/async_events.html">événement social asynchrone de</a> rappel qui contient <tt>async_load</tt> carte remplie avec les paires clé / valeur pertinentes. La clé d&#39; <i>identification</i> de cette <tt>ds_map</tt> est utilisé pour identifier le rappel correct (il peut y avoir plus d&#39;une fonction de déclenchement pour un événement asynchrone donné), et sera associé à la <b>constante</b> <tt>achievement_our_info</tt> ainsi qu&#39;un certain nombre d&#39;autres paires clé / valeur pour chaque défi. Le contenu exact de la carte est indiqué ci-dessous: </p><blockquote><ol><li> &quot; <b>id</b> &quot; - Pour cette fonction, il devrait être <tt>achievement_our_info</tt><br><br></li><li> &quot; <b>name</b> &quot; - Le nom de l&#39;utilisateur actuellement connecté. <br><br></li><li> &quot; <b>playerid</b> &quot; - L&#39;ID de joueur unique pour l&#39;utilisateur actuellement connecté. <br><br></li></ol></blockquote></blockquote><p><br></p><h3> Exemple étendu: </h3><blockquote><p> Le code suivant sera probablement appelé au début de votre jeu ou à partir d&#39;un objet bouton spécial que vous avez placé dans une pièce, et demandera que le joueur se connecte à son compte Google Game Services ou au centre de jeu Apple: </p></blockquote><p class="code">achievement_login();<br><span class="notranslate"></span></p><blockquote><p> Cela va envoyer une demande pour les informations du joueur en cours et générer un rappel asynchrone avec le spécial <tt>async_load</tt> ds_map contenant les données suivantes: </p></blockquote><p class="code">var ident = ds_map_find_value(async_load,
+"id");<br>
+if ident == achievement_our_info<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;var name = ds_map_find_value(async_load, "name"
+);<br>
+&nbsp;&nbsp;&nbsp;var playerid = ds_map_find_value(async_load,
+"playerid" );<br>
+&nbsp;&nbsp;&nbsp;global.OurName = name;<br>
+&nbsp;&nbsp;&nbsp;global.OurId = playerid;<br>
+&nbsp;&nbsp;&nbsp;if os_type == os_android<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;achievement_load_leaderboard("CgkIs9_51u0PEAIQBw",
+1, 100, achievement_filter_friends_only);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;achievement_load_leaderboard("leaderboard1id",
+1, 100, achievement_filter_friends_only);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;achievement_get_challenges();<br>
+&nbsp;&nbsp;&nbsp;achievement_load_friends();<br>
+&nbsp;&nbsp;&nbsp;achievement_load_progress();<br>
+&nbsp;&nbsp;&nbsp;}<br><span class="notranslate"></span></p><blockquote><p> Le code ci-dessus vérifie le retour <tt>ds_map</tt> dans l&#39; <b>événement asynchrone social</b> et si son «id» correspond à la constante vérifiée, il parcourt ensuite la carte stockant toutes les différentes valeurs dans les variables avant d&#39;appeler le reste des fonctions pour préparer les classements, les défis et les listes d&#39;amis. </p></blockquote><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">Réalisations et classements</a> </div><div style="float:right"> Suivant: <a href=
+"achievement_logout.html">achievement_logout</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

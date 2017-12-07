@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>skeleton_bone_state_get</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/sprites/skeletal animations/skeleton_bone_state_get.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fsprites%2Fskeletal%20animations%2Fskeleton_bone_state_get.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fsprites%2Fskeletal%20animations%2Fskeleton_bone_state_get.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> skeleton_bone_state_get </h2><div class="body-scroll"><p><br></p><h3> Syntaxe: </h3><p class="code">skeleton_bone_state_get(bone, map);<span class="notranslate"></span></p><p><br></p><blockquote><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">bone</span> </td> <td> Le nom (comme une chaîne) de l&#39;os. </td></tr><tr class="alt"><td> <span class="notranslate">map</span> </td> <td> Le fichier ds_map (précédemment créé) qui stocke les données de l&#39;os. </td></tr></table></blockquote><p><br></p><h3> Résultats: </h3><p class="code">N/A<span class="notranslate"></span></p><p><br></p><h3> La description </h3><blockquote><p> Votre animation squelettique est composée d&#39;un certain nombre d &#39;«os», que vous aurez définis et nommés dans votre programme d&#39;animation, et cette fonction peut être utilisée pour obtenir certaines données pour l&#39;os nommé à tout moment. Notez que ces données se réfèrent à la pose <b>actuelle</b> pour le squelette, en fonction de l&#39;ensemble d&#39;animation utilisé, et la fonction nécessite un préalablement créé <a href=
+"../../data_structures/ds%20maps/index.html"><tt>ds_map</tt></a>, qui aura alors les clés suivantes et leurs valeurs équivalentes après avoir appelé la fonction: </p><blockquote><ul><li> <b>&quot;x&quot;:</b> La position x locale de l&#39;os par rapport à l&#39;os parent. <br><br></li><li> <b>&quot;y&quot;:</b> La position y locale de l&#39;os par rapport à l&#39;os parent. <br><br></li><li> <b>&quot;angle&quot;:</b> La rotation locale de l&#39;os par rapport à l&#39;os parent. <br><br></li><li> <b>&quot;xscale&quot;:</b> L&#39;échelle horizontale locale de l&#39;os, en référence à l&#39;os parent. <br><br></li><li> <b>&quot;yscale&quot;:</b> L&#39;échelle verticale locale de l&#39;os, en référence à l&#39;os parent. <br><br></li><li> <b>&quot;worldX&quot;:</b> La position x de l&#39;os par rapport à la racine de l&#39;animation (c&#39;est une valeur en <i>lecture seule</i> ). <br><br></li><li> <b>&quot;worldY&quot;:</b> La position y de l&#39;os par rapport à la racine de l&#39;animation (c&#39;est une valeur en <i>lecture seule</i> ). <br><br></li><li> <b>&quot;worldScaleX&quot;:</b> L&#39;échelle horizontale de l&#39;os dans l&#39;espace &quot;global&quot; (en ignorant toutes les transformations par <i><span class="notranslate">GameMaker Studio</span> 2</i> ), par opposition à l&#39;échelle en référence à son os parent (c&#39;est une valeur en <i>lecture seule</i> ). <br><br></li><li> <b>&quot;worldScaleY&quot;:</b> L&#39;échelle verticale de l&#39;os dans l&#39;espace &quot;global&quot; (en ignorant toute transformation par <i><span class="notranslate">GameMaker Studio</span> 2</i>: Studio par opposition à l&#39;échelle en référence à son os parent (c&#39;est une valeur en <i>lecture seule</i> ). <br><br></li><li> <b>&quot;worldAngle&quot;:</b> La rotation de l&#39;os par rapport à la racine de l&#39;animation (c&#39;est une valeur en <i>lecture seule</i> ). <br><br></li><li> <b>&quot;parent&quot;:</b> Le nom (une chaîne) de l&#39;os parent. <br><br></li></ul></blockquote><p> Les données de carte retournées sont similaires à celles renvoyées pour la pose par défaut lorsque vous utilisez <a href=
+"skeleton_bone_data_get.html"><tt>skeleton_bone_data_get</tt></a>, seulement maintenant vous avez les clés &quot;monde&quot; supplémentaires. Elles se réfèrent à la position de l&#39;os par rapport à la <i>racine</i> (origine) de l&#39;image-objet d&#39;animation squelettique et les valeurs renvoyées ne prennent en compte aucune mise à l&#39;échelle ou rotation effectuée en définissant les variables d&#39;image-objet prédéfinies <tt>image_xscale</tt> ou <tt>image_angle</tt>. Les valeurs mondiales sont en <i>lecture seule</i> et ne peuvent pas être définies. </p><p> Cette fonction est fournie afin que vous puissiez &quot;intercepter&quot; les données d&#39;animation et les modifier avant qu&#39;elles ne soient dessinées à l&#39;écran. Vous devriez donc les utiliser dans l&#39;événement <a href=
+"../../../../2_interface/1_editors/events/index.html">Other - Animation Update</a>, car cet événement est déclenché juste avant le Draw. Événements. </p><div class="note"> <b>IMPORTANT!</b> Cette fonction n&#39;est <b>pas</b> disponible avec la licence d&#39;évaluation du produit. </div></blockquote><p><br></p><h3> Exemple: </h3><p class="code">var map = ds_map_create();<br>
+skeleton_bone_state_get("head", map);<br>
+var xx = ds_map_find_value(map, "worldX");<br>
+var yy = ds_map_find_value(map, "worldY");<br>
+var deltax = mouse_x - (x + xx);<br>
+var deltay = mouse_y - (y + yy);<br>
+var angle = -radtodeg(arctan2(deltay, deltax));<br>
+ds_map_replace(map, "angle", angle);<br>
+skeleton_bone_state_set("head", map);<br>
+ds_map_destroy(map);<br><span class="notranslate"></span></p><blockquote><p> Le code ci-dessus crée un ds_map et le remplit ensuite avec les données de l&#39;os nommé &quot;head&quot;. Il extrait ensuite la position du monde pour l&#39;os et utilise ces données pour régler l&#39;angle de l&#39;os afin de suivre la position de la souris dans le jeu. </p></blockquote><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">Animations squelettiques</a> </div><div style="float:right"> Suivant: <a href=
+"skeleton_bone_state_set.html">skeleton_bone_state_set</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

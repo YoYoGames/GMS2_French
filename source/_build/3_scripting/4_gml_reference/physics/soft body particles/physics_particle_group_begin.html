@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>physics_particle_group_begin</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/physics/soft body particles/physics_particle_group_begin.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fphysics%2Fsoft%20body%20particles%2Fphysics_particle_group_begin.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fphysics%2Fsoft%20body%20particles%2Fphysics_particle_group_begin.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h1 class="studio"> physics_particle_group_begin </h1><h2 class="studio"> Commencez la création d&#39;un groupe de particules de corps mou avec les paramètres donnés. </h2><h3 class="studio"> Syntaxe: </h3><p class="code">physics_particle_group_begin(flags, groupflags, x,
+y, ang, xv, yv, ang_velocity, col, alpha, strength, category)<span class="notranslate"></span></p><p><br></p><div class="param"><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">flags</span> </td> <td> Les drapeaux à définir sur la particule. </td></tr><tr class="alt"><td> <span class="notranslate">groupflags</span> </td> <td> Les indicateurs de groupe à définir sur la particule (voir <b>Description</b> ci-dessous). </td></tr><tr><td> <span class="notranslate">x</span> </td> <td> La position x pour créer le groupe de particules à. </td></tr><tr class="alt"><td> <span class="notranslate">y</span> </td> <td> La position y pour créer le groupe de particules à. </td></tr><tr><td> <span class="notranslate">ang</span> </td> <td> L&#39;angle (en degrés) pour faire pivoter le groupe sur créer. </td></tr><tr class="alt"><td> <span class="notranslate">xv</span> </td> <td> La vitesse horizontale initiale. </td></tr><tr><td> <span class="notranslate">yv</span> </td> <td> La vitesse verticale initiale. </td></tr><tr class="alt"><td> <span class="notranslate">ang_velocity</span> </td> <td> La vitesse angulaire initiale. </td></tr><tr><td> <span class="notranslate">col</span> </td> <td> La couleur de base à utiliser pour le groupe de particules. </td></tr><tr class="alt"><td> <span class="notranslate">alpha</span> </td> <td> L&#39;alpha de base à utiliser pour le groupe de particules. </td></tr><tr><td> <span class="notranslate">strength</span> </td> <td> Définissez la force de cohésion entre les particules du groupe. </td></tr><tr class="alt"><td> <span class="notranslate">category</span> </td> <td> La catégorie définie par l&#39;utilisateur à laquelle le groupe appartient. </td></tr></table></div><p><br></p><p> <b>Retours:</b> N / A </p><p><br></p><h3 class="studio"> La description </h3><p> Avec cette fonction, vous pouvez créer un groupe de particules dans une pièce. Un groupe de particules est celui où les particules nécessaires pour créer une forme spécifique sont créées en une fois en tant que groupe, ce qui vous permet de créer des corps mou simulés avec différentes propriétés définies par les drapeaux utilisés. Les &quot;flags&quot; sont la valeur de retour d&#39;une combinaison des <b>constantes de particules</b> (voir la fonction <a href=
+"physics_particle_create.html"><tt>physics_particle_create</tt></a> pour les détails de ceux-ci), tandis que les &quot;groupFlags&quot; sont une combinaison des <b>constantes de groupe</b> suivantes (ou 0 pour aucun fanion): </p><div class="compat"><table><tr><th> Constant </th><th> La description </th></tr><tr><td> <span class="notranslate">phy_particle_group_flag_solid</span> </td> <td> Un groupe de particules solides empêche les autres appareils de se loger à l&#39;intérieur. Si quelque chose le pénètre, le groupe de particules solides repousse le dispositif incriminé à sa surface, ce qui fait qu&#39;un groupe de particules solides possède une force de répulsion particulièrement forte. </td></tr><tr><td> <span class="notranslate">phy_particle_group_flag_rigid</span> </td> <td> Les groupes de particules rigides sont ceux dont la forme ne change pas, même lorsqu&#39;ils entrent en collision avec d&#39;autres appareils. </td></tr></table></div><p><br><br> Ces indicateurs de groupe utilisent le masquage de bits pour créer une valeur de sortie finale qui est ensuite vérifiée pour définir les différentes propriétés de base du groupe, à l&#39;exception de celles définies par les indicateurs de particules. Vous pouvez utiliser aucune, une ou les deux de ces constantes en utilisant le bitwise <i>ou</i> &quot;|&quot; pour masquer les bits appropriés (comme indiqué dans l&#39;exemple ci-dessous). <br><br> En plus des drapeaux, vous pouvez également définir la position dans la pièce pour créer le groupe de particules à (la position donnée sera le centre de masse du groupe fini), la vitesse horizontale et verticale initiale, ainsi que la vitesse angulaire de le groupe, vous permettant de créer des groupes mobiles et rotatifs. <br><br> Vous pouvez également définir la couleur initiale et l&#39;alpha de toutes les particules du groupe, les valeurs étant utilisées lors du dessin des particules à l&#39;aide de la fonction <a href=
+"physics_particle_draw.html"><tt>physics_particle_draw()</tt></a>. Après cela, vous définissez la force de cohésion des particules dans le groupe, ce qui est une autre façon de dire à quel point ils &quot;collent&quot; les uns aux autres. La force peut être une valeur entre 0 et 1, où 0 n&#39;est pas de cohésion, et 1 est une cohésion maximale. <br><br> Enfin, vous devez donner la catégorie pour votre groupe de particules. Cette valeur est une valeur entière arbitraire que vous attribuez à chaque groupe de particules pour lequel vous souhaitez avoir des propriétés similaires, et elle peut être utilisée pour définir des indicateurs plus tard pour cette catégorie spécifique, ainsi qu&#39;un certain nombre d&#39;autres choses. <br><br></p><blockquote> <i><b>NOTE:</b> Vous pouvez utiliser n&#39;importe quelle valeur entière pour la catégorie <b>sauf 0</b> qui est réservée par la simulation et est utilisée pour sélectionner toutes les catégories dans d&#39;autres fonctions (comme pour le dessin).</i> </blockquote><p> Il est important de noter que l&#39;appel de cette fonction ne crée <i>pas</i> le groupe dans la salle de physique. Cette fonction commence simplement le processus et définit les propriétés de la particule de base pour le groupe. Pour créer réellement le groupe de particules, vous devez lui donner un <i>formulaire</i> (voir l&#39;exemple ci-dessous), puis appeler la fonction <a href=
+"physics_particle_group_end.html"><tt>physics_particle_group_end()</tt></a>, à quel point il sera créé. </p><blockquote> <i><b>REMARQUE:</b> Les indicateurs de type de particule que vous définissez influenceront également la cohésion du groupe de particules, de sorte que si vous marquez les particules comme étant du type eau (par exemple), lorsque le groupe entre en collision avec un autre appareil, il se séparera. Si vous marquez la particule comme un type de ressort, alors elle maintiendra sa cohésion lors d&#39;une collision.</i> </blockquote><p><br></p><h3 class="studio"> Exemple: </h3><p class="code">var flags = phy_particle_flag_water |
+phy_particle_flag_viscous | phy_particle_flag_tensile;<br>
+var groupflags = phy_particle_group_flag_solid |
+phy_particle_group_flag_rigid;<br>
+physics_particle_group_begin(flags, groupflags, mouse_x, mouse_y,
+0, 0, 0, 0, c_white, 1, 1, 2);<br>
+physics_particle_group_circle(100);<br>
+mLastGroup = physics_particle_group_end();<br><span class="notranslate"></span></p><p> Le code ci-dessus stocke les indicateurs pour le type de particule et les propriétés de groupe de particules dans les variables puis les utilise pour créer un groupe de particules circulaire avec un rayon de 100 px à la position de la souris. </p><p><br></p><div class="clear"><div style="float:left"> Dos: <a href="index.html">Particules molles du corps</a> </div><div style="float:right"> Suivant: <a href=
+"physics_particle_group_circle.html">physics_particle_group_circle</a> </div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

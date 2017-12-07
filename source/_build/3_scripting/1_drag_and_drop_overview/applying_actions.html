@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Applying Actions To Other Instances</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+<link rel="stylesheet" href="../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/1_drag_and_drop_overview/applying_actions.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2F_build%2F3_scripting%2F1_drag_and_drop_overview%2Fapplying_actions.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2F_build%2F3_scripting%2F1_drag_and_drop_overview%2Fapplying_actions.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> Application d&#39;actions à d&#39;autres instances </h2><div class="body-scroll"><p><br></p><p> La plupart des actions dans les bibliothèques DnD™ ont une option pour appliquer l&#39;action de différentes manières. C&#39;est ce qu&#39;on appelle définir la <i>portée de</i> l&#39;action et cela peut être l&#39;une des choses suivantes: <img class=
+"center" src="images/dnd_applies_to.png" alt="DnD™ s&#39;applique à"> Essentiellement ce que vous <i><span class="notranslate">GameMaker Studio 2</span></i> à <i><span class="notranslate">GameMaker Studio 2</span></i> de quelle instance exécuter l&#39;action. La portée de l&#39;action par défaut est <tt>self</tt>, ce qui signifie qu&#39;une fois l&#39;objet créé en tant qu&#39;instance dans la pièce, cette instance exécutera le code d&#39;action. Cependant, ce n&#39;est pas toujours ce que vous voulez, et vous voudrez peut-être que certaines actions affectent d&#39;autres instances, voire toutes, dans la pièce. C&#39;est là qu&#39;intervient la modification de la <i>portée de</i> l&#39;action. </p><p> Les différentes portées pour effectuer des actions sont énumérées ci-dessous, mais il convient de noter que modifier la portée d&#39;une action de cette manière <b>n&#39;appliquera la nouvelle portée à cette action</b> et <i>pas</i> aux actions suivantes dans la chaîne. Si vous souhaitez appliquer un changement d&#39;étendue d&#39;action à plusieurs actions chaînées, utilisez <a href=
+"../2_drag_and_drop_reference/common_actions/apply_to.html">d&#39;</a> abord l&#39;action <a href=
+"../2_drag_and_drop_reference/common_actions/apply_to.html">Appliquer à....</a> </p><blockquote><a name="dnd_scope_self" id="dnd_scope_self"></a> <label class="collapse" for="one"><img style=
+"vertical-align:middle" src="images/i_scope_self.png"> Soi</label> <input id="one" type="checkbox"><div class="index_list"><div style="margin-left: 2em"><p> C&#39;est la portée par défaut pour une action et indique simplement que l&#39;action ne doit être appelée que par l&#39;instance qui exécute le code. </p></div></div><br><a name="dnd_scope_other" id="dnd_scope_other"></a> <label class=
+"collapse" for="two"><img style="vertical-align:middle" src=
+"images/i_scope_other.png"> Autre</label> <input id="two" type=
+"checkbox"><div class="index_list"><div style="margin-left: 2em"><p> le <tt>other</tt> La portée a deux fonctions principales, et la valeur qu&#39;elle renvoie dépendra de l&#39;endroit et de la manière dont vous l&#39;utiliserez. Dans l&#39; <a href=
+"../../2_interface/1_editors/events/index.html">événement de collision</a>, <tt>other</tt> renverra la valeur d&#39; <i>ID d&#39;instance</i> unique (une valeur unique utilisée pour distinguer les instances individuelles de chaque objet), de sorte que vous pouvez, par exemple, créer une instance «bullet» et avoir un événement de collision avec une instance «player» et dans ce cas Utilisez le <tt>other</tt> portée pour enlever les points de vie de l&#39;objet &quot;joueur&quot;, puis revenir à <tt>self</tt> portée pour détruire l&#39;instance &quot;balle&quot;. </p><p> En dehors de l&#39;événement de collision, le <tt>other</tt> le réglage se comportera comme s&#39;il était réglé sur <a href=
+"../3_gml_overview/5_keywords.html"><tt>noone</tt></a> <i>à moins</i> qu&#39;il ne soit appelé depuis un bloc d&#39;actions limité. Ce que cela signifie est que si vous modifiez la portée d&#39;un groupe d&#39;actions à un objet spécifique, alors que ces actions sont appelées, le <tt>other</tt> scope renvoie l&#39;ID d&#39;instance de l&#39;instance qui a initialement appelé le groupe d&#39;actions. Par exemple, vous pouvez exécuter une action <a href=
+"../2_drag_and_drop_reference/common_actions/apply_to.html">Appliquer à...</a> puis, dans la référence de bloc de code suivante, définir la portée sur <tt>other</tt> pour effectuer une action sur l&#39;instance qui exécute l&#39;ensemble du bloc d&#39;événements, et non sur l&#39;instance qui est étendue dans les blocs de code apply yo. L&#39;image ci-dessous donne un exemple: <img class="center" src="images/dnd_scope_other.png" alt="DnD™ Scope"> Dans l&#39;image, nous vérifions la présence d&#39;une souris dans l&#39;instance, et si une image est détectée, nous modifions la portée à l&#39;aide de l&#39;action <b>Appliquer à....</b> Les deux blocs d&#39;action suivants sont maintenant appelés à partir de l&#39;instance &quot;obj_Player&quot; (s&#39;il y en a plus d&#39;un alors ils seront <i>tous</i> exécutés) et ainsi l&#39;objet changera son sprite et créera un objet au <tt>other</tt> position, c&#39;est-à-dire: la position de l&#39;objet qui exécute l&#39;événement et a détecté la pression de la souris. </p></div></div><br><a name="dnd_scope_all" id="dnd_scope_all"></a> <label class=
+"collapse" for="three"><img style="vertical-align:middle" src=
+"images/i_scope_all.png"> Tout</label> <input id="three" type=
+"checkbox"><div class="index_list"><div style="margin-left: 2em"><p> Lorsque vous définissez une action pour <tt>all</tt>, vous <i><span class="notranslate">GameMaker Studio 2</span></i> à <i><span class="notranslate">GameMaker Studio 2</span></i> d&#39;exécuter ce bloc pour chaque instance active de la pièce actuelle. Par exemple, créer une action <a href=
+"../2_drag_and_drop_reference/instance_actions/destroy_object_instance.html">Destroy Object Instance</a> et définir sa portée sur <tt>all</tt> provoquera la disparition de chaque instance de la pièce, quel que soit l&#39;objet à partir duquel elles ont été créées. </p></div></div><br><a name="dnd_scope_object" id="dnd_scope_object"></a> <label class=
+"collapse" for="four"><img style="vertical-align:middle" src=
+"images/i_scope_object.png"> Objet</label> <input id="four" type=
+"checkbox"><div class="index_list"><div style="margin-left: 2em"><p> Une action peut également recevoir un <b>objet</b> tel que sa portée. Cela signifie que <i>toutes les</i> instances de l&#39;objet donné exécuteront cette action au même moment. Donc, si vous avez 100 instances ennemies dans la pièce, par exemple, et que vous voulez les définir toutes pour pointer vers un point spécifique. Vous appelez la <a href=
+"../2_drag_and_drop_reference/movement_actions/set_point_direction.html">direction du point de consigne</a> et définissez la portée de l&#39;action sur l&#39;objet &quot;obj_Enemy&quot; et, lorsqu&#39;elle est appelée, toutes les instances de cet objet changent de direction. </p></div></div><br><a name="dnd_scope_expression" id="dnd_scope_expression"></a> <label class="collapse" for="five">Expression</label> <input id=
+"five" type="checkbox"><div class="index_list"><div style="margin-left: 2em"><p> Le champ de saisie <b>Expression</b> vous permet de saisir l&#39;ID d&#39;une instance spécifique sur laquelle vous souhaitez que l&#39;action fonctionne. Il peut s&#39;agir de la valeur d&#39;identifiant unique affectée à une instance depuis l&#39; <a href=
+"../../2_interface/1_editors/rooms.html#room_instance_layer">éditeur de pièce</a> ou de l&#39;ID d&#39;une instance que vous avez stockée dans une variable (où la variable serait la valeur d&#39;entrée) ou même d&#39;une expression utilisant code, comme indiqué dans l&#39;image ci-dessous: <img class="center" src="images/dnd_scope_target.png" alt="DnD™ Target"> Dans ce cas, une instance appelle <a href=
+"../2_drag_and_drop_reference/instance_actions/set_sprite.html">Set Sprite à</a> partir de l&#39;instance créée par le code donné pour l&#39;expression. Notez que dans ce cas, l&#39;instance en cours de création exécutera son <a href=
+"../../2_interface/1_editors/events/index.html">Créer</a> un <a href=
+"../../2_interface/1_editors/events/index.html">événement</a> avant de l&#39;action est appliquée. </p></div></div></blockquote><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">Vue d&#39;ensemble du glisser-déposer</a> </div><div style="float:right"> Suivant: <a href="action_scripts.html">Scripts d&#39;action</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Start Following Path</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/2_drag_and_drop_reference/path_actions/start_following_path.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F2_drag_and_drop_reference%2Fpath_actions%2Fstart_following_path.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F2_drag_and_drop_reference%2Fpath_actions%2Fstart_following_path.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2><img style="vertical-align:middle" src=
+"images/i_paths_start_following_path.png"> Commencer le chemin suivant </h2><div class="body-scroll"><p><br></p><h3> La description </h3><blockquote><p> Cette action lancera une instance en suivant un chemin qui a été créé dans l&#39;arborescence des ressources. Vous utiliseriez ensuite cette action pour indiquer à votre instance le chemin à suivre, la vitesse à suivre pour le suivre (mesurée en pixels par trame de jeu), comment se comporter quand elle atteint la fin du chemin, et si suivre l&#39;absolu ou le relatif position du chemin. Lorsque vous définissez la vitesse, vous pouvez utiliser des valeurs négatives pour indiquer que l&#39;instance doit suivre le chemin en sens inverse et noter que la vitesse définie ici peut être modifiée par le modificateur de vitesse défini dans l&#39;éditeur de chemin pour chaque point de chemin. Définissez une vitesse de trajet sur 2 et dans le chemin, l&#39;un des points a un modificateur de vitesse de 200%, les pixels réels par vitesse de trame de jeu à ce moment seront de 4. </p><p> Une fois que vous avez défini la vitesse du chemin initial, vous pouvez définir comment l&#39;instance doit se comporter quand elle atteint la fin du chemin parmi les options suivantes (notez que lorsqu&#39;une instance atteint la fin d&#39;un chemin, cela déclenche également un <a href=
+"../../../2_interface/1_editors/events/index.html">autre chemin - Terminé Événement</a> ): </p><ul><li> <b>Stop</b>: termine le chemin, en arrêtant l&#39;instance sur le dernier point de chemin. <br><br></li><li> <b>Redémarrer</b>: Continuer le chemin depuis le début, en sautant à la position de départ à nouveau si le chemin n&#39;est pas marqué comme fermé dans l&#39;éditeur de chemin. <br><br></li><li> <b>Boucle</b>: Continuez à partir de la position actuelle pour réexécuter le chemin. <br><br></li><li> <b>Revers</b>: Revenez sur le chemin à nouveau (en inversant la vitesse du chemin), et quand il atteindra le début du chemin, il s&#39;inversera de nouveau, etc... </li></ul><p> Enfin, vous pouvez marquer le chemin comme <i>Relatif</i> ou non. Par défaut, l&#39;instance commencera à suivre le chemin exactement comme vous l&#39;avez conçu et placé dans l&#39;éditeur de chemin (la position absolue), mais si vous marquez la case <i>Relative,</i> elle commencera à suivre le chemin à partir duquel l&#39;instance a été créé (la position relative). L&#39;image ci-dessous illustre ceci: </p><p><img class="center" src="images/path_relative_image.png" alt="Vs relatifs Les chemins absolus"></p><p> Comme vous pouvez le voir dans cette image, les deux instances suivent le <i>même</i> chemin commencé avec cette action, mais l&#39;une des instances suit le chemin <i>absolu</i> tandis que l&#39;autre suit le chemin <i>relatif</i>. Il est à noter que lorsque Relative n&#39;est pas marqué, l&#39;instance &quot;sautera&quot; au début du chemin, peu importe où elle se trouve dans la pièce. </p></blockquote><p><br></p><h3> Syntaxe de l&#39;action: </h3><img class="center" src="images/a_paths_start_following_path.png"
+alt="Commencer la syntaxe du chemin suivant"><p><br></p><h3> Arguments: </h3><blockquote><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">Path</span> </td> <td> La ressource de chemin pour commencer à suivre </td></tr><tr class="alt"><td> <span class="notranslate">Speed</span> </td> <td> La vitesse (en pixels par trame de jeu) à suivre le chemin </td></tr><tr><td> <span class="notranslate">On End</span> </td> <td> La réponse à atteindre la fin du chemin </td></tr></table></blockquote><p><br></p><h3> Exemple: </h3><img class="center" src="images/e_paths_start_following_path.png"
+alt="Démarrer l&#39;exemple de chemin suivant"><blockquote> Le code de bloc d&#39;action ci-dessus lancera l&#39;instance d&#39;appel en suivant un chemin lorsque vous appuyez sur une touche. </blockquote><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">Actions de la salle</a> </div><div style="float:right"> suivant: <a href=
+"stop_following_path.html">Arrêter le chemin suivant</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

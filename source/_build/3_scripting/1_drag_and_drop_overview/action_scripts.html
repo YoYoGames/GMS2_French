@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Creating Action Scripts</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+<link rel="stylesheet" href="../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/1_drag_and_drop_overview/action_scripts.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2F_build%2F3_scripting%2F1_drag_and_drop_overview%2Faction_scripts.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2F_build%2F3_scripting%2F1_drag_and_drop_overview%2Faction_scripts.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> Création de scripts d&#39;action </h2><div class="body-scroll"><p><br></p><p> L&#39;une des ressources de l&#39; <b>arbre de ressources</b> est la ressource <b>Script</b>. Les scripts sont simplement des blocs de code ou des actions DnD™ exécutés comme s&#39;ils étaient l&#39;une des fonctions ou actions intégrées de <i><span class="notranslate">GameMaker Studio 2</span></i>. Nous avons une section entière du manuel sur l&#39;écriture de scripts en utilisant le code ( <a href=
+"../../2_interface/1_editors/scripts.html">ici</a> ), mais vous pouvez également créer des scripts en utilisant uniquement les actions Glisser-Déposer. </p><p> Un script DnD™ (comme toute action DnD™ intégrée) peut prendre des valeurs différentes (ou aucune), puis effectuer une chaîne d&#39;actions et renvoyer une valeur ou ne rien retourner, et vous l&#39;appelleriez en utilisant le <a href=
+"../2_drag_and_drop_reference/common_actions/execute_script.html">script d&#39;exécution</a> <img style="vertical-align:middle" src=
+"../2_drag_and_drop_reference/common_actions/images/i_common_execute_script.png"> action, qui ressemble à ceci: <img class="center" src=
+"../2_drag_and_drop_reference/common_actions/images/a_common_execute_script.png"
+alt="Exécuter la syntaxe de script"> Les variables d&#39;entrée sont appelées arguments, et vous pouvez en fournir jusqu&#39;à 4 en utilisant cette action (bien que vous puissiez en utiliser toutes, certaines ou aucune, selon ce dont vous avez besoin pour le script), mais vous pouvez aussi utiliser le <a href=
+"../2_drag_and_drop_reference/common_actions/execute_code.html">code Execute</a> <img style="vertical-align:middle" src=
+"../2_drag_and_drop_reference/common_actions/images/i_common_execute_code.png"> pour appeler le script, auquel cas votre script peut avoir jusqu&#39;à 16 arguments (en utilisant le <tt>argument0 ... argument15</tt> variables) ou autant d&#39;arguments que nécessaire (lors de l&#39;utilisation du <tt>argument[n]</tt> tableau): <img class="center" src=
+"images/executecode_example.png" alt="Exécuter un script d&#39;action à l&#39;aide du code"></p><p> Pour créer un script DnD™, il vous suffit d&#39;utiliser le bouton droit de la souris <img style="vertical-align:middle" src="../../images/icon_rmb.png"> sur la ressource de script et sélectionnez <i>Créer</i>. Cela va créer un nouveau script DnD™ et ouvrir la fenêtre de l&#39;éditeur: <img class="center"
+src="images/dnd_scripts.png" alt="Éditeur de script D &amp; D"></p><p> Vous pouvez nommer le script par un clic droit <img style=
+"vertical-align:middle" src="../../images/icon_rmb.png"> dans l&#39;arbre des ressources et en sélectionnant <i>Renommer</i> (ou en utilisant un lent double clic gauche <img style="vertical-align:middle" src=
+"../../images/icon_lmb.png"> ), mais notez que le nom du script <i>doit</i> être conforme aux règles de script pour les fonctions, de sorte qu&#39;ils doivent commencer par une lettre et contenir uniquement des lettres, des chiffres ou le symbole de la barre de soulignement &quot;_&quot;. </p><p> Comme mentionné ci-dessus, vous pouvez passer un certain nombre d&#39;arguments à un script, et il va les utiliser pour effectuer la tâche pour laquelle vous l&#39;avez écrit. Pour mieux comprendre cela, prenez par exemple une action et réfléchissez à son fonctionnement... vous la placez dans un événement et spécifiez un certain nombre de paramètres, ce qui fera que votre instance fera quelque chose. Les scripts sont exactement les mêmes, la seule différence étant que <i>vous les</i> écrivez. L&#39;image ci-dessous montre un script DnD™ simple qui prend un seul argument et l&#39;utilise pour créer un nombre d&#39;instances à des positions aléatoires dans une pièce: <img class="center"
+src="images/script_example.png" alt="Exemple de script D &amp; D"></p><p> Notez que nous attribuons la valeur <tt><b>argument0</b></tt> à une variable temporaire au départ. Toutes les valeurs transmises dans un script sont affectées aux variables <b>intégrées</b> suivantes: </p><p class="code">argument0, argument1, ..., etc... up to
+argument15<span class="notranslate"></span></p><p> Vous pouvez directement accéder à ces variables d&#39;argument intégrées, ou les affecter à des variables temporaires (locales) comme nous l&#39;avons fait dans l&#39;exemple ci-dessus (l&#39;utilisation de variables temporaires facilite le suivi de ce que chacun fait et est recommandée). Dans le script ci-dessus, la valeur de <tt>argument0</tt> est ce qui sera utilisé pour déterminer le nombre de fois que le <tt>repeat</tt> la boucle sera exécutée, et vous appelleriez le script comme ceci: <img class="center" src=
+"images/script_call.png" alt="Appelez le script D &amp; D"></p><p> Non seulement vous pouvez passer des arguments dans un script, mais vous pouvez également demander un script pour renvoyer une valeur trop ( en utilisant le <a href=
+"../2_drag_and_drop_reference/common_actions/return.html">retour</a> <img style="vertical-align:middle" src=
+"../2_drag_and_drop_reference/common_actions/images/i_common_return.png"> action), vous pouvez donc les utiliser pour (par exemple) construire des méthodes de calcul ou redonner un ID d&#39;instance après une détection de collision complexe ou un nombre quelconque de choses. Notez toutefois que l&#39; <b>utilisation de la fonction de retour met fin au script</b> et qu&#39;aucune action placée après son utilisation ne sera exécutée, ce qui signifie qu&#39;une certaine réflexion doit être menée sur la structure de vos scripts. </p><p> Voici un script de glisser-déposer qui retourne une valeur: <img class="center" src="images/script_example_return.png" alt="Exemple de retour de script D &amp; D"></p><p> Le script ci-dessus vérifie simplement toutes les instances dans une pièce pour voir ce que leur <tt>object_index</tt> est et si l&#39;un d&#39;eux est l&#39;objet joueur le script va revenir <tt>true</tt> (terminant le script) ou <tt>false</tt>. Vous appelez ce script comme ceci: <img class="center" src="images/script_call_return.png" alt="Appelez le script D &amp; D avec la valeur de retour"> Ainsi, nous appelons le script et le faisons créer une variable temporaire (locale) pour stocker la valeur retournée (qui dans ce cas est soit <tt>true</tt> ou <tt>false</tt> ), puis cette variable est vérifiée et une action est effectuée. </p><p> Lorsque vous créez vos scripts DnD™, vous pouvez utiliser toutes les mêmes actions que lorsque vous ajoutez des actions à un événement objet, et vous pouvez même appeler des scripts depuis des scripts, et ainsi créer plus de code d&#39;action &quot;modulaire&quot;. Les scripts construits de cette manière peuvent vous faire gagner beaucoup de temps en créant les mêmes séquences d&#39;actions et peuvent également faciliter la lecture de vos séquences d&#39;actions et faciliter le débogage. </p><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">Vue d&#39;ensemble du glisser-déposer</a> </div><div style="float:right"> Suivant: <a href="changing_dnd.html">Modification du glisser-déposer au code</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

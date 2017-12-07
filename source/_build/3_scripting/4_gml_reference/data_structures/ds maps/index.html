@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>DS Maps</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/data_structures/ds maps/index.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fdata_structures%2Fds%20maps%2Findex.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fdata_structures%2Fds%20maps%2Findex.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h1 class="studio"> Cartes DS </h1><h2 class="studio"> Un ds_map est une structure de données qui stocke des données dans des paires liées constituées d&#39;une clé et d&#39;une valeur correspondante. </h2><p> La structure de données ds_map est particulièrement utile car elle vous permet de stocker <b>des</b> paires de <b>clés</b> et de <b>valeurs</b>. Par exemple, un personnage dans votre jeu peut avoir une quantité d&#39;objets différents ( <i>clés</i> ) et pour chaque objet il peut en avoir plusieurs ( <i>valeurs</i> ), comme dans un RPG où vous pouvez avoir 10 potions de santé, 5 potions de mana et 100 pièces d&#39;or. Les cartes maintiennent toutes ces paires au même endroit et vous pouvez ajouter des paires à la carte et rechercher la valeur correspondant à certaines touches en utilisant des fonctions simples. Cependant, vous devez savoir quelques choses sur les cartes avant de les utiliser! Les cartes <i>ne</i> sont <i>pas</i> triées de façon (reconnaissable), ce qui signifie que pour trouver une certaine clé, vous devrez parcourir toute l&#39;affaire (ce qui est <b>très</b> lent). Il est également impossible de conserver deux clés identiques et vous ne pouvez pas attribuer deux valeurs à une clé. <br><br> <i><b>REMARQUE:</b> Les fonctions ds_map ont changé depuis les versions précédentes de</i> <span class="notranslate">GameMaker</span> sorte que les jeux importés peuvent ne pas fonctionner ou se comporter comme prévu. <br><br> <i><b>REMARQUE:</b> Comme pour toutes les ressources dynamiques, les structures de données occupent de la mémoire et doivent donc <b>toujours</b> être détruites lorsqu&#39;elles ne sont plus nécessaires pour éviter les fuites de mémoire qui ralentiront et finiront par planter votre partie.</i> <br><br> Les fonctions suivantes concernent les cartes DS. </p><blockquote><ol><li> <a href="ds_map_exists.html">ds_map_exists</a> <br></li><li> <a href="ds_map_create.html">ds_map_create</a> <br></li><li> <a href="ds_map_add.html">ds_map_add</a> <br></li><li> <a href="ds_map_clear.html">ds_map_clear</a> <br></li><li> <a href="ds_map_copy.html">ds_map_copy</a> <br></li><li> <a href="ds_map_replace.html">ds_map_replace</a> <br></li><li> <a href="ds_map_delete.html">ds_map_delete</a> <br></li><li> <a href="ds_map_empty.html">ds_map_empty</a> <br></li><li> <a href="ds_map_size.html">ds_map_size</a> <br></li><li> <a href="ds_map_find_first.html">ds_map_find_first</a> <br></li><li> <a href="ds_map_find_last.html">ds_map_find_last</a> <br></li><li> <a href="ds_map_find_next.html">ds_map_find_next</a> <br></li><li> <a href=
+"ds_map_find_previous.html">ds_map_find_previous</a> <br></li><li> <a href="ds_map_find_value.html">ds_map_find_value</a> <br></li><li> <a href="ds_map_read.html">ds_map_read</a> <br></li><li> <a href="ds_map_write.html">ds_map_write</a> <br></li><li> <a href="ds_map_destroy.html">ds_map_destroy</a> <br></li></ol></blockquote><p> Il y a quatre autres fonctions disponibles pour sauvegarder et charger un fichier ds_map. Ces fonctions vont crypter la carte et la stocker dans un emplacement sécurisé sur la plate-forme cible, de sorte que vous pouvez l&#39;utiliser pour enregistrer les détails de l&#39;achat de l&#39;application, les mots de passe, les informations de jeu sensibles, etc... </p><blockquote><ol><li> <a href="ds_map_secure_save.html">ds_map_secure_save</a> <br></li><li> <a href=
+"ds_map_secure_save_buffer.html">ds_map_secure_save_buffer</a> <br></li><li> <a href="ds_map_secure_load.html">ds_map_secure_load</a> <br></li><li> <a href=
+"ds_map_secure_load_buffer.html">ds_map_secure_load_buffer</a> <br></li></ol></blockquote><p> En dehors de ces fonctions spécifiques, vous pouvez tous utiliser une expression (appelée <i>accesseur</i> ) pour ajouter ou modifier le contenu de votre <tt>ds_map</tt>. Cet accesseur ressemble à un tableau 1D avec la syntaxe suivante: </p><p class="code">map_index[? key]<span class="notranslate"></span></p><p> Vous pouvez trouver plus d&#39;informations, ainsi que des exemples, à partir de la page Vue d&#39;ensemble du GML sur les <a href=
+"../../../3_gml_overview/13_accessors.html">accesseurs</a>. <br><br></p><h3 class="studio"> JSON et Ds_maps </h3><p> Une des utilisations de ds_maps est lorsque vous travaillez avec JSON, et donc il y a quelques fonctions spéciales qui sont spécifiques à cela: </p><blockquote><ol><li> <a href="ds_map_add_list.html">ds_map_add_list</a> <br></li><li> <a href="ds_map_add_map.html">ds_map_add_map</a> <br></li><li> <a href="ds_map_replace_list.html">ds_map_replace_list</a> <br></li><li> <a href="ds_map_replace_map.html">ds_map_replace_map</a> <br></li></ol></blockquote><p> Il y a aussi quelques fonctions complémentaires pour ds_lists: </p><blockquote><ol><li> <a href=
+"../ds%20lists/ds_list_mark_as_list.html">ds_list_mark_as_list</a> <br></li><li> <a href=
+"../ds%20lists/ds_list_mark_as_map.html">ds_list_mark_as_map</a> <br></li></ol></blockquote><p> <i><b>REMARQUE:</b> Bien que ces fonctions vous permettent d&#39;ajouter des listes et des cartes dans une carte, elles ne servent à rien d&#39;autre que JSON et les cartes et listes imbriquées ne seront pas lues correctement si elles sont écrites sur disque ou accédées autrement.</i> <br><br></p><blockquote> <i><b>NOTE:</b> si vous avez besoin de vérifier si une structure de données existe, vous pouvez utiliser <a href=
+"../ds_exists.html"><tt>ds_exists()</tt></a> fonction.</i> </blockquote><p><br></p><div class="clear"><div style="float:left"> Retour: <a href="../index.html">Structures de données</a> </div><div style="float:right"> Suivant: <a href=
+"../ds%20priority%20queues/index.html">Files d&#39;attente de priorité DS</a> </div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>audio_sound_gain</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/audio/audio_sound_gain.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Faudio%2Faudio_sound_gain.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Faudio%2Faudio_sound_gain.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> audio_sound_gain </h2><div class="body-scroll"><p><br></p><h3> La description </h3><blockquote><p> Avec cette fonction, vous pouvez fondre ou atténuer un son sur une durée donnée, ou le régler instantanément. Le temps est mesuré en millisecondes et la fonction nécessite que vous saisissiez un niveau de gain final pour que le son atteigne la fin de ce temps. Ce gain peut être compris entre 0 (silencieux) et 1 (plein volume) et l&#39;échelle est linéaire, de sorte qu&#39;une valeur de 0,5 serait égale à la moitié du volume. Pour modifier instantanément le gain, réglez simplement l&#39;argument time sur 0. </p><p> Cette fonction affectera toutes les instances du son en cours de lecture dans la pièce si l&#39;index est une ressource sonore, et le volume final sera le volume auquel toutes les autres occurrences du son seront jouées. Cependant, si vous avez utilisé l&#39;index renvoyé par une fonction <a href=
+"audio_play_sound.html"><tt>audio_play_sound</tt></a> cela affectera seulement cette instance du son. </p></blockquote><p><br></p><h3> Syntaxe: </h3><p class="code">audio_sound_gain(index, volume, time);<span class="notranslate"></span></p><p><br></p><div><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">index</span> </td> <td> L&#39;indice du son pour régler le gain pour. </td></tr><tr class="alt"><td> <span class="notranslate">volume</span> </td> <td> Valeur pour le volume de la musique. </td></tr><tr><td> <span class="notranslate">time</span> </td> <td> La longueur de la variation du gain en millisecondes. </td></tr></table></div><p><br></p><h3> Résultats: </h3><p class="code">N/A<span class="notranslate"></span></p><p><br></p><h3> Exemple: </h3><p class="code">if val<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;var snd = audio_play_sound(snd_fountain);<br>
+&nbsp;&nbsp;&nbsp;audio_sound_gain(snd, 0, 0);<br>
+&nbsp;&nbsp;&nbsp;audio_sound_gain(snd, 1, 5000);<br>
+&nbsp;&nbsp;&nbsp;}<br><span class="notranslate"></span></p><blockquote><p> Le code ci-dessus vérifie une variable et si elle retourne <tt>true</tt> il assignera alors l&#39;indice d&#39;un son à lire à la variable locale &quot;snd&quot;. Cette variable est ensuite utilisée pour réduire le volume de ce son spécifique à 0 et passer au volume total pendant 5 secondes. </p></blockquote><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">Audio</a> </div><div style="float:right"> Suivant: <a href=
+"audio_sound_get_gain.html">audio_sound_get_gain</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Free Data Structure</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/2_drag_and_drop_reference/data_structure_actions/free_data_structure.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F2_drag_and_drop_reference%2Fdata_structure_actions%2Ffree_data_structure.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F2_drag_and_drop_reference%2Fdata_structure_actions%2Ffree_data_structure.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2><img style="vertical-align:middle" src=
+"images/i_ds_free_data_structure.png"> Structure de données gratuite </h2><div class="body-scroll"><p><br></p><h3> La description </h3><blockquote><p> Cette action libère la structure de données de la mémoire et doit être appelée chaque fois qu&#39;une structure de données n&#39;est plus nécessaire, par exemple dans le Destroy même d&#39;une instance ou l&#39;événement Room End, etc... Libérer une structure de données signifie qu&#39;aucune autre action peut être utilisé pour le référencer car il n&#39;existe plus, bien que vous puissiez également le vérifier en utilisant l&#39;action <a href=
+"if_data_structure_exists.html">Si la structure de données existe</a>. </p><p> Notez que si la structure de données n&#39;a pas d&#39;index affecté à une variable de portée globale, elle ne sera pas transmise d&#39;une pièce à l&#39;autre. Par exemple, si vous créez une instance de joueur et qu&#39;une structure de données de liste est affectée à une variable dans cette instance, la liste devra être libérée si le joueur est détruit <i>ou</i> si la pièce change avec l&#39;instance de joueur (sauf si le joueur instance est marquée comme persistante), de sorte que l&#39;instance de lecteur possède deux actions de structure de données libre pour ces deux événements. Il est important que toutes les structures de données créées soient détruites de cette manière lorsqu&#39;elles ne sont plus nécessaires pour éviter les fuites de mémoire qui peuvent causer des problèmes de performances ou même provoquer un crash de votre jeu. </p></blockquote><p><br></p><h3> Syntaxe de l&#39;action: </h3><img class="center" src="images/a_ds_free_data_structure.png" alt="Syntaxe de structure de données gratuite"><p><br></p><h3> Arguments: </h3><blockquote><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">Type</span> </td> <td> Le type de structure de données que vous libérez (List, Map, Grid ou Stack) </td></tr><tr class="alt"><td> <span class="notranslate">Variable</span> </td> <td> La variable contenant l&#39;index de la structure de données à libérer </td></tr></table></blockquote><p><br></p><h3> Exemple: </h3><img class="center" src="images/e_ds_free_data_structure.png" alt="Exemple de structure de données libre"><blockquote> Le code de bloc d&#39;action ci-dessus obtient la taille de la liste référencée dans la variable globale, puis utilise une boucle de répétition pour la parcourir et détruire les instances avec les identifiants stockés dans la liste. Une fois la boucle de répétition terminée, la liste est libérée de la mémoire. </blockquote><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Précédent: <a href="index.html">Actions de structure de données</a> </div><div style="float:right"> suivant: <a href="add_to_list.html">Ajouter à la liste</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

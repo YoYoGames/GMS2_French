@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>gpu_set_blendmode_ext</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/drawing/gpu/gpu_set_blendmode_ext.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fdrawing%2Fgpu%2Fgpu_set_blendmode_ext.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fdrawing%2Fgpu%2Fgpu_set_blendmode_ext.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> gpu_set_blendmode_ext </h2><p><br></p><h3> La description </h3><blockquote><p> Lorsque <i><span class="notranslate">GameMaker Studio 2</span></i> dessine un pixel, il y a une couleur source (la couleur du pixel que nous allons dessiner) et une couleur de destination (la couleur qui est déjà dans le pixel sur lequel nous dessinons), donc lors de la détermination du nouvelle couleur du pixel, les couleurs source et destination sont calculées en fonction du mode de fusion choisi. Chaque composant des couleurs est stocké en tant que valeur flottante entre 0 et 1, et la nouvelle couleur est calculée en multipliant chaque composant de la couleur source par un facteur et en multipliant chaque composant de couleur de destination par un autre facteur, puis en ajoutant résultats ensemble composant par composant. </p><p> Cette fonction vous permet de définir les différentes parties du composant qui doivent être factorisées pour créer un mode de fusion personnalisé. La source et la destination ont toutes deux une composante rouge, verte, bleue et alpha, et dans le tableau suivant les RGBA de la source sont considérés (Rs, Gs, Bs, As) tandis que les destinations sont (Rd, Gd, Bd, Ad). Les onze constantes qui peuvent être utilisées peuvent être source ou destination (ou les deux) lorsqu&#39;elles sont utilisées dans cette fonction. </p><div class="compat"><table><tr><th> Constant </th><th> Facteur de fusion (Rouge, Vert, Bleu, Alpha) </th></tr><tr><td> <span class="notranslate">bm_zero</span> </td> <td> (0, 0, 0, 0) </td></tr><tr class="alt"><td> <span class="notranslate">bm_one</span> </td> <td> (1, 1, 1, 1) </td></tr><tr><td> <span class="notranslate">bm_src_colour</span> </td> <td> (Rs, Gs, Bs, As) </td></tr><tr class="alt"><td> <span class="notranslate">bm_inv_src_colour</span> </td> <td> (1-Rs, 1-Gs, 1-Bs, 1-As) </td></tr><tr><td> <span class="notranslate">bm_src_alpha</span> </td> <td> (As, As, As, As) </td></tr><tr class="alt"><td> <span class="notranslate">bm_inv_src_alpha</span> </td> <td> (1-As, 1-As, 1-As, 1-As) </td></tr><tr><td> <span class="notranslate">bm_dest_alpha</span> </td> <td> (Annonce, Annonce, Annonce, Annonce) </td></tr><tr class="alt"><td> <span class="notranslate">bm_inv_dest_alpha</span> </td> <td> (1-Annonce, 1-Annonce, 1-Annonce, 1-Annonce) </td></tr><tr><td> <span class="notranslate">bm_dest_colour</span> </td> <td> (Rd, Gd, Bd, Ad) </td></tr><tr class="alt"><td> <span class="notranslate">bm_inv_dest_colour</span> </td> <td> (1-Rd, 1-Gd, 1-Bd, 1-Ad) </td></tr><tr><td> <span class="notranslate">bm_src_alpha_sat</span> </td> <td> (f, f, f, 1) où f = min (As, 1-Ad) </td></tr></table></div><p> Notez que vous pouvez fournir deux arguments individuels à cette fonction ou vous pouvez fournir un tableau d&#39;arguments (tel que renvoyé par la fonction <a href=
+"gpu_get_blendmode_ext.html"><tt>gpu_get_blendmode_ext</tt></a> par exemple). Si vous fournissez un tableau, il doit avoir les deux éléments suivants: </p><ul><li> [0] = Mode de fusion source (la valeur par défaut est <tt>bm_src_alpha</tt> ) </li><li> [1] = Mode de fusion de destination (par défaut <tt>bm_inv_src_alpha</tt> ) </li></ul><p> Il peut être assez difficile de visualiser le fonctionnement de ces différents modes de fusion. Vous trouverez ci-dessous un graphique simple montrant l&#39;interaction de base d&#39;un sprite unique avec différentes combinaisons de modes de fusion sur un seul arrière-plan. Veuillez noter que les résultats réels du mode de fusion que vous utiliserez dépendront beaucoup de la couleur de l&#39;image-objet, de la valeur alpha de l&#39;image-objet et de la couleur et de l&#39;alpha de l&#39;arrière-plan. <img class="center"
+src="images/blendmode_chart.png"></p><blockquote> <i><b>AVERTISSEMENT!:</b> Tous les modes de fusion ne sont pas disponibles sur toutes les plates-formes. <span class="notranslate">Android</span>, Tizen, iOS et HTML5 sans WebGL <b>ne</b> pourront pas afficher correctement les modes suivants: <br><br></i> <ul><li> <i>bm_src_colour</i> </li><li> <i>bm_inv_src_colour</i> </li><li> <i>bm_dest_colour</i> </li><li> <i>bm_inv_dest_colour</i> </li><li> <i>bm_src_alpha_sat</i> </li></ul></blockquote></blockquote><p><br></p><h3> Syntaxe: </h3><p class="code">gpu_set_blendmode(src, dest);<span class="notranslate"></span></p><p><br></p><h3> Arguments: </h3><blockquote><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">src</span> </td> <td> Facteur de mode de mélange de source (voir les constantes ci-dessus). </td></tr><tr class="alt"><td> <span class="notranslate">dest</span> </td> <td> Facteur de mode de mélange de destination (voir les constantes ci-dessus) </td></tr></table></blockquote><p><br></p><h3> Résultats: </h3><p class="code">N/A<span class="notranslate"></span></p><p><br></p><h3> Exemple: </h3><p class="code">gpu_set_blendmode_ext(bm_src_alpha, bm_one);<br>
+draw_circle_colour(100, 100, 50, c_white, c_black, 0);<br>
+gpu_set_blendmode(bm_normal);<br><span class="notranslate"></span></p><blockquote> Cela va transformer le noir en transparence, créant un effet de &quot;lueur&quot; du blanc étant fort à l&#39;extérieur et s&#39;affaiblissant progressivement du centre du cercle. Le mode de fusion est réinitialisé après que le cercle est dessiné pour s&#39;assurer que le mélange additif n&#39;est pas également appliqué à tout le reste après. </blockquote><p><br></p><div class="clear"><div style="float:left"> Retour: <a href="index.html">Fonctions GPU</a> </div><div style="float:right"> Suivant: <a href=
+"gpu_set_blendmode_ext_sepalpha.html">gpu_set_blendmode_ext_sepalpha</a> </div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

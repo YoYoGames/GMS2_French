@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Create Particle Type</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/2_drag_and_drop_reference/particle_actions/create_particle_type.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F2_drag_and_drop_reference%2Fparticle_actions%2Fcreate_particle_type.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F2_drag_and_drop_reference%2Fparticle_actions%2Fcreate_particle_type.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2><img style="vertical-align:middle" src=
+"images/i_particles_create_particle_type.png"> Créer un type de particules </h2><div class="body-scroll"><p><br></p><h3> La description </h3><blockquote><p> Dans vos projets, vous pouvez avoir plusieurs <i>types de</i> particules <i>différents</i>, chacun avec leurs propres propriétés comme la direction et la couleur, etc... qui sont définies en utilisant les différentes actions de type de particules. Cependant, vous devez d&#39;abord créer un <b>type de particule en</b> utilisant cette action, qui alloue essentiellement une petite quantité de mémoire pour contenir tous les détails de la particule afin que vous puissiez utiliser les particules à tout moment dans le futur. Vous donnez une variable pour contenir la valeur d&#39;ID unique pour le type de particule, puis dans toutes les actions futures relatives à cette particule, vous pouvez appeler la variable. Vous pouvez choisir de marquer cette variable comme étant une variable locale temporaire, mais cela signifie qu&#39;elle sera rejetée à la fin du script ou de l&#39;événement d&#39;action, ce qui signifie que le type de particule existera mais vous laissera sans aucun moyen d&#39;y accéder. il faut donc faire attention en utilisant ceci (en général, les types de particules n&#39;auront jamais besoin d&#39;être stockés dans une variable locale temporaire, mais pour certaines choses, comme dessiner des particules sur une surface, cela peut être nécessaire). </p><div class="note"> <b>NOTE</b>: Un type de particule, une fois créé, reste résident dans la mémoire système pendant la durée du jeu, et donc si vous devez le recréer à n&#39;importe quel moment (par exemple, si vous appelez l&#39;action <a href="../game_actions/restart_game.html">Redémarrer le jeu</a> ), vous <b>devez détruire le type de particules actuel</b> sinon vous obtenez une fuite de mémoire. Cela se produit lorsqu&#39;une ressource est ajoutée à la mémoire puis « <i><span class="notranslate">GameMaker Studio 2</span></i> », ce qui signifie que <i><span class="notranslate">GameMaker Studio 2</span></i> n&#39;a plus aucun moyen d&#39;interagir avec cette ressource. Cela conduit à une obstruction de la mémoire par des ressources inaccessibles qui, à leur tour, peuvent causer des problèmes avec votre jeu. Pour détruire un type de particule lorsqu&#39;il n&#39;est plus nécessaire, utilisez l&#39;action <a href=
+"destroy_particle_type.html">Détruire le type de particule</a>. </div><p><br> Vous pouvez également définir le <b>mode de fusion</b> à utiliser pour les particules. Par défaut, ils seront dessinés avec un mode de fusion &quot;normal&quot;, donc les couleurs ne seront pas modifiées par ce qui a été dessiné sous la particule, mais avec un mélange marqué, elles seront dessinées en utilisant un mélange <i>additif</i>, ce qui signifie que les choses seront dessinées aux couleurs en fonction de ce qui a été dessiné sous la particule. Le mélange additif donne des effets très brillants et &quot;brillants&quot;, et est idéal pour les exlposions, les lasers, le feu, etc... tandis que le mélange normal est meilleur pour des choses comme la pluie, la fumée ou les effets de débris. L&#39;image ci-dessous montre le même effet avec additif activé et avec additif désactivé: </p><p><br><img class="center" src="images/particle_blending.gif" alt="Exemple de mélange de particules"></p></blockquote><p><br></p><h3> Syntaxe de l&#39;action: </h3><img class="center" src=
+"images/a_particles_create_particle_type.png" alt="Créer une syntaxe de type de particules"><p><br></p><h3> Arguments: </h3><blockquote><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">Target</span> </td> <td> La variable cible pour contenir la valeur d&#39;ID de type renvoyée </td></tr></table></blockquote><p><br></p><h3> Exemple: </h3><img class="center" src=
+"images/e_particles_create_particle_type.png" alt="Créer un exemple de type de particules"><blockquote> Le code de bloc d&#39;action ci-dessus crée un nouveau type de particule et affecte sa valeur d&#39;ID unique à une variable globale. Il procède ensuite à définir toutes les propriétés pour le type de particule. </blockquote><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">Actions de particules</a> </div><div style="float:right"> suivant: <a href=
+"destroy_particle_type.html">Détruire le type de particules</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Changing DnD™ To Code</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+<link rel="stylesheet" href="../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/1_drag_and_drop_overview/changing_dnd.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2F_build%2F3_scripting%2F1_drag_and_drop_overview%2Fchanging_dnd.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2F_build%2F3_scripting%2F1_drag_and_drop_overview%2Fchanging_dnd.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> Modification de DnD™ en code </h2><div class="body-scroll"><p><br></p><p> Une autre caractéristique de DnD™ est que vous pouvez le convertir en code GML ( <span class="notranslate">GameMaker</span> Language), et ainsi voir ce qui se passe exactement dans les coulisses lorsque vous utilisez des actions. Avant de changer les actions en GML, vous pouvez d&#39;abord les <i>prévisualiser</i> en utilisant le bouton droit de la souris <img style=
+"vertical-align:middle" src="../../images/icon_rmb.png"> Option de menu <b>Live Preview</b>: <img class="center" src=
+"images/dnd_preview_rmbmenu.png" alt="Aperçu en direct"></p><p> Qui va ouvrir une nouvelle fenêtre: <img class="center" src=
+"images/dnd_preview.png" alt="DnD Live Fenêtre d&#39;aperçu"></p><p> Au fur et à mesure que vous ajoutez, modifiez ou supprimez des actions DnD™, le GML Live Preview se met à jour pour vous montrer le code réel qui est créé &quot;en coulisses&quot;. Le code de l&#39;aperçu en direct ne peut pas être modifié directement, mais vous pouvez sélectionner des sections et les copier pour les coller dans des scripts GML ou des actions de code (par exemple). </p><p> Si vous décidez de convertir le DnD™ en code après avoir vu l&#39;aperçu, vous pouvez le faire à nouveau en cliquant sur le bouton droit de la souris <img style="vertical-align:middle" src=
+"../../images/icon_rmb.png"> dans tous les cas, espace de travail avec des actions et en sélectionnant <b>Convertir en GML</b>. <img class="center" src=
+"images/dnd_code_rmbmenu.png" alt="Convertir en GML"></p><p> La première fois que vous faites cela, vous recevrez un message d&#39;avertissement indiquant qu&#39;il s&#39;agit d&#39;une <b>conversion à sens unique</b>, car vous pouvez convertir des actions en code, mais vous ne pourrez plus les convertir en actions <i>individuelles</i> plus tard. En cliquant sur &quot;OK&quot; ici effectuera la conversion pour vous. <img class="center" src=
+"images/dnd_code.png" alt="DnD™ comme code"></p><p> Le code résultant utilisera {} pour délimiter les actions individuelles, et vous pouvez voir clairement quelles actions concernent les fonctions ou les déclarations de variables dans le code. Si le DnD™ est plus complexe alors le code le sera aussi, mais les mêmes règles générales s&#39;appliquent et le code sera séquentiellement identique à celui que vous avez écrit pour le DnD™. Notez que parfois le code aura des variables locales supplémentaires (temporaires) ajoutées pour stocker certaines valeurs qui seront utilisées, par exemple: <img class="center" src=
+"images/dnd_instanceexists.png" alt="L&#39;instance DnD™ existe"></p><p> Deviendra ce code: <img class="center" src=
+"images/code_instanceexists.png" alt="L&#39;instance de code existe"></p><p> Ici, le code crée d&#39;abord une variable locale (temporaire) et la définit sur false, puis vérifie si l&#39;instance existe et définit la variable locale sur le retour de l&#39;appel de fonction. La variable locale est ensuite vérifiée pour voir si elle est <tt>true</tt> ou <tt>false</tt> et si c&#39;est vrai, le reste du code est exécuté. </p><p> Lorsque vous apprenez à programmer en utilisant Drag and Drop, cela peut être un outil important pour passer à l&#39;utilisation de GML à un stade ultérieur, mais ce n&#39;est en aucun cas obligatoire et vous pouvez toujours faire de super jeux en utilisant DnD™! Notez que si le processus de conversion est à sens unique, après avoir converti les actions en code, vous <i>pouvez</i> revenir à l&#39;utilisation de DnD™ en utilisant le menu contextuel dans l&#39;éditeur de code et en sélectionnant &quot;Convert To DnD™&quot;. Cela placera le code précédemment créé dans une action <a href=
+"../2_drag_and_drop_reference/common_actions/execute_code.html">Execute Code</a> et vous pourrez continuer à utiliser DnD™ comme auparavant: <img class="center" src="images/dnd_executecode.png" alt="DnD™ Execute Code"></p><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">Vue d&#39;ensemble du glisser-déposer</a> </div><div style="float:right"> Next: <a href=
+"creating_action_block_code.html">Construire un code d&#39;action</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

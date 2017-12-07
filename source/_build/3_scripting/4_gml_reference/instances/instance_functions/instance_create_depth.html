@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>instance_create_depth</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/instances/instance_functions/instance_create_depth.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Finstances%2Finstance_functions%2Finstance_create_depth.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Finstances%2Finstance_functions%2Finstance_create_depth.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> instance_create_depth </h2><div class="body-scroll"><p><br></p><h3> La description </h3><blockquote><p> Avec cette fonction, vous pouvez créer une nouvelle instance de l&#39;objet spécifié à n&#39;importe quel point de la pièce et à la profondeur spécifiée. La profondeur peut être n&#39;importe quelle valeur, où plus la profondeur est proche de la caméra, plus la profondeur est élevée et plus la profondeur est éloignée, donc une instance à profondeur -200 sera dessinée sur une instance à profondeur +300 ( par exemple). Notez que cette fonction créera réellement un calque de pièce pour l&#39;instance, puisque toutes les instances <i>doivent</i> être sur un calque dans la pièce, mais puisqu&#39;il s&#39;agit d&#39;un calque <i>géré</i> (pas un que vous avez créé par le code ou dans la pièce, mais celui que <i><span class="notranslate">GameMaker Studio 2</span></i> a créé automatiquement) vous ne pouvez pas y accéder, et le <a href=
+"../instance_variables/layer.html"><tt>layer</tt></a> La variable d&#39;instance renverra -1. </p><div class="note"> <b>IMPORTANT!</b> Il existe une profondeur de couche minimum et maximum de -16000 à 16000. Tout ce qui est placé sur un calque en dehors de cette plage <b>ne sera pas dessiné</b> bien que tous les événements continueront à fonctionner normalement. </div><p> Cette fonction renvoie le <a href=
+"../instance_variables/id.html"><tt>id</tt></a> de la nouvelle instance qui peut ensuite être stockée dans une variable ou utilisée pour accéder à cette instance. Notez que cette fonction appelle également l&#39;événement de création de l&#39;instance en cours de création <i>avant de</i> poursuivre le ou les actions de l&#39;événement qui a appelé la fonction. </p></blockquote><p><br></p><h3> Syntaxe: </h3><p class="code">instance_create_depth(x, y, depth, obj);<span class="notranslate"></span></p><p><br></p><h3> Arguments: </h3><blockquote><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">x</span> </td> <td> La position x de l&#39;objet sera créée à </td></tr><tr class="alt"><td> <span class="notranslate">y</span> </td> <td> La position y l&#39;objet sera créé à </td></tr><tr><td> <span class="notranslate">depth</span> </td> <td> La profondeur à affecter à l&#39;instance créée </td></tr><tr class="alt"><td> <span class="notranslate">obj</span> </td> <td> L&#39;index d&#39;objet de l&#39;objet pour créer une instance de </td></tr></table></blockquote><p><br></p><h3> Résultats: </h3><p class="code">Real (instance ID value)<span class="notranslate"></span></p><p><br></p><h3> Exemple: </h3><p class="code">var inst;<br>
+inst = instance_create_depth(x, y, -10000, obj_Bullet);<br>
+with (inst)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;speed = other.shoot_speed;<br>
+&nbsp;&nbsp;&nbsp;direction = other.image_angle;<br>
+&nbsp;&nbsp;&nbsp;}<br><span class="notranslate"></span></p><blockquote><p> Le code ci-dessus crée une nouvelle instance de l&#39;objet &quot;obj_Bullet&quot; et stocke l&#39;identifiant de l&#39;instance dans une variable. Cette variable est ensuite utilisée pour affecter <tt>speed</tt> et <tt>direction</tt> à la nouvelle instance. </p></blockquote><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">Fonctions d&#39;instance</a> </div><div style="float:right"> Suivant: <a href=
+"instance_destroy.html">instance_destroy</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

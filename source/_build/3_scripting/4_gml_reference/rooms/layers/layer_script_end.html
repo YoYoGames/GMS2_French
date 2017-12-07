@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>layer_script_end</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/rooms/layers/layer_script_end.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Frooms%2Flayers%2Flayer_script_end.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Frooms%2Flayers%2Flayer_script_end.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> layer_script_end </h2><div class="body-scroll"><p><br></p><h3> La description </h3><blockquote><p> Avec cette fonction, vous pouvez assigner un script à un calque et il sera appelé après le rendu du calque. Lors de l&#39;ajout d&#39;un script à une couche, celle-ci sera exécutée à la fin de <i>chacun des différents événements de dessin, de</i> sorte que vous souhaitiez vérifier dans le script affecté quel événement est actuellement terminé et adapter le code en conséquence. Cela peut être fait en vérifiant <a href=
+"../../objects/generating%20events/event_type.html"><tt>event_type</tt></a> et / ou <a href=
+"../../objects/generating%20events/event_number.html"><tt>event_number</tt></a> (voir l&#39;exemple étendu ci-dessous). Notez que la fonction n&#39;est <i>pas</i> destinée à être appelée dans les événements de dessin ou les événements d&#39;étape, mais doit seulement être appelée au début de la pièce dans le code de création de pièce ou dans l&#39;événement Créer un événement / une pièce. </p></blockquote><p><br></p><h3> Syntaxe: </h3><p class="code">layer_script_end(layer_id, script)<span class="notranslate"></span></p><blockquote><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">layer_id</span> </td> <td> La valeur d&#39;ID unique de la couche à cibler (ou le nom de la couche sous forme de chaîne) </td></tr><tr class="alt"><td> <span class="notranslate">script</span> </td> <td> L&#39;index de script à affecter à la couche </td></tr></table></blockquote><p><br></p><h3> Résultats: </h3><p class="code">N/A<span class="notranslate"></span></p><p><br></p><h3> Exemple étendu: </h3><blockquote><p> Dans cet exemple étendu, nous allons d&#39;abord vous montrer comment un script simple est structuré pour définir des données de shader uniformes de sorte que lorsque le calque donné est dessiné, ce script sera exécuté et le shader fonctionnera correctement. Dans l&#39;exemple, il est intéressant de noter comment nous vérifions quel événement est appelé afin que le reste du script ne soit exécuté que sur l&#39;événement spécifique sur lequel nous devons le faire - dans ce cas, uniquement sur l&#39;événement draw principal: </p></blockquote><p class="code">/// scr_LayerShader_Start();<br>
+if event_type == ev_draw<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;if event_number == 0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;colour_to_find =
+shader_get_uniform(sShaderDemo5, "f_Colour1");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;colour_to_set =
+shader_get_uniform(sShaderDemo5, "f_Colour2");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shader_set(s_ColourChanger);<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shader_set_uniform_f(colour_to_find,
+1,1,1 );<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shader_set_uniform_f(colour_to_set,
+1,0,0 );<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;}<br><span class="notranslate"></span></p><blockquote><p> Nous aurions alors un script compagnon pour réinitialiser le shader après que tout le dessin soit terminé: </p></blockquote><p class="code">/// scr_LayerShader_End();<br>
+if event_type == ev_draw<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;if event_number == 0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shader_reset();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;}<br><span class="notranslate"></span></p><blockquote><p> Maintenant que nous avons défini nos scripts pour la définition du shader, nous devons les affecter à une couche spécifique pour que la couche sache les appeler. Cela se fera dans le code de création de salle, ou dans l&#39;événement create ou room start d&#39;un objet contrôleur (ils n&#39;ont pas besoin d&#39;être définis à chaque pas, mais plutôt une fois au début de la pièce ou au début de la couche créé): </p></blockquote><p class="code">var lay_id = layer_get_id("Instances");<br>
+layer_script_begin(lay_id, scr_LayerShader_Start);<br>
+layer_script_end(lay_id, scr_LayerShader_End);<br><span class="notranslate"></span></p><blockquote><p> Ce dernier bloc de code affecte les scripts à la couche. </p></blockquote><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Précédent: <a href="index.html">Fonctions de couche générales</a> </div><div style="float:right"> suivant: <a href=
+"layer_shader.html">layer_shader</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

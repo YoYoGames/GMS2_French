@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>General Layer Functions</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/rooms/layers/index.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Frooms%2Flayers%2Findex.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Frooms%2Flayers%2Findex.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> Fonctions de couche générales </h2><p> L&#39; <i><span class="notranslate">GameMaker Studio 2</span></i> <a href=
+"../../../../2_interface/1_editors/rooms.html">salle de</a> <i><span class="notranslate">GameMaker Studio 2</span></i> vous permet d&#39;ajouter des <i>couches</i> de différents éléments à votre pièce. Il peut s&#39;agir de tilemaps (en utilisant des tilesets), d&#39;arrière-plans, de sprites ou d&#39;instances, mais notez que contrairement à l&#39;éditeur de pièce, vous n&#39;êtes <i>pas</i> limité à un seul type d&#39;actif et pouvez ajouter plusieurs types d&#39;actifs au même calque. avoir un fond et un tilemap sur la même couche. Cette section présente les fonctions utilisées lors de l&#39;utilisation de <b>couches d&#39;instance</b> ainsi que quelques fonctions générales à utiliser pour toutes les couches: </p><div class="index_list"><ul><li> <a href="layer_exists.html">layer_exists</a> </li><li> <a href="layer_get_id.html">layer_get_id</a> </li><li> <a href="layer_get_depth.html">layer_get_depth</a> </li><li> <a href="layer_get_name.html">layer_get_name</a> </li><li> <a href="layer_get_all.html">layer_get_all</a> </li><li> <a href=
+"layer_get_all_elements.html">layer_get_all_elements</a> </li><li> <a href=
+"layer_get_element_layer.html">layer_get_element_layer</a> </li><li> <a href=
+"layer_get_element_type.html">layer_get_element_type</a> </li><li> <a href="layer_get_x.html">layer_get_x</a> </li><li> <a href="layer_get_y.html">layer_get_y</a> </li><li> <a href="layer_get_hspeed.html">layer_get_hspeed</a> </li><li> <a href="layer_get_vspeed.html">layer_get_vspeed</a> </li><li> <a href="layer_create.html">layer_create</a> </li><li> <a href="layer_destroy.html">layer_destroy</a> </li><li> <a href="layer_x.html">layer_x</a> </li><li> <a href="layer_y.html">layer_y</a> </li><li> <a href="layer_hspeed.html">layer_hspeed</a> </li><li> <a href="layer_vspeed.html">layer_vspeed</a> </li><li> <a href="layer_add_instance.html">layer_add_instance</a> </li><li> <a href="layer_has_instance.html">layer_has_instance</a> </li><li> <a href=
+"layer_instance_get_instance.html">layer_instance_get_instance</a> </li><li> <a href="layer_element_move.html">layer_element_move</a> </li><li> <a href="layer_set_visible.html">layer_set_visible</a> </li><li> <a href="layer_get_visible.html">layer_get_visible</a> </li><li> <a href="layer_depth.html">layer_depth</a> </li><li> <a href=
+"layer_force_draw_depth.html">layer_force_draw_depth</a> </li><li> <a href=
+"layer_is_draw_depth_forced.html">layer_is_draw_depth_forced</a> </li><li> <a href=
+"layer_get_forced_depth.html">layer_get_forced_depth</a> </li><li> <a href="layer_script_begin.html">layer_script_begin</a> </li><li> <a href="layer_script_end.html">layer_script_end</a> </li><li> <a href="layer_shader.html">layer_shader</a> </li><li> <a href=
+"layer_get_script_begin.html">layer_get_script_begin</a> </li><li> <a href="layer_get_script_end.html">layer_get_script_end</a> </li><li> <a href="layer_get_shader.html">layer_get_shader</a> </li></ul></div><p> Nous avons également quelques fonctions supplémentaires concernant les couches de ciblage dans une pièce différente. Il se peut que vous vouliez changer quelque chose dans une pièce qui n&#39;est pas la pièce actuelle, ou peut-être que vous voulez générer des pièces de façon procédurale, ou n&#39;importe quel nombre de choses. Pour activer cela, nous utilisons les fonctions suivantes: </p><div class="index_list"><ul><li> <a href="layer_set_target_room.html">layer_set_target_room</a> </li><li> <a href="layer_get_target_room.html">layer_get_target_room</a> </li><li> <a href=
+"layer_reset_target_room.html">layer_reset_target_room</a> </li></ul></div><p> Qu&#39;est-ce que vous faites ici est de définir la pièce cible en utilisant la fonction appropriée, puis appeler les fonctions de couche sont normales. Ces fonctions de couche ne s&#39;appliquent <i>plus</i> qu&#39;à la pièce cible et non à la pièce en cours. Lorsque vous avez terminé, vous appelez la fonction de réinitialisation pour ramener l&#39;étendue du code dans la pièce actuelle. </p><div class="note"> <b>ATTENTION!</b> Lorsque vous ciblez une autre pièce, vous pouvez utiliser toutes les fonctions de la couche normale, <b>sauf que</b> vous ne pouvez pas créer d&#39;instances en utilisant <a href=
+"../../instances/instance_functions/instance_create_layer.html"><tt>
+instance_create_layer</tt></a> ou <a href=
+"../../instances/instance_functions/instance_create_depth.html"><tt>
+instance_create_depth</tt></a>, ni la fonction de couche <tt>layer_add_instance</tt> être disponible. </div><p><br> Enfin, et ceci est exclusivement à utiliser avec des <i>instances</i> sur des calques (bien que la couche elle-même puisse avoir d&#39;autres éléments, ils ne seront pas affectés par les fonctions suivantes), vous avez quelques fonctions pour désactiver ou réactiver toutes les instances: </p><div class="index_list"><ul><li> <a href=
+"../../instances/deactivating_instances/instance_deactivate_layer.html">instance_deactivate_layer</a> </li><li> <a href=
+"../../instances/deactivating_instances/instance_activate_layer.html">instance_activate_layer</a> </li></ul></div><p><br></p><div class="clear"><div style="float:left"> Retour: <a href=
+"../index.html">Chambres</a> </div><div style="float:right"> Next: <a href=
+"../tilemaps/index.html">Fonctions de couche Tilemap</a> </div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

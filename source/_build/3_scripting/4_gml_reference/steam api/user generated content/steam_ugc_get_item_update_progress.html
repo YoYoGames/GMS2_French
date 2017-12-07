@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>steam_ugc_get_item_update_progress</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/steam api/user generated content/steam_ugc_get_item_update_progress.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fsteam%20api%2Fuser%20generated%20content%2Fsteam_ugc_get_item_update_progress.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fsteam%20api%2Fuser%20generated%20content%2Fsteam_ugc_get_item_update_progress.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> <span class="notranslate">steam</span> _ugc_get_item_update_progress </h2><div class="body-scroll"><h3 class="studio"> Syntaxe: </h3><p class="code">
+steam_ugc_get_item_update_progress(ugc_update_handle,
+info_map);<span class="notranslate"></span></p><p><br></p><div class="param"><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">ugc_update_handle</span> </td> <td> Le handle unique pour l&#39;UGC à mettre à jour. </td></tr><tr class="alt"><td> <span class="notranslate">info_map</span> </td> <td> Un index de carte DS (précédemment créé). </td></tr></table></div><p><br></p><p> <b>Renvoie:</b> Boolean </p><p><br></p><h3 class="studio"> La description </h3><p> Cette fonction peut être utilisée pour suivre l&#39;état de mise à jour d&#39;un élément. Vous donnez le handle d&#39;élément (tel que renvoyé par la fonction <a href="steam_ugc_start_item_update.html"><tt>steam_ugc_start_item_update</tt></a> ) et une carte DS vide qui sera ensuite remplie avec les paires clé / valeur suivantes: </p><blockquote><ol><li> &quot; <b>status_code</b> &quot; - Le code d&#39;état <span class="notranslate">Steam</span> </li><li style="list-style: none"><br></li><li> &quot; <b>status_string</b> &quot; - Une chaîne pour l&#39;état actuel </li><li style="list-style: none"><br></li><li> &quot; <b>bytes_processed</b> &quot; - Les octets traités jusqu&#39;à présent </li><li style="list-style: none"><br></li><li> &quot; <b>bytes_total</b> &quot; - Le nombre total d&#39;octets dans la mise à jour </li><li style="list-style: none"><br></li></ol></blockquote><p> S&#39;il y a une erreur, la fonction retournera <tt>false</tt> et la carte sera vide, sinon la fonction retourne <tt>true</tt>. <br><br></p><p><br></p><h3 class="studio"> Exemple: </h3><p class="code">var uploadMap = ds_map_create();<br>
+steam_ugc_get_item_update_progress(global.itemHandle,
+uploadMap);<br>
+var statusCode = uploadMap[? "status_code"];<br>
+var status = uploadMap[? "status_string"];<br>
+var processed = uploadMap[? "bytes_processed"];<br>
+var total = uploadMap[? "bytes_total"];<br>
+draw_text(32, 0, "Upload info for item:" +
+string(global.itemHandle));<br>
+draw_text(32, 15, "status code:" + string(statusCode));<br>
+draw_text(32, 30, "status:" + string(status));<br>
+draw_text(32, 45, "bytes processed:" +string(processed));<br>
+draw_text(32, 60, "bytes total:" + string( total));<br>
+ds_map_destroy(uploadMap);<br><span class="notranslate"></span></p><p> Le code ci-dessus interrogera l&#39;état de téléchargement de l&#39;élément indexé dans la variable globale &quot;itemHandle&quot;, en utilisant un <tt>ds_map</tt> pour stocker les informations. Ceci est ensuite analysé et les valeurs résultantes sont dessinées à l&#39;écran. </p><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Précédent: <a href="index.html">API <span class="notranslate">Steam</span> - Contenu généré par l&#39;utilisateur</a> </div><div style="float:right"> Suivant: <a href=
+"steam_ugc_subscribe_item.html"><span class="notranslate">steam</span> _ugc_subscribe_item</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

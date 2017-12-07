@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>string_copy</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/strings/string_copy.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fstrings%2Fstring_copy.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fstrings%2Fstring_copy.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> string_copy </h2><div class="body-scroll"><p><br></p><h3> La description </h3><blockquote><p> Avec cette fonction, vous pouvez facilement sélectionner un nombre de caractères dans une chaîne à copier dans un autre. Le premier caractère d&#39;une chaîne est toujours numéroté comme &quot;1&quot;, donc pour copier (par exemple) les cinq premiers caractères de la chaîne que vous auriez <tt>string_copy(str, 1, 5)</tt>. Un autre exemple est fourni ci-dessous. </p></blockquote><p><br></p><h3> Syntaxe: </h3><p class="code">string_copy(str, index, count);<span class="notranslate"></span></p><blockquote><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">str</span> </td> <td> La chaîne à partir de laquelle copier </td></tr><tr class="alt"><td> <span class="notranslate">index</span> </td> <td> La position du premier caractère dans la chaîne à partir de laquelle (copier à partir de 1) </td></tr><tr><td> <span class="notranslate">count</span> </td> <td> Le nombre de caractères, à partir de la position du premier, à copier </td></tr></table></blockquote><p><br></p><h3> Résultats: </h3><p class="code">String<span class="notranslate"></span></p><p><br></p><h3> Exemple: </h3><p class="code">name = keyboard_string;<br>
+if string_length(name) &gt; 15 )<br>
+&nbsp; &nbsp; &nbsp; {<br>
+&nbsp; &nbsp; &nbsp; keyboard_string = string_copy(name, 1, 15
+);<br>
+&nbsp; &nbsp; &nbsp; }<br><span class="notranslate"></span></p><blockquote><p> Le code ci-dessus permettra au joueur d&#39;entrer une chaîne via le clavier qui est ensuite stockée dans la variable <tt>name</tt>. Cette variable est ensuite vérifiée pour voir si elle dépasse la longueur maximale de 15 caractères et si c&#39;est le cas, la chaîne_clavier est remplacée par une copie de 15 caractères du <tt>name</tt> chaîne. Cela limite effectivement l&#39;entrée du joueur à 15 caractères. </p></blockquote><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href=
+"index.html">Cordes</a> </div><div style="float:right"> Suivant: <a href=
+"string_count.html">string_count</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

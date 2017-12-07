@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>The Path Editor</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+<link rel="stylesheet" href="../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/2_interface/1_editors/paths.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2F_build%2F2_interface%2F1_editors%2Fpaths.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2F_build%2F2_interface%2F1_editors%2Fpaths.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> L&#39;éditeur de chemin </h2><div class="body-scroll"><p><br></p><p><img class="center" src="images/editor_paths.png" alt="Éditeur de chemin"> À un moment donné, lors de la création de vos jeux, vous pouvez avoir besoin d&#39;une de vos instances pour suivre un chemin à travers un niveau. Maintenant, cela peut être fait dans le code en créant simplement un tableau de positions dans la pièce et ensuite en passant une instance entre elles, mais cela peut être une corvée à mettre en place et difficile à changer, tester et adapter pour différentes instances. Pour cette raison, <i><span class="notranslate">GameMaker Studio 2</span></i> dispose de ressources de chemin et d&#39;un éditeur de chemin dédié. </p><p> L&#39;idée de base est plutôt simple - vous définissez un chemin en le dessinant dans l&#39;éditeur de chemin, puis vous pouvez placer une action (ou un code) dans l&#39;événement de création d&#39;un objet pour indiquer à l&#39;instance de suivre ce chemin particulier. Vous pouvez également définir la vitesse à suivre le chemin et un certain nombre d&#39;autres actions relatives à la position et l&#39;orientation du chemin dans la pièce. Lorsque vous créez une ressource de chemin pour la première fois, la fenêtre de l&#39;éditeur de chemin s&#39;ouvre avec les options suivantes: </p><blockquote><a name="path_properties" id="path_properties"></a> <label class="collapse" for="one">Propriétés du chemin</label> <input id="one" type="checkbox"><div class="index_list"><p> Comme pour toutes les ressources de <i><span class="notranslate">GameMaker Studio 2</span></i> vous devez donner à votre nouveau chemin un nom unique, car c&#39;est ce qui sera utilisé pour l&#39;identifier dans le jeu que vous faites, et un bon système que beaucoup de gens utilisent est le préfixe (ou le suffixe ) la ressource pour une reconnaissance facile dans le code ou les actions (par exemple: <tt>path_Enemy_1</tt> ou <tt>PowerUp_path</tt> ). Une fois que vous avez nommé le chemin, vous pouvez commencer à le définir en plaçant des points dans l&#39;éditeur principal sur la droite, chaque point étant ajouté à la liste ici avec sa position et sa vitesse. </p><p> Vous pouvez modifier chaque valeur dans les propriétés du chemin en double-cliquant <img style="vertical-align:middle" src=
+"../../images/icon_lmb.png"> dessus et en entrant une valeur. La valeur de <b>vitesse</b> pour les points de chemin est définie par un pourcentage de la vitesse à laquelle l&#39;instance se déplace le long du chemin (la valeur par défaut est 100%). Donc, si vous démarrez une instance à une vitesse de 2 (2 pixels par pas) le long d&#39;un chemin et que l&#39;un des points de chemin a une valeur de vitesse de 50%, l&#39;instance réduit la vitesse à l&#39;approche de ce point. (50% de la vitesse du trajet). De même, vous pouvez définir la vitesse à 150% et l&#39;instance accélérera dès qu&#39;elle atteindra le point. De cette façon, vous pouvez créer un joli mouvement dynamique sans aucun code. </p><p> Vous pouvez également spécifier le type de connexion pour le chemin entier et si le chemin doit être fermé ou non (un chemin fermé connectera le dernier point du chemin avec le premier). Le type de connexion peut être soit <b>linéaire</b>, soit <b>lisse</b> où une ligne droite connecte simplement les points d&#39;un chemin de manière linéaire, avec des changements angulaires à chaque point, tandis qu&#39;une connexion en douceur crée un chemin beaucoup plus doux qui peut ne pas passer directement à travers l&#39;un des points, mais prenez plutôt une ligne approximative, créant de belles courbes. Vous pouvez également spécifier la précision pour les courbes (la valeur par défaut est 4) qui peut être de 1 à 8 avec 8 étant le plus lisse. L&#39;image ci-dessous montre un exemple de la façon dont ces options affectent le chemin: <img class="center" src=
+"images/editor_paths_examples.png" alt="Exemples d&#39;éditeur de chemin"></p></div><br><a name="path_edit" id="path_edit"></a> <label class="collapse"
+for="two">Modification</label> <input id="two" type="checkbox"><div class="index_list"><p> Vous pouvez ajouter des points au clic sur le chemin <img style=
+"vertical-align:middle" src="../../images/icon_lmb.png"> n&#39;importe où dans la fenêtre d&#39;édition, et tous les clics suivants ajouteront d&#39;autres points. Une fois placé dans l&#39;éditeur, un point peut être déplacé en cliquant <img style="vertical-align:middle" src="../../images/icon_lmb.png"> et en le faisant glisser ou en changeant les valeurs qui vous sont présentées à gauche pour la position X et Y et la vitesse (voir <a href=
+"#path_properties">Propriétés du chemin</a>, ci-dessus). Vous pouvez utiliser <img style="vertical-align:middle" src=
+"../../images/icon_ctrl.png"> / <img style="vertical-align:middle"
+src="../../images/icon_cmd.png"> et clic gauche <img style=
+"vertical-align:middle" src="../../images/icon_lmb.png"> sur plusieurs points pour les sélectionner ensemble, et ce groupe de points peut ensuite être déplacé et placé selon vos besoins. Vous pouvez appuyer sur <img style="vertical-align:middle" src=
+"../../images/icon_delete.png"> pour supprimer le ou les points sélectionnés aussi. </p><p> Un menu supplémentaire est disponible dans la fenêtre de l&#39;éditeur lorsque vous cliquez avec le bouton droit de la souris, illustré ci-dessous: <img class="center" src=
+"images/editor_paths_menu.png" alt="Menu de l&#39;éditeur de chemin"> Chacun des éléments de ce menu fonctionne comme suit: </p><ul><li> <b>Modifier les points</b> - Modifiez les points de chemin. </li><li> <b>Pan to Path</b> - Parcourt la vue de l&#39;éditeur jusqu&#39;au centre du chemin. </li><li> <b>Inverser</b> - Inverse l&#39;ordre des points de chemin. Cela ne les déplace pas, mais change plutôt l&#39;ordre dans lequel ils seront traités afin que le début devienne la fin et vice-versa. </li><li> <b>Flip</b> - Retourne le chemin le long de l&#39;axe horizontal. </li><li> <b>Minrror</b> - Retourne le chemin le long de l&#39;axe vertical. </li><li> <b>Supprimer les points</b> - Supprime le ou les points sélectionnés. </li></ul></div><br><a name="path_toolbox" id="path_toolbox"></a> <label class=
+"collapse" for="three">Boîte à outils</label> <input id="three" type=
+"checkbox"><div class="index_list"><p> Les boutons de la boîte à outils en haut vous permettent de contrôler la façon dont les choses sont dessinées dans la fenêtre de l&#39;éditeur. Vous pouvez activer ou désactiver la grille d&#39;arrière-plan, ainsi que définir l&#39;ajout de points de chemin à ajouter à cette grille ou non. Les valeurs d&#39;accrochage indiquent la taille des cellules de la grille et ceci peut être changé pour n&#39;importe quelle valeur dont vous avez besoin. Le reste des outils est dédié au zoom et au panoramique de la zone de l&#39;éditeur, et vous pouvez cliquer sur le bouton (=) pour réinitialiser l&#39;affichage à 1: 1. Notez que si vous faites un panoramique trop loin de l&#39;endroit où vous voulez tracer le chemin, vous pouvez utiliser le <a href=
+"#path_edit">menu du bouton droit de la souris</a>, puis cliquer sur <b>le chemin</b> vers le <b>chemin</b> pour revenir à l&#39;endroit où vous travailliez. </p></div><br><a name="path_points" id="path_points"></a> <label class="collapse"
+for="four">Points de chemin</label> <input id="four" type="checkbox"><div class="index_list"><p> Les chemins sont simplement une collection de points reliés par une ligne. Dans l&#39;éditeur, vous placez ces points en utilisant le bouton gauche de la souris. Vous pouvez ajouter des points n&#39;importe où dans l&#39;éditeur de pièce et ils seront ajoutés à la liste de points consécutivement pour créer un chemin. Si vous placez un point près d&#39;une ligne de connexion ou d&#39;un autre nœud, le nouveau point sera inséré dans le chemin plutôt que ajouté (vous pouvez définir la distance de détection pour cela dans les <a href=
+"../../1_overview/1_getting_started/preferences/prefs_splineeditor.html">Préférences</a> ). Vous pouvez appuyer sur <img style="vertical-align:middle"
+src="../../images/icon_ctrl.png"> / <img style=
+"vertical-align:middle" src="../../images/icon_cmd.png"> et cliquez <img style="vertical-align:middle" src="../../images/icon_lmb.png"> sur les points déjà placés pour les sélectionner, et ensuite toutes les opérations effectuées sur les points du chemin comme les déplacer, seront appliquées à tous les points sélectionnés en tant que groupe. Pour supprimer un point ou une sélection de points, vous pouvez faire un clic droit <img style="vertical-align:middle" src=
+"../../images/icon_rmb.png"> et sélectionnez &quot;Supprimer le point&quot; ou appuyez sur <img style="vertical-align:middle" src=
+"../../images/icon_delete.png"> clé. </p><p> Notez que vous pouvez également utiliser les raccourcis suivants pour effectuer des opérations supplémentaires qui ne sont pas disponibles via le menu du bouton droit de la souris sur le (s) point (s) de chemin choisi (s): </p><ul><li> <b>T</b> + <img style="vertical-align:middle" src=
+"../../images/icon_lmb.png">: Traduire (déplacer) les points de chemin </li><li> <b>R</b> + <img style="vertical-align:middle" src=
+"../../images/icon_lmb.png">: Faire pivoter les points de chemin </li><li> <b>S</b> + <img style="vertical-align:middle" src=
+"../../images/icon_lmb.png">: Mettre à l&#39;échelle les points de chemin </li></ul></div></blockquote><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">Index des éditeurs</a> </div><div style="float:right"> Suivant: <a href="scripts.html">L&#39;éditeur de script</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>
