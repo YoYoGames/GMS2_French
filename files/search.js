@@ -21,7 +21,7 @@ function ValidateRequest(s)
   res = s.match(regexp);
   if (res)
   {
-    alert("Invalid character \"" + (res[0]) + "\" !");
+    alert("Caractère non valide \"" + (res[0]) + "\" !");
     return false;
   }
 
@@ -39,7 +39,7 @@ function Search(s)
   for (i=0; i<request.length; i++) {
    if (request[i].length<$minchars)
    {
-     alert("Your search term \"" + request[i] + "\" was too short, please select one that is greater than " + $minchars + " character(s).");
+     alert("Votre terme de recherche \"" + request[i] + "\" était trop court, veuillez en sélectionner un qui est supérieur à " + $minchars + " personnages.");
      return false;
    }
   }
@@ -48,7 +48,7 @@ function Search(s)
   var docs = RecursiveSearch(0, true, []);
   if (!docs.length) { 
     var e = document.createElement("OPTION");
-    e.text = "No matches found!";
+    e.text = "Aucun résultat!";
     e.value = "";
     document.forms['searchform'].founddocslist[0] = e;
   } else
