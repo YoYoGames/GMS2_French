@@ -1305,7 +1305,7 @@ var HelpIndex = [
 ["Mouvement DnD™ - Régler la gravité", [
 ["Bibliothèque d&#39;actions audio DnD™", "source/_build/3_scripting/2_drag_and_drop_reference/audio_actions/index.html"], 
 ["Bibliothèque d&#39;actions de mouvement DnD™", "source/_build/3_scripting/2_drag_and_drop_reference/movement_actions/index.html"]]], 
-["Mouvement DnD™ - Réglez la force de gravité", [
+["DnD™ Movement - Réglez la force de gravité", [
 ["Bibliothèque d&#39;actions audio DnD™", "source/_build/3_scripting/2_drag_and_drop_reference/audio_actions/index.html"], 
 ["Bibliothèque d&#39;actions de mouvement DnD™", "source/_build/3_scripting/2_drag_and_drop_reference/movement_actions/index.html"]]], 
 ["Mouvement DnD™ - Direction du point de consigne", [
@@ -1763,7 +1763,7 @@ var HelpIndex = [
 ["FIFO (premier entré, premier sorti)", "source/_build/3_scripting/4_gml_reference/data_structures/ds queues/index.html"], 
 ["la gestion des fichiers", "source/_build/3_scripting/4_gml_reference/file handling/index.html"], 
 ["Menu Fichier", "source/_build/1_overview/2_quick_start/menus/file_menu.html"], 
-["Zones d&#39;enregistrement de fichier", "source/_build/1_overview/3_additional_information/file_system.html"], 
+["Zones d&#39;enregistrement de fichiers", "source/_build/1_overview/3_additional_information/file_system.html"], 
 ["Système de fichiers", "source/_build/1_overview/3_additional_information/file_system.html"], 
 ["Fonctions du système de fichiers", "source/_build/1_overview/3_additional_information/file_system.html"], 
 ["systèmes de fichiers", "source/_build/3_scripting/4_gml_reference/file handling/index.html"], 
