@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>sprite_get_bbox_mode</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/sprites/sprite_get_bbox_mode.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fsprites%2Fsprite_get_bbox_mode.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fsprites%2Fsprite_get_bbox_mode.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> sprite_get_bbox_mode </h2><div class="body-scroll"><p><br></p><h3> La description </h3><blockquote><p> Cette fonction renverra le &quot;mode&quot; actuel pour les calculs du cadre de sélection. Vous fournissez l&#39;index de l&#39;image-objet de l&#39;image-objet à vérifier, et la fonction renvoie l&#39;une des constantes illustrées ci-dessous. </p></blockquote><p><br></p><h3> Syntaxe: </h3><p class="code">sprite_get_bbox_mode(ind);<span class="notranslate"></span></p><blockquote><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">ind</span> </td> <td> L&#39;index du sprite à vérifier. </td></tr></table></blockquote><p><br></p><h3> Résultats </h3><p class="code">Constant<span class="notranslate"></span></p><div class="compat"><table><tr><th> Constant </th><th> La description </th></tr><tr><td> <span class="notranslate"><tt>bboxmode_automatic</tt></span> </td><td> Automatique - Le cadre de sélection est calculé automatiquement en fonction du paramètre de tolérance défini pour l&#39;image-objet. </td></tr><tr class="alt"><td> <span class="notranslate"><tt>bboxmode_fullimage</tt></span> </td><td> Image complète - Le cadre de sélection sera configuré pour utiliser toute la largeur et la hauteur de l&#39;image-objet, quelles que soient la tolérance et les pixels &quot;vides&quot;. </td></tr><tr><td> <span class="notranslate"><tt>bboxmode_manual</tt></span> </td><td> Manuel - Le cadre de sélection a été défini manuellement sur les valeurs définies par l&#39;utilisateur (dans l&#39;éditeur de sprite ou à l&#39;aide de la fonction <a href=
+"sprite_set_bbox.htlm"><tt>sprite_set_bbox()</tt></a> ) </td></tr></table></div><p><br></p><h3> Exemple: </h3><p class="code">if sprite_get_bbox_mode(sprite_index) != 0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sprite_set_bbox_mode(sprite_index,
+bboxmode_automatic);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br><span class="notranslate"></span></p><blockquote><p> Ce qui précède vérifie le mode bbox du sprite actuel et, dans le cas contraire <tt>automatic</tt>, alors il la met à cette valeur. </p></blockquote><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href=
+"index.html">Sprites</a> </div><div style="float:right"> Suivant: <a href=
+"sprite_get_texture.html">sprite_get_texture</a> </div></div></div><h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

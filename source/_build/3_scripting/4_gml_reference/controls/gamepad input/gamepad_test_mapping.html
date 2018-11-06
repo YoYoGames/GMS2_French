@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>gamepad_test_mapping</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/controls/gamepad input/gamepad_test_mapping.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fcontrols%2Fgamepad%20input%2Fgamepad_test_mapping.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fcontrols%2Fgamepad%20input%2Fgamepad_test_mapping.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> gamepad_test_mapping </h2><div class="body-scroll"><p><br></p><h3> La description </h3><blockquote><p> Cette fonction peut être utilisée pour définir le mappage de la manette de jeu sur les cibles qui le permettent. Vous fournissez l&#39;index &quot;slot&quot; que le gamepad doit définir, puis la chaîne de mappage, qui aurait dû être créée à l&#39;aide du format SDL avec les champs suivants: </p><p class="code">
+&lt;guid&gt;,&lt;description&gt;,platform:&lt;platform-name&gt;,&lt;bindings&gt;<span class="notranslate"></span></p><p> Les détails à inclure dans chacun de ces champs sont les suivants: </p><ul><li><tt>guid</tt> - une chaîne de chiffres et de lettres identifiant de manière unique un type d&#39;appareil (elle peut être récupérée à l&#39;aide du <a href=
+"gamepad_get_guid.html"><tt>gamepad_get_guid()</tt></a> une fonction) </li><li style="list-style: none"><br></li><li><tt>description</tt> - une description de l’appareil en ascii (elle peut être récupérée à l’aide de la <a href=
+"gamepad_get_description.html"><tt>gamepad_get_description()</tt></a> une fonction) </li><li style="list-style: none"><br></li><li><tt>platform-name</tt> - sera soit &quot;platform: android&quot;, &quot;platform: windows&quot;, &quot;linux&quot; ou &quot;mac&quot; (notez que <b>cela sera ajouté automatiquement à la chaîne lorsque vous appelez cette fonction</b>, vous n&#39;avez donc pas besoin de la fournir. lors de la construction de vos propres chaînes de mappage) </li><li style="list-style: none"><br></li><li><tt>bindings</tt> - un ensemble d&#39;entrées séparées par un &#39;,&#39; pour lier l&#39;entrée réelle à des constantes GML spécifiques </li><li style="list-style: none"><br></li></ul><p> La liste des entrées séparées par des virgules suit un format spécifique pour chaque entrée: </p><p class="code">&lt;abstract-gp-name&gt;:&lt;value-binding&gt;<span class="notranslate"></span></p><p> Ici <tt>&lt;value-binding&gt;</tt> (c.-à-d. l&#39;entrée directe de la manette de jeu) peut être l&#39;un des éléments suivants: </p><ul><li><tt>a&lt;N&gt;</tt> - Ceci représente un axe de la manette de jeu, où le &lt;N&gt; est l’un des axes de 0 à <a href=
+"gamepad_axis_count.html"><tt>gamepad_axis_count()</tt></a> -1 </li><li><tt>b&lt;N&gt;</tt> - Ceci représente un bouton de la manette de jeu, où le &lt;N&gt; est l’un des boutons de 0 à <a href=
+"gamepad_button_count.html"><tt>gamepad_button_count()</tt></a> -1 </li><li><tt>h&lt;N&gt;.&lt;mask&gt;</tt> - Ceci représente un chapeau de la manette de jeu, où le &lt;N&gt; représente un chapeau de 0 à <a href=
+"gamepad_hat_count.html"><tt>gamepad_hat_count()</tt></a> -1 et le <tt>&lt;mask&gt;</tt> sera soit 1, 2, 4 ou 8. </li></ul><p> Chaque valeur d’entrée doit être liée à un nom SDL, exprimé sous la forme: <tt>&lt;&gt;abstract-gp-name&gt;</tt>, qui à son tour est lié à une constante GML. Le tableau ci-dessous montre l&#39;équivalence entre le nom SDL et la constante <i><span class="notranslate">GameMaker Studio 2</span></i>: </p><div class="compat"><table><tr><th> Nom SDL </th><th> Nom GML </th></tr><tr><td><tt>a</tt></td><td> gp_face1 </td></tr><tr class="alt"><td><tt>b</tt></td><td> gp_face2 </td></tr><tr><td><tt>x</tt></td><td> gp_face3 </td></tr><tr class="alt"><td><tt>y</tt></td><td> gp_face4 </td></tr><tr><td><tt>leftshoulder</tt></td><td> gp_shoulderl </td></tr><tr class="alt"><td><tt>lefttrigger</tt></td><td> gp_shoulderlb </td></tr><tr><td><tt>rightshoulder</tt></td><td> gp_shoulderr </td></tr><tr class="alt"><td><tt>righttrigger</tt></td><td> gp_shoulderrb </td></tr><tr><td><tt>guide</tt></td><td> gp_select </td></tr><tr class="alt"><td><tt>start</tt></td><td> gp_start </td></tr><tr><td><tt>leftstick</tt></td><td> gp_stickl </td></tr><tr class="alt"><td><tt>rightstick</tt></td><td> gp_stick </td></tr><tr><td><tt>dpup</tt></td><td> gp_padu </td></tr><tr class="alt"><td><tt>dpdown</tt></td><td> gp_padl </td></tr><tr><td><tt>dpleft</tt></td><td> gp_padr </td></tr><tr class="alt"><td><tt>dpright</tt></td><td> gp_padd </td></tr><tr><td><tt>leftx</tt></td><td> gp_axislh </td></tr><tr class="alt"><td><tt>lefty</tt></td><td> gp_axislv </td></tr><tr><td><tt>rightx</tt></td><td> gp_axisrh </td></tr><tr class="alt"><td><tt>righty</tt></td><td> gp_axisrv </td></tr></table></div><p><br> Lorsque vous avez construit votre chaîne de mappage, elle devrait ressembler à ceci: </p><p class="code" style="width:auto; word-wrap:break-word;"> &quot;050000005e040000fd020000ffff3f00, Manette sans fil Xbox, a: b0, b: b1, début: b4, dpdown: h0.4, dpleft: h0.8, dpright: h0.2, dpup: h0.1, guide: b6, guide: b6, épaule gauche: b9, leftstick: b7, lefttrigger: a4, leftx: a0, lefty: a1, rightshoulder: b10, rightstick: b8, righttrigger: a5, rightx: a2, righty: a3, x: b2, y: b3, plate-forme: android &quot; </p></blockquote><p><br></p><h3> Syntaxe: </h3><p class="code">gamepad_test_mapping(index, mapping_string);<span class="notranslate"></span></p><div class="param"><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">index</span> </td> <td> Quel index &quot;gamepad&quot; choisir? </td></tr><tr class="alt"><td> <span class="notranslate">colour</span> </td> <td> La chaîne de la carte à utiliser (voir la description pour plus d&#39;informations). </td></tr></table></div><p><br></p><h3> Résultats: </h3><p class="code">N/A<span class="notranslate"></span></p><p><br></p><h3> Exemple: </h3><p class="code">var mapping = gamepad_get_guid(global.padIndex) +
+"," + gamepad_get_description(global.padIndex);<br>
+var len = array_length_1d(global.PadInstances);<br>
+for( i = 0; i &lt; len; i += 2)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;var left = global.PadInstances[i];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;var right = global.PadInstances[i+1];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;mapping += "," + left.sdlLabel + ":" +
+right.binding;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+gamepad_test_mapping(global.padIndex, mapping);<br><span class="notranslate"></span></p><blockquote><p> Le code ci-dessus parcourt un certain nombre d&#39;instances et utilise les valeurs des différentes variables qu&#39;elles contiennent pour créer une chaîne de mappage, qui est ensuite définie pour être utilisée sur la manette de jeu dans l&#39;index de logement donné. </p></blockquote><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">Entrée GamePad</a> </div><div style="float:right"> Suivant: <a href=
+"gamepad_remove_mapping.html">gamepad_remove_mapping</a> </div></div></div><h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

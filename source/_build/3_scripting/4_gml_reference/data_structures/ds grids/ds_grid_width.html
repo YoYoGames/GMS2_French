@@ -26,8 +26,8 @@ if (window.name != "content")
 </script>
 <!-- !chm2web! --><script type="text/JavaScript">
  if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
-</script><h1 class="studio"> ds_grid_width </h1><h2 class="studio"> Renvoie la largeur d&#39;une grille. </h2><h3 class="studio"> Syntaxe: </h3><p class="code">ds_grid_width(index);<span class="notranslate"></span></p><p><br></p><div class="param"><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">index</span> </td> <td> Cet index de la grille pour trouver la largeur de. </td></tr></table></div><p><br></p><p> <b>Retours:</b> Real </p><p><br></p><h3 class="studio"> La description </h3><p> Cette fonction renvoie la largeur de la grille donnée. Cette valeur est le nombre de cellules que la grille a le long de l&#39;axe des x et est toujours un nombre entier, comme indiqué dans l&#39;image ci-dessous: <img class="center"
-src="ds_grid_width.png"><br><br></p><p><br></p><h3 class="studio"> Exemple: </h3><p class="code">var i, j;<br>
+</script><h2> ds_grid_width </h2><div class="body-scroll"><p><br></p><h3> La description </h3><blockquote><p> Cette fonction retournera la largeur de la grille donnée. Cette valeur correspond au nombre de cellules de la grille le long de l&#39;axe des x et correspond toujours à un entier, comme indiqué dans l&#39;image ci-dessous: <img class="center"
+src="ds_grid_width.png"></p></blockquote><p><br></p><h3> Syntaxe: </h3><p class="code">ds_grid_width(index);<span class="notranslate"></span></p><div class="param"><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">index</span> </td> <td> Cet index de la grille pour trouver la largeur de. </td></tr></table></div><p><br></p><h3> Résultats: </h3><p class="code">Real<span class="notranslate"></span></p><p><br></p><h3> Exemple: </h3><p class="code">var i, j;<br>
 for (i = 0; i &lt; ds_grid_width(grid); i += 1)<br>
 &nbsp;&nbsp;&nbsp;{<br>
 &nbsp;&nbsp;&nbsp;for (j = 0; j &lt; ds_grid_height(grid); j +=
@@ -40,11 +40,12 @@ for (i = 0; i &lt; ds_grid_width(grid); i += 1)<br>
 * 32, j * 32, "Walls", obj_Wall);<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-&nbsp;&nbsp;&nbsp;}<br><span class="notranslate"></span></p><p> Le code ci-dessus parcourt le ds_grid indexé dans la variable &quot;grid&quot; et si la valeur trouvée dans une cellule spécifique est égale à 1, il crée alors une instance de &quot;obj_Wall&quot; à la position appropriée dans la pièce. </p><p><br></p><div class="clear"><div style="float:left"> Retour: <a href="index.html">Grilles DS</a> </div><div style="float:right"> Suivant: <a href=
-"ds_grid_height.html">ds_grid_height</a> </div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+&nbsp;&nbsp;&nbsp;}<br><span class="notranslate"></span></p><blockquote><p> Le code ci-dessus parcourt la ds_grid indexée dans la variable &quot;grid&quot; et si la valeur trouvée dans une cellule spécifique est égale à 1, il créera alors une instance de &quot;obj_Wall&quot; à la position appropriée dans la pièce. </p></blockquote><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">Grilles DS</a> </div><div style="float:right"> Suivant: <a href=
+"ds_grid_height.html">ds_grid_height</a> </div></div></div><h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
 <script type="text/javascript">
    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
 </script>
+</div>
 
 <script type="text/JavaScript">
 var fe = FindFrame("toc", top);

@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>xboxlive_achievements_set_progress</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/uwp and xbox_live/xboxlive_achievements_set_progress.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fuwp%20and%20xbox_live%2Fxboxlive_achievements_set_progress.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fuwp%20and%20xbox_live%2Fxboxlive_achievements_set_progress.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> xboxlive_achievements_set_progress </h2><div class="body-scroll"><p><br></p><h3> <b>La description</b> </h3><blockquote><p> Cette fonction peut être utilisée pour mettre à jour l&#39;avancement d&#39;une réalisation. Vous fournissez l&#39;ID utilisateur tel que renvoyé, par exemple, par la fonction <a href=
+"xboxlive_get_user.html"><tt>xboxlive_get_user</tt></a>, puis la chaîne de réalisation (il s&#39;agit de l&#39;ID de réussite tel qu&#39;il a été attribué dans le Centre de développement XDP / Windows lors de sa création). Enfin, vous définissez la valeur de progression sur une valeur comprise entre 0 et 100. Notez que le système d’exécution refusera les mises à jour inférieures à la valeur de progression actuelle. </p></blockquote><p><br></p><h3> Syntaxe: </h3><p class="code">xboxlive_achievements_set_progress(user_id,
+achievement, progress);<span class="notranslate"></span></p><blockquote><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">user_id</span> </td> <td> L&#39;ID utilisateur de l&#39;utilisateur pour définir la réalisation de </td></tr><tr class="alt"><td> <span class="notranslate">achievement</span> </td> <td> La réalisation à définir (une chaîne) </td></tr><tr><td> <span class="notranslate">progress</span> </td> <td> La valeur de progression à définir (de 0 à 100) </td></tr></table></blockquote><p><br></p><h3> Résultats: </h3><p class="code">N/A<span class="notranslate"></span></p><p><br></p><h3> Exemple étendu: </h3><blockquote><p> Voici un exemple étendu d&#39;utilisation de cette fonction. Pour commencer, appelez-le dans un événement comme le <b>démarrage</b> ou la <b>création d&#39;une</b> <b>pièce</b>: </p></blockquote><p class="code">xboxlive_stats_get_social_leaderboard(user_id,
+"GlobalTime", 20, 1, false, false);<span class="notranslate"></span></p><blockquote><p> Le code ci-dessus serait appelé pour obtenir une liste de toutes les positions mondiales du classement pour le jeu et générera un rappel d&#39;événement social asynchrone que nous traiterions de la manière suivante: </p></blockquote><p class="code">var _progress = (global.Level / global.LevelMax) *
+100;<br>
+xboxlive_achievements_set_progress(user_id, "Game_Completed",
+_progress);<br><span class="notranslate"></span></p><blockquote><p> Le code ci-dessus crée une valeur en pourcentage basée sur certaines variables globales et l&#39;utilise ensuite pour définir la progression des performances pour la réalisation &quot;Game_Completed&quot;. </p></blockquote><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">UWP et XBox Live</a> </div><div style="float:right"> Suivant: <a href=
+"uwp_suspend.html">uwp_suspend</a> </div></div></div><h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

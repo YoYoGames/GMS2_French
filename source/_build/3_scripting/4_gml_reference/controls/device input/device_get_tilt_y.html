@@ -26,7 +26,7 @@ if (window.name != "content")
 </script>
 <!-- !chm2web! --><script type="text/JavaScript">
  if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
-</script><h1 class="studio"> device_get_tilt_y </h1><h2 class="studio"> Cette fonction renvoie la valeur de l&#39;inclinaison sur l&#39;axe des x de votre appareil. </h2><h3 class="studio"> Syntaxe: </h3><p class="code">device_get_tilt_y()<span class="notranslate"></span></p><p><br></p><p> <b>Retours:</b> Real </p><p><br></p><h3 class="studio"> La description </h3><p> Cette fonction renvoie une valeur comprise entre -1 et 1 en fonction de l&#39;angle d&#39;inclinaison de l&#39;appareil. La corrélation réelle entre les degrés d&#39;inclinaison et la valeur renvoyée dépend du périphérique et du système d&#39;exploitation utilisés, mais généralement, la valeur 1 ou -1 correspond à +/- 90 °. L&#39;image ci-dessous montre comment chacune si les fonctions disponibles concernent l&#39;appareil: <img class="center" src=
+</script><h1 class="studio"> device_get_tilt_y </h1><h2 class="studio"> Cette fonction renvoie la quantité d’inclinaison sur l’axe x de votre appareil. </h2><h3 class="studio"> Syntaxe: </h3><p class="code">device_get_tilt_y()<span class="notranslate"></span></p><p><br></p><p> <b>Retours:</b> réel </p><p><br></p><h3 class="studio"> La description </h3><p> Cette fonction renvoie une valeur comprise entre -1 et 1 en fonction de l&#39;angle d&#39;inclinaison de l&#39;appareil. La corrélation réelle entre les degrés d’inclinaison et la valeur renvoyée dépend de l’appareil et du système d’exploitation qu’elle utilise, mais une valeur de 1 ou -1 correspond généralement à la même chose que +/- 90ï¿½. L&#39;image ci-dessous montre comment chacune des fonctions disponibles concerne l&#39;appareil: <img class="center" src=
 "tilt_image.png"></p><p><br></p><h3 class="studio"> Exemple: </h3><p class="code">if display_get_orientation() =
 display_landscape<br>
 &nbsp;&nbsp;&nbsp;{<br>
@@ -35,8 +35,8 @@ display_landscape<br>
 else<br>
 &nbsp;&nbsp;&nbsp;{<br>
 &nbsp;&nbsp;&nbsp;x += sign(device_get_tilt_x());<br>
-&nbsp;&nbsp;&nbsp;}<br><span class="notranslate"></span></p><p> Le code ci-dessus vérifie l&#39;orientation de l&#39;affichage et utilise ensuite la valeur d&#39;inclinaison correspondante pour déplacer le joueur le long de l&#39;axe x. </p><p><br></p><div class="clear"><div style="float:left"> Retour: <a href="index.html">Entrée du périphérique</a> </div><div style="float:right"> Suivant: <a href=
-"device_get_tilt_z.html">device_get_tiltyz</a> </div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+&nbsp;&nbsp;&nbsp;}<br><span class="notranslate"></span></p><p> Le code ci-dessus vérifie l&#39;orientation de l&#39;écran puis utilise la valeur d&#39;inclinaison correspondante pour déplacer le lecteur le long de l&#39;axe des x. </p><p><br></p><div class="clear"><div style="float:left"> Retour: <a href="index.html">entrée de périphérique</a> </div><div style="float:right"> Suivant: <a href=
+"device_get_tilt_z.html">device_get_tiltyz</a> </div></div><h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
 <script type="text/javascript">
    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
 </script>

@@ -27,18 +27,18 @@ if (window.name != "content")
 </script>
 <!-- !chm2web! --><script type="text/JavaScript">
  if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
-</script><h2> layer_get_name </h2><p><br></p><h3> La description </h3><blockquote><p> Vous pouvez utiliser cette fonction pour obtenir le <i>nom</i> du calque donné. Vous fournissez la valeur d&#39;ID de couche unique et si la couche est l&#39;une des couches nommées créées dans l&#39;éditeur de pièce, la fonction renvoie une chaîne avec le nom de la couche. Si la couche n&#39;est pas celle de l&#39;éditeur de pièce (ie: elle a été créée en utilisant <a href=
-"layer_create.html"><tt>layer_create</tt></a> ) alors une chaîne vide sera retournée. </p></blockquote><p><br></p><h3> Syntaxe: </h3><p class="code">layer_get_name(layer_id)<span class="notranslate"></span></p><p><br></p><h3> Arguments: </h3><blockquote><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">layer_id</span> </td> <td> La valeur d&#39;ID unique de la couche pour obtenir le nom de </td></tr></table></blockquote><p><br></p><h3> Résultats: </h3><p class="code">String<span class="notranslate"></span></p><p><br></p><h3> Exemple: </h3><p class="code">var a = layer_get_all();<br>
+</script><h2> layer_get_name </h2><p><br></p><h3> La description </h3><blockquote><p> Vous pouvez utiliser cette fonction pour obtenir le <i>nom</i> de la couche donnée. Vous fournissez la valeur d&#39;ID de couche unique et si la couche est l&#39;une des couches nommées créées dans l&#39;éditeur de salle, la fonction renvoie une chaîne avec le nom de la couche. Si la couche n’est pas celle de l’éditeur de salle (c’est-à-dire: elle a été créée avec <a href=
+"layer_create.html"><tt>layer_create</tt></a> ) alors une chaîne vide sera retournée. </p></blockquote><p><br></p><h3> Syntaxe: </h3><p class="code">layer_get_name(layer_id)<span class="notranslate"></span></p><p><br></p><h3> Arguments: </h3><blockquote><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">layer_id</span> </td> <td> La valeur d&#39;identifiant unique de la couche pour obtenir le nom de </td></tr></table></blockquote><p><br></p><h3> Résultats: </h3><p class="code">String<span class="notranslate"></span></p><p><br></p><h3> Exemple: </h3><p class="code">var a = layer_get_all();<br>
 var layer_list = ds_list_create(); for (var i = 0; i Alt;
 array_length_1d(a); i++;)<br>
 &nbsp;&nbsp;&nbsp;{<br>
 &nbsp;&nbsp;&nbsp;if layer_get_name(a[i]) != ""<br>
-&nbsp;&nbsp;&nbsp;i&nbsp;&nbsp;&nbsp;i{<br>
-&nbsp;&nbsp;&nbsp;i&nbsp;&nbsp;&nbsp;ids_list_add(layer_list,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ds_list_add(layer_list,
 a[i])<br>
-&nbsp;&nbsp;&nbsp;i&nbsp;&nbsp;&nbsp;i}<br>
-&nbsp;&nbsp;&nbsp;}<br><span class="notranslate"></span></p><blockquote> Le code ci-dessus obtient les ID de toutes les couches de la pièce, puis les boucle en les vérifiant pour voir s&#39;il y en a des couches nommées. Si elles sont, ils sont alors leur ID est ajouté à une liste. </blockquote><p><br></p><div class="clear"><div style="float:left"> Précédent: <a href="index.html">Fonctions de couche générales</a> </div><div style="float:right"> Suivant: <a href=
-"layer_get_all.html">layer_get_all</a> </div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;}<br><span class="notranslate"></span></p><blockquote> Le code ci-dessus obtient les identifiants de toutes les couches de la pièce, puis les boucle pour vérifier s&#39;ils sont nommés. S&#39;ils le sont, leur identifiant est ajouté à une liste. </blockquote><p><br></p><div class="clear"><div style="float:left"> Retour: <a href="index.html">Fonctions générales de la couche</a> </div><div style="float:right"> next: <a href=
+"layer_get_all.html">layer_get_all</a> </div></div><h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
 <script type="text/javascript">
    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
 </script>

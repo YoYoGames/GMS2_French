@@ -26,12 +26,11 @@ if (window.name != "content")
 </script>
 <!-- !chm2web! --><script type="text/JavaScript">
  if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
-</script><h2> file_text_write_string </h2><div class="body-scroll"><h3 class="studio"> Syntaxe: </h3><p class="code">file_text_write_string(fileid, str);<span class="notranslate"></span></p><p><br></p><div class="param"><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">fileid</span> </td> <td> L&#39;identifiant du fichier à éditer. </td></tr><tr><td> <span class="notranslate">str</span> </td> <td> La chaîne à écrire dans le fichier. </td></tr></table></div><p><br></p><p> <b>Retours:</b> Real </p><p><br></p><h3 class="studio"> La description </h3><p> Avec cette fonction, vous pouvez écrire une chaîne dans un fichier texte précédemment ouvert. Si le fichier contient déjà des informations, ces informations seront effacées et la chaîne sera écrite au début du fichier, sauf si vous avez ouvert le fichier avec le <a href=
+</script><h2> file_text_write_string </h2><div class="body-scroll"><h3 class="studio"> Syntaxe: </h3><p class="code">file_text_write_string(fileid, str);<span class="notranslate"></span></p><p><br></p><div class="param"><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">fileid</span> </td> <td> L&#39;identifiant du fichier à éditer. </td></tr><tr><td> <span class="notranslate">str</span> </td> <td> La chaîne à écrire dans le fichier. </td></tr></table></div><p><br></p><p> <b>Retours:</b> réel </p><p><br></p><h3 class="studio"> La description </h3><p> Avec cette fonction, vous pouvez écrire une chaîne dans un fichier texte précédemment ouvert. Si le fichier contient déjà des informations, celles-ci seront effacées et la chaîne sera écrite au début du fichier, à moins que vous n&#39;ayez ouvert le fichier avec le bouton <a href=
 "file_text_open_append.html"><tt>file_text_open_append</tt></a>. Vous pouvez également éviter cela en utilisant le <a href=
 "file_text_readln.html"><tt>file_text_readln</tt></a> fonctionner avec le <a href=
-"file_text_eof.html"><tt>file_text_eof</tt></a> Fonction pour parcourir le contenu du fichier jusqu&#39;à la fin et commencer à écrire. <br><br></p><p><br></p><h3 class="studio"> Exemple: </h3><p class="code">var i, file;<br>
-file = file_text_open_write(working_directory +
-"\hiscore.txt");<br>
+"file_text_eof.html"><tt>file_text_eof</tt></a> fonction pour parcourir le contenu du fichier jusqu&#39;à la fin, puis commencer à écrire. <br><br></p><p><br></p><h3 class="studio"> Exemple: </h3><p class="code">var i, file;<br>
+file = file_text_open_write(working_directory + "hiscore.txt");<br>
 for (i = 0; i &lt; 10; i += 1)<br>
 &nbsp;&nbsp;&nbsp;{<br>
 &nbsp;&nbsp;&nbsp;file_text_write_real(file, scr[i]);<br>
@@ -39,8 +38,8 @@ for (i = 0; i &lt; 10; i += 1)<br>
 &nbsp;&nbsp;&nbsp;file_text_write_string(file, scr_name[i]);<br>
 &nbsp;&nbsp;&nbsp;file_text_writeln(file);<br>
 &nbsp;&nbsp;&nbsp;}<br>
-file_text_close(file);<br><span class="notranslate"></span></p><p> Le code ci-dessus ouvre un fichier pour l&#39;écriture et ensuite boucle à travers deux tableaux, en écrivant chaque valeur de tableau à une nouvelle ligne du fichier. Le fichier est ensuite fermé lorsque la boucle est terminée. </p><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">Fichiers texte</a> </div><div style="float:right"> Suivant: <a href=
-"file_text_writeln.html">file_text_writeln</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+file_text_close(file);<br><span class="notranslate"></span></p><p> Le code ci-dessus ouvre un fichier pour l&#39;écriture, puis parcourt deux tableaux, écrivant chaque valeur de tableau sur une nouvelle ligne du fichier. Le fichier est ensuite fermé lorsque la boucle est terminée. </p><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">fichiers texte</a> </div><div style="float:right"> Suivant: <a href=
+"file_text_writeln.html">file_text_writeln</a> </div></div></div><h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
 <script type="text/javascript">
    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
 </script>

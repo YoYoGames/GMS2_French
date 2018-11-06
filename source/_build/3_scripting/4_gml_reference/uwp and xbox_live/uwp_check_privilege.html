@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>uwp_check_privilege</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+<link rel="stylesheet" href="../../../../../default.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "_build/3_scripting/4_gml_reference/uwp and xbox_live/uwp_check_privilege.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fuwp%20and%20xbox_live%2Fuwp_check_privilege.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2F_build%2F3_scripting%2F4_gml_reference%2Fuwp%20and%20xbox_live%2Fuwp_check_privilege.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! --><script type="text/JavaScript">
+ if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
+</script><h2> uwp_check_privilege </h2><div class="body-scroll"><p><br></p><h3 class="studio"> La description </h3><blockquote><p> Avec cette fonction, vous pouvez vérifier qu&#39;un utilisateur donné a un privilège choisi. La fonction renvoie true ou false dans l&#39;événement asynchrone système, que le privilège soit activé ou non. Si vous définissez l&#39;argument tentative_resolution sur true et que le privilège n&#39;est pas activé, un dialogue système s&#39;ouvrira (suspension du jeu). ) pour inviter l&#39;utilisateur à mettre à niveau le compte ou tout autre moyen nécessaire pour obtenir le privilège. Si l&#39;utilisateur active ensuite l&#39;option requise, la fonction renvoie true. </p><p> La fonction nécessite que vous utilisiez l&#39;une des constantes suivantes pour la demande de privilège: </p><div class="compat"><table><tr><th> Constant </th><th> La description </th></tr><tr><td> <span class="notranslate">uwp_privilege_internet_browsing</span> </td> <td> Vérifiez si la navigation sur Internet est autorisée </td></tr><tr class="alt"><td> <span class="notranslate">uwp_privilege_social_network_sharing</span> </td> <td> Vérifiez si le partage sur les réseaux sociaux est autorisé </td></tr><tr><td> <span class="notranslate">uwp_privilege_share_kinect_content</span> </td> <td> Vérifier si le partage du contrôleur Kinect est autorisé </td></tr><tr class="alt"><td> <span class="notranslate">uwp_privilege_video_communications</span> </td> <td> Vérifiez si la communication vidéo est autorisée </td></tr><tr><td> <span class="notranslate">uwp_privilege_communications</span> </td> <td> Vérifiez si la communication Internet est autorisée </td></tr><tr class="alt"><td> <span class="notranslate">uwp_privilege_user_created_content</span> </td> <td> Vérifier si l&#39;accès au contenu créé par l&#39;utilisateur est autorisé </td></tr><tr><td> <span class="notranslate">uwp_privilege_multiplayer_sessions</span> </td> <td> Vérifiez si les sessions multijoueurs en ligne sont autorisées </td></tr><tr class="alt"><td> <span class="notranslate">uwp_privilege_sessions</span> </td> <td> Vérifiez si les sessions en ligne sont autorisées </td></tr><tr><td> <span class="notranslate">uwp_privilege_fitness_upload</span> </td> <td> Vérifiez si le téléchargement des données de condition physique est autorisé </td></tr></table></div><p><br> Une fois la fonction appelée, elle déclenchera un <a href=
+"../../../2_interface/1_editors/events/async_events.html">événement système asynchrone</a> à la réception du résultat du rappel, qui comportera la mappe DS spéciale. <tt>async_load</tt>. Cette carte doit ensuite être analysée pour la clé suivante: </p><ul><li> &quot; <b>event_type</b> &quot; - doit contenir la valeur &quot;check_privilege_result&quot; si l&#39;événement a été déclenché par cette fonction </li></ul><p> Si le type d&#39;événement concerne cette fonction, il y aura également les clés supplémentaires suivantes: </p><ul><li> &quot; <b>result</b> &quot; - sera une ou plusieurs des constantes suivantes (valeurs combinées): <div class="compat"><table><tr><th> Constant </th><th> Valeur </th><th> La description </th></tr><tr><td> <span class="notranslate">uwp_privilege_result_no_issue</span> </td> <td> 0 </td><td> <span class="notranslate">There are no privilege issues with the user</span> </td> </tr><tr class="alt"><td> <span class="notranslate">uwp_privilege_result_purchase_required</span> </td> <td> 1 </td><td> <span class="notranslate">The user must purchase something additional, usually a subscription, for access</span> </td> </tr><tr><td> <span class="notranslate">uwp_privilege_result_aborted</span> </td> <td> 2 </td><td> <span class="notranslate">The check was aborted</span> </td> </tr><tr class="alt"><td> <span class="notranslate">uwp_privilege_result_banned</span> </td> <td> 4 </td><td> <span class="notranslate">The user is banned</span> </td> </tr><tr><td> <span class="notranslate">uwp_privilege_result_restricted</span> </td> <td> 8 </td><td> <span class="notranslate">The user is restricted from access, usually through parental controls</span> </td> </tr></table></div></li><li style="list-style: none"><br></li><li> &quot; <b>privilège</b> &quot; - sera l&#39;une des constantes répertoriées ci-dessus à utiliser dans la fonction. Vous pourrez ainsi déterminer le privilège que vous avez demandé en cas de vérifications multiples. </li></ul></blockquote><p><br></p><h3> Syntaxe: </h3><p class="code">uwp_check_privilege(user_id, privilege,
+attempt_resolution);<span class="notranslate"></span></p><blockquote><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">user_id</span> </td> <td> Le pointeur d&#39;identification d&#39;utilisateur à vérifier. </td></tr><tr class="alt"><td> <span class="notranslate">privilege</span> </td> <td> La constante de privilège à vérifier (voir la description ci-dessus). </td></tr><tr><td> <span class="notranslate">attempt_resolution</span> </td> <td> Activer la tentative de résolution si défini sur <tt>true</tt>, ou ignorer si défini sur <tt>false</tt>. </td></tr></table></blockquote><p><br></p><h3> Résultats: </h3><p class="code">Real<span class="notranslate"></span></p><p><br></p><h3> Exemple: </h3><p class="code">var user_one = xboxlive_get_user(0);<br>
+if (xboxlive_user_is_signed_in(user_one))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;uwp_check_privilege(user_one,
+xboxlive_privilege_multiplayer_sessions, true);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br><span class="notranslate"></span></p><blockquote><p> Ce qui précède vérifie si l’utilisateur est connecté et, s’ils le sont, vérifie l’autorisation des sessions multijoueurs. </p></blockquote><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">UWP et XBox Live</a> </div><div style="float:right"> Next: <a href=
+"xboxlive_get_user_count.html">xboxlive_get_user_count</a> </div></div></div><h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
+</script>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

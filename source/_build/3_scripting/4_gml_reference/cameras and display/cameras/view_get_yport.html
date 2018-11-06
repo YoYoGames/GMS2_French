@@ -29,11 +29,11 @@ if (window.name != "content")
 </script><h2> view_get_yport </h2><p><br></p><h3> La description </h3><blockquote><p> Cette fonction peut être utilisée pour récupérer la position y du port de vue donné. </p></blockquote><p><br></p><h3> Syntaxe: </h3><p class="code">view_get_yport(view_port)<span class="notranslate"></span></p><p><br></p><h3> Arguments: </h3><blockquote><table><tr><th> Argument </th><th> La description </th></tr><tr><td> <span class="notranslate">view_port</span> </td> <td> Le port de vue à cibler (0 - 7) </td></tr></table></blockquote><p><br></p><h3> Résultats: </h3><p class="code">Real<span class="notranslate"></span></p><p><br></p><h3> Exemple: </h3><p class="code">if view_get_yport(0) != (display_get_height() / 2)
 - (view_hport[0] / 2)<br>
 &nbsp;&nbsp;&nbsp;{<br>
-&nbsp;&nbsp;&nbsp;view_get_yport(0, (display_get_height() / 2) -
+&nbsp;&nbsp;&nbsp;view_set_yport(0, (display_get_height() / 2) -
 (view_hport[0] / 2));<br>
-&nbsp;&nbsp;&nbsp;}<br><span class="notranslate"></span></p><p> Le code ci-dessus vérifie la position y du port de visualisation [0] et si ce n&#39;est pas le cas, il est réglé sur cette position. </p><p><br></p><div class="clear"><div style="float:left"> Retour: <a href=
+&nbsp;&nbsp;&nbsp;}<br><span class="notranslate"></span></p><p> Le code ci-dessus vérifie la position y du port de visualisation [0] et, si ce n’est pas le cas, il est défini sur cette position. </p><p><br></p><div class="clear"><div style="float:left"> Retour: <a href=
 "index.html">Caméras</a> </div><div style="float:right"> Suivant: <a href=
-"view_get_wport.html">view_get_wport</a> </div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+"view_get_wport.html">view_get_wport</a> </div></div><h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
 <script type="text/javascript">
    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
 </script>

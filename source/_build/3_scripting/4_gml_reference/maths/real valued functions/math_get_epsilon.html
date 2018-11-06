@@ -26,12 +26,13 @@ if (window.name != "content")
 </script>
 <!-- !chm2web! --><script type="text/JavaScript">
  if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
-</script><h1 class="studio"> math_get_epsilon </h1><h2 class="studio"> Obtenez la &quot;machine epsilon&quot; pour les calculs à virgule flottante. </h2><h3> <b>Syntaxe:</b> </h3><p class="code">math_get_epsilon();<span class="notranslate"></span></p><p><br></p><p> <b>Retours:</b> Real </p><p><br></p><h3 class="studio"> La description </h3><p> Cette fonction renvoie la valeur epsilon actuelle pour la plate-forme cible. Pour plus d&#39;informations sur epsilon, veuillez voir la fonction <a href=
-"math_set_epsilon.html"><tt>math_set_epsilon()</tt></a>. <br><br></p><p><br></p><h3> <b>Exemple:</b> </h3><p class="code">var e = math_get_epsilon();<span class="notranslate"></span></p><p> Cela va récupérer la valeur epsilon actuelle et la stocker dans une variable locale. </p><p><br></p><div class="clear"><div style="float:left"> Retour: <a href="index.html">Maths</a> </div><div style="float:right"> Suivant: <a href=
-"math_set_epsilon.html">math_set_epsilon</a> </div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+</script><h2> math_get_epsilon </h2><div class="body-scroll"><p><br></p><h3> La description </h3><blockquote><p> Cette fonction renverra la valeur epsilon actuelle pour la plate-forme cible. Pour plus d&#39;informations sur epsilon, veuillez consulter la fonction <a href=
+"math_set_epsilon.html"><tt>math_set_epsilon()</tt></a>. </p></blockquote><p><br></p><h3> Syntaxe: </h3><p class="code">math_get_epsilon();<span class="notranslate"></span></p><p><br></p><h3> Résultats: </h3><p class="code">Real<span class="notranslate"></span></p><p><br></p><h3> Exemple: </h3><p class="code">var e = math_get_epsilon();<span class="notranslate"></span></p><blockquote><p> Cela récupérera la valeur epsilon actuelle et la stockera dans une variable locale. </p></blockquote><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">Maths</a> </div><div style="float:right"> Suivant: <a href=
+"math_set_epsilon.html">math_set_epsilon</a> </div></div></div><h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
 <script type="text/javascript">
    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
 </script>
+</div>
 
 <script type="text/JavaScript">
 var fe = FindFrame("toc", top);

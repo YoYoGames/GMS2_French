@@ -26,14 +26,14 @@ if (window.name != "content")
 </script>
 <!-- !chm2web! --><script type="text/JavaScript">
  if( typeof(chmtop.helpStyle) != 'undefined' ) { var linkNodes = document.getElementsByTagName("link");  for( var i=0; i < linkNodes.length; ++i ) { var link = linkNodes[i];    if( link.href.endsWith("default.css")) {    var style = link.href.replace("default.css", chmtop.helpStyle); document.write('<link id="newstyleLink" rel="stylesheet" href=' + style + ' type="text/css">');    break; } } } 
-</script><h2> os_get_region </h2><div class="body-scroll"><h2 class="studio"> Cette fonction renvoie une valeur différente selon le navigateur ou la région linguistique du périphérique. </h2><h3 class="studio"> Syntaxe: </h3><p class="code">os_get_region()<span class="notranslate"></span></p><p><br></p><p> <b>Retourne:</b> Chaîne </p><p><br></p><h3 class="studio"> La description </h3><p> Cette fonction renvoie une chaîne avec le code régional à deux ou trois lettres du système d&#39;exploitation qui exécute le jeu, tel que défini par la norme <a href="http://en.wikipedia.org/wiki/ISO_3166-1" target=
-"_blank">ISO3166-1</a>. Si l&#39;information n&#39;est pas disponible, elle contiendra simplement une chaîne vide &quot;&quot;. <br><br></p><p> <i><b>REMARQUE:</b> il ne s&#39;agit pas du code régional d&#39;emplacement renvoyé, mais du code de langue régional du système d&#39;exploitation.</i> <br><br></p><p><br></p><h3 class="studio"> Exemple: </h3><p class="code">switch (os_get_language())<br>
+</script><h2> os_get_region </h2><div class="body-scroll"><h2 class="studio"> Cette fonction renvoie une valeur différente selon le navigateur ou la région linguistique de l&#39;appareil. </h2><h3 class="studio"> Syntaxe: </h3><p class="code">os_get_region()<span class="notranslate"></span></p><p><br></p><p> <b>Retours:</b> String </p><p><br></p><h3 class="studio"> La description </h3><p> Cette fonction renvoie une chaîne contenant le code régional à deux ou trois lettres du système d&#39;exploitation exécutant le jeu, défini par la norme <a href="http://en.wikipedia.org/wiki/ISO_3166-1" target=
+"_blank">ISO3166-1</a>. Si les informations ne sont pas disponibles, il ne contiendra qu&#39;une chaîne vide &quot;&quot;. <br><br></p><p> <i><b>REMARQUE:</b> il ne s&#39;agit pas du code régional d&#39;emplacement renvoyé, mais du code de langue régional du système d&#39;exploitation.</i> <br><br></p><p><br></p><h3 class="studio"> Exemple: </h3><p class="code">switch (os_get_language())<br>
 &nbsp;&nbsp;&nbsp;{<br>
 &nbsp;&nbsp;&nbsp;case "zh":<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var region =
 os_get_region();<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (region == "hk" || region ==
-"mo" || region == "tw")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (region == "HK" || region ==
+"MO" || region == "TW")<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ini_open("chinese_traditional.ini");<br>
 
@@ -53,8 +53,8 @@ os_get_region();<br>
 &nbsp;&nbsp;&nbsp;default:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ini_open("english.ini");<br>
 &nbsp;&nbsp;&nbsp;break;<br>
-&nbsp;&nbsp;&nbsp;}<br><span class="notranslate"></span></p><p> Le code ci-dessus vérifie la langue du système d&#39;exploitation et s&#39;il est chinois, il vérifie ensuite la région du système d&#39;exploitation, ouvrant un autre <tt>*.ini</tt> fichier en fonction des valeurs renvoyées. </p><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">Fonctions diverses</a> </div><div style="float:right"> Suivant: <a href=
-"os_get_info.html">os_get_info</a> </div></div></div><h5> © Copyright <span class="notranslate">YoYo Games Ltd.</span> 2017 Tous droits réservés </h5>
+&nbsp;&nbsp;&nbsp;}<br><span class="notranslate"></span></p><p> Le code ci-dessus vérifie la langue du système d’exploitation et s’il s’agit du chinois, il vérifie ensuite la région du système d’exploitation, ouvrant un autre répertoire. <tt>*.ini</tt> fichier en fonction des valeurs renvoyées. </p><p><br></p></div><div class="footer"><div class="buttons"><div class="clear"><div style="float:left"> Retour: <a href="index.html">Fonctions diverses</a> </div><div style="float:right"> Suivant: <a href=
+"os_get_info.html">os_get_info</a> </div></div></div><h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
 <script type="text/javascript">
    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');   ga('create', 'UA-2711665-14', 'auto');   ga('send', 'pageview'); 
 </script>
